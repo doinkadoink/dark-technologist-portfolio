@@ -1,0 +1,18 @@
+Open Graph Image Requirements:
+
+Create an og-image.jpg file (1200x630 pixels recommended) for social media sharing.
+
+The image should include:
+- Rachel's name: "Rachel - Dark Technologist"
+- Tagline: "Digital Anarchist & AI Punk"
+- Dark, cyberpunk aesthetic matching the website theme
+- Professional yet rebellious design
+
+Place the actual og-image.jpg file in the public/ directory.
+
+This image will be used when your website is shared on:
+- Facebook
+- Twitter
+- LinkedIn
+- Discord
+- Other social media platforms 
