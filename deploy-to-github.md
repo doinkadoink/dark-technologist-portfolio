@@ -20,7 +20,10 @@ Run these commands in your terminal:
 
 ```bash
 # Add the remote repository (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/dark-technologist-portfolio.git
+git remote add origin https://github.com/doinakadoink/dark-technologist-portfolio.git
+
+# Pull the latest changes from GitHub and merge with your local changes
+git pull --rebase origin main
 
 # Push your code to GitHub
 git branch -M main
