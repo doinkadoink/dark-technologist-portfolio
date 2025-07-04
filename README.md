@@ -111,24 +111,39 @@ Edit the CSS custom properties in `src/index.css`:
 
 ## 🚀 Deployment
 
-### Netlify
+### GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+1. **Push to GitHub**: Simply push your code to the main branch
+2. **Automatic Deployment**: GitHub Actions will automatically build and deploy your site
+3. **Enable GitHub Pages**: 
+   - Go to your repository Settings
+   - Navigate to Pages section
+   - Select "Deploy from a branch"
+   - Choose "gh-pages" branch
+   - Save
+
+Your site will be available at: `https://yourusername.github.io/repository-name`
+
+### Manual Deployment
+
+If you prefer manual deployment:
+
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Build the project: `npm run build`
+3. Deploy: `npm run deploy`
+
+### Other Platforms
+
+#### Netlify
 1. Build the project: `npm run build`
 2. Drag the `build` folder to Netlify
 3. Configure custom domain if needed
 
-### Vercel
+#### Vercel
 1. Connect your GitHub repository to Vercel
 2. Vercel will automatically detect and deploy the React app
-
-### GitHub Pages
-1. Add `"homepage": "https://username.github.io/repo-name"` to `package.json`
-2. Install gh-pages: `npm install --save-dev gh-pages`
-3. Add deploy scripts to `package.json`:
-   ```json
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build"
-   ```
-4. Run: `npm run deploy`
 
 ## 🎯 About Rachel
 

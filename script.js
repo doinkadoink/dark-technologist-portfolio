@@ -72,23 +72,14 @@ document.querySelectorAll('.tech-tag').forEach(tag => {
     });
 });
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
 // Add glow effect to buttons on hover
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 0 30px rgba(255, 0, 102, 0.5)';
+        this.style.boxShadow = '0 0 30px rgba(138, 43, 226, 0.5)';
     });
     
     btn.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 0 20px rgba(255, 0, 102, 0.3)';
+        this.style.boxShadow = '0 0 20px rgba(138, 43, 226, 0.3)';
     });
 });
 
@@ -167,7 +158,7 @@ function createScrollProgress() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #ff0066, #ff6b35);
+        background: linear-gradient(90deg, #8a2be2, #9370db);
         z-index: 1001;
         transition: width 0.1s ease;
     `;
