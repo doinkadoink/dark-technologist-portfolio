@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
 const Projects: React.FC = () => {
@@ -27,7 +28,7 @@ const Projects: React.FC = () => {
                 <span className="tech-tag">AI Corruption</span>
               </div>
               
-              <a href="#contact" className="btn">EXPLORE CHAOS</a>
+              <Link to="/web-corruption" className="btn">EXPLORE CHAOS</Link>
             </div>
           </article>
           
@@ -50,7 +51,7 @@ const Projects: React.FC = () => {
                 <span className="tech-tag">D&D Corruption</span>
               </div>
               
-              <a href="#contact" className="btn">ENTER DYSTOPIA</a>
+              <Link to="/chaos-maps" className="btn">ENTER DYSTOPIA</Link>
             </div>
           </article>
           
@@ -73,7 +74,7 @@ const Projects: React.FC = () => {
                 <span className="tech-tag">Chaos Design</span>
               </div>
               
-              <a href="#contact" className="btn">JOIN CHAOS</a>
+              <Link to="/ai-interactive" className="btn">JOIN CHAOS</Link>
             </div>
           </article>
           
@@ -96,7 +97,7 @@ const Projects: React.FC = () => {
                 <span className="tech-tag">Chaos Direction</span>
               </div>
               
-              <a href="#contact" className="btn">VIEW DARKNESS</a>
+              <Link to="/digital-dark-art" className="btn">VIEW DARKNESS</Link>
             </div>
           </article>
         </div>

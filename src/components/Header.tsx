@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import ScrollToSection from './ScrollToSection';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -12,18 +13,18 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <a href="#home" aria-label="Rachel - Dark Technologist Home">
+            <ScrollToSection to="#home" ariaLabel="Rachel - Dark Technologist Home">
               <span className="logo-text">R</span>
               <span className="logo-full">RACHEL</span>
-            </a>
+            </ScrollToSection>
           </div>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`} role="navigation" aria-label="Main Navigation">
             <ul className="nav-list">
-              <li><a href="#home" className="nav-link" aria-label="Go to Home section">HOME</a></li>
-              <li><a href="#about" className="nav-link" aria-label="Go to About section">ABOUT</a></li>
-              <li><a href="#projects" className="nav-link" aria-label="Go to Projects section">PROJECTS</a></li>
-              <li><a href="#contact" className="nav-link" aria-label="Go to Contact section">CONTACT</a></li>
+              <li><ScrollToSection to="#home" className="nav-link" ariaLabel="Go to Home section">HOME</ScrollToSection></li>
+              <li><ScrollToSection to="#about" className="nav-link" ariaLabel="Go to About section">ABOUT</ScrollToSection></li>
+              <li><ScrollToSection to="#projects" className="nav-link" ariaLabel="Go to Projects section">PROJECTS</ScrollToSection></li>
+              <li><ScrollToSection to="#contact" className="nav-link" ariaLabel="Go to Contact section">CONTACT</ScrollToSection></li>
             </ul>
           </nav>
           
