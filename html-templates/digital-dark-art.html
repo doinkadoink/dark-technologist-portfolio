@@ -112,16 +112,16 @@
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(255, 0, 128, 0.4);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 0, 128, 0.3);
       border-color: var(--cyber-blue);
-      animation: cyberShift 0.5s ease;
+      animation: cyberFlutter 0.5s ease;
     }
     
-    @keyframes cyberShift {
-      0% { transform: translateY(-5px); }
-      50% { transform: translateY(-5px) translateX(3px); }
-      100% { transform: translateY(-5px); }
+    @keyframes cyberFlutter {
+      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
+      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
+      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
     }
     
     .gallery-item::before {
@@ -198,14 +198,23 @@
       color: var(--cyber-pink);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
-      text-align: center;
-      text-shadow: 0 0 15px var(--cyber-pink);
-      animation: cyberFlicker 2s infinite;
+      text-shadow: 0 0 10px var(--cyber-pink);
     }
     
-    @keyframes cyberFlicker {
-      0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--cyber-pink); }
-      50% { opacity: 0.7; text-shadow: 0 0 25px var(--cyber-blue); }
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 0, 128, 0.1) 50%, transparent 70%);
+      animation: cyberGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes cyberGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
     
     .gallery-title {
@@ -221,6 +230,22 @@
       color: #EEEEEE;
       font-size: 0.9rem;
       line-height: 1.5;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--cyber-pink);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--cyber-pink);
     }
   </style>
 </head>

@@ -109,18 +109,16 @@
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
       border-color: var(--hologram-pink);
-      animation: holoShift 0.8s ease;
+      animation: holoFlutter 0.5s ease;
     }
     
-    @keyframes holoShift {
-      0% { transform: translateY(-5px); }
-      25% { transform: translateY(-5px) translateX(2px); }
-      50% { transform: translateY(-5px) translateX(-2px); }
-      75% { transform: translateY(-5px) translateX(1px); }
-      100% { transform: translateY(-5px); }
+    @keyframes holoFlutter {
+      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
+      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
+      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
     }
     
     .gallery-item::before {
@@ -197,15 +195,23 @@
       color: var(--hologram-blue);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
-      text-align: center;
-      text-shadow: 0 0 15px var(--hologram-blue);
-      animation: holoFlicker 3s infinite;
+      text-shadow: 0 0 10px var(--hologram-blue);
     }
     
-    @keyframes holoFlicker {
-      0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--hologram-blue); }
-      33% { opacity: 0.6; text-shadow: 0 0 25px var(--hologram-pink); }
-      66% { opacity: 0.8; text-shadow: 0 0 20px var(--neon-green); }
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+      animation: holoGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes holoGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
     
     .gallery-title {
@@ -221,6 +227,22 @@
       color: #EEEEEE;
       font-size: 0.9rem;
       line-height: 1.5;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--hologram-blue);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--hologram-blue);
     }
   </style>
 </head>

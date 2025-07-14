@@ -14,7 +14,7 @@
     --text-secondary: #cccccc;
     --text-muted: #888888;
     --border-color: #333333;
-    --gradient-primary: linear-gradient(135deg, #8A2BE2, #4B0082);
+    --gradient-primary: linear-gradient(135deg, #8A2BE2, #FFD700, #8A2BE2);
     --gradient-secondary: linear-gradient(135deg, #1a1a1a, #0a0a0a);
     --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
@@ -289,20 +289,20 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px var(--accent-glow);
-    animation: glowPulse 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.9);
+    animation: titleGlow 4s ease-in-out infinite;
 }
 
 .title-line:nth-child(2) {
-    animation-delay: 1.5s;
+    animation-delay: 2s;
 }
 
-@keyframes glowPulse {
-    0% {
-        filter: brightness(1) drop-shadow(0 0 20px var(--accent-glow));
+@keyframes titleGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 25px rgba(138, 43, 226, 0.8));
     }
-    100% {
-        filter: brightness(1.2) drop-shadow(0 0 40px var(--accent-glow));
+    50% {
+        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
     }
 }
 

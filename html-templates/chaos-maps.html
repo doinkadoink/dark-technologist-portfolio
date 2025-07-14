@@ -101,25 +101,24 @@
     .gallery-item {
       background: linear-gradient(135deg, #1a0f2e 0%, var(--retro-bg) 100%);
       border: 3px solid var(--arcade-green);
-      border-radius: 0;
+      border-radius: 15px;
       padding: 25px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     }
     
     .gallery-item:hover {
       transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(57, 255, 20, 0.5);
+      box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
       border-color: var(--primary-purple);
-      animation: pixelShift 0.3s ease;
+      animation: arcadeFlutter 0.5s ease;
     }
     
-    @keyframes pixelShift {
-      0% { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
-      50% { clip-path: polygon(5px 5px, calc(100% - 5px) 5px, calc(100% - 5px) calc(100% - 5px), 5px calc(100% - 5px)); }
-      100% { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+    @keyframes arcadeFlutter {
+      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
+      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
+      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
     }
     
     .gallery-item::before {
@@ -130,7 +129,7 @@
       right: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--arcade-green), var(--primary-purple), var(--arcade-green));
-      animation: scanline 2s linear infinite;
+      animation: scanline 3s linear infinite;
     }
     
     @keyframes scanline {
@@ -182,7 +181,7 @@
       width: 100%;
       height: 200px;
       background: linear-gradient(45deg, #1a0f2e, var(--retro-bg));
-      border-radius: 0;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -190,7 +189,6 @@
       border: 2px solid var(--arcade-green);
       position: relative;
       overflow: hidden;
-      clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
     }
     
     .gallery-image::before {
@@ -198,9 +196,23 @@
       color: var(--arcade-green);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
-      text-align: center;
       text-shadow: 0 0 10px var(--arcade-green);
-      animation: pixelFlicker 1s infinite;
+    }
+    
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.1) 50%, transparent 70%);
+      animation: arcadeGlow 4s ease-in-out infinite;
+    }
+    
+        @keyframes arcadeGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
     
     @keyframes pixelFlicker {
@@ -221,6 +233,22 @@
       color: #EEEEEE;
       font-size: 0.9rem;
       line-height: 1.5;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--arcade-green);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--arcade-green);
     }
   </style>
 </head>

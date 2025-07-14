@@ -86,17 +86,17 @@
     .project-title {
       position: relative;
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(45deg, var(--film-gold), var(--primary-purple), var(--neon-green));
+      background: linear-gradient(45deg, var(--film-gold), #FFFFFF, var(--film-gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: cyberGlow 3s ease-in-out infinite;
+      animation: filmGlow 4s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
     }
     
-    @keyframes cyberGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px var(--film-gold)); }
-      33% { filter: drop-shadow(0 0 20px var(--primary-purple)); }
-      66% { filter: drop-shadow(0 0 20px var(--neon-green)); }
+    @keyframes filmGlow {
+      0%, 100% { filter: drop-shadow(0 0 25px var(--film-gold)); }
+      50% { filter: drop-shadow(0 0 25px #FFFFFF); }
     }
     
     .gallery-item {
@@ -110,16 +110,16 @@
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
       border-color: var(--primary-purple);
-      animation: filmShift 0.6s ease;
+      animation: filmFlutter 0.5s ease;
     }
     
-    @keyframes filmShift {
-      0% { transform: translateY(-5px); }
-      50% { transform: translateY(-5px) scale(1.02); }
-      100% { transform: translateY(-5px); }
+    @keyframes filmFlutter {
+      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
+      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
+      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
     }
     
     .gallery-item::before {
@@ -194,7 +194,23 @@
       color: #FFD700;
       font-family: 'Orbitron', monospace;
       font-size: 14px;
-      text-align: center;
+      text-shadow: 0 0 10px #FFD700;
+    }
+    
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+      animation: filmGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes filmGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
     
     .gallery-title {
@@ -209,6 +225,22 @@
       color: #EEEEEE;
       font-size: 0.9rem;
       line-height: 1.5;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid #FFD700;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #FFD700;
     }
     
     .project-stats {
