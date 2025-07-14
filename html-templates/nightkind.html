@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Nightkind - Bat Conservation Merchandise | Rachel - Dark Technologist</title>
+  <meta name="title" content="Nightkind - Bat Conservation Merchandise | Rachel - Dark Technologist" />
+  <meta name="description" content="Personal project creating a bat company selling merchandise to raise funds for Bats QLD conservation efforts." />
+  <meta name="keywords" content="bat conservation, merchandise, Bats QLD, nightkind, wildlife protection, fundraising, dark technologist" />
+  <meta name="author" content="Rachel - Dark Technologist" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/nightkind" />
+  <meta property="og:title" content="Nightkind - Bat Conservation Merchandise | Rachel - Dark Technologist" />
+  <meta property="og:description" content="Personal project creating a bat company selling merchandise to raise funds for Bats QLD conservation efforts." />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:site_name" content="Rachel - Dark Technologist" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://your-domain.com/nightkind" />
+  <meta property="twitter:title" content="Nightkind - Bat Conservation Merchandise | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="Personal project creating a bat company selling merchandise to raise funds for Bats QLD conservation efforts." />
+  <meta property="twitter:image" content="og-image.jpg" />
+  <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="apple-touch-icon" href="../public/logo192.png" />
+  <link rel="manifest" href="../public/manifest.json" />
+  <link rel="canonical" href="https://your-domain.com/nightkind" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/App.css" />
+  <link rel="stylesheet" href="../src/index.css" />
+  <link rel="stylesheet" href="../src/components/Header.css" />
+  <link rel="stylesheet" href="../src/pages/ProjectPages.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Nightkind Theme: Bat/Night Aesthetic */
+    :root {
+      --primary-purple: #8A2BE2;
+      --secondary-purple: #4B0082;
+      --neon-green: #00FF41;
+      --bat-black: #0A0A0A;
+      --moon-silver: #C0C0C0;
+      --night-blue: #1E3A8A;
+    }
+    
+    body {
+      background: var(--bat-black);
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(192, 192, 192, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      animation: nightPulse 6s ease-in-out infinite;
+    }
+    
+    @keyframes nightPulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
+    }
+    
+    .project-header {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-title {
+      position: relative;
+      font-family: 'Orbitron', monospace;
+      background: linear-gradient(45deg, var(--moon-silver), var(--neon-green), var(--moon-silver));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: nightGlow 4s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(192, 192, 192, 0.8);
+    }
+    
+    @keyframes nightGlow {
+      0%, 100% { filter: drop-shadow(0 0 25px var(--moon-silver)); }
+      50% { filter: drop-shadow(0 0 25px var(--neon-green)); }
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #1a0f2e 0%, var(--bat-black) 100%);
+      border: 3px solid var(--neon-green);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+      border-color: var(--primary-purple);
+      animation: batFlutter 0.5s ease;
+    }
+    
+    @keyframes batFlutter {
+      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
+      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
+      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-green), var(--primary-purple), var(--neon-green));
+      animation: scanline 3s linear infinite;
+    }
+    
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .project-gallery {
+      margin: 60px 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #1a0f2e, var(--bat-black));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px solid var(--neon-green);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-image::before {
+      content: '[BAT MERCH]';
+      color: var(--neon-green);
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
+      animation: moonGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes moonGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .project-description {
+      color: #E0E0E0;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    .project-description strong {
+      color: var(--neon-green);
+      text-shadow: 0 0 5px var(--neon-green);
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--neon-green);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    .project-footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px 0;
+      border-top: 2px solid var(--neon-green);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid var(--neon-green);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 255, 65, 0.4);
+      border-color: var(--moon-silver);
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .company-link {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--neon-green), var(--primary-purple));
+      color: var(--bat-black);
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid var(--neon-green);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .company-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 255, 65, 0.5);
+      border-color: var(--moon-silver);
+    }
+    
+    .company-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .company-link:hover::before {
+      left: 100%;
+    }
+    
+    .placeholder-text {
+      color: var(--moon-silver);
+      font-style: italic;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="project-container">
+    <header class="project-header">
+      <h1 class="project-title">NIGHTKIND</h1>
+      <p class="project-subtitle">Bat Conservation Merchandise Company</p>
+    </header>
+
+    <main class="project-content">
+      <section class="project-overview">
+        <div class="gallery-item">
+          <h2>Project Overview</h2>
+          <p class="project-description">
+            <strong>Nightkind</strong> is a personal passion project where I created a bat-themed merchandise company 
+            to raise funds for <strong>Bats QLD</strong> conservation efforts. This project combines my love for 
+            wildlife conservation with entrepreneurial spirit, creating a sustainable way to support bat protection 
+            and rehabilitation programs.
+          </p>
+          <p class="project-description">
+            The company sells a variety of bat-themed merchandise including clothing, accessories, and home decor, 
+            with all profits going directly to Bats QLD to support their vital work in bat rescue, rehabilitation, 
+            and habitat protection.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">E-commerce</span>
+            <span class="tech-tag">Merchandise Design</span>
+            <span class="tech-tag">Conservation</span>
+            <span class="tech-tag">Fundraising</span>
+            <span class="tech-tag">Wildlife Protection</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Project Highlights</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-image"></div>
+            <h3>Company Branding</h3>
+            <p>Developed the complete Nightkind brand identity, including logo design, color scheme, and brand messaging that reflects both the nocturnal nature of bats and the conservation mission.</p>
+          </div>
+          
+          <div class="gallery-item">
+            <div class="gallery-image"></div>
+            <h3>Merchandise Line</h3>
+            <p>Created a diverse range of bat-themed products including t-shirts, hoodies, stickers, and accessories, all designed to raise awareness about bat conservation while generating funds.</p>
+          </div>
+          
+          <div class="gallery-item">
+            <div class="gallery-image"></div>
+            <h3>Conservation Partnership</h3>
+            <p>Established direct partnership with Bats QLD to ensure all profits go directly to supporting their bat rescue, rehabilitation, and habitat protection programs.</p>
+          </div>
+          
+          <div class="gallery-item">
+            <div class="gallery-image"></div>
+            <h3>Community Impact</h3>
+            <p>Built a community of bat enthusiasts and conservation supporters through social media engagement and educational content about bat species and their importance to ecosystems.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-details">
+        <div class="gallery-item">
+          <h2>Project Details</h2>
+          <p class="project-description">
+            <strong>Role:</strong> Sole Founder & Creator<br>
+            <strong>Duration:</strong> Ongoing Personal Project<br>
+            <strong>Impact:</strong> Direct funding for Bats QLD conservation efforts
+          </p>
+          <p class="project-description">
+            This project represents my commitment to using creative and entrepreneurial skills for environmental 
+            conservation. By creating appealing merchandise that celebrates bats, I aim to change public 
+            perception of these misunderstood creatures while providing tangible support to organizations 
+            working to protect them.
+          </p>
+          
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="company-link">VISIT NIGHTKIND</a>
+            <p class="placeholder-text">[Link to be added when company website is live]</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="project-footer">
+      <a href="../index.html" class="btn">RETURN TO CHAOS</a>
+    </footer>
+  </div>
+</body>
+</html> 
