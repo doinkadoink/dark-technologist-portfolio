@@ -87,17 +87,17 @@
     .project-title {
       position: relative;
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(45deg, var(--neon-green), var(--primary-purple), var(--glitch-red));
+      background: linear-gradient(45deg, var(--neon-green), #FFFFFF, var(--neon-green));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: cyberGlow 3s ease-in-out infinite;
+      animation: matrixGlow 4s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
     }
     
-    @keyframes cyberGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px var(--neon-green)); }
-      33% { filter: drop-shadow(0 0 20px var(--primary-purple)); }
-      66% { filter: drop-shadow(0 0 20px var(--glitch-red)); }
+    @keyframes matrixGlow {
+      0%, 100% { filter: drop-shadow(0 0 25px var(--neon-green)); }
+      50% { filter: drop-shadow(0 0 25px #FFFFFF); }
     }
     
     .project-gallery {
@@ -340,11 +340,12 @@
       background: repeating-linear-gradient(
         90deg,
         transparent,
-        transparent 2px,
-        rgba(0, 255, 65, 0.1) 2px,
-        rgba(0, 255, 65, 0.1) 4px
+        transparent 4px,
+        rgba(0, 255, 65, 0.05) 4px,
+        rgba(0, 255, 65, 0.05) 6px
       );
       pointer-events: none;
+      opacity: 0.3;
     }
     
     .challenges-title {
@@ -360,13 +361,14 @@
     }
     
     .challenge-item {
-      background: rgba(0, 255, 65, 0.1);
+      background: rgba(0, 0, 0, 0.7);
       border: 1px solid var(--neon-green);
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 15px;
       position: relative;
       z-index: 1;
+      backdrop-filter: blur(5px);
     }
     
     .challenge-title {
@@ -686,7 +688,7 @@
       </div>
       
       <footer class="project-footer">
-        <a href="index.html" class="btn">RETURN TO CHAOS</a>
+        <a href="../index.html" class="btn">RETURN TO CHAOS</a>
       </footer>
     </div>
   </div>
