@@ -7,16 +7,16 @@
 :root {
     --primary-bg: #0a0a0a;
     --secondary-bg: #1a1a1a;
-    --accent-color: #FFD700;
-    --accent-glow: #FFD700;
-    --accent-purple: #8A2BE2;
+    --accent-color: #8A2BE2;
+    --accent-glow: #8A2BE2;
+    --accent-yellow: #FFD700;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --text-muted: #888888;
     --border-color: #333333;
-    --gradient-primary: linear-gradient(135deg, #FFD700, #8A2BE2);
+    --gradient-primary: linear-gradient(135deg, #8A2BE2, #4B0082);
     --gradient-secondary: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-    --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
@@ -64,12 +64,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary {
     background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--accent-yellow);
+    color: var(--accent-yellow);
 }
 
 .btn-secondary:hover {
-    background: var(--accent-color);
+    background: var(--accent-yellow);
     color: var(--text-primary);
 }
 
@@ -354,6 +354,10 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
 }
 
+.hero-buttons .btn:first-child {
+    background: linear-gradient(135deg, var(--accent-yellow), var(--accent-color));
+}
+
 /* About Styles */
 .about {
     background: var(--secondary-bg);
@@ -377,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-badge {
     display: inline-block;
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, var(--accent-yellow), var(--accent-color));
     color: var(--text-primary);
     padding: 8px 20px;
     border-radius: 25px;
