@@ -7,15 +7,16 @@
 :root {
     --primary-bg: #0a0a0a;
     --secondary-bg: #1a1a1a;
-    --accent-color: #8a2be2;
-    --accent-glow: #8a2be2;
+    --accent-color: #FFD700;
+    --accent-glow: #FFD700;
+    --accent-pink: #FF69B4;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --text-muted: #888888;
     --border-color: #333333;
-    --gradient-primary: linear-gradient(135deg, #8a2be2, #9370db);
+    --gradient-primary: linear-gradient(135deg, #FFD700, #FF69B4);
     --gradient-secondary: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-    --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.3);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
@@ -97,6 +98,17 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     padding: 15px 0;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    width: 0%;
+    transition: width 0.3s ease;
+    z-index: 1001;
 }
 
 .header-content {
@@ -192,8 +204,8 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: 
-        linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+        linear-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
 }

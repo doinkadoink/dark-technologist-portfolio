@@ -75,11 +75,11 @@ document.querySelectorAll('.tech-tag').forEach(tag => {
 // Add glow effect to buttons on hover
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 0 30px rgba(138, 43, 226, 0.5)';
+        this.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.5)';
     });
     
     btn.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 0 20px rgba(138, 43, 226, 0.3)';
+        this.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.3)';
     });
 });
 
@@ -151,18 +151,7 @@ window.addEventListener('load', function() {
 
 // Add scroll progress indicator
 function createScrollProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #8a2be2, #9370db);
-        z-index: 1001;
-        transition: width 0.1s ease;
-    `;
-    document.body.appendChild(progressBar);
+    const progressBar = document.getElementById('progressBar');
     
     window.addEventListener('scroll', function() {
         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
