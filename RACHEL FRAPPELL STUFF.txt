@@ -1,0 +1,398 @@
+RACHEL FRAPPELL
+Visual Design & Branding for My Portfolio
+https://doinkadoink.github.io/dark-technologist-portfolio
+
+Tutor: Nikolche Vasilevski
+7/13/2025
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+CONTENTS
+Self-Assessment	3
+Revision History	4
+1.0 Application Purpose and Scope	4
+2.0 List of top 5 Prioritized Objectives	5
+3.0 Target Market Profile	6
+4.0 Competitor Analysis	8
+Proposed Application Design	10
+Colour	13
+Font	13
+Contrast	14
+Repetition /Unity	14
+Alignment	14
+Proximity	14
+Input Interface	14
+Output Interface	14
+TIME LOG (Individual – Every Group Member)	15
+Summary	15
+Technology Stack	16
+Source Reference	16
+
+ 
+SELF-ASSESSMENT
+
+
+
+
+
+
+
+
+
+
+1.	Team effort put into this project:  1   2   3   4   5 (solo)
+2.	What areas still need improvement?
+Continuous refinement of branding elements and accessibility based on user feedback.
+3.	What areas of the project are you most proud of?
+       Consistent visual identity, modern responsive design, and strong accessibility focus.
+4.	If you were not able to complete your project, explain why, and what happened: 
+
+N/A
+(formative) Team Self-Assessment – Grade out of 100 – [ 80 ]
+(formative) <Student name> Self-Assessment – Grade out of 100 – [ 80 ]
+Any other Comments:
+
+
+no
+
+
+
+
+
+
+
+REVISION HISTORY
+ 
+1.0 APPLICATION PURPOSE AND SCOPE
+
+This portfolio website showcases my creative journey, technical skills, and personal brand as a web developer and AI enthusiast. The site is designed to present my work, skills, and interests in a visually engaging, modern, and accessible way. It leverages a cyberpunk-inspired aesthetic with a focus on usability, accessibility, and responsive design. The main goals are to present my skills and projects, demonstrate proficiency in modern web technologies, build a memorable personal brand, serve as a platform for networking, and provide an accessible user experience across devices.
+
+
+
+
+
+2.0 LIST OF TOP 5 PRIORITIZED OBJECTIVES 
+
+Item	Justification	Priority [1...5]
+Build interactive branding	To create a memorable, unique personal brand and visual identity.      	1
+To network	Attract collaboration and job opportunities in web and AI fields.	3
+To allow feedback from customers	Gather feedback to improve my portfolio and user experience.  	5
+Provide direct marketing opportunities	Showcase my work and skills to a broad audience.	4
+Improve access to information	Make my skills, projects, and contact info easily discoverable.	2
+
+ 
+3.0 TARGET MARKET PROFILE
+
+
+PRIMARY USER
+	
+A general description of the user.	Small PHOTO
+A confident and professional hiring manager in a mid-sized tech or design firm, reviewing online portfolios to identify standout candidates. Seated in a modern office environment, she is expressive, perceptive, and highly competent in evaluating talent.	
+
+ 
+(ai generated image)
+
+USER OBJECTIVES 
+•	Review applicant portfolios quickly and efficiently
+•	Evaluate visual style, development skill, and personal branding coherence
+•	Determine candidate fit based on tone, projects, and professionalism
+•	Store or share portfolio links with internal hiring teams
+USER PROFILE Name   Elena Morales
+Gender/ age group	Female, 32
+Experience	8 years in recruitment and team leadership
+Education	Bachelor’s in Communications and HR
+Occupation	Hiring Manager at a design and software firm
+Residence	Urban (e.g., Sydney, Australia or Toronto, Canada)
+Computer Literacy	Very high; proficient in ATS platforms, digital portfolios, and online evaluation tools
+Other	Passionate about inclusive hiring, visual communication, and finding team players with creativity and initiative
+
+
+SECONDARY USER
+
+USER EXPECTATIONS (what will the user expect to experience with the application)
+•	Visually appealing and accessible design that loads well on all devices
+•	Clear navigation and high-level overview of skills and accomplishments
+•	Polished tone with attention to detail in layout, spelling, and formatting
+•	Engaging visuals or animations that do not hinder usability
+•	Easy-to-find contact info and downloadable résumé or link to LinkedIn
+A general description of the user.	Small PHOTO
+An aspiring web developer and university student who explores portfolio sites to learn best practices, gather creative inspiration, and connect with other creatives. Engaged, curious, and aesthetically driven, they represent the next wave of tech professionals.	
+ 
+(ai generated image)
+USER OBJECTIVES 
+•	Gain inspiration for layout, colour palettes, and project presentation
+•	Compare their own skills to industry-ready portfolios
+•	Discover code examples, frameworks, or UI patterns used
+•	Connect with the creator via GitHub, LinkedIn, or social media
+•	Learn how to present themselves professionally
+USER PROFILE Name   Aiden Tran
+Gender/ age group	Male, 21
+Experience	Intermediate. has built personal projects and contributed to small group assignments
+Education	Currently pursuing a Bachelor of Information Technology
+Occupation	Student and part-time freelance front-end developer
+Residence	Suburban (e.g., Brisbane, Australia)
+Computer Literacy	High; uses GitHub, VS Code, Figma, and web development tools regularly
+Other	Active on Discord communities, always seeking peer feedback and real-world project exposure
+
+USER EXPECTATIONS (what will the user expect to experience with the application)
+•	Modern, eye-catching design that balances style and clarity
+•	Mobile-first responsiveness with smooth transitions
+•	Clearly labelled sections and simple navigation
+•	Visible tech stack and tools used per project
+•	External links to social platforms or repositories
+•	A tone that feels human and creative, not corporate
+
+
+
+
+4.0 COMPETITOR ANALYSIS 
+
+SUMMARY - COMPETITIVE REVIEW of THREE APPLICATIONS
+	URL	Description
+1	https://ryanchilton.com.au/local/web-design-gold-coast/ 
+Ryan Chilton’s web design portfolio made for self-promotion of web building services
+2	https://www.michaelsherry.com.au/web-design-gold-coast/ 
+Michael Sherry’s web design portfolio made for self-promotion of web building services
+3	https://emmatroy.com.au/ 
+Emma Troy’s web design portfolio made for self-promotion of web building services
+Recommendations and review for proposed Website based on competitor Website analysis:
+
+Michael Sherry’s website does exhibit visual and structural traits reminiscent of early 2000s design. This includes heavy gradient backgrounds, centred block text, and minimal spacing finesse.
+→ Proposal: Use Michael’s site as a cautionary benchmark. emphasize modern layout systems (flex/grid), reduce visual clutter, and prioritise responsive interactivity and accessibility.
+
+Emma Troy’s website is clearly designed with a strong focus on aesthetics, personality, and visual branding. However, this emphasis on elegance introduces some usability trade-offs, particularly in legibility and contrast.
+→ Proposal: Draw inspiration from her visual cohesion and brand voice, but pair elegant fonts with functional legibility. Maintain sufficient contrast and avoid overly decorative typefaces for body content.
+
+Ryan Chilton’s website achieves a clean and corporate layout with strong contrast and call-to-action visibility. However, some layout elements feel rigid, and long content blocks lack visual relief. Branding is solid, but interactivity is minimal.
+→ Proposal: Adopt Ryan’s clear hierarchy and CTA focus, but enhance user engagement through interactive UI elements, modular spacing, and greater visual dynamism.
+
+
+
+
+APPLICATION URL: https://ryanchilton.com.au/local/web-design-gold-coast/   
+APPLICATION NAME: Ryan Chilton Portfolio
+PAGE	ITEM	COMMENT	SCORE
+Index.html	Colour	Strong use of navy, light blue (cyan) and white provides professional and consistent appearance for branding.	5
+Index.html	Font Choice	Accent font is cursive but still legible, distinguishes brand. Non serif fonts are large and blocky and provide good legibility.	5
+Index.html	Contrast	Generally strong, but some text (especially in the footer and dense sections) could use improved contrast or spacing for accessibility.	3
+Index.html	Repetition/unity	Buttons, fonts, and headings are reused consistently, but overuse of repeated styles	4
+Index.html	Alignment	Header and footer are aligned well, but content blocks lack modularity and spacing. Visual flow is interrupted by text-heavy layout.	3
+Index.html	Proximity	It looks cluttered with text and graphics, text sections look more like book paragraphs	3
+Index.html	Input Interface	No transitional flow animations when scrolling down, buttons have basic hover and click interactive features	3
+https://ryanchilton.com.au/	Output Interface	Client list animations appear glitchy when hovering. Responsive design is evident when switching to mobile. 	3
+		Application total Score	         29
+		Application average Score (total/no items)	3.63
+
+
+APPLICATION URL: https://www.michaelsherry.com.au/web-design-gold-coast/ 
+APPLICATION NAME: Michael Sherry
+PAGE	ITEM	COMMENT	SCORE
+Index.html
+ 	Colour	Strong reliance on navy and desaturated blue gradients. While coherent, the palette feels dated and reminiscent of early 2000s design styles.	4
+Index.html	Font Choice	Uses standard sans-serif fonts. Functional, but lacks character or modern typography trends (e.g., varied weights, font pairings).	3
+Index.html	contrast	Sufficient contrast for legibility, but the dark overlay on images flattens depth and makes elements feel compressed rather than layered.	3
+Index.html	Repetition/unity	Visual consistency is maintained (fonts, colours), but repetition is minimal.	4
+Index.html	Alignment	Mostly centred alignment throughout. Lacks responsive grid structure; content feels blocky. No clear visual hierarchy beyond headings.	2
+Index.html	Proximity	Moderate spacing between text elements, but buttons and CTAs feel crowded together. Could benefit from increased white space to guide attention.	2
+Index.html	Input Interface	Standard form elements with a basic layout. Functional but unengaging. Form lacks animation or progressive interaction feedback.	2
+Index.html	Output Interface	
+The site claims to be responsive, but interaction is minimal. A persistent reCAPTCHA badge follows the user across the page. Though not a popup, it behaves like one and distracts from content visibility.
+	1
+		Application total Score	21
+		Application average Score (total/no items)	2.63
+
+
+APPLICATION URL: https://emmatroy.com.au/ 
+APPLICATION NAME: Emma Troy
+PAGE	ITEM	COMMENT	SCORE
+Index.html
+ 	Colour	Uses soft neutrals, beige, and blush tones to evoke calm and elegance. Emotionally effective for branding, but low contrast with white backgrounds may reduce clarity.	4
+Index.html	Font Choice	Stylish serif and cursive fonts convey personality, but the thin cursive text (e.g., “Choose your adventure”) can be difficult to read, especially on smaller screens.	3
+Index.html	contrast	Aesthetic choices reduce visual contrast. Light greys and thin script fonts against white backgrounds impair legibility for some users.	3
+Index.html	Repetition/unity	Strong brand cohesion. Fonts, iconography, and colour usage are repeated consistently. Layout patterns feel elegant and intentional.	5
+Index.html	Alignment	Excellent alignment and spacing. Clear use of margins and visual hierarchy enhances flow and maintains user attention.	5
+Index.html	Proximity	Clear grouping of elements and whitespace management gives a refined, editorial feel. Captions, images, and CTAs are spatially coherent. Always leaves content cut off at the bottom to encourage further scrolling.	5
+Index.html	Input Interface	
+Contact buttons and links are minimal but functional. However, form interactions are stylistic and not heavily animated.	4
+Index.html	Output Interface	Responsive across devices. However, menu is extremely confusing and punishes user with a loading screen despite all content being on the same page.	3
+		Application total Score	32
+		Application average Score (total/no items)	4
+
+
+PROPOSED APPLICATION DESIGN
+
+Page/screen titles	https://doinkadoink.github.io/dark-technologist-portfolio/ INDEX PAGE
+
+	
+	
+PAGE DESIGN WIREFRAME/INTERFACE SKETCH PER SCREEN \
+      
+
+  
+PAGE DESIGN COLOUR LAYOUT PER SCREEN 
+
+Primary Purple: #3B1E54
+
+- Accent Purple: #9B7EBD
+
+- Highlight Lilac: #D4BEE4
+
+- Clean White: #EEEEEE
+
+- Neon Pink Accents for call-to-action and highlights
+
+- Dark backgrounds for cyberpunk effect
+
+- Yellow for interactive content
+
+LOGIC DESIGN PER SCREEN 
+
+ 
+
+    
+ 
+
+
+
+- Navigation: Responsive, collapses to hamburger on mobile.
+
+- Hero/Stats: Large, bold typography, animated grid, and stats.
+
+- Projects: Card-based layout, parameterized for content.
+
+- Contact: Simple form, accessible labels.
+
+- Branding: Consistent color, font, and animation logic.
+
+
+
+
+Content justification/comments 
+
+Colour: Deep purples and neon pinks for creativity and modernity; high contrast for accessibility.
+
+- Font: Large, bold, sans-serif (Orbitron); inspired by Discord for modern, friendly feel.
+
+- Contrast: All colour pairings checked for WCAG AA compliance.
+
+- Repetition/Unity: Consistent use of colour, font, and card layouts.
+
+- Alignment: Cantered hero, left-aligned content, grid-based layouts.
+
+- Proximity: Grouped related content, clear spacing.
+
+- Input Interface: Touch-friendly buttons, hamburger menu on mobile.
+
+- Output Interface: Responsive, animated, visually engaging.
+
+
+
+
+COLOUR
+•	Monochrome grid background with vivid neon purples creates a bold cyberpunk aesthetic.
+FONT
+•	Large, bold, sans-serif (Orbitron); inspired by Discord for modern, friendly feel. Pixel-style tech fonts (may need adjusting to be more legible when at smaller sizes)
+CONTRAST
+•	 High-contrast text (purple on black) enhances visibility, going to change grey to pure white in future versions
+REPETITION /UNITY
+•	Strong visual and thematic unity. Typography, grid layout, colour, and branding are consistent across all pages and sections.
+ALIGNMENT
+•	use of symmetrical layout and grid logic. Content blocks are evenly distributed and responsive across screen widths.
+PROXIMITY
+•	Grouped related content, clear spacing.
+•	Content grouping is clear. Labels and buttons are logically paired and spaced, preserving a clean hierarchy despite the high-impact visuals
+INPUT INTERFACE
+•	Design patterns used in the input interaction, and user experience (e.g. mobile touch and gesture interpretation)
+
+•	Usability of the Input design (Affordance of input, Effect on cognitive load; Intuition and relation to user experience 
+OUTPUT INTERFACE
+•	Design patterns used in the output interface design
+
+•	Screen design (responsive across devices)
+
+•	Menu interface design (hidden)
+
+•	Visual feedback
+
+•	Auditory feedback
+
+•	
+•	 Responsive, animated, visually engaging.
+
+•	Responsive layout, thematic cohesion, and interactive buttons demonstrate advanced styling.
+
+•	Animated hover animations
+
+
+
+
+
+
+TIME LOG (INDIVIDUAL – EVERY GROUP MEMBER)
+Project Log
+Date	Hours	Tasks	Notes
+13/07/2025	2	Project review and final adjustments	
+12/07/2025	1	Editing wording and wireframes	
+11/07/2025	1	Filling in missing content	
+08/07/2025	1	Tuesday session - Content updates	
+04/07/2025	3	Component refinements and styling updates	
+01/07/2025	1	Navigation and layout improvements	
+30/06/2025	2	Content updates and responsive design	
+24/06/2025	1	Tuesday session - UI improvements	
+23/06/2025	3	UI component implementation	
+17/06/2025	1	Tuesday session - Layout adjustments	
+16/06/2025	2	Project structure and setup	
+11/06/2025	1	Tuesday session - Component development	
+10/06/2025	1	Initial development and planning	
+03/06/2025	1	Tuesday session - Project planning	
+02/06/2025	2	Project initialization and setup	
+
+SUMMARY
+
+-	Total Hours: 22 hours
+-	Total Sessions: 15
+-	Project Period: 02/06/2025 - 13/07/2025
+-	Average per Session: 1.5 hours
+
+TECHNOLOGY STACK
+
+-	React + TypeScript + Vite
+-	Shadcn/UI components
+-	Tailwind CSS
+-	Git repository (initialized)
+
+SOURCE REFERENCE
+
+AI Assistance Documentation:
+- AI Tool: Claude Sonnet 4 (Anthropic)
+- Purpose: Time log creation and formatting
+- Tasks Completed:
+-	Created initial time log structure
+-	Added confirmed work dates provided by user
+-	Added Tuesday sessions and additional dates
+-	Converted to Word-compatible table format
+  - Organized technology stack information
+- User Input: Provided confirmed dates and work session requirements
+- AI Contribution: Structure, formatting, task descriptions, and time estimates
+
+Note: This time log was created with AI assistance for organization and formatting purposes. All dates and work sessions were confirmed by the user, with AI providing structure.
+
+---
+
+Last Updated: 13/07/2025 
+
+

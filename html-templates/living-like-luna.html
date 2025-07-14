@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Living Like Luna - Student Film Production | Rachel - Dark Technologist</title>
+  <meta name="title" content="Living Like Luna - Student Film Production | Rachel - Dark Technologist" />
+  <meta name="description" content="Rachel's role as film producer in the 2022 student film 'Living Like Luna' at Bond University, showcasing creative leadership and project management skills." />
+  <meta name="keywords" content="film production, student film, Bond University, Living Like Luna, film producer, creative leadership, project management" />
+  <meta name="author" content="Rachel - Dark Technologist" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/living-like-luna" />
+  <meta property="og:title" content="Living Like Luna - Student Film Production | Rachel - Dark Technologist" />
+  <meta property="og:description" content="Rachel's role as film producer in the 2022 student film 'Living Like Luna' at Bond University, showcasing creative leadership and project management skills." />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:site_name" content="Rachel - Dark Technologist" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://your-domain.com/living-like-luna" />
+  <meta property="twitter:title" content="Living Like Luna - Student Film Production | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="Rachel's role as film producer in the 2022 student film 'Living Like Luna' at Bond University, showcasing creative leadership and project management skills." />
+  <meta property="twitter:image" content="og-image.jpg" />
+  <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="apple-touch-icon" href="../public/logo192.png" />
+  <link rel="manifest" href="../public/manifest.json" />
+  <link rel="canonical" href="https://your-domain.com/living-like-luna" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/App.css" />
+  <link rel="stylesheet" href="../src/index.css" />
+  <link rel="stylesheet" href="../src/components/Header.css" />
+  <link rel="stylesheet" href="../src/pages/ProjectPages.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .project-gallery {
+      margin: 60px 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      border-color: #9B7EBD;
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #9B7EBD, #FFD700);
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #2a1a3a, #3B1E54);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid #FFD700;
+    }
+    
+    .gallery-image::before {
+      content: '[Film Still Placeholder]';
+      color: #FFD700;
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .gallery-title {
+      color: #FFD700;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .gallery-description {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .project-stats {
+      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 10px;
+      border: 1px solid #FFD700;
+    }
+    
+    .stat-number {
+      color: #FFD700;
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: 'Orbitron', monospace;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .process-timeline {
+      margin: 40px 0;
+    }
+    
+    .timeline-item {
+      display: flex;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 40px;
+      bottom: -30px;
+      width: 2px;
+      background: linear-gradient(180deg, #FFD700, #9B7EBD);
+    }
+    
+    .timeline-item:last-child::before {
+      display: none;
+    }
+    
+    .timeline-marker {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #FFD700, #9B7EBD);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: #1a0f2e;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      background: rgba(59, 30, 84, 0.5);
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    .timeline-title {
+      color: #FFD700;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .timeline-description {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .crew-section {
+      background: linear-gradient(135deg, #1a0f2e 0%, #3B1E54 100%);
+      border: 2px solid #9B7EBD;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .crew-title {
+      color: #FFD700;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', monospace;
+      text-align: center;
+    }
+    
+    .crew-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    
+    .crew-member {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .crew-role {
+      color: #FFD700;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .crew-name {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .synopsis-section {
+      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .synopsis-title {
+      color: #FFD700;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', monospace;
+      text-align: center;
+    }
+    
+    .synopsis-text {
+      color: #EEEEEE;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html" aria-label="Rachel - Dark Technologist Home">
+            <span class="logo-text">R</span>
+            <span class="logo-full">RACHEL</span>
+          </a>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html#home" class="nav-link" aria-label="Go to Home section">HOME</a></li>
+            <li><a href="index.html#about" class="nav-link" aria-label="Go to About section">ABOUT</a></li>
+            <li><a href="index.html#projects" class="nav-link" aria-label="Go to Projects section">PROJECTS</a></li>
+            <li><a href="index.html#contact" class="nav-link" aria-label="Go to Contact section">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Page Content -->
+  <div class="project-page">
+    <div class="container">
+      <nav class="project-nav">
+        <a href="index.html" class="back-link">← BACK TO CHAOS</a>
+      </nav>
+      
+      <header class="project-header">
+        <h1 class="project-title">LIVING LIKE LUNA</h1>
+        <p class="project-subtitle">Student Film Production at Bond University</p>
+      </header>
+      
+      <div class="project-content">
+        <section class="project-overview">
+          <h2>PROJECT OVERVIEW</h2>
+          <p>
+            "Living Like Luna" is a compelling student film produced at Bond University in 2022, 
+            where Rachel served as the film producer. This project showcases creative leadership, 
+            project management skills, and the ability to bring artistic visions to life through 
+            collaborative filmmaking. The film explores themes of identity, transformation, and 
+            the human experience through innovative storytelling and visual techniques.
+          </p>
+        </section>
+        
+        <section class="project-stats">
+          <h2>PRODUCTION STATISTICS</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">2022</div>
+              <div class="stat-label">Production Year</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">15</div>
+              <div class="stat-label">Crew Members</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Weeks Production</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Student-Led</div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="synopsis-section">
+          <h2 class="synopsis-title">FILM SYNOPSIS</h2>
+          <div class="synopsis-text">
+            "Living Like Luna" follows the journey of a young woman named Luna who discovers 
+            an extraordinary ability to see the world through different perspectives. As she 
+            navigates through various life experiences, Luna learns to embrace change and 
+            transformation, ultimately finding her true identity. The film combines elements 
+            of drama, fantasy, and coming-of-age storytelling, creating a unique narrative 
+            that resonates with audiences of all ages. Through innovative cinematography and 
+            creative direction, the film explores themes of self-discovery, resilience, and 
+            the power of perspective in shaping our reality.
+          </div>
+        </section>
+        
+        <section class="project-details">
+          <h2>PRODUCTION DETAILS</h2>
+          
+          <div class="detail-grid">
+            <div class="detail-item">
+              <h3>PRODUCTION ROLE</h3>
+              <p>Film Producer - Creative leadership and project management</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>PRODUCTION LOCATION</h3>
+              <p>Bond University, Gold Coast, Australia</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>FILM GENRE</h3>
+              <p>Drama/Fantasy with coming-of-age elements</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>PRODUCTION STATUS</h3>
+              <p>Completed and screened at university film festival</p>
+            </div>
+          </div>
+        </section>
+        
+        <section class="process-timeline">
+          <h2>PRODUCTION PROCESS</h2>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">1</div>
+            <div class="timeline-content">
+              <div class="timeline-title">SCRIPT DEVELOPMENT</div>
+              <div class="timeline-description">
+                Collaborated with the writing team to develop the screenplay, 
+                focusing on character development and narrative structure. 
+                Provided creative input and ensured story coherence.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">2</div>
+            <div class="timeline-content">
+              <div class="timeline-title">PRE-PRODUCTION PLANNING</div>
+              <div class="timeline-description">
+                Managed casting, location scouting, and equipment coordination. 
+                Developed production schedules and budget management strategies 
+                to ensure smooth execution of the project.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">3</div>
+            <div class="timeline-content">
+              <div class="timeline-title">PRODUCTION PHASE</div>
+              <div class="timeline-description">
+                Oversaw daily production activities, coordinated between 
+                different departments, and ensured creative vision was maintained 
+                throughout the filming process.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">4</div>
+            <div class="timeline-content">
+              <div class="timeline-title">POST-PRODUCTION</div>
+              <div class="timeline-description">
+                Collaborated with editing team, provided feedback on cuts, 
+                and managed sound design and visual effects integration 
+                to achieve the final creative vision.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">5</div>
+            <div class="timeline-content">
+              <div class="timeline-title">PREMIERE & DISTRIBUTION</div>
+              <div class="timeline-description">
+                Organized premiere screening at Bond University film festival, 
+                managed promotional materials, and coordinated audience feedback 
+                collection for future improvements.
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="crew-section">
+          <h2 class="crew-title">PRODUCTION CREW</h2>
+          <div class="crew-grid">
+            <div class="crew-member">
+              <div class="crew-role">PRODUCER</div>
+              <div class="crew-name">Rachel Frappell</div>
+            </div>
+            <div class="crew-member">
+              <div class="crew-role">DIRECTOR</div>
+              <div class="crew-name">[Director Name]</div>
+            </div>
+            <div class="crew-member">
+              <div class="crew-role">CINEMATOGRAPHER</div>
+              <div class="crew-name">[Cinematographer Name]</div>
+            </div>
+            <div class="crew-member">
+              <div class="crew-role">EDITOR</div>
+              <div class="crew-name">[Editor Name]</div>
+            </div>
+            <div class="crew-member">
+              <div class="crew-role">SOUND DESIGNER</div>
+              <div class="crew-name">[Sound Designer Name]</div>
+            </div>
+            <div class="crew-member">
+              <div class="crew-role">PRODUCTION DESIGNER</div>
+              <div class="crew-name">[Production Designer Name]</div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="project-features">
+          <h2>PRODUCTION FEATURES</h2>
+          <ul class="features-list">
+            <li>Creative leadership and project management</li>
+            <li>Budget planning and resource allocation</li>
+            <li>Crew coordination and communication</li>
+            <li>Location scouting and logistics management</li>
+            <li>Production scheduling and timeline management</li>
+            <li>Quality control and creative vision maintenance</li>
+            <li>Post-production oversight and feedback</li>
+            <li>Festival submission and distribution planning</li>
+          </ul>
+        </section>
+        
+        <section class="project-gallery">
+          <h2>PRODUCTION GALLERY</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">PRODUCTION STILLS</div>
+              <div class="gallery-description">
+                Behind-the-scenes photographs capturing the creative process 
+                and collaborative atmosphere during filming at Bond University.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">SET DESIGN</div>
+              <div class="gallery-description">
+                Detailed shots of the carefully crafted sets and locations 
+                that brought Luna's world to life on screen.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">CHARACTER DEVELOPMENT</div>
+              <div class="gallery-description">
+                Visual documentation of character transformation sequences 
+                and the innovative techniques used to portray Luna's journey.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">CINEMATOGRAPHY</div>
+              <div class="gallery-description">
+                Examples of the film's distinctive visual style, including 
+                lighting techniques and camera movements that enhance the narrative.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">POST-PRODUCTION</div>
+              <div class="gallery-description">
+                Screenshots from the editing process, showing the transformation 
+                from raw footage to the final cinematic experience.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">FESTIVAL PREMIERE</div>
+              <div class="gallery-description">
+                Documentation of the film's premiere at Bond University's 
+                film festival, including audience reactions and feedback.
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="project-technologies">
+          <h2>PRODUCTION TECHNOLOGIES</h2>
+          <div class="tech-grid">
+            <span class="tech-tag">Film Production</span>
+            <span class="tech-tag">Project Management</span>
+            <span class="tech-tag">Creative Leadership</span>
+            <span class="tech-tag">Budget Management</span>
+            <span class="tech-tag">Crew Coordination</span>
+            <span class="tech-tag">Post-Production</span>
+          </div>
+        </section>
+        
+        <section class="project-impact">
+          <h2>PROJECT IMPACT</h2>
+          <p>
+            "Living Like Luna" successfully demonstrated Rachel's ability to lead creative 
+            projects and manage complex production processes. The film received positive 
+            feedback from faculty and peers, showcasing strong storytelling and technical 
+            execution. This project laid the foundation for future creative leadership 
+            opportunities and demonstrated the importance of collaboration in artistic 
+            endeavors.
+          </p>
+        </section>
+        
+        <section class="project-future">
+          <h2>FUTURE ENDEAVORS</h2>
+          <p>
+            The experience gained from "Living Like Luna" has influenced Rachel's approach 
+            to creative projects and team leadership. Future film and media projects will 
+            build upon these skills, incorporating innovative storytelling techniques and 
+            collaborative production methods. The project serves as a testament to the 
+            power of creative vision and effective project management in bringing artistic 
+            concepts to life.
+          </p>
+        </section>
+      </div>
+      
+      <footer class="project-footer">
+        <a href="index.html" class="btn">RETURN TO CHAOS</a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Smooth Scroll JS for anchor links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href.length > 1 && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist</title>
+  <meta name="title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
+  <meta name="description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
+  <meta name="keywords" content="AI corruption, web development, machine-generated code, digital rebellion, dark technologist, AI tools, automated development" />
+  <meta name="author" content="Rachel - Dark Technologist" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/web-corruption" />
+  <meta property="og:title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
+  <meta property="og:description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:site_name" content="Rachel - Dark Technologist" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://your-domain.com/web-corruption" />
+  <meta property="twitter:title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
+  <meta property="twitter:image" content="og-image.jpg" />
+  <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
+  <meta name="msapplication-TileColor" content="#000000" />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="apple-touch-icon" href="../public/logo192.png" />
+  <link rel="manifest" href="../public/manifest.json" />
+  <link rel="canonical" href="https://your-domain.com/web-corruption" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/App.css" />
+  <link rel="stylesheet" href="../src/index.css" />
+  <link rel="stylesheet" href="../src/components/Header.css" />
+  <link rel="stylesheet" href="../src/pages/ProjectPages.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .project-gallery {
+      margin: 60px 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      border-color: #9B7EBD;
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #9B7EBD, #FFD700);
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #2a1a3a, #3B1E54);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid #FFD700;
+    }
+    
+    .gallery-image::before {
+      content: '[Screenshot Placeholder]';
+      color: #FFD700;
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .gallery-title {
+      color: #FFD700;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .gallery-description {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .project-stats {
+      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 10px;
+      border: 1px solid #FFD700;
+    }
+    
+    .stat-number {
+      color: #FFD700;
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: 'Orbitron', monospace;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .process-timeline {
+      margin: 40px 0;
+    }
+    
+    .timeline-item {
+      display: flex;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 40px;
+      bottom: -30px;
+      width: 2px;
+      background: linear-gradient(180deg, #FFD700, #9B7EBD);
+    }
+    
+    .timeline-item:last-child::before {
+      display: none;
+    }
+    
+    .timeline-marker {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #FFD700, #9B7EBD);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: #1a0f2e;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      background: rgba(59, 30, 84, 0.5);
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    .timeline-title {
+      color: #FFD700;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .timeline-description {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .challenges-section {
+      background: linear-gradient(135deg, #1a0f2e 0%, #3B1E54 100%);
+      border: 2px solid #9B7EBD;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    
+    .challenges-title {
+      color: #FFD700;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', monospace;
+      text-align: center;
+    }
+    
+    .challenge-item {
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .challenge-title {
+      color: #FFD700;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .challenge-description {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html" aria-label="Rachel - Dark Technologist Home">
+            <span class="logo-text">R</span>
+            <span class="logo-full">RACHEL</span>
+          </a>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html#home" class="nav-link" aria-label="Go to Home section">HOME</a></li>
+            <li><a href="index.html#about" class="nav-link" aria-label="Go to About section">ABOUT</a></li>
+            <li><a href="index.html#projects" class="nav-link" aria-label="Go to Projects section">PROJECTS</a></li>
+            <li><a href="index.html#contact" class="nav-link" aria-label="Go to Contact section">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Page Content -->
+  <div class="project-page">
+    <div class="container">
+      <nav class="project-nav">
+        <a href="index.html" class="back-link">← BACK TO CHAOS</a>
+      </nav>
+      
+      <header class="project-header">
+        <h1 class="project-title">AI-CORRUPTED WEB DEVELOPMENT</h1>
+        <p class="project-subtitle">Digital Rebellion Through Machine-Generated Chaos</p>
+      </header>
+      
+      <div class="project-content">
+        <section class="project-overview">
+          <h2>PROJECT OVERVIEW</h2>
+          <p>
+            Created 3 fully corrupted websites using dark AI tools with 95% machine-generated code, 
+            demonstrating the future of automated digital rebellion. Each site represents a different 
+            aspect of digital anarchy and AI corruption, pushing the boundaries of what's possible 
+            when human creativity meets machine intelligence.
+          </p>
+        </section>
+        
+        <section class="project-stats">
+          <h2>CORRUPTION STATISTICS</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Machine-Generated Code</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Corrupted Websites</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">2.5</div>
+              <div class="stat-label">Weeks Development</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Digital Rebellion</div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="project-details">
+          <h2>DIGITAL CORRUPTION DETAILS</h2>
+          
+          <div class="detail-grid">
+            <div class="detail-item">
+              <h3>AI CORRUPTION LEVEL</h3>
+              <p>95% machine-generated code using advanced AI tools</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>WEBSITES CREATED</h3>
+              <p>3 fully functional corrupted sites with unique themes</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>CORRUPTION TOOLS</h3>
+              <p>Cursor.ai, React, TypeScript, AI-powered development</p>
+            </div>
+            
+            <div class="detail-item">
+              <h3>REBELLION STATUS</h3>
+              <p>Active digital anarchy with ongoing corruption</p>
+            </div>
+          </div>
+        </section>
+        
+        <section class="process-timeline">
+          <h2>CORRUPTION PROCESS</h2>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">1</div>
+            <div class="timeline-content">
+              <div class="timeline-title">AI TOOL SELECTION</div>
+              <div class="timeline-description">
+                Researched and selected Cursor.ai as the primary corruption tool, 
+                along with React and TypeScript for maximum digital rebellion potential.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">2</div>
+            <div class="timeline-content">
+              <div class="timeline-title">CONCEPTUAL CORRUPTION</div>
+              <div class="timeline-description">
+                Developed three distinct themes: cyberpunk rebellion, digital dystopia, 
+                and AI-enhanced chaos. Each site would showcase different aspects of 
+                machine-generated creativity.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">3</div>
+            <div class="timeline-content">
+              <div class="timeline-title">MACHINE GENERATION</div>
+              <div class="timeline-description">
+                Used AI tools to generate 95% of the codebase, including components, 
+                styling, and functionality. Human oversight focused on creative direction 
+                and quality assurance.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">4</div>
+            <div class="timeline-content">
+              <div class="timeline-title">DIGITAL REFINEMENT</div>
+              <div class="timeline-description">
+                Enhanced AI-generated code with custom animations, dark technologist 
+                aesthetics, and advanced interactive elements for maximum impact.
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker">5</div>
+            <div class="timeline-content">
+              <div class="timeline-title">DEPLOYMENT & CHAOS</div>
+              <div class="timeline-description">
+                Successfully deployed all three corrupted websites, demonstrating 
+                the future of AI-assisted web development and digital rebellion.
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="project-features">
+          <h2>CORRUPTION FEATURES</h2>
+          <ul class="features-list">
+            <li>AI-powered code generation and corruption</li>
+            <li>Automated digital rebellion systems</li>
+            <li>Dark technologist aesthetic integration</li>
+            <li>Chaos-driven user experience design</li>
+            <li>Machine learning enhanced corruption</li>
+            <li>Automated content generation</li>
+            <li>Advanced CSS animations and effects</li>
+            <li>Responsive design across all devices</li>
+          </ul>
+        </section>
+        
+        <section class="project-gallery">
+          <h2>CORRUPTION GALLERY</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">CYBERPUNK REBELLION SITE</div>
+              <div class="gallery-description">
+                The first corrupted website featuring neon aesthetics, glitch effects, 
+                and AI-generated cyberpunk content. Demonstrates machine creativity 
+                in dark digital environments.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">DIGITAL DYSTOPIA PORTAL</div>
+              <div class="gallery-description">
+                Second site showcasing AI-generated dystopian landscapes and corrupted 
+                user interfaces. Features advanced animations and interactive chaos elements.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">AI-ENHANCED CHAOS HUB</div>
+              <div class="gallery-description">
+                Third corrupted website with machine-generated content, dynamic layouts, 
+                and automated rebellion systems. Pushes boundaries of AI-assisted design.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">CODE CORRUPTION VIEWER</div>
+              <div class="gallery-description">
+                Interactive tool showing the AI-generated code structure and corruption 
+                patterns. Demonstrates the technical complexity behind the rebellion.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">MACHINE LEARNING DASHBOARD</div>
+              <div class="gallery-description">
+                Real-time display of AI corruption metrics and machine learning 
+                performance. Shows the data behind the digital anarchy.
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="gallery-image"></div>
+              <div class="gallery-title">REBELLION ANALYTICS</div>
+              <div class="gallery-description">
+                Comprehensive overview of user engagement with corrupted content, 
+                showing the impact of AI-generated digital experiences.
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="challenges-section">
+          <h2 class="challenges-title">CHALLENGES & SOLUTIONS</h2>
+          
+          <div class="challenge-item">
+            <div class="challenge-title">AI CODE QUALITY</div>
+            <div class="challenge-description">
+              Initial AI-generated code required significant refinement for production use. 
+              Solution: Implemented hybrid approach with human oversight and iterative 
+              AI generation cycles.
+            </div>
+          </div>
+          
+          <div class="challenge-item">
+            <div class="challenge-title">PERFORMANCE OPTIMIZATION</div>
+            <div class="challenge-description">
+              Machine-generated code was initially inefficient. Solution: Applied 
+              advanced optimization techniques and caching strategies for smooth performance.
+            </div>
+          </div>
+          
+          <div class="challenge-item">
+            <div class="challenge-title">CREATIVE DIRECTION</div>
+            <div class="challenge-description">
+              Balancing AI creativity with human artistic vision. Solution: Established 
+              clear creative parameters and iterative feedback loops with AI systems.
+            </div>
+          </div>
+          
+          <div class="challenge-item">
+            <div class="challenge-title">DEPLOYMENT COMPLEXITY</div>
+            <div class="challenge-description">
+              Managing multiple corrupted sites with different technologies. Solution: 
+              Implemented automated deployment pipelines and version control systems.
+            </div>
+          </div>
+        </section>
+        
+        <section class="project-technologies">
+          <h2>TECHNOLOGIES OF CHAOS</h2>
+          <div class="tech-grid">
+            <span class="tech-tag">Cursor.ai</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">AI Corruption</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Digital Anarchy</span>
+            <span class="tech-tag">CSS3 Animations</span>
+            <span class="tech-tag">Responsive Design</span>
+          </div>
+        </section>
+        
+        <section class="project-impact">
+          <h2>DIGITAL IMPACT</h2>
+          <p>
+            These corrupted websites demonstrate the potential for AI to generate functional, 
+            rebellious digital experiences. They challenge traditional web development paradigms 
+            and showcase the future of automated digital creation. The project successfully 
+            achieved 95% machine-generated code while maintaining high quality and user experience.
+          </p>
+        </section>
+        
+        <section class="project-future">
+          <h2>FUTURE CORRUPTIONS</h2>
+          <p>
+            Plans for expanding the corruption include more sophisticated AI integration, 
+            advanced chaos algorithms, and deeper digital rebellion systems. Future projects 
+            will explore AI-generated content, automated testing, and machine learning 
+            enhanced user experiences.
+          </p>
+        </section>
+      </div>
+      
+      <footer class="project-footer">
+        <a href="index.html" class="btn">RETURN TO CHAOS</a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Smooth Scroll JS for anchor links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href.length > 1 && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 
