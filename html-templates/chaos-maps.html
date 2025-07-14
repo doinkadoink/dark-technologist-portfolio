@@ -42,6 +42,101 @@
       scroll-behavior: smooth;
     }
     
+    /* Chaos Maps Theme: Retro Arcade/8-bit Aesthetic */
+    :root {
+      --primary-purple: #8A2BE2;
+      --secondary-purple: #4B0082;
+      --neon-green: #00FF41;
+      --arcade-green: #39FF14;
+      --retro-bg: #0A0A0A;
+      --pixel-border: #00FF00;
+    }
+    
+    body {
+      background: var(--retro-bg);
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+      animation: retroPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes retroPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    
+    .project-header {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-title {
+      position: relative;
+      font-family: 'Orbitron', monospace;
+      text-shadow: 
+        0 0 10px var(--arcade-green),
+        0 0 20px var(--arcade-green),
+        0 0 30px var(--arcade-green);
+      animation: arcadeGlow 2s ease-in-out infinite;
+    }
+    
+    @keyframes arcadeGlow {
+      0%, 100% { text-shadow: 0 0 10px var(--arcade-green), 0 0 20px var(--arcade-green), 0 0 30px var(--arcade-green); }
+      50% { text-shadow: 0 0 15px var(--arcade-green), 0 0 25px var(--arcade-green), 0 0 35px var(--arcade-green), 0 0 45px var(--arcade-green); }
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #1a0f2e 0%, var(--retro-bg) 100%);
+      border: 3px solid var(--arcade-green);
+      border-radius: 0;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(57, 255, 20, 0.5);
+      border-color: var(--primary-purple);
+      animation: pixelShift 0.3s ease;
+    }
+    
+    @keyframes pixelShift {
+      0% { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+      50% { clip-path: polygon(5px 5px, calc(100% - 5px) 5px, calc(100% - 5px) calc(100% - 5px), 5px calc(100% - 5px)); }
+      100% { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--arcade-green), var(--primary-purple), var(--arcade-green));
+      animation: scanline 2s linear infinite;
+    }
+    
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
     .project-gallery {
       margin: 60px 0;
     }
@@ -54,19 +149,21 @@
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
-      border: 2px solid #8A2BE2;
-      border-radius: 15px;
+      background: linear-gradient(135deg, #1a0f2e 0%, var(--retro-bg) 100%);
+      border: 3px solid var(--arcade-green);
+      border-radius: 0;
       padding: 25px;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-      border-color: #9B7EBD;
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(57, 255, 20, 0.5);
+      border-color: var(--primary-purple);
+      animation: pixelShift 0.3s ease;
     }
     
     .gallery-item::before {
@@ -76,35 +173,47 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #FFD700, #9B7EBD, #FFD700);
+      background: linear-gradient(90deg, var(--arcade-green), var(--primary-purple), var(--arcade-green));
+      animation: scanline 2s linear infinite;
     }
     
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, #2a1a3a, #3B1E54);
-      border-radius: 10px;
+      background: linear-gradient(45deg, #1a0f2e, var(--retro-bg));
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      border: 1px solid #FFD700;
+      border: 2px solid var(--arcade-green);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
     }
     
     .gallery-image::before {
-      content: '[Map Screenshot Placeholder]';
-      color: #FFD700;
+      content: '[ARCADE MAP]';
+      color: var(--arcade-green);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
       text-align: center;
+      text-shadow: 0 0 10px var(--arcade-green);
+      animation: pixelFlicker 1s infinite;
+    }
+    
+    @keyframes pixelFlicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
     
     .gallery-title {
-      color: #FFD700;
+      color: var(--arcade-green);
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 10px;
       font-family: 'Orbitron', monospace;
+      text-shadow: 0 0 10px var(--arcade-green);
     }
     
     .gallery-description {

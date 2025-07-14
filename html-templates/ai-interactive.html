@@ -42,6 +42,103 @@
       scroll-behavior: smooth;
     }
     
+    /* AI Interactive Theme: Holographic/Futuristic Aesthetic */
+    :root {
+      --primary-purple: #8A2BE2;
+      --secondary-purple: #4B0082;
+      --neon-green: #00FF41;
+      --hologram-blue: #00FFFF;
+      --hologram-pink: #FF00FF;
+      --futuristic-bg: #0A0A0A;
+      --holo-border: #00FFFF;
+    }
+    
+    body {
+      background: var(--futuristic-bg);
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(0, 255, 255, 0.1) 90deg, transparent 180deg, rgba(255, 0, 255, 0.1) 270deg, transparent 360deg);
+      pointer-events: none;
+      z-index: -1;
+      animation: holoRotate 20s linear infinite;
+    }
+    
+    @keyframes holoRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .project-header {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-title {
+      position: relative;
+      font-family: 'Orbitron', monospace;
+      background: linear-gradient(45deg, var(--hologram-blue), var(--hologram-pink), var(--neon-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: holoGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes holoGlow {
+      0%, 100% { filter: drop-shadow(0 0 20px var(--hologram-blue)); }
+      33% { filter: drop-shadow(0 0 20px var(--hologram-pink)); }
+      66% { filter: drop-shadow(0 0 20px var(--neon-green)); }
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #1a0f2e 0%, var(--futuristic-bg) 100%);
+      border: 2px solid var(--hologram-blue);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+      border-color: var(--hologram-pink);
+      animation: holoShift 0.8s ease;
+    }
+    
+    @keyframes holoShift {
+      0% { transform: translateY(-5px); }
+      25% { transform: translateY(-5px) translateX(2px); }
+      50% { transform: translateY(-5px) translateX(-2px); }
+      75% { transform: translateY(-5px) translateX(1px); }
+      100% { transform: translateY(-5px); }
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hologram-blue), var(--hologram-pink), var(--neon-green));
+      animation: holoScan 4s linear infinite;
+    }
+    
+    @keyframes holoScan {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
     .project-gallery {
       margin: 60px 0;
     }
@@ -54,8 +151,8 @@
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #3B1E54 0%, #1a0f2e 100%);
-      border: 2px solid #8A2BE2;
+      background: linear-gradient(135deg, #1a0f2e 0%, var(--futuristic-bg) 100%);
+      border: 2px solid var(--hologram-blue);
       border-radius: 15px;
       padding: 25px;
       transition: all 0.3s ease;
@@ -65,8 +162,9 @@
     
     .gallery-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-      border-color: #9B7EBD;
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+      border-color: var(--hologram-pink);
+      animation: holoShift 0.8s ease;
     }
     
     .gallery-item::before {
@@ -76,35 +174,47 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #FFD700, #9B7EBD, #FFD700);
+      background: linear-gradient(90deg, var(--hologram-blue), var(--hologram-pink), var(--neon-green));
+      animation: holoScan 4s linear infinite;
     }
     
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, #2a1a3a, #3B1E54);
+      background: linear-gradient(45deg, #1a0f2e, var(--futuristic-bg));
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      border: 1px solid #FFD700;
+      border: 2px solid var(--hologram-blue);
+      position: relative;
+      overflow: hidden;
     }
     
     .gallery-image::before {
-      content: '[Conversation Screenshot Placeholder]';
-      color: #FFD700;
+      content: '[HOLOGRAM]';
+      color: var(--hologram-blue);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
       text-align: center;
+      text-shadow: 0 0 15px var(--hologram-blue);
+      animation: holoFlicker 3s infinite;
+    }
+    
+    @keyframes holoFlicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--hologram-blue); }
+      33% { opacity: 0.6; text-shadow: 0 0 25px var(--hologram-pink); }
+      66% { opacity: 0.8; text-shadow: 0 0 20px var(--neon-green); }
     }
     
     .gallery-title {
-      color: #FFD700;
+      color: var(--hologram-blue);
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 10px;
       font-family: 'Orbitron', monospace;
+      text-shadow: 0 0 10px var(--hologram-blue);
     }
     
     .gallery-description {
