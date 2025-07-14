@@ -88,22 +88,29 @@
     .project-title {
       position: relative;
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(45deg, var(--cyber-pink), var(--cyber-blue), var(--neon-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--cyber-pink);
       animation: cyberGlow 3s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
     }
     
     @keyframes cyberGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px var(--cyber-pink)); }
-      33% { filter: drop-shadow(0 0 20px var(--cyber-blue)); }
-      66% { filter: drop-shadow(0 0 20px var(--neon-green)); }
+      0%, 100% { 
+        text-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
+        filter: drop-shadow(0 0 20px var(--cyber-pink));
+      }
+      33% { 
+        text-shadow: 0 0 35px rgba(0, 191, 255, 0.8);
+        filter: drop-shadow(0 0 25px var(--cyber-blue));
+      }
+      66% { 
+        text-shadow: 0 0 35px rgba(0, 255, 65, 0.8);
+        filter: drop-shadow(0 0 25px var(--neon-green));
+      }
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #1a0f2e 0%, var(--cyber-bg) 100%);
-      border: 2px solid var(--cyber-pink);
+      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+      border: 3px solid var(--cyber-pink);
       border-radius: 15px;
       padding: 25px;
       transition: all 0.3s ease;
@@ -152,8 +159,8 @@
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #1a0f2e 0%, var(--cyber-bg) 100%);
-      border: 2px solid var(--cyber-pink);
+      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+      border: 3px solid var(--cyber-pink);
       border-radius: 15px;
       padding: 25px;
       transition: all 0.3s ease;
@@ -182,7 +189,7 @@
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, #1a0f2e, var(--cyber-bg));
+      background: linear-gradient(45deg, rgba(26, 15, 46, 0.6), rgba(0, 0, 0, 0.8));
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -209,10 +216,10 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(45deg, transparent 30%, rgba(255, 0, 128, 0.1) 50%, transparent 70%);
-      animation: cyberGlow 4s ease-in-out infinite;
+      animation: cyberImageGlow 4s ease-in-out infinite;
     }
     
-    @keyframes cyberGlow {
+    @keyframes cyberImageGlow {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }

@@ -87,17 +87,20 @@
     .project-title {
       position: relative;
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(45deg, var(--neon-green), #FFFFFF, var(--neon-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--neon-green);
       animation: matrixGlow 4s ease-in-out infinite;
       text-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
     }
     
     @keyframes matrixGlow {
-      0%, 100% { filter: drop-shadow(0 0 25px var(--neon-green)); }
-      50% { filter: drop-shadow(0 0 25px #FFFFFF); }
+      0%, 100% { 
+        text-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
+        filter: drop-shadow(0 0 25px var(--neon-green));
+      }
+      50% { 
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
+      }
     }
     
     .project-gallery {
@@ -112,7 +115,7 @@
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #1a0f2e 0%, var(--matrix-bg) 100%);
+      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
       border: 3px solid var(--neon-green);
       border-radius: 15px;
       padding: 25px;
@@ -153,7 +156,7 @@
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, #1a0f2e, var(--matrix-bg));
+      background: linear-gradient(45deg, rgba(26, 15, 46, 0.6), rgba(0, 0, 0, 0.8));
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -180,10 +183,10 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
-      animation: matrixGlow 4s ease-in-out infinite;
+      animation: matrixImageGlow 4s ease-in-out infinite;
     }
     
-    @keyframes matrixGlow {
+    @keyframes matrixImageGlow {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }

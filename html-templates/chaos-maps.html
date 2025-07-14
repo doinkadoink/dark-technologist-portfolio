@@ -85,21 +85,24 @@
     .project-title {
       position: relative;
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(45deg, var(--arcade-green), var(--primary-purple), var(--neon-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: cyberGlow 3s ease-in-out infinite;
+      color: var(--arcade-green);
+      animation: arcadeGlow 4s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
     }
     
-    @keyframes cyberGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px var(--arcade-green)); }
-      33% { filter: drop-shadow(0 0 20px var(--primary-purple)); }
-      66% { filter: drop-shadow(0 0 20px var(--neon-green)); }
+    @keyframes arcadeGlow {
+      0%, 100% { 
+        text-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+        filter: drop-shadow(0 0 25px var(--arcade-green));
+      }
+      50% { 
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
+      }
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, #1a0f2e 0%, var(--retro-bg) 100%);
+      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
       border: 3px solid var(--arcade-green);
       border-radius: 15px;
       padding: 25px;
@@ -180,7 +183,7 @@
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, #1a0f2e, var(--retro-bg));
+      background: linear-gradient(45deg, rgba(26, 15, 46, 0.6), rgba(10, 10, 10, 0.8));
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -199,7 +202,7 @@
       text-shadow: 0 0 10px var(--arcade-green);
     }
     
-    .gallery-image::after {
+        .gallery-image::after {
       content: '';
       position: absolute;
       top: 0;
@@ -207,10 +210,10 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.1) 50%, transparent 70%);
-      animation: arcadeGlow 4s ease-in-out infinite;
+      animation: arcadeImageGlow 4s ease-in-out infinite;
     }
     
-        @keyframes arcadeGlow {
+    @keyframes arcadeImageGlow {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }
