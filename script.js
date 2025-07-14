@@ -75,11 +75,11 @@ document.querySelectorAll('.tech-tag').forEach(tag => {
 // Add glow effect to buttons on hover
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.5)';
+        this.style.boxShadow = '0 0 30px rgba(138, 43, 226, 0.5)';
     });
     
     btn.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.3)';
+        this.style.boxShadow = '0 0 20px rgba(138, 43, 226, 0.3)';
     });
 });
 
