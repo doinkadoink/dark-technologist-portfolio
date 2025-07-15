@@ -594,6 +594,233 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 
+/* Project Card Theme Styles */
+/* Web Corruption - Matrix/Glitch Theme */
+.project-card.web-corruption {
+    border-color: #00FF41;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.web-corruption::before {
+    background: linear-gradient(90deg, #00FF41, #FF0000, #00FF41);
+}
+
+.project-card.web-corruption:hover {
+    border-color: #FF0000;
+    box-shadow: 0 20px 40px rgba(0, 255, 65, 0.3);
+}
+
+.project-card.web-corruption .project-category {
+    color: #00FF41;
+    text-shadow: 0 0 10px #00FF41;
+}
+
+.project-card.web-corruption .tech-tag {
+    border-color: #00FF41;
+    color: #00FF41;
+}
+
+.project-card.web-corruption .tech-tag:hover {
+    background: #00FF41;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #00FF41;
+}
+
+/* Chaos Maps - Retro Arcade Theme */
+.project-card.chaos-maps {
+    border-color: #00FF00;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.chaos-maps::before {
+    background: linear-gradient(90deg, #00FF00, #FFD700, #00FF00);
+}
+
+.project-card.chaos-maps:hover {
+    border-color: #FFD700;
+    box-shadow: 0 20px 40px rgba(0, 255, 0, 0.3);
+}
+
+.project-card.chaos-maps .project-category {
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+.project-card.chaos-maps .tech-tag {
+    border-color: #00FF00;
+    color: #00FF00;
+}
+
+.project-card.chaos-maps .tech-tag:hover {
+    background: #00FF00;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #00FF00;
+}
+
+/* AI Interactive - Holographic Theme */
+.project-card.ai-interactive {
+    border-color: #00BFFF;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.ai-interactive::before {
+    background: linear-gradient(90deg, #00BFFF, #FF69B4, #00BFFF);
+}
+
+.project-card.ai-interactive:hover {
+    border-color: #FF69B4;
+    box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3);
+}
+
+.project-card.ai-interactive .project-category {
+    color: #00BFFF;
+    text-shadow: 0 0 10px #00BFFF;
+}
+
+.project-card.ai-interactive .tech-tag {
+    border-color: #00BFFF;
+    color: #00BFFF;
+}
+
+.project-card.ai-interactive .tech-tag:hover {
+    background: #00BFFF;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #00BFFF;
+}
+
+/* Digital Dark Art - Cyberpunk Theme */
+.project-card.digital-dark-art {
+    border-color: #FF69B4;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.digital-dark-art::before {
+    background: linear-gradient(90deg, #FF69B4, #00BFFF, #FF69B4);
+}
+
+.project-card.digital-dark-art:hover {
+    border-color: #00BFFF;
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+}
+
+.project-card.digital-dark-art .project-category {
+    color: #FF69B4;
+    text-shadow: 0 0 10px #FF69B4;
+}
+
+.project-card.digital-dark-art .tech-tag {
+    border-color: #FF69B4;
+    color: #FF69B4;
+}
+
+.project-card.digital-dark-art .tech-tag:hover {
+    background: #FF69B4;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #FF69B4;
+}
+
+/* Living Like Luna - Cinematic Theme */
+.project-card.living-like-luna {
+    border-color: #FFD700;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.living-like-luna::before {
+    background: linear-gradient(90deg, #FFD700, #8A2BE2, #FFD700);
+}
+
+.project-card.living-like-luna:hover {
+    border-color: #8A2BE2;
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.project-card.living-like-luna .project-category {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.project-card.living-like-luna .tech-tag {
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+.project-card.living-like-luna .tech-tag:hover {
+    background: #FFD700;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* Nightkind - Bat/Night Theme */
+.project-card.nightkind {
+    border-color: #C0C0C0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.project-card.nightkind::before {
+    background: linear-gradient(90deg, #C0C0C0, #00FF41, #C0C0C0);
+}
+
+.project-card.nightkind:hover {
+    border-color: #00FF41;
+    box-shadow: 0 20px 40px rgba(192, 192, 192, 0.3);
+}
+
+.project-card.nightkind .project-category {
+    color: #C0C0C0;
+    text-shadow: 0 0 10px #C0C0C0;
+}
+
+.project-card.nightkind .tech-tag {
+    border-color: #C0C0C0;
+    color: #C0C0C0;
+}
+
+.project-card.nightkind .tech-tag:hover {
+    background: #C0C0C0;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #C0C0C0;
+}
+
+/* Enhanced hover animations for themed cards */
+.project-card.web-corruption:hover,
+.project-card.chaos-maps:hover,
+.project-card.ai-interactive:hover,
+.project-card.digital-dark-art:hover,
+.project-card.living-like-luna:hover,
+.project-card.nightkind:hover {
+    transform: translateY(-10px) scale(1.02);
+    animation: themedFlutter 0.5s ease;
+}
+
+@keyframes themedFlutter {
+    0%, 100% { transform: translateY(-10px) scale(1.02) rotate(0deg); }
+    25% { transform: translateY(-10px) scale(1.02) rotate(1deg); }
+    75% { transform: translateY(-10px) scale(1.02) rotate(-1deg); }
+}
+
+/* Scanning line effect for themed cards */
+.project-card.web-corruption::after,
+.project-card.chaos-maps::after,
+.project-card.ai-interactive::after,
+.project-card.digital-dark-art::after,
+.project-card.living-like-luna::after,
+.project-card.nightkind::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: inherit;
+    animation: themedScanline 3s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes themedScanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 /* Contact Styles */
 .contact {
     background: var(--secondary-bg);
