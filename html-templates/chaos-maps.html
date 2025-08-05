@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#000000" />
   <title>Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist</title>
   <meta name="title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
-  <meta name="description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
-  <meta name="keywords" content="chaos maps, retro grid, arcade aesthetic, 8-bit gaming, pixel fonts, experimental navigation, dark technologist" />
+  <meta name="description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for creative tools and experimental visualizations." />
+  <meta name="keywords" content="chaos maps, retro grid, arcade aesthetic, pixelated fonts, 8-bit gaming, experimental visualization, creative tools, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -15,14 +15,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/chaos-maps" />
   <meta property="og:title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
-  <meta property="og:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
+  <meta property="og:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for creative tools and experimental visualizations." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:site_name" content="Chaos Maps" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/chaos-maps" />
   <meta property="twitter:title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
+  <meta property="twitter:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for creative tools and experimental visualizations." />
   <meta property="twitter:image" content="og-image.jpg" />
   <meta name="application-name" content="Chaos Maps" />
   <meta name="msapplication-TileColor" content="#000000" />
@@ -38,7 +38,7 @@
     :root {
       --primary-color: #39ff14; /* Arcade Green */
       --accent-color: #ff5afd; /* Glitch Pink */
-      --background-color: #000000; /* Black */
+      --background-color: #000000; /* True Black */
       --text-color: #ffffff;
       --font-family: 'Press Start 2P', monospace;
       --hover-duration: 0.5s;
@@ -135,18 +135,26 @@
         filter: drop-shadow(0 0 25px var(--primary-color));
       }
       50% { 
-        text-shadow: 0 0 40px var(--accent-color);
-        filter: drop-shadow(0 0 35px var(--accent-color));
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
       }
     }
     
     .hero-subtitle {
       font-size: 1.2rem;
+      color: var(--accent-color);
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+    
+    .hero-description {
+      font-size: 1rem;
       color: var(--text-color);
       margin-bottom: 40px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.8;
     }
     
     .hero-buttons {
@@ -164,10 +172,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border: 2px solid;
+      border: 3px solid;
       transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
+      font-size: 0.8rem;
     }
     
     .btn-primary {
@@ -180,6 +189,7 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--primary-color);
       filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: pixelShake 0.3s ease;
     }
     
     .btn-secondary {
@@ -192,33 +202,32 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--accent-color);
       filter: drop-shadow(0 0 10px var(--accent-color));
+      animation: pixelShake 0.3s ease;
     }
     
-    /* Features Section */
-    .features {
+    @keyframes pixelShake {
+      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); }
+      25% { transform: scale(var(--hover-scale)) translateX(-3px); }
+      75% { transform: scale(var(--hover-scale)) translateX(3px); }
+    }
+    
+    /* Project Overview Section */
+    .project-overview {
       padding: 100px 0;
       background: var(--background-color);
     }
     
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    
-    .feature-card {
-      text-align: center;
-      padding: 40px 20px;
-      border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      transition: all var(--hover-duration) ease;
+    .overview-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(57, 255, 20, 0.1) 100%);
+      border: 3px solid var(--primary-color);
+      border-radius: 0;
+      padding: 40px;
+      margin-bottom: 40px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(57, 255, 20, 0.1) 100%);
     }
     
-    .feature-card::before {
+    .overview-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -229,127 +238,162 @@
       transition: left 0.5s;
     }
     
-    .feature-card:hover::before {
+    .overview-card:hover::before {
       left: 100%;
     }
     
-    .feature-card:hover {
+    .overview-card:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--primary-color);
-      border-color: var(--accent-color);
     }
     
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .overview-title {
+      font-size: 1.5rem;
       color: var(--primary-color);
+      margin-bottom: 20px;
       text-shadow: 0 0 10px var(--primary-color);
     }
     
-    .feature-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .feature-description {
+    .overview-description {
       color: var(--text-color);
       line-height: 1.8;
+      margin-bottom: 20px;
       font-size: 0.9rem;
     }
     
-    /* Loading Bar Section */
-    .loading-section {
-      background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
-      padding: 40px 0;
-      text-align: center;
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
     }
     
-    .loading-bar {
-      background: rgba(0, 0, 0, 0.9);
+    .tech-tag {
+      background: transparent;
+      color: var(--primary-color);
+      padding: 8px 15px;
+      border-radius: 0;
+      font-size: 0.7rem;
+      font-weight: 500;
       border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 800px;
-      font-family: var(--font-family);
+      transition: all var(--hover-duration) ease;
     }
     
-    .loading-header {
+    .tech-tag:hover {
+      transform: scale(var(--hover-scale));
+      background: var(--primary-color);
+      color: var(--background-color);
+      box-shadow: 0 0 15px var(--primary-color);
+    }
+    
+    /* Gallery Section */
+    .project-gallery {
+      padding: 100px 0;
+      background: var(--background-color);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(57, 255, 20, 0.1) 100%);
+      border: 3px solid var(--primary-color);
+      border-radius: 0;
+      padding: 25px;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+      animation: scanline 3s linear infinite;
+    }
+    
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .gallery-item:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--primary-color);
+      animation: retroFlutter 0.8s ease;
+    }
+    
+    @keyframes retroFlutter {
+      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.5deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.5deg); }
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(57, 255, 20, 0.2));
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-image::before {
+      content: '[ARCADE SCREENSHOT]';
+      color: var(--primary-color);
+      font-family: var(--font-family);
+      font-size: 0.7rem;
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.1) 50%, transparent 70%);
+      animation: retroImageGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes retroImageGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .gallery-title {
       color: var(--primary-color);
       font-size: 1rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px var(--primary-color);
     }
     
-    .progress-bar {
-      width: 100%;
-      height: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      width: 0%;
-      animation: progressLoad 3s ease-in-out infinite;
-    }
-    
-    @keyframes progressLoad {
-      0% { width: 0%; }
-      50% { width: 100%; }
-      100% { width: 0%; }
-    }
-    
-    .loading-text {
+    .gallery-description {
       color: var(--text-color);
-      margin-top: 15px;
+      line-height: 1.6;
       font-size: 0.8rem;
     }
     
     /* Footer */
     .footer {
       background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
+      border-top: 3px solid var(--primary-color);
       padding: 40px 0;
       text-align: center;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section h3 {
-      color: var(--primary-color);
-      font-size: 1rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .footer-section p {
-      color: var(--text-color);
-      line-height: 1.6;
-      font-size: 0.8rem;
-    }
-    
-    .retro-info {
-      background: rgba(57, 255, 20, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--primary-color);
     }
     
     .return-btn {
@@ -362,8 +406,9 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border: 2px solid var(--accent-color);
+      border: 3px solid var(--accent-color);
       transition: all var(--hover-duration) ease;
+      font-size: 0.8rem;
     }
     
     .return-btn:hover {
@@ -383,17 +428,22 @@
         font-size: 1rem;
       }
       
+      .hero-description {
+        font-size: 0.9rem;
+      }
+      
       .hero-buttons {
         flex-direction: column;
         align-items: center;
       }
       
-      .features-grid {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
       
-      .footer-content {
-        grid-template-columns: 1fr;
+      .btn {
+        font-size: 0.7rem;
+        padding: 12px 25px;
       }
     }
   </style>
@@ -403,60 +453,86 @@
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">CHAOS MAPS</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle">Retro Grid Aesthetic</p>
+      <p class="hero-description">
         A playful, arcade-inspired interface referencing 1980s gaming consoles. 
-        Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation.
+        Uses pixelated fonts, neon outlines, and animated grid backgrounds for 
+        creative tools and experimental visualizations.
       </p>
       <div class="hero-buttons">
-        <a href="#features" class="btn btn-primary">EXPLORE GRID</a>
-        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">PLAY GAME</a>
+        <a href="#gallery" class="btn btn-primary">PLAY GAME</a>
+        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE CODE</a>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
+  <!-- Project Overview -->
+  <section class="project-overview">
     <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎮</div>
-          <h3 class="feature-title">Pixel Borders</h3>
-          <p class="feature-description">
-            Pixel borders and animated background layers that create authentic 8-bit gaming aesthetics 
-            with retro loading bar animations and CRT-style distortions.
-          </p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3 class="feature-title">Retro Loading</h3>
-          <p class="feature-description">
-            Retro loading bar animations with CRT-style distortions applied to hover icons, 
-            creating an immersive arcade gaming experience.
-          </p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🔧</div>
-          <h3 class="feature-title">Grid Patterns</h3>
-          <p class="feature-description">
-            8-bit grid loop patterns with animated background layers that reference classic 
-            gaming consoles and experimental visualizations.
-          </p>
+      <div class="overview-card">
+        <h2 class="overview-title">Project Overview</h2>
+        <p class="overview-description">
+          <strong>Chaos Maps</strong> creates an immersive retro gaming experience that combines 
+          the nostalgia of 1980s arcade aesthetics with modern web technologies. Using pixelated 
+          fonts, neon outlines, and animated grid backgrounds, this project explores the intersection 
+          of classic gaming and contemporary digital art.
+        </p>
+        <p class="overview-description">
+          The theme incorporates arcade green (#39ff14), glitch pink (#ff5afd), and true black (#000000) 
+          to create a vibrant, high-energy visual experience that evokes the excitement of classic 
+          arcade gaming while maintaining modern functionality.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Pixel Fonts</span>
+          <span class="tech-tag">8-bit Grid</span>
+          <span class="tech-tag">Neon Outlines</span>
+          <span class="tech-tag">Retro Animations</span>
+          <span class="tech-tag">Arcade Aesthetic</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Loading Bar Section -->
-  <section class="loading-section">
+  <!-- Project Gallery -->
+  <section id="gallery" class="project-gallery">
     <div class="container">
-      <div class="loading-bar">
-        <div class="loading-header">LOADING CHAOS MAPS...</div>
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
+      <h2 class="overview-title">Project Highlights</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Pixel Borders</h3>
+          <p class="gallery-description">
+            Implemented authentic pixel-style borders and animated background layers 
+            that recreate the visual style of classic 8-bit gaming interfaces.
+          </p>
         </div>
-        <div class="loading-text">Initializing retro grid system...</div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Retro Loading</h3>
+          <p class="gallery-description">
+            Created retro loading bar animations and CRT-style distortions that 
+            enhance the nostalgic gaming experience and visual appeal.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Animated Grid</h3>
+          <p class="gallery-description">
+            Applied 8-bit grid loop animations with pixel-perfect precision to create 
+            dynamic backgrounds that reference classic gaming aesthetics.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Hover Effects</h3>
+          <p class="gallery-description">
+            Designed CRT-style distortions applied to hover icons and interactive 
+            elements that maintain the retro gaming aesthetic throughout the interface.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -464,34 +540,6 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Theme Overview</h3>
-          <p>
-            Playful, arcade-inspired interface referencing 1980s gaming consoles with pixelated fonts, 
-            neon outlines, and animated grid backgrounds for creative tools and experimental visualizations.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <div class="retro-info">
-            <h3>Retro Features</h3>
-            <p>
-              Pixel borders, animated background layers, retro loading bar animations, and CRT-style 
-              distortions applied to hover icons for authentic arcade gaming experience.
-            </p>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Typography</h3>
-          <p>
-            Pixel-style fonts (Press Start 2P) for authentic 8-bit gaming aesthetics with 
-            neon outlines and animated grid backgrounds throughout the interface.
-          </p>
-        </div>
-      </div>
-      
       <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
   </footer>

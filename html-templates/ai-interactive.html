@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#000000" />
   <title>AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist</title>
   <meta name="title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta name="description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with animations simulating holographic flicker and real-time AI data processing." />
-  <meta name="keywords" content="ai interactive, holographic system, futuristic tools, conversational interfaces, layered gradients, translucent cards, dark technologist" />
+  <meta name="description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
+  <meta name="keywords" content="ai interactive, holographic system, futuristic tools, conversational interfaces, layered gradients, translucent cards, glowing outlines, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -15,14 +15,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/ai-interactive" />
   <meta property="og:title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with animations simulating holographic flicker and real-time AI data processing." />
+  <meta property="og:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:site_name" content="AI Interactive" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/ai-interactive" />
   <meta property="twitter:title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with animations simulating holographic flicker and real-time AI data processing." />
+  <meta property="twitter:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
   <meta property="twitter:image" content="og-image.jpg" />
   <meta name="application-name" content="AI Interactive" />
   <meta name="msapplication-TileColor" content="#000000" />
@@ -39,7 +39,7 @@
       --primary-color: #00eaff; /* Hologram Blue */
       --accent-color: #ff00c8; /* Cyber Pink */
       --highlight-color: #b6ff00; /* ML Green */
-      --background-color: #000000; /* Black */
+      --background-color: #000000; /* True Black */
       --text-color: #ffffff;
       --font-family: 'Orbitron', monospace;
       --hover-duration: 0.5s;
@@ -134,13 +134,20 @@
         filter: drop-shadow(0 0 25px var(--primary-color));
       }
       50% { 
-        text-shadow: 0 0 40px var(--accent-color);
-        filter: drop-shadow(0 0 35px var(--accent-color));
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
       }
     }
     
     .hero-subtitle {
       font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+    
+    .hero-description {
+      font-size: 1.2rem;
       color: var(--text-color);
       margin-bottom: 40px;
       max-width: 600px;
@@ -167,11 +174,12 @@
       transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
+      backdrop-filter: blur(10px);
     }
     
     .btn-primary {
-      background: var(--primary-color);
-      color: var(--background-color);
+      background: rgba(0, 234, 255, 0.1);
+      color: var(--primary-color);
       border-color: var(--primary-color);
     }
     
@@ -179,10 +187,11 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--primary-color);
       filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: holoFlicker 0.3s ease;
     }
     
     .btn-secondary {
-      background: transparent;
+      background: rgba(255, 0, 200, 0.1);
       color: var(--accent-color);
       border-color: var(--accent-color);
     }
@@ -191,34 +200,33 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--accent-color);
       filter: drop-shadow(0 0 10px var(--accent-color));
+      animation: holoFlicker 0.3s ease;
     }
     
-    /* Interface Section */
-    .interface {
+    @keyframes holoFlicker {
+      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); opacity: 1; }
+      25% { transform: scale(var(--hover-scale)) translateX(-2px); opacity: 0.8; }
+      75% { transform: scale(var(--hover-scale)) translateX(2px); opacity: 0.8; }
+    }
+    
+    /* Project Overview Section */
+    .project-overview {
       padding: 100px 0;
       background: var(--background-color);
     }
     
-    .interface-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    
-    .interface-card {
-      text-align: center;
-      padding: 40px 20px;
+    .overview-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
       border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      transition: all var(--hover-duration) ease;
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 40px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
       backdrop-filter: blur(10px);
     }
     
-    .interface-card::before {
+    .overview-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -229,79 +237,155 @@
       transition: left 0.5s;
     }
     
-    .interface-card:hover::before {
+    .overview-card:hover::before {
       left: 100%;
     }
     
-    .interface-card:hover {
+    .overview-card:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--primary-color);
-      border-color: var(--accent-color);
     }
     
-    .interface-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .overview-title {
+      font-size: 2rem;
       color: var(--primary-color);
+      margin-bottom: 20px;
       text-shadow: 0 0 10px var(--primary-color);
     }
     
-    .interface-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .interface-description {
+    .overview-description {
       color: var(--text-color);
       line-height: 1.8;
+      margin-bottom: 20px;
     }
     
-    /* Holographic Display Section */
-    .hologram-section {
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .tech-tag {
+      background: rgba(0, 234, 255, 0.1);
+      color: var(--primary-color);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--primary-color);
+      transition: all var(--hover-duration) ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .tech-tag:hover {
+      transform: scale(var(--hover-scale));
+      background: var(--primary-color);
+      color: var(--background-color);
+      box-shadow: 0 0 15px var(--primary-color);
+    }
+    
+    /* Gallery Section */
+    .project-gallery {
+      padding: 100px 0;
       background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
-      padding: 40px 0;
-      text-align: center;
     }
     
-    .hologram-display {
-      background: rgba(0, 0, 0, 0.9);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
       border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 800px;
-      font-family: var(--font-family);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
       backdrop-filter: blur(10px);
     }
     
-    .hologram-header {
-      color: var(--primary-color);
-      font-size: 1.2rem;
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+      animation: scanline 3s linear infinite;
+    }
+    
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .gallery-item:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--primary-color);
+      animation: holoFlutter 0.8s ease;
+    }
+    
+    @keyframes holoFlutter {
+      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 234, 255, 0.2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      border: 2px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
     }
     
-    .hologram-content {
-      color: var(--text-color);
-      margin-bottom: 15px;
-      animation: holoFlicker 2s ease-in-out infinite;
-    }
-    
-    @keyframes holoFlicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
-    }
-    
-    .hologram-data {
-      color: var(--highlight-color);
+    .gallery-image::before {
+      content: '[HOLOGRAM INTERFACE]';
+      color: var(--primary-color);
+      font-family: var(--font-family);
       font-size: 0.9rem;
-      margin-top: 15px;
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0, 234, 255, 0.1) 50%, transparent 70%);
+      animation: holoImageGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes holoImageGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .gallery-title {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+    
+    .gallery-description {
+      color: var(--text-color);
+      line-height: 1.6;
     }
     
     /* Footer */
@@ -310,33 +394,6 @@
       border-top: 2px solid var(--primary-color);
       padding: 40px 0;
       text-align: center;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section h3 {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .footer-section p {
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    
-    .holo-info {
-      background: rgba(0, 234, 255, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--primary-color);
     }
     
     .return-btn {
@@ -351,6 +408,7 @@
       letter-spacing: 2px;
       border: 2px solid var(--accent-color);
       transition: all var(--hover-duration) ease;
+      backdrop-filter: blur(10px);
     }
     
     .return-btn:hover {
@@ -370,16 +428,16 @@
         font-size: 1.2rem;
       }
       
+      .hero-description {
+        font-size: 1rem;
+      }
+      
       .hero-buttons {
         flex-direction: column;
         align-items: center;
       }
       
-      .interface-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-content {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -390,60 +448,85 @@
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">AI INTERACTIVE</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle">Holographic System Aesthetic</p>
+      <p class="hero-description">
         Designed for futuristic tools and conversational interfaces. Uses layered gradients, 
-        translucent cards, and glowing outlines with animations simulating holographic flicker.
+        translucent cards, and glowing outlines with holographic flicker and real-time AI data processing.
       </p>
       <div class="hero-buttons">
-        <a href="#interface" class="btn btn-primary">ACCESS INTERFACE</a>
-        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VIEW HOLOGRAM</a>
+        <a href="#gallery" class="btn btn-primary">VIEW INTERFACE</a>
+        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE CODE</a>
       </div>
     </div>
   </section>
 
-  <!-- Interface Section -->
-  <section class="interface">
+  <!-- Project Overview -->
+  <section class="project-overview">
     <div class="container">
-      <div class="interface-grid">
-        <div class="interface-card">
-          <div class="interface-icon">💎</div>
-          <h3 class="interface-title">Multi-layered Cards</h3>
-          <p class="interface-description">
-            Multi-layered card interfaces with glassmorphism overlays and blurred motion transitions 
-            for authentic holographic system aesthetics.
-          </p>
-        </div>
-        
-        <div class="interface-card">
-          <div class="interface-icon">✨</div>
-          <h3 class="interface-title">Soft Glow Effects</h3>
-          <p class="interface-description">
-            Soft glow effects and variable blur with simulated hologram hover states 
-            that create immersive futuristic tool experiences.
-          </p>
-        </div>
-        
-        <div class="interface-card">
-          <div class="interface-icon">⚡</div>
-          <h3 class="interface-title">Real-time Processing</h3>
-          <p class="interface-description">
-            Animations simulate holographic flicker and real-time AI data processing 
-            with layered gradients and translucent card interfaces.
-          </p>
+      <div class="overview-card">
+        <h2 class="overview-title">Project Overview</h2>
+        <p class="overview-description">
+          <strong>AI Interactive</strong> represents the cutting edge of futuristic interface design, 
+          combining holographic aesthetics with advanced AI processing capabilities. Using layered gradients, 
+          translucent cards, and glowing outlines, this project creates an immersive experience that 
+          simulates the future of human-computer interaction.
+        </p>
+        <p class="overview-description">
+          The theme incorporates hologram blue (#00eaff), cyber pink (#ff00c8), and ML green (#b6ff00) 
+          to create a sophisticated visual system that evokes advanced AI interfaces and holographic 
+          technology while maintaining exceptional usability and performance.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Layered Gradients</span>
+          <span class="tech-tag">Translucent Cards</span>
+          <span class="tech-tag">Glowing Outlines</span>
+          <span class="tech-tag">Holographic Flicker</span>
+          <span class="tech-tag">Real-time Processing</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Holographic Display Section -->
-  <section class="hologram-section">
+  <!-- Project Gallery -->
+  <section id="gallery" class="project-gallery">
     <div class="container">
-      <div class="hologram-display">
-        <div class="hologram-header">HOLOGRAPHIC SYSTEM - AI INTERACTIVE</div>
-        <div class="hologram-content">> Initializing holographic interface...</div>
-        <div class="hologram-content">> Loading layered gradients...</div>
-        <div class="hologram-content">> Applying translucent overlays...</div>
-        <div class="hologram-data">> System online - Holographic flicker active</div>
+      <h2 class="overview-title">Project Highlights</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Multi-layered Cards</h3>
+          <p class="gallery-description">
+            Implemented sophisticated multi-layered card interfaces with translucent backgrounds 
+            and glassmorphism effects that create depth and visual hierarchy.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Soft Glow Effects</h3>
+          <p class="gallery-description">
+            Created soft glow effects and variable blur techniques that simulate 
+            holographic technology and advanced display systems.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Hologram Hover States</h3>
+          <p class="gallery-description">
+            Designed simulated hologram hover states with flicker effects and 
+            real-time data processing animations that enhance user interaction.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Motion Transitions</h3>
+          <p class="gallery-description">
+            Applied blurred motion transitions and smooth animations that create 
+            fluid, futuristic user experiences with holographic aesthetics.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -451,34 +534,6 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Theme Overview</h3>
-          <p>
-            Designed for futuristic tools and conversational interfaces with layered gradients, 
-            translucent cards, and glowing outlines for holographic system aesthetics.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <div class="holo-info">
-            <h3>Holographic Features</h3>
-            <p>
-              Multi-layered card interfaces, soft glow effects, variable blur, and simulated 
-              hologram hover states with real-time AI data processing animations.
-            </p>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Animations</h3>
-          <p>
-            Animations simulate holographic flicker and real-time AI data processing with 
-            glassmorphism overlays and blurred motion transitions throughout the interface.
-          </p>
-        </div>
-      </div>
-      
       <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
   </footer>

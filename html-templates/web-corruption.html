@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#000000" />
   <title>Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist</title>
   <meta name="title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta name="description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
-  <meta name="keywords" content="web corruption, digital glitch, matrix green, retro hacking, terminal interface, corrupted systems, dark technologist" />
+  <meta name="description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
+  <meta name="keywords" content="web corruption, digital glitch, matrix green, retro hacking, terminal interface, glitch animations, scanline textures, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -15,14 +15,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/web-corruption" />
   <meta property="og:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
+  <meta property="og:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:site_name" content="Web Corruption" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/web-corruption" />
   <meta property="twitter:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
+  <meta property="twitter:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
   <meta property="twitter:image" content="og-image.jpg" />
   <meta name="application-name" content="Web Corruption" />
   <meta name="msapplication-TileColor" content="#000000" />
@@ -38,7 +38,7 @@
     :root {
       --primary-color: #00ff41; /* Matrix Green */
       --accent-color: #ff0033; /* Glitch Red */
-      --background-color: #000000; /* Black */
+      --background-color: #000000; /* True Black */
       --text-color: #ffffff;
       --font-family: 'VT323', monospace;
       --hover-duration: 0.5s;
@@ -136,13 +136,20 @@
         filter: drop-shadow(0 0 25px var(--primary-color));
       }
       50% { 
-        text-shadow: 0 0 40px var(--accent-color);
-        filter: drop-shadow(0 0 35px var(--accent-color));
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
       }
     }
     
     .hero-subtitle {
       font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+    
+    .hero-description {
+      font-size: 1.2rem;
       color: var(--text-color);
       margin-bottom: 40px;
       max-width: 600px;
@@ -181,6 +188,7 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--primary-color);
       filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: glitchFlicker 0.3s ease;
     }
     
     .btn-secondary {
@@ -195,31 +203,29 @@
       filter: drop-shadow(0 0 10px var(--accent-color));
     }
     
-    /* Project Section */
-    .project {
+    @keyframes glitchFlicker {
+      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); }
+      25% { transform: scale(var(--hover-scale)) translateX(-2px); }
+      75% { transform: scale(var(--hover-scale)) translateX(2px); }
+    }
+    
+    /* Project Overview Section */
+    .project-overview {
       padding: 100px 0;
       background: var(--background-color);
     }
     
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    
-    .project-card {
-      text-align: center;
-      padding: 40px 20px;
+    .overview-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 59, 0, 0.3) 100%);
       border: 2px solid var(--primary-color);
       border-radius: 10px;
-      transition: all var(--hover-duration) ease;
+      padding: 40px;
+      margin-bottom: 40px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 59, 0, 0.3) 100%);
     }
     
-    .project-card::before {
+    .overview-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -230,87 +236,152 @@
       transition: left 0.5s;
     }
     
-    .project-card:hover::before {
+    .overview-card:hover::before {
       left: 100%;
     }
     
-    .project-card:hover {
+    .overview-card:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--primary-color);
-      border-color: var(--accent-color);
     }
     
-    .project-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .overview-title {
+      font-size: 2rem;
       color: var(--primary-color);
+      margin-bottom: 20px;
       text-shadow: 0 0 10px var(--primary-color);
     }
     
-    .project-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .project-description {
+    .overview-description {
       color: var(--text-color);
       line-height: 1.8;
+      margin-bottom: 20px;
     }
     
-    /* Command Line Section */
-    .command-line {
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .tech-tag {
+      background: transparent;
+      color: var(--primary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--primary-color);
+      transition: all var(--hover-duration) ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(var(--hover-scale));
+      background: var(--primary-color);
+      color: var(--background-color);
+      box-shadow: 0 0 15px var(--primary-color);
+    }
+    
+    /* Gallery Section */
+    .project-gallery {
+      padding: 100px 0;
       background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
-      padding: 40px 0;
-      text-align: center;
     }
     
-    .terminal {
-      background: rgba(0, 0, 0, 0.9);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 59, 0, 0.3) 100%);
       border: 2px solid var(--primary-color);
       border-radius: 10px;
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 800px;
-      font-family: var(--font-family);
-      text-align: left;
+      padding: 25px;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
     }
     
-    .terminal-header {
-      color: var(--primary-color);
-      font-size: 1.2rem;
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+      animation: scanline 3s linear infinite;
+    }
+    
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .gallery-item:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--primary-color);
+      animation: matrixFlutter 0.8s ease;
+    }
+    
+    @keyframes matrixFlutter {
+      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 59, 0, 0.4));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      border: 2px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
     }
     
-    .terminal-line {
-      color: var(--text-color);
-      margin-bottom: 10px;
-      animation: typewriter 2s steps(40, end);
-    }
-    
-    .terminal-line:nth-child(2) { animation-delay: 0.5s; }
-    .terminal-line:nth-child(3) { animation-delay: 1s; }
-    .terminal-line:nth-child(4) { animation-delay: 1.5s; }
-    
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    
-    .cursor {
+    .gallery-image::before {
+      content: '[MATRIX SCREENSHOT]';
       color: var(--primary-color);
-      animation: blink 1s infinite;
+      font-family: var(--font-family);
+      font-size: 14px;
+      text-shadow: 0 0 10px var(--primary-color);
     }
     
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+    .gallery-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
+      animation: matrixImageGlow 4s ease-in-out infinite;
+    }
+    
+    @keyframes matrixImageGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .gallery-title {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+    
+    .gallery-description {
+      color: var(--text-color);
+      line-height: 1.6;
     }
     
     /* Footer */
@@ -319,33 +390,6 @@
       border-top: 2px solid var(--primary-color);
       padding: 40px 0;
       text-align: center;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section h3 {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .footer-section p {
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    
-    .glitch-info {
-      background: rgba(0, 255, 65, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--primary-color);
     }
     
     .return-btn {
@@ -379,16 +423,16 @@
         font-size: 1.2rem;
       }
       
+      .hero-description {
+        font-size: 1rem;
+      }
+      
       .hero-buttons {
         flex-direction: column;
         align-items: center;
       }
       
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-content {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -399,60 +443,83 @@
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">WEB CORRUPTION</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle">Digital Glitch Aesthetic</p>
+      <p class="hero-description">
         Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays. 
         Glitch animations and scanline textures mimic corrupted system interfaces.
       </p>
       <div class="hero-buttons">
-        <a href="#project" class="btn btn-primary">VIEW CORRUPTION</a>
-        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">ACCESS TERMINAL</a>
+        <a href="#gallery" class="btn btn-primary">VIEW CORRUPTION</a>
+        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE CODE</a>
       </div>
     </div>
   </section>
 
-  <!-- Project Section -->
-  <section class="project">
+  <!-- Project Overview -->
+  <section class="project-overview">
     <div class="container">
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="project-icon">💻</div>
-          <h3 class="project-title">Terminal Interface</h3>
-          <p class="project-description">
-            Terminal font (VT323) with monospaced styling for authentic retro hacking aesthetics. 
-            Used for AI-generated, unstable, or datastream-based projects.
-          </p>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-icon">⚡</div>
-          <h3 class="project-title">Glitch Animations</h3>
-          <p class="project-description">
-            Frame-jitter, glitch flicker, and CRT glow animations that simulate corrupted data reveal 
-            and system instability effects.
-          </p>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-icon">🔧</div>
-          <h3 class="project-title">Command Line</h3>
-          <p class="project-description">
-            Section dividers styled as command line prompts with animated RGB channel offsets 
-            and hover displacements for authentic terminal experience.
-          </p>
+      <div class="overview-card">
+        <h2 class="overview-title">Project Overview</h2>
+        <p class="overview-description">
+          <strong>Web Corruption</strong> demonstrates the fusion of retro hacking aesthetics with modern web development. 
+          Using terminal-style fonts, glitch animations, and scanline textures, this project creates an immersive 
+          digital environment that simulates corrupted system interfaces and data streams.
+        </p>
+        <p class="overview-description">
+          The theme incorporates matrix green (#00ff41), deep red (#ff0033), and true black (#000000) to create 
+          a high-contrast visual experience that evokes the feeling of accessing forbidden digital realms.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Terminal Fonts</span>
+          <span class="tech-tag">Glitch Animations</span>
+          <span class="tech-tag">Scanline Textures</span>
+          <span class="tech-tag">Matrix Effects</span>
+          <span class="tech-tag">Retro Hacking</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Command Line Section -->
-  <section class="command-line">
+  <!-- Project Gallery -->
+  <section id="gallery" class="project-gallery">
     <div class="container">
-      <div class="terminal">
-        <div class="terminal-header">SYSTEM TERMINAL - WEB CORRUPTION</div>
-        <div class="terminal-line">> Initializing corruption sequence...</div>
-        <div class="terminal-line">> Loading matrix green overlay...</div>
-        <div class="terminal-line">> Applying glitch red accents...</div>
-        <div class="terminal-line">> System corrupted successfully <span class="cursor">_</span></div>
+      <h2 class="overview-title">Project Highlights</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Terminal Interface</h3>
+          <p class="gallery-description">
+            Implemented VT323 monospace font family to create authentic terminal-style typography 
+            that mimics classic computer interfaces and command-line environments.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Glitch Animations</h3>
+          <p class="gallery-description">
+            Created frame-jitter, glitch flicker, and CRT glow effects that simulate corrupted 
+            data streams and unstable system interfaces.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Scanline Textures</h3>
+          <p class="gallery-description">
+            Applied transparent scanline overlays with animated matrix rain effects to create 
+            depth and movement in the background layers.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">RGB Channel Offsets</h3>
+          <p class="gallery-description">
+            Implemented animated RGB channel offsets and hover displacements that create 
+            authentic glitch effects and visual corruption.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -460,34 +527,6 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Theme Overview</h3>
-          <p>
-            Digital glitch aesthetic inspired by retro hacking visuals, using matrix green, 
-            deep red, and black overlays with terminal-style fonts and corrupted system interfaces.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <div class="glitch-info">
-            <h3>Glitch Effects</h3>
-            <p>
-              Animations use frame-jitter, glitch flicker, and CRT glow. Hover elements simulate 
-              corrupted data reveal with RGB channel offsets and scanline textures.
-            </p>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Typography</h3>
-          <p>
-            Terminal font (VT323) for authentic retro hacking experience. Monospaced styling 
-            with command line prompt aesthetics throughout the interface.
-          </p>
-        </div>
-      </div>
-      
       <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
   </footer>

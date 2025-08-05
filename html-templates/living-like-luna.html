@@ -7,7 +7,7 @@
   <title>Living Like Luna - Cinematic Aesthetic | Rachel - Dark Technologist</title>
   <meta name="title" content="Living Like Luna - Cinematic Aesthetic | Rachel - Dark Technologist" />
   <meta name="description" content="Styled after cinematic title sequences and theatrical trailers. Deep purple and gold tones dominate with content sections divided like storyboard panels for short films and visual media presentations." />
-  <meta name="keywords" content="living like luna, cinematic aesthetic, film trailers, storyboard panels, deep purple, gold tones, visual media, dark technologist" />
+  <meta name="keywords" content="living like luna, cinematic aesthetic, theatrical trailers, storyboard panels, short films, visual media, studio purple, film gold, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -38,7 +38,7 @@
     :root {
       --primary-color: #8a2be2; /* Studio Purple */
       --accent-color: #ffd700; /* Film Gold */
-      --background-color: #000000; /* Black */
+      --background-color: #000000; /* True Black */
       --text-color: #ffffff;
       --font-family-heading: 'Playfair Display', serif;
       --font-family-body: 'Space Mono', monospace;
@@ -122,7 +122,7 @@
     .hero-title {
       font-family: var(--font-family-heading);
       font-size: 4rem;
-      font-weight: 700;
+      font-weight: 900;
       color: var(--accent-color);
       text-shadow: 0 0 20px var(--accent-color);
       margin-bottom: 20px;
@@ -136,13 +136,21 @@
         filter: drop-shadow(0 0 25px var(--accent-color));
       }
       50% { 
-        text-shadow: 0 0 40px var(--primary-color);
-        filter: drop-shadow(0 0 35px var(--primary-color));
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 0 35px #FFFFFF);
       }
     }
     
     .hero-subtitle {
+      font-family: var(--font-family-heading);
       font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    
+    .hero-description {
+      font-size: 1.2rem;
       color: var(--text-color);
       margin-bottom: 40px;
       max-width: 600px;
@@ -181,6 +189,7 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--accent-color);
       filter: drop-shadow(0 0 10px var(--accent-color));
+      animation: filmShake 0.3s ease;
     }
     
     .btn-secondary {
@@ -193,33 +202,32 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--primary-color);
       filter: drop-shadow(0 0 10px var(--primary-color));
+      animation: filmShake 0.3s ease;
     }
     
-    /* Storyboard Section */
-    .storyboard {
+    @keyframes filmShake {
+      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); }
+      25% { transform: scale(var(--hover-scale)) translateX(-2px); }
+      75% { transform: scale(var(--hover-scale)) translateX(2px); }
+    }
+    
+    /* Project Overview Section */
+    .project-overview {
       padding: 100px 0;
       background: var(--background-color);
     }
     
-    .storyboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    
-    .storyboard-panel {
-      text-align: center;
-      padding: 40px 20px;
+    .overview-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 215, 0, 0.1) 100%);
       border: 2px solid var(--accent-color);
       border-radius: 10px;
-      transition: all var(--hover-duration) ease;
+      padding: 40px;
+      margin-bottom: 40px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 215, 0, 0.1) 100%);
     }
     
-    .storyboard-panel::before {
+    .overview-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -230,102 +238,154 @@
       transition: left 0.5s;
     }
     
-    .storyboard-panel:hover::before {
+    .overview-card:hover::before {
       left: 100%;
     }
     
-    .storyboard-panel:hover {
+    .overview-card:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--accent-color);
-      border-color: var(--primary-color);
     }
     
-    .panel-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .overview-title {
+      font-family: var(--font-family-heading);
+      font-size: 2rem;
       color: var(--accent-color);
+      margin-bottom: 20px;
       text-shadow: 0 0 10px var(--accent-color);
     }
     
-    .panel-title {
-      font-family: var(--font-family-heading);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .panel-description {
+    .overview-description {
       color: var(--text-color);
       line-height: 1.8;
+      margin-bottom: 20px;
     }
     
-    /* Letterbox Section */
-    .letterbox-section {
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .tech-tag {
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--accent-color);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--accent-color);
+      transition: all var(--hover-duration) ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(var(--hover-scale));
+      background: var(--accent-color);
+      color: var(--background-color);
+      box-shadow: 0 0 15px var(--accent-color);
+    }
+    
+    /* Gallery Section */
+    .project-gallery {
+      padding: 100px 0;
       background: var(--background-color);
-      border-top: 2px solid var(--accent-color);
-      padding: 40px 0;
-      text-align: center;
     }
     
-    .letterbox {
-      background: rgba(0, 0, 0, 0.9);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 215, 0, 0.1) 100%);
       border: 2px solid var(--accent-color);
       border-radius: 10px;
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 800px;
-      font-family: var(--font-family-body);
+      padding: 25px;
+      transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
     }
     
-    .letterbox::before {
+    .gallery-item::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 20px;
-      background: var(--background-color);
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--accent-color));
+      animation: scanline 3s linear infinite;
     }
     
-    .letterbox::after {
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .gallery-item:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--accent-color);
+      animation: filmFlutter 0.8s ease;
+    }
+    
+    @keyframes filmFlutter {
+      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(255, 215, 0, 0.2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-image::before {
+      content: '[FILM SCREENSHOT]';
+      color: var(--accent-color);
+      font-family: var(--font-family-body);
+      font-size: 0.9rem;
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+    
+    .gallery-image::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       right: 0;
-      height: 20px;
-      background: var(--background-color);
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+      animation: filmImageGlow 4s ease-in-out infinite;
     }
     
-    .letterbox-header {
+    @keyframes filmImageGlow {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .gallery-title {
+      font-family: var(--font-family-heading);
       color: var(--accent-color);
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .letterbox-content {
-      color: var(--text-color);
+      font-size: 1.3rem;
       margin-bottom: 15px;
-      animation: crossfade 3s ease-in-out infinite;
+      text-shadow: 0 0 5px var(--accent-color);
     }
     
-    @keyframes crossfade {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
-    }
-    
-    .letterbox-subtitle {
-      color: var(--primary-color);
-      font-size: 0.9rem;
-      margin-top: 15px;
-      font-style: italic;
+    .gallery-description {
+      color: var(--text-color);
+      line-height: 1.6;
     }
     
     /* Footer */
@@ -334,33 +394,6 @@
       border-top: 2px solid var(--accent-color);
       padding: 40px 0;
       text-align: center;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section h3 {
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .footer-section p {
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    
-    .cinema-info {
-      background: rgba(255, 215, 0, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--accent-color);
     }
     
     .return-btn {
@@ -394,16 +427,16 @@
         font-size: 1.2rem;
       }
       
+      .hero-description {
+        font-size: 1rem;
+      }
+      
       .hero-buttons {
         flex-direction: column;
         align-items: center;
       }
       
-      .storyboard-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-content {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -414,60 +447,84 @@
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">LIVING LIKE LUNA</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle">Cinematic Aesthetic</p>
+      <p class="hero-description">
         Styled after cinematic title sequences and theatrical trailers. Deep purple and gold tones dominate 
         with content sections divided like storyboard panels for short films and visual media presentations.
       </p>
       <div class="hero-buttons">
-        <a href="#storyboard" class="btn btn-primary">WATCH TRAILER</a>
-        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VIEW STORYBOARD</a>
+        <a href="#gallery" class="btn btn-primary">WATCH FILM</a>
+        <a href="https://vimeo.com/your-film" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VIEW TRAILER</a>
       </div>
     </div>
   </section>
 
-  <!-- Storyboard Section -->
-  <section class="storyboard">
+  <!-- Project Overview -->
+  <section class="project-overview">
     <div class="container">
-      <div class="storyboard-grid">
-        <div class="storyboard-panel">
-          <div class="panel-icon">🎬</div>
-          <h3 class="panel-title">Letterbox Layout</h3>
-          <p class="panel-description">
-            Letterbox layout simulation with cinematic title sequences and theatrical trailer aesthetics 
-            for authentic film presentation experience.
-          </p>
-        </div>
-        
-        <div class="storyboard-panel">
-          <div class="panel-icon">📝</div>
-          <h3 class="panel-title">Subtitle Styling</h3>
-          <p class="panel-description">
-            Subtitle-inspired body styling with smooth crossfades between sections and 
-            scene-based scroll reveals for immersive storytelling.
-          </p>
-        </div>
-        
-        <div class="storyboard-panel">
-          <div class="panel-icon">🎭</div>
-          <h3 class="panel-title">Storyboard Panels</h3>
-          <p class="panel-description">
-            Content sections divided like storyboard panels with deep purple and gold tones 
-            dominating the visual aesthetic for short films and visual media.
-          </p>
+      <div class="overview-card">
+        <h2 class="overview-title">Project Overview</h2>
+        <p class="overview-description">
+          <strong>Living Like Luna</strong> represents the pinnacle of cinematic web design, drawing inspiration 
+          from classic film aesthetics and theatrical presentation. Using studio purple (#8a2be2) and film gold (#ffd700), 
+          this project creates an immersive experience that evokes the magic of cinema and storytelling.
+        </p>
+        <p class="overview-description">
+          The design incorporates letterbox layout simulation, subtitle-inspired body styling, and smooth crossfades 
+          between sections that create a seamless cinematic journey through the content, just like watching a carefully 
+          crafted film.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Letterbox Layout</span>
+          <span class="tech-tag">Storyboard Panels</span>
+          <span class="tech-tag">Smooth Crossfades</span>
+          <span class="tech-tag">Scene Reveals</span>
+          <span class="tech-tag">Cinematic Typography</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Letterbox Section -->
-  <section class="letterbox-section">
+  <!-- Project Gallery -->
+  <section id="gallery" class="project-gallery">
     <div class="container">
-      <div class="letterbox">
-        <div class="letterbox-header">CINEMATIC PRESENTATION - LIVING LIKE LUNA</div>
-        <div class="letterbox-content">> Fade in from black...</div>
-        <div class="letterbox-content">> Title sequence begins...</div>
-        <div class="letterbox-content">> Storyboard panels reveal...</div>
-        <div class="letterbox-subtitle">> Scene transitions with smooth crossfades</div>
+      <h2 class="overview-title">Project Highlights</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Letterbox Layout</h3>
+          <p class="gallery-description">
+            Implemented letterbox layout simulation that creates the authentic cinematic 
+            experience of watching a film with proper aspect ratios and framing.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Subtitle Styling</h3>
+          <p class="gallery-description">
+            Created subtitle-inspired body styling that mimics the typography and 
+            presentation of professional film subtitles and credits.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Smooth Crossfades</h3>
+          <p class="gallery-description">
+            Applied smooth crossfades between sections that create seamless transitions 
+            reminiscent of professional film editing and scene changes.
+          </p>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image"></div>
+          <h3 class="gallery-title">Scene Reveals</h3>
+          <p class="gallery-description">
+            Designed scene-based scroll reveals that unveil content like dramatic 
+            film sequences, creating anticipation and visual storytelling.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -475,34 +532,6 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Theme Overview</h3>
-          <p>
-            Styled after cinematic title sequences and theatrical trailers with deep purple and gold tones 
-            dominating the visual aesthetic for short films and visual media presentations.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <div class="cinema-info">
-            <h3>Cinematic Features</h3>
-            <p>
-              Letterbox layout simulation, subtitle-inspired body styling, smooth crossfades between sections, 
-              and scene-based scroll reveals for immersive storytelling experience.
-            </p>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Typography</h3>
-          <p>
-            Serif typography for headers (Playfair Display) and monospaced body text (Space Mono) 
-            with storyboard panel aesthetics throughout the interface.
-          </p>
-        </div>
-      </div>
-      
       <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
   </footer>
