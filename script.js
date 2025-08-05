@@ -84,17 +84,17 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 
 // Add counter animation to stats
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, suffix, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
     
     function updateCounter() {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start) + (target === 95 ? '%' : target === 3 ? '' : '+');
+            element.textContent = start.toFixed(1) + suffix;
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + (target === 95 ? '%' : target === 3 ? '' : '+');
+            element.textContent = target.toFixed(1) + suffix;
         }
     }
     
@@ -108,8 +108,22 @@ const statsObserver = new IntersectionObserver(function(entries) {
             const statNumbers = entry.target.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
                 const text = stat.textContent;
-                const number = parseInt(text.replace(/[^\d]/g, ''));
-                animateCounter(stat, number);
+                // Handle different number formats
+                if (text.includes('M')) {
+                    // For numbers like "1.2M+"
+                    const number = parseFloat(text.replace(/[^\d.]/g, ''));
+                    const suffix = text.includes('+') ? 'M+' : 'M';
+                    animateCounter(stat, number, suffix);
+                } else if (text.includes('%')) {
+                    // For percentages like "95%"
+                    const number = parseInt(text.replace(/[^\d]/g, ''));
+                    animateCounter(stat, number, '%');
+                } else {
+                    // For regular numbers like "3"
+                    const number = parseInt(text.replace(/[^\d]/g, ''));
+                    const suffix = text.includes('+') ? '+' : '';
+                    animateCounter(stat, number, suffix);
+                }
             });
             statsObserver.unobserve(entry.target);
         }

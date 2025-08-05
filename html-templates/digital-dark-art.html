@@ -4,25 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <title>Digital Dark Art - Artistic Rebellion Through AI Corruption | Rachel - Dark Technologist</title>
-  <meta name="title" content="Digital Dark Art - Artistic Rebellion Through AI Corruption | Rachel - Dark Technologist" />
-  <meta name="description" content="Combining traditional artistic rebellion with AI corruption tools to create unique digital artworks and dystopian short film content." />
-  <meta name="keywords" content="Digital dark art, AI corruption, artistic rebellion, video corruption, dystopian aesthetics, chaos direction, AI tools" />
+  <title>Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist</title>
+  <meta name="title" content="Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist" />
+  <meta name="description" content="Gallery of Rachel's hand-drawn digital artworks from the pre-AI era, showcasing human artistic competence and commitment to authentic creativity." />
+  <meta name="keywords" content="Digital dark art, human-made art, hand-drawn artwork, artistic rebellion, pre-AI era, authentic creativity, Rachel's artwork" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/digital-dark-art" />
-  <meta property="og:title" content="Digital Dark Art - Artistic Rebellion Through AI Corruption | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Combining traditional artistic rebellion with AI corruption tools to create unique digital artworks and dystopian short film content." />
+  <meta property="og:title" content="Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist" />
+  <meta property="og:description" content="Gallery of Rachel's hand-drawn digital artworks from the pre-AI era, showcasing human artistic competence and commitment to authentic creativity." />
   <meta property="og:image" content="og-image.jpg" />
   <meta property="og:site_name" content="Rachel - Dark Technologist" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/digital-dark-art" />
-  <meta property="twitter:title" content="Digital Dark Art - Artistic Rebellion Through AI Corruption | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Combining traditional artistic rebellion with AI corruption tools to create unique digital artworks and dystopian short film content." />
+  <meta property="twitter:title" content="Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="Gallery of Rachel's hand-drawn digital artworks from the pre-AI era, showcasing human artistic competence and commitment to authentic creativity." />
   <meta property="twitter:image" content="og-image.jpg" />
   <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
   <meta name="msapplication-TileColor" content="#000000" />
@@ -116,6 +116,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     
     .gallery-item:hover {
@@ -158,34 +159,6 @@
       margin-top: 40px;
     }
     
-    .gallery-item {
-      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
-      border: 3px solid var(--cyber-pink);
-      border-radius: 15px;
-      padding: 25px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(255, 0, 128, 0.4);
-      border-color: var(--cyber-blue);
-      animation: cyberShift 0.5s ease;
-    }
-    
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--cyber-pink), var(--cyber-blue), var(--neon-green));
-      animation: cyberScan 3s linear infinite;
-    }
-    
     .gallery-image {
       width: 100%;
       height: 200px;
@@ -198,14 +171,19 @@
       border: 2px solid var(--cyber-pink);
       position: relative;
       overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     
     .gallery-image::before {
-      content: '[CYBER ART]';
+      content: '[HAND-DRAWN]';
       color: var(--cyber-pink);
       font-family: 'Orbitron', monospace;
       font-size: 14px;
       text-shadow: 0 0 10px var(--cyber-pink);
+      z-index: 2;
+      position: relative;
     }
     
     .gallery-image::after {
@@ -254,6 +232,175 @@
       transform: scale(1.05);
       box-shadow: 0 0 10px var(--cyber-pink);
     }
+
+    /* Modal/Lightbox Styles */
+    .artwork-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 2% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 90vh;
+      background: linear-gradient(135deg, rgba(26, 15, 46, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+      border: 3px solid var(--cyber-pink);
+      border-radius: 15px;
+      box-shadow: 0 0 50px rgba(255, 0, 128, 0.5);
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--cyber-pink);
+    }
+
+    .modal-title {
+      color: var(--cyber-pink);
+      font-family: 'Orbitron', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-shadow: 0 0 15px var(--cyber-pink);
+    }
+
+    .close-modal {
+      color: var(--cyber-pink);
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--cyber-blue);
+      text-shadow: 0 0 15px var(--cyber-blue);
+      transform: scale(1.1);
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 2px solid var(--cyber-pink);
+      margin-bottom: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+    }
+
+    .modal-description {
+      color: #EEEEEE;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .modal-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .detail-item {
+      background: rgba(255, 0, 128, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid var(--cyber-pink);
+    }
+
+    .detail-label {
+      color: var(--cyber-pink);
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      color: #EEEEEE;
+      font-size: 0.9rem;
+    }
+
+    /* Navigation arrows for modal */
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--cyber-pink);
+      border: 2px solid var(--cyber-pink);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+
+    .modal-nav:hover {
+      background: var(--cyber-pink);
+      color: black;
+      box-shadow: 0 0 20px var(--cyber-pink);
+    }
+
+    .modal-prev {
+      left: 20px;
+    }
+
+    .modal-next {
+      right: 20px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 15px;
+      }
+      
+      .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .modal-prev {
+        left: 10px;
+      }
+      
+      .modal-next {
+        right: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -264,7 +411,7 @@
         <div class="logo">
           <a href="../index.html" aria-label="Rachel - Dark Technologist Home">
             <span class="logo-text">R</span>
-            <span class="logo-full">RACHEL</span>
+            <span class="logo-full">ACHEL</span>
           </a>
         </div>
         <nav class="nav" role="navigation" aria-label="Main Navigation">
@@ -288,16 +435,17 @@
       
       <header class="project-header">
         <h1 class="project-title">DIGITAL DARK ART</h1>
-        <p class="project-subtitle">Artistic Rebellion Through AI Corruption</p>
+        <p class="project-subtitle">Human-Made Artistic Rebellion - Pre-AI Era</p>
       </header>
       
       <div class="project-content">
         <section class="project-overview">
           <h2>PROJECT OVERVIEW</h2>
           <p>
-            Combining traditional artistic rebellion with AI corruption tools to create unique 
-            digital artworks and dystopian short film content. This project explores the intersection 
-            of human creativity and machine-generated chaos.
+            A showcase of Rachel's hand-drawn digital artworks from the pre-AI generative era, 
+            demonstrating authentic human artistic competence and commitment to genuine creativity. 
+            While AI is embraced for coding and concept development, this gallery proves that 
+            Rachel's artistic foundation was built through traditional human skill and dedication.
           </p>
         </section>
         
@@ -307,168 +455,197 @@
           <div class="detail-grid">
             <div class="detail-item">
               <h3>ARTISTIC MEDIUM</h3>
-              <p>Digital dark art & video</p>
+              <p>Hand-drawn digital art</p>
             </div>
             
             <div class="detail-item">
-              <h3>CORRUPTION TOOLS</h3>
-              <p>AI-powered artistic rebellion</p>
+              <h3>CREATION ERA</h3>
+              <p>Pre-AI generative period</p>
             </div>
             
             <div class="detail-item">
               <h3>CREATIVE DIRECTION</h3>
-              <p>Chaos-driven aesthetics</p>
+              <p>Authentic human expression</p>
             </div>
             
             <div class="detail-item">
-              <h3>REBELLION LEVEL</h3>
-              <p>Maximum artistic anarchy</p>
+              <h3>ARTISTIC INTEGRITY</h3>
+              <p>100% human-made</p>
             </div>
           </div>
         </section>
         
         <section class="project-features">
-          <h2>ARTISTIC REBELLION FEATURES</h2>
+          <h2>HUMAN ARTISTIC COMPETENCE</h2>
           <ul class="features-list">
-            <li>AI-generated dark art and imagery</li>
-            <li>Corrupted video content creation</li>
-            <li>Digital dystopian aesthetics</li>
-            <li>Chaos-driven artistic direction</li>
-            <li>Automated creative corruption</li>
+            <li>Hand-drawn digital artworks and illustrations</li>
+            <li>Traditional artistic techniques and skills</li>
+            <li>Authentic human creative expression</li>
+            <li>Pre-AI era artistic foundation</li>
+            <li>Genuine artistic rebellion and vision</li>
             <li>Dark technologist visual themes</li>
           </ul>
         </section>
         
         <section class="project-technologies">
-          <h2>TECHNOLOGIES OF DARKNESS</h2>
+          <h2>ARTISTIC FOUNDATION</h2>
           <div class="tech-grid">
-            <span class="tech-tag">Digital Dark Art</span>
-            <span class="tech-tag">Video Corruption</span>
-            <span class="tech-tag">AI Tools</span>
-            <span class="tech-tag">Chaos Direction</span>
+            <span class="tech-tag">Hand-Drawn Art</span>
+            <span class="tech-tag">Digital Illustration</span>
+            <span class="tech-tag">Traditional Skills</span>
+            <span class="tech-tag">Human Creativity</span>
             <span class="tech-tag">Artistic Rebellion</span>
-            <span class="tech-tag">Dystopian Aesthetics</span>
+            <span class="tech-tag">Dark Aesthetics</span>
           </div>
         </section>
         
         <section class="project-gallery">
-          <h2>DARK ART GALLERY</h2>
+          <h2>HUMAN-MADE ART GALLERY</h2>
           <div class="gallery-grid">
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">AI-GENERATED DARK ART</div>
+            <div class="gallery-item" data-artwork="rachelsart1">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart1.png')"></div>
+              <div class="gallery-title">DARK TECHNOLOGIST PORTRAIT</div>
               <div class="gallery-description">
-                Collection of AI-generated artworks featuring dark technologist themes, 
-                corrupted aesthetics, and dystopian visual elements.
+                Hand-drawn digital portrait showcasing dark technologist themes and authentic human artistic expression from the pre-AI era.
               </div>
             </div>
             
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CORRUPTED VIDEO CONTENT</div>
+            <div class="gallery-item" data-artwork="rachelsart2">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart2.png')"></div>
+              <div class="gallery-title">DIGITAL REBELLION</div>
               <div class="gallery-description">
-                Short film clips and video content that have been artistically corrupted 
-                and enhanced with AI tools for dark artistic expression.
+                Original digital illustration created entirely by hand, demonstrating Rachel's artistic skills before AI generative tools.
               </div>
             </div>
             
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">DIGITAL DYSTOPIAN LANDSCAPES</div>
+            <div class="gallery-item" data-artwork="rachelsart3">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart3.png')"></div>
+              <div class="gallery-title">APOCALYPTIC LANDSCAPE</div>
               <div class="gallery-description">
-                AI-generated apocalyptic environments and corrupted digital landscapes 
-                that challenge traditional artistic boundaries and conventions.
+                Hand-drawn apocalyptic environment showcasing authentic human artistic competence and traditional skills.
               </div>
             </div>
             
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CHAOS-DRIVEN ABSTRACTIONS</div>
+            <div class="gallery-item" data-artwork="rachelsart4">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart4.png')"></div>
+              <div class="gallery-title">HUMAN CHAOS</div>
               <div class="gallery-description">
-                Abstract digital artworks created through algorithmic chaos and 
-                AI corruption, representing the intersection of technology and rebellion.
+                Abstract digital artwork created through genuine human creativity and artistic vision.
               </div>
             </div>
             
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">DARK TECHNOLOGIST PORTRAITS</div>
+            <div class="gallery-item" data-artwork="rachelsart5">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart5.png')"></div>
+              <div class="gallery-title">DARK PORTRAIT STUDY</div>
               <div class="gallery-description">
-                Corrupted digital self-portraits and character studies that explore 
-                identity, technology, and the dark side of digital existence.
+                Hand-drawn digital portrait exploring identity, darkness, and the human condition through authentic artistic expression.
               </div>
             </div>
             
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
+            <div class="gallery-item" data-artwork="rachelsart6">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart6.png')"></div>
+              <div class="gallery-title">ARTISTIC FOUNDATION</div>
+              <div class="gallery-description">
+                Comprehensive piece proving Rachel's artistic foundation was built through human skill, dedication, and genuine creativity.
+              </div>
+            </div>
+            
+            <div class="gallery-item" data-artwork="rachelsart7">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart7.png')"></div>
+              <div class="gallery-title">DIGITAL DYSTOPIA</div>
+              <div class="gallery-description">
+                Hand-drawn digital landscape showcasing dark technologist aesthetics and human artistic rebellion.
+              </div>
+            </div>
+            
+            <div class="gallery-item" data-artwork="rachelsart8">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart8.png')"></div>
+              <div class="gallery-title">AUTHENTIC ABSTRACTION</div>
+              <div class="gallery-description">
+                Abstract digital artwork demonstrating genuine human creativity and artistic vision from the pre-AI era.
+              </div>
+            </div>
+            
+            <div class="gallery-item" data-artwork="rachelsart9">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart9.png')"></div>
+              <div class="gallery-title">DARK CHARACTER STUDY</div>
+              <div class="gallery-description">
+                Hand-drawn character study exploring dark themes and human artistic expression through traditional digital techniques.
+              </div>
+            </div>
+            
+            <div class="gallery-item" data-artwork="rachelsart10">
+              <div class="gallery-image" style="background-image: url('rachelsartworks/rachelsart10.png')"></div>
               <div class="gallery-title">ARTISTIC REBELLION ARCHIVE</div>
               <div class="gallery-description">
-                Comprehensive collection of all dark art pieces, showing the evolution 
-                of AI-assisted artistic rebellion and digital corruption techniques.
+                Final piece in the collection, showcasing Rachel's complete artistic journey and commitment to human-made creativity.
               </div>
             </div>
           </div>
         </section>
         
         <section class="project-impact">
-          <h2>ARTISTIC IMPACT</h2>
+          <h2>ARTISTIC INTEGRITY</h2>
           <p>
-            This project challenges traditional artistic paradigms by incorporating AI corruption 
-            and digital anarchy into the creative process. It demonstrates the potential for 
-            machine-generated chaos to enhance human artistic expression.
+            This gallery serves as proof of Rachel's authentic artistic foundation, demonstrating 
+            that her creative vision and technical skills were developed through traditional 
+            human effort and dedication. While AI is embraced for coding and concept development, 
+            this collection proves that Rachel's artistic competence predates the AI generative era.
           </p>
         </section>
         
         <section class="project-process">
-          <h2>CREATIVE CORRUPTION PROCESS</h2>
+          <h2>HUMAN CREATIVE PROCESS</h2>
           <div class="process-steps">
             <div class="step">
-              <h3>PHASE 1: CONCEPTUAL CORRUPTION</h3>
-              <p>Developing dark artistic concepts through AI</p>
+              <h3>PHASE 1: CONCEPTUAL VISION</h3>
+              <p>Developing dark artistic concepts through human imagination</p>
             </div>
             <div class="step">
-              <h3>PHASE 2: DIGITAL GENERATION</h3>
-              <p>AI tools create corrupted visual content</p>
+              <h3>PHASE 2: HAND-DRAWN CREATION</h3>
+              <p>Traditional artistic skills create authentic visual content</p>
             </div>
             <div class="step">
               <h3>PHASE 3: ARTISTIC REFINEMENT</h3>
-              <p>Human creativity enhances machine chaos</p>
+              <p>Human creativity and skill perfect the artwork</p>
             </div>
             <div class="step">
-              <h3>PHASE 4: DYSTOPIAN PRESENTATION</h3>
-              <p>Final corrupted artworks are displayed</p>
+              <h3>PHASE 4: AUTHENTIC PRESENTATION</h3>
+              <p>Final hand-made artworks are displayed</p>
             </div>
           </div>
         </section>
         
         <section class="project-collections">
-          <h2>DARK ART COLLECTIONS</h2>
+          <h2>HUMAN ART COLLECTIONS</h2>
           <div class="collections-grid">
             <div class="collection-item">
               <h3>DIGITAL DYSTOPIA</h3>
-              <p>AI-generated apocalyptic landscapes</p>
+              <p>Hand-drawn apocalyptic landscapes</p>
             </div>
             <div class="collection-item">
-              <h3>CORRUPTED PORTRAITS</h3>
-              <p>Machine-manipulated human forms</p>
+              <h3>AUTHENTIC PORTRAITS</h3>
+              <p>Human-drawn character studies</p>
             </div>
             <div class="collection-item">
-              <h3>CHAOS ABSTRACTIONS</h3>
-              <p>Algorithmic disorder and anarchy</p>
+              <h3>HUMAN ABSTRACTIONS</h3>
+              <p>Genuine artistic disorder and rebellion</p>
             </div>
             <div class="collection-item">
               <h3>DARK TECHNOLOGIST</h3>
-              <p>Corrupted digital self-portraits</p>
+              <p>Hand-drawn digital self-portraits</p>
             </div>
           </div>
         </section>
         
         <section class="project-future">
-          <h2>FUTURE DARKNESS</h2>
+          <h2>ARTISTIC PHILOSOPHY</h2>
           <p>
-            Future developments include more sophisticated AI art generation, 
-            expanded video corruption techniques, and deeper integration of 
-            digital anarchy into artistic expression.
+            Rachel's commitment to human-made art extends to all merchandise and creative projects. 
+            While AI is embraced for coding and concept development, all final artistic pieces 
+            are created by human hands. AI serves as a tool for visual concept development, 
+            but the final artwork remains authentically human-made, upholding artistic integrity 
+            and genuine creative expression.
           </p>
         </section>
       </div>
@@ -479,8 +656,206 @@
     </div>
   </div>
 
-  <!-- Smooth Scroll JS for anchor links -->
+  <!-- Artwork Modal/Lightbox -->
+  <div id="artworkModal" class="artwork-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Artwork Title</h2>
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+      </div>
+      <img id="modalImage" class="modal-image" src="" alt="Artwork">
+      <p class="modal-description" id="modalDescription">Artwork description</p>
+      <div class="modal-details">
+        <div class="detail-item">
+          <div class="detail-label">Medium</div>
+          <div class="detail-value" id="modalMedium">Digital Art</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Year</div>
+          <div class="detail-value" id="modalYear">Pre-AI Era</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Technique</div>
+          <div class="detail-value" id="modalTechnique">Hand-drawn</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Style</div>
+          <div class="detail-value" id="modalStyle">Dark Technologist</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-nav modal-prev" onclick="navigateModal(-1)">&#10094;</div>
+    <div class="modal-nav modal-next" onclick="navigateModal(1)">&#10095;</div>
+  </div>
+
+  <!-- Artwork Data -->
   <script>
+    const artworkData = {
+      'rachelsart1': {
+        title: 'Dark Technologist Portrait',
+        image: 'rachelsartworks/rachelsart1.png',
+        description: 'A hand-drawn digital portrait showcasing dark technologist themes and authentic human artistic expression from the pre-AI era.',
+        medium: 'Digital Illustration',
+        year: '2020',
+        technique: 'Hand-drawn with digital tools',
+        style: 'Dark Technologist'
+      },
+      'rachelsart2': {
+        title: 'Digital Rebellion',
+        image: 'rachelsartworks/rachelsart2.png',
+        description: 'Original digital illustration created entirely by hand, demonstrating Rachel\'s artistic skills before AI generative tools.',
+        medium: 'Digital Art',
+        year: '2019',
+        technique: 'Hand-drawn digital',
+        style: 'Artistic Rebellion'
+      },
+      'rachelsart3': {
+        title: 'Apocalyptic Landscape',
+        image: 'rachelsartworks/rachelsart3.png',
+        description: 'Hand-drawn apocalyptic environment showcasing authentic human artistic competence and traditional skills.',
+        medium: 'Digital Landscape',
+        year: '2021',
+        technique: 'Hand-drawn digital',
+        style: 'Dark Aesthetics'
+      },
+      'rachelsart4': {
+        title: 'Human Chaos',
+        image: 'rachelsartworks/rachelsart4.png',
+        description: 'Abstract digital artwork created through genuine human creativity and artistic vision.',
+        medium: 'Digital Abstract',
+        year: '2020',
+        technique: 'Hand-drawn digital',
+        style: 'Abstract Rebellion'
+      },
+      'rachelsart5': {
+        title: 'Dark Portrait Study',
+        image: 'rachelsartworks/rachelsart5.png',
+        description: 'Hand-drawn digital portrait exploring identity, darkness, and the human condition through authentic artistic expression.',
+        medium: 'Digital Portrait',
+        year: '2021',
+        technique: 'Hand-drawn digital',
+        style: 'Dark Portrait'
+      },
+      'rachelsart6': {
+        title: 'Artistic Foundation',
+        image: 'rachelsartworks/rachelsart6.png',
+        description: 'Comprehensive piece proving Rachel\'s artistic foundation was built through human skill, dedication, and genuine creativity.',
+        medium: 'Digital Art',
+        year: 'Pre-AI Era',
+        technique: 'Hand-drawn digital',
+        style: 'Foundation Piece'
+      },
+      'rachelsart7': {
+        title: 'Digital Dystopia',
+        image: 'rachelsartworks/rachelsart7.png',
+        description: 'Hand-drawn digital landscape showcasing dark technologist aesthetics and human artistic rebellion.',
+        medium: 'Digital Landscape',
+        year: '2020',
+        technique: 'Hand-drawn digital',
+        style: 'Dark Technologist'
+      },
+      'rachelsart8': {
+        title: 'Authentic Abstraction',
+        image: 'rachelsartworks/rachelsart8.png',
+        description: 'Abstract digital artwork demonstrating genuine human creativity and artistic vision from the pre-AI era.',
+        medium: 'Digital Abstract',
+        year: '2021',
+        technique: 'Hand-drawn digital',
+        style: 'Abstract Rebellion'
+      },
+      'rachelsart9': {
+        title: 'Dark Character Study',
+        image: 'rachelsartworks/rachelsart9.png',
+        description: 'Hand-drawn character study exploring dark themes and human artistic expression through traditional digital techniques.',
+        medium: 'Digital Portrait',
+        year: '2020',
+        technique: 'Hand-drawn digital',
+        style: 'Dark Portrait'
+      },
+      'rachelsart10': {
+        title: 'Artistic Rebellion Archive',
+        image: 'rachelsartworks/rachelsart10.png',
+        description: 'Final piece in the collection, showcasing Rachel\'s complete artistic journey and commitment to human-made creativity.',
+        medium: 'Digital Art',
+        year: 'Pre-AI Era',
+        technique: 'Hand-drawn digital',
+        style: 'Artistic Rebellion'
+      }
+    };
+
+    let currentArtworkIndex = 0;
+    const artworkKeys = Object.keys(artworkData);
+
+    // Gallery click handlers
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+          const artworkKey = this.getAttribute('data-artwork');
+          openModal(artworkKey, index);
+        });
+      });
+
+      // Close modal when clicking outside
+      document.getElementById('artworkModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (document.getElementById('artworkModal').style.display === 'block') {
+          if (e.key === 'Escape') {
+            closeModal();
+          } else if (e.key === 'ArrowLeft') {
+            navigateModal(-1);
+          } else if (e.key === 'ArrowRight') {
+            navigateModal(1);
+          }
+        }
+      });
+    });
+
+    function openModal(artworkKey, index) {
+      const artwork = artworkData[artworkKey];
+      currentArtworkIndex = index;
+      
+      document.getElementById('modalTitle').textContent = artwork.title;
+      document.getElementById('modalImage').src = artwork.image;
+      document.getElementById('modalImage').alt = artwork.title;
+      document.getElementById('modalDescription').textContent = artwork.description;
+      document.getElementById('modalMedium').textContent = artwork.medium;
+      document.getElementById('modalYear').textContent = artwork.year;
+      document.getElementById('modalTechnique').textContent = artwork.technique;
+      document.getElementById('modalStyle').textContent = artwork.style;
+      
+      document.getElementById('artworkModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('artworkModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function navigateModal(direction) {
+      currentArtworkIndex = (currentArtworkIndex + direction + artworkKeys.length) % artworkKeys.length;
+      const artworkKey = artworkKeys[currentArtworkIndex];
+      const artwork = artworkData[artworkKey];
+      
+      document.getElementById('modalTitle').textContent = artwork.title;
+      document.getElementById('modalImage').src = artwork.image;
+      document.getElementById('modalImage').alt = artwork.title;
+      document.getElementById('modalDescription').textContent = artwork.description;
+      document.getElementById('modalMedium').textContent = artwork.medium;
+      document.getElementById('modalYear').textContent = artwork.year;
+      document.getElementById('modalTechnique').textContent = artwork.technique;
+      document.getElementById('modalStyle').textContent = artwork.style;
+    }
+
+    // Smooth Scroll JS for anchor links
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
