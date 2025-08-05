@@ -51,6 +51,11 @@
       --hologram-pink: #FF00FF;
       --futuristic-bg: #0A0A0A;
       --holo-border: #00FFFF;
+      
+      /* Shared Motion & Animation Standards (derived from NightKind) */
+      --hover-duration: 0.5s;
+      --hover-scale: 1.02;
+      --glow-opacity: 0.7;
     }
     
     body {
@@ -106,22 +111,22 @@
       border: 3px solid var(--hologram-blue);
       border-radius: 15px;
       padding: 25px;
-      transition: all 0.3s ease;
+      transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+      transform: scale(var(--hover-scale));
+      filter: drop-shadow(0 0 6px var(--hologram-blue));
       border-color: var(--hologram-pink);
-      animation: holoFlutter 0.5s ease;
+      animation: holoFlutter 0.8s ease;
     }
     
     @keyframes holoFlutter {
-      0%, 100% { transform: translateY(-5px) scale(1.02) rotate(0deg); }
-      25% { transform: translateY(-5px) scale(1.02) rotate(1deg); }
-      75% { transform: translateY(-5px) scale(1.02) rotate(-1deg); }
+      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
     }
     
     .gallery-item::before {
@@ -156,14 +161,14 @@
       border: 3px solid var(--hologram-blue);
       border-radius: 15px;
       padding: 25px;
-      transition: all 0.3s ease;
+      transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
     }
     
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+      transform: scale(var(--hover-scale));
+      filter: drop-shadow(0 0 6px var(--hologram-blue));
       border-color: var(--hologram-pink);
       animation: holoShift 0.8s ease;
     }
@@ -240,12 +245,12 @@
       font-size: 12px;
       font-weight: 500;
       border: 1px solid var(--hologram-blue);
-      transition: all 0.3s ease;
+      transition: all var(--hover-duration) ease;
     }
     
     .tech-tag:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px var(--hologram-blue);
+      transform: scale(var(--hover-scale));
+      filter: drop-shadow(0 0 6px var(--hologram-blue));
     }
   </style>
 </head>
