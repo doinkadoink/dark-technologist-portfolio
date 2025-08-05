@@ -18,6 +18,11 @@
     --gradient-secondary: linear-gradient(135deg, #1a1a1a, #0a0a0a);
     --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
+    
+    /* Shared Motion & Animation Standards (derived from NightKind) */
+    --hover-duration: 0.5s;
+    --hover-scale: 1.02;
+    --glow-opacity: 0.7;
 }
 
 body {
@@ -53,13 +58,13 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
     box-shadow: var(--shadow-glow);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px var(--accent-color));
 }
 
 .btn-secondary {
@@ -152,13 +157,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
     position: relative;
 }
 
 .nav-link:hover {
     color: var(--accent-color);
     text-shadow: 0 0 10px var(--accent-glow);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px var(--accent-color));
 }
 
 .nav-link::after {
@@ -443,7 +450,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
     position: relative;
     overflow: hidden;
 }
@@ -502,7 +509,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-color);
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
     position: relative;
 }
 
@@ -523,8 +530,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.15);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px var(--accent-color));
     border-color: var(--accent-color);
 }
 
@@ -579,13 +586,14 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 1px;
     border: 1px solid var(--accent-color);
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
 }
 
 .tech-tag:hover {
     background: var(--accent-color);
     color: var(--text-primary);
-    box-shadow: 0 0 15px var(--accent-glow);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px var(--accent-color));
 }
 
 .project-card .btn {
@@ -607,7 +615,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.web-corruption:hover {
     border-color: #FF0000;
-    box-shadow: 0 20px 40px rgba(0, 255, 65, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #00FF41);
 }
 
 .project-card.web-corruption .project-category {
@@ -638,7 +647,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.chaos-maps:hover {
     border-color: #FFD700;
-    box-shadow: 0 20px 40px rgba(0, 255, 0, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #00FF00);
 }
 
 .project-card.chaos-maps .project-category {
@@ -669,7 +679,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.ai-interactive:hover {
     border-color: #FF69B4;
-    box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #00BFFF);
 }
 
 .project-card.ai-interactive .project-category {
@@ -700,7 +711,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.digital-dark-art:hover {
     border-color: #00BFFF;
-    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #FF69B4);
 }
 
 .project-card.digital-dark-art .project-category {
@@ -731,7 +743,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.living-like-luna:hover {
     border-color: #8A2BE2;
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #FFD700);
 }
 
 .project-card.living-like-luna .project-category {
@@ -762,7 +775,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card.nightkind:hover {
     border-color: #00FF41;
-    box-shadow: 0 20px 40px rgba(192, 192, 192, 0.3);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #C0C0C0);
 }
 
 .project-card.nightkind .project-category {
@@ -781,21 +795,20 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 15px #C0C0C0;
 }
 
-/* Enhanced hover animations for themed cards */
+/* Enhanced hover animations for themed cards - using standardized motion system */
 .project-card.web-corruption:hover,
 .project-card.chaos-maps:hover,
 .project-card.ai-interactive:hover,
 .project-card.digital-dark-art:hover,
 .project-card.living-like-luna:hover,
 .project-card.nightkind:hover {
-    transform: translateY(-10px) scale(1.02);
     animation: themedFlutter 0.5s ease;
 }
 
 @keyframes themedFlutter {
-    0%, 100% { transform: translateY(-5px) scale(1.01) rotate(0deg); }
-    25% { transform: translateY(-5px) scale(1.01) rotate(0.3deg); }
-    75% { transform: translateY(-5px) scale(1.01) rotate(-0.3deg); }
+    0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
+    25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
+    75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
 }
 
 /* Scanning line effect for themed cards */
@@ -839,7 +852,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 15px;
     padding: 40px 30px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--hover-duration) ease;
     position: relative;
     overflow: hidden;
 }
@@ -861,9 +874,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-card:hover {
-    transform: translateY(-3px);
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px var(--accent-color));
     border-color: var(--accent-color);
-    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.15);
 }
 
 .contact-icon {

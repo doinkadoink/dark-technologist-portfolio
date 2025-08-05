@@ -16,7 +16,7 @@
   font-family: 'Orbitron', monospace;
   font-weight: 700;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -25,7 +25,8 @@
 .back-link:hover {
   color: #ff0066;
   text-shadow: 0 0 10px #ff0066;
-  transform: translateX(-5px);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #ff0066);
 }
 
 .project-header {
@@ -102,13 +103,13 @@
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
 }
 
 .detail-item:hover {
   background: rgba(0, 255, 65, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 255, 65, 0.15);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #00ff41);
 }
 
 .detail-item h3 {
@@ -139,7 +140,7 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
 }
 
 .features-list li::before {
@@ -158,8 +159,8 @@
 
 .features-list li:hover {
   background: rgba(255, 0, 102, 0.1);
-  transform: translateX(3px);
-  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.15);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #ff0066);
 }
 
 .tech-grid {
@@ -178,12 +179,12 @@
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
 }
 
 .tech-tag:hover {
-  transform: scale(1.02);
-  box-shadow: 0 3px 10px rgba(0, 255, 65, 0.2);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #00ff41);
 }
 
 .gallery-placeholder {
@@ -220,8 +221,8 @@
 
 .step:hover {
   background: rgba(0, 255, 65, 0.1);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #00ff41);
 }
 
 .step h3 {
@@ -247,13 +248,13 @@
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
 }
 
 .stat-item:hover, .collection-item:hover {
   background: rgba(255, 0, 102, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 0, 102, 0.15);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #ff0066);
 }
 
 .stat-item h3, .collection-item h3 {
@@ -286,13 +287,13 @@
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
   text-transform: uppercase;
 }
 
 .project-footer .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 255, 65, 0.2);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px #00ff41);
 }
 
 /* Responsive Design */

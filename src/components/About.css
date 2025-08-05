@@ -82,7 +82,7 @@
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--hover-duration) ease;
   position: relative;
   overflow: hidden;
 }
@@ -103,9 +103,9 @@
 }
 
 .skill-card:hover {
-  transform: translateY(-3px);
+  transform: scale(var(--hover-scale));
+  filter: drop-shadow(0 0 6px var(--accent-color));
   border-color: var(--accent-color);
-  box-shadow: 0 8px 25px rgba(162, 89, 255, 0.15);
 }
 
 .skill-title {
