@@ -12,13 +12,14 @@
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <!-- Anti-scraping meta tags temporarily disabled for development -->
+  <!-- <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="copyright" content="Rachel - Dark Technologist. All Rights Reserved." />
   <meta name="rights" content="All Rights Reserved" />
-  <meta name="usage-rights" content="Personal viewing only. No AI training use permitted." />
+  <meta name="usage-rights" content="Personal viewing only. No AI training use permitted." /> -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/digital-dark-art" />
   <meta property="og:title" content="Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist" />
@@ -49,7 +50,8 @@
       scroll-behavior: smooth;
     }
     
-    /* Anti-Scraping Protections */
+    /* Anti-Scraping Protections - TEMPORARILY DISABLED FOR DEVELOPMENT */
+    /*
     body {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -83,6 +85,7 @@
       -ms-user-select: text;
       user-select: text;
     }
+    */
     
     /* Digital Dark Art Theme: Artistic Authenticity Aesthetic */
     :root {
@@ -100,7 +103,7 @@
     
     body {
       background: var(--background-color);
-      color: var(--text-color);
+      color: #ffffff;
       position: relative;
       font-family: 'Rajdhani', sans-serif;
     }
@@ -272,7 +275,7 @@
     }
     
     .gallery-description {
-      color: var(--text-color);
+      color: #ffffff;
       font-size: 0.9rem;
       line-height: 1.5;
     }
@@ -372,7 +375,7 @@
     }
 
     .modal-description {
-      color: var(--text-color);
+      color: #ffffff;
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 15px;
@@ -402,7 +405,7 @@
     }
 
     .detail-value {
-      color: var(--text-color);
+      color: #ffffff;
       font-size: 0.9rem;
     }
 
@@ -456,6 +459,17 @@
       border: 1px solid var(--accent-color);
     }
 
+    /* Project content text styling */
+    .project-overview p, .project-features p, .project-impact p, .project-future p,
+    .project-overview li, .project-features li, .project-impact li, .project-future li {
+      color: #ffffff !important;
+    }
+    
+    .project-overview h2, .project-features h2, .project-impact h2, .project-future h2,
+    .project-overview h3, .project-features h3, .project-impact h3, .project-future h3 {
+      color: var(--primary-color);
+    }
+    
     /* Responsive design */
     @media (max-width: 768px) {
       .modal-content {
@@ -776,16 +790,17 @@
     <div class="modal-nav modal-next" onclick="navigateModal(1)">&#10095;</div>
   </div>
 
-  <!-- Copyright Protection Notice -->
-  <div class="copyright-notice">
+  <!-- Copyright Protection Notice - TEMPORARILY HIDDEN FOR DEVELOPMENT -->
+  <!-- <div class="copyright-notice">
     © Rachel - Dark Technologist<br>
     All Rights Reserved<br>
     No AI Training Use
-  </div>
+  </div> -->
 
   <!-- Artwork Data -->
   <script>
-    // Anti-Scraping JavaScript Protections
+    // Anti-Scraping JavaScript Protections - TEMPORARILY DISABLED FOR DEVELOPMENT
+    /*
     document.addEventListener('DOMContentLoaded', function() {
       // Disable right-click context menu
       document.addEventListener('contextmenu', function(e) {
@@ -832,6 +847,7 @@
         }
       }, 1000);
     });
+    */
 
     const artworkData = {
       'rachelsart1': {
