@@ -1,0 +1,63 @@
+User-agent: *
+Disallow: /rachelsartworks/
+Disallow: /digital-dark-art.html
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.gif
+Disallow: /*.webp
+
+# Block AI training scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: ai-archiver
+Disallow: /
+
+# Block common scraping tools
+User-agent: Scraper
+Disallow: /
+
+User-agent: Crawler
+Disallow: /
+
+User-agent: Bot
+Disallow: /
+
+User-agent: Spider
+Disallow: /
+
+# Allow legitimate search engines but with restrictions
+User-agent: Googlebot
+Disallow: /rachelsartworks/
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.gif
+Disallow: /*.webp
+
+User-agent: Bingbot
+Disallow: /rachelsartworks/
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.gif
+Disallow: /*.webp
+
+# Sitemap (if you have one)
+# Sitemap: https://your-domain.com/sitemap.xml 

@@ -12,6 +12,13 @@
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="slurp" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="copyright" content="Rachel - Dark Technologist. All Rights Reserved." />
+  <meta name="rights" content="All Rights Reserved" />
+  <meta name="usage-rights" content="Personal viewing only. No AI training use permitted." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/digital-dark-art" />
   <meta property="og:title" content="Digital Dark Art - Human-Made Artistic Rebellion | Rachel - Dark Technologist" />
@@ -40,6 +47,41 @@
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    
+    /* Anti-Scraping Protections */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+    }
+    
+    img, .gallery-image {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+      pointer-events: none;
+    }
+    
+    /* Allow text selection for accessibility */
+    .gallery-description, .modal-description, .detail-value {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
     }
     
     /* Digital Dark Art Theme: Artistic Authenticity Aesthetic */
@@ -399,6 +441,21 @@
       right: 20px;
     }
 
+    /* Copyright Protection Notice */
+    .copyright-notice {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--accent-color);
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-family: 'Orbitron', monospace;
+      z-index: 1000;
+      border: 1px solid var(--accent-color);
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
       .modal-content {
@@ -423,6 +480,13 @@
       
       .project-title {
         font-size: 2.5rem;
+      }
+      
+      .copyright-notice {
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        padding: 8px 12px;
       }
     }
   </style>
@@ -712,8 +776,63 @@
     <div class="modal-nav modal-next" onclick="navigateModal(1)">&#10095;</div>
   </div>
 
+  <!-- Copyright Protection Notice -->
+  <div class="copyright-notice">
+    © Rachel - Dark Technologist<br>
+    All Rights Reserved<br>
+    No AI Training Use
+  </div>
+
   <!-- Artwork Data -->
   <script>
+    // Anti-Scraping JavaScript Protections
+    document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // Disable keyboard shortcuts for saving
+      document.addEventListener('keydown', function(e) {
+        // Prevent Ctrl+S, Ctrl+Shift+S, F12, Ctrl+U, Ctrl+Shift+I
+        if ((e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) ||
+            (e.ctrlKey && e.shiftKey && (e.key === 's' || e.key === 'S' || e.key === 'i' || e.key === 'I')) ||
+            e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // Detect and block common scraping tools
+      const userAgent = navigator.userAgent.toLowerCase();
+      const scrapingTools = [
+        'scraper', 'crawler', 'bot', 'spider', 'wget', 'curl', 'python', 'requests',
+        'selenium', 'puppeteer', 'playwright', 'scrapy', 'beautifulsoup', 'lxml'
+      ];
+      
+      if (scrapingTools.some(tool => userAgent.includes(tool))) {
+        document.body.innerHTML = '<div style="text-align: center; padding: 50px; color: #ff6b35; font-family: Orbitron, monospace;"><h1>ACCESS DENIED</h1><p>Automated scraping is not permitted.</p></div>';
+      }
+      
+      // Block iframe embedding
+      if (window.self !== window.top) {
+        window.top.location = window.self.location;
+      }
+      
+      // Disable developer tools (basic protection)
+      setInterval(function() {
+        const devtools = /./;
+        devtools.toString = function() {
+          this.opened = true;
+        }
+        console.log('%c', devtools);
+        if (devtools.opened) {
+          document.body.innerHTML = '<div style="text-align: center; padding: 50px; color: #ff6b35; font-family: Orbitron, monospace;"><h1>DEVELOPER TOOLS DETECTED</h1><p>Please close developer tools to view this content.</p></div>';
+        }
+      }, 1000);
+    });
+
     const artworkData = {
       'rachelsart1': {
         title: 'Grotesque Monster Portrait',
