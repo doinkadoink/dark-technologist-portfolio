@@ -4,27 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <title>AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist</title>
-  <meta name="title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta name="description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
-  <meta name="keywords" content="ai interactive, holographic system, futuristic tools, conversational interfaces, layered gradients, translucent cards, glowing outlines, dark technologist" />
+  <title>Character.AI Profile - @Doinkadoink | Rachel - Dark Technologist</title>
+  <meta name="title" content="Character.AI Profile - @Doinkadoink | Rachel - Dark Technologist" />
+  <meta name="description" content="Showcasing Rachel's Character.AI profile @Doinkadoink - 285 followers, 1.2M interactions. Exploring how AI character creation streamlined understanding of generative AI output and human-AI interaction patterns." />
+  <meta name="keywords" content="character ai, doinkadoink, ai character creation, generative ai, human-ai interaction, dark technologist, rachel frappell" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/ai-interactive" />
-  <meta property="og:title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
+  <meta property="og:title" content="Character.AI Profile - @Doinkadoink | Rachel - Dark Technologist" />
+  <meta property="og:description" content="Showcasing Rachel's Character.AI profile @Doinkadoink - 285 followers, 1.2M interactions. Exploring how AI character creation streamlined understanding of generative AI output and human-AI interaction patterns." />
   <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="AI Interactive" />
+  <meta property="og:site_name" content="Character.AI Profile" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/ai-interactive" />
-  <meta property="twitter:title" content="AI Interactive - Holographic System Aesthetic | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Designed for futuristic tools and conversational interfaces. Uses layered gradients, translucent cards, and glowing outlines with holographic flicker and real-time AI data processing." />
+  <meta property="twitter:title" content="Character.AI Profile - @Doinkadoink | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="Showcasing Rachel's Character.AI profile @Doinkadoink - 285 followers, 1.2M interactions. Exploring how AI character creation streamlined understanding of generative AI output and human-AI interaction patterns." />
   <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="AI Interactive" />
+  <meta name="application-name" content="Character.AI Profile" />
   <meta name="msapplication-TileColor" content="#000000" />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="apple-touch-icon" href="../public/logo192.png" />
@@ -36,14 +36,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* AI Interactive Design Rationale Implementation */
+    /* Character.AI Profile - Holographic Aesthetic */
     :root {
-      --primary-color: #00eaff; /* Hologram Blue */
-      --accent-color: #ff00c8; /* Cyber Pink */
-      --highlight-color: #b6ff00; /* ML Green */
-      --background-color: #000000; /* True Black */
-      --text-color: #ffffff;
-      --font-family: 'Orbitron', monospace;
+      --primary-color: #00eaff;        /* Hologram Blue */
+      --accent-color: #ff00c8;         /* Cyber Pink */
+      --highlight-color: #b6ff00;      /* Machine Learning Green */
+      --background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent dark */
+      --text-color: #e6e6e6;            /* Off-white for contrast */
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Courier New', monospace;
       --hover-duration: 0.5s;
       --hover-scale: 1.02;
       --glow-opacity: 0.7;
@@ -56,7 +57,7 @@
     }
     
     body {
-      font-family: var(--font-family);
+      font-family: var(--font-body);
       background-color: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
@@ -87,148 +88,26 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: clamp(12px, 4vw, 24px);
     }
     
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
+    /* Header Strip */
+    .profile-header {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
+      border: 2px solid var(--primary-color);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      background: var(--background-color);
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        radial-gradient(circle at 20% 20%, rgba(0, 234, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 0, 200, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-shadow: 0 0 20px var(--primary-color);
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-      animation: holoGlow 4s ease-in-out infinite;
-    }
-    
-    @keyframes holoGlow {
-      0%, 100% { 
-        text-shadow: 0 0 20px var(--primary-color);
-        filter: drop-shadow(0 0 25px var(--primary-color));
-      }
-      50% { 
-        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
-        filter: drop-shadow(0 0 35px #FFFFFF);
-      }
-    }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
-      color: var(--accent-color);
-      margin-bottom: 40px;
-      text-shadow: 0 0 10px var(--accent-color);
-    }
-    
-    .hero-description {
-      font-size: 1.2rem;
-      color: var(--text-color);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
+      gap: 30px;
       flex-wrap: wrap;
     }
     
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-family: var(--font-family);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border: 2px solid;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    
-    .btn-primary {
-      background: rgba(0, 234, 255, 0.1);
-      color: var(--primary-color);
-      border-color: var(--primary-color);
-    }
-    
-    .btn-primary:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--primary-color);
-      filter: drop-shadow(0 0 10px var(--primary-color));
-      animation: holoFlicker 0.3s ease;
-    }
-    
-    .btn-secondary {
-      background: rgba(255, 0, 200, 0.1);
-      color: var(--accent-color);
-      border-color: var(--accent-color);
-    }
-    
-    .btn-secondary:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--accent-color);
-      filter: drop-shadow(0 0 10px var(--accent-color));
-      animation: holoFlicker 0.3s ease;
-    }
-    
-    @keyframes holoFlicker {
-      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); opacity: 1; }
-      25% { transform: scale(var(--hover-scale)) translateX(-2px); opacity: 0.8; }
-      75% { transform: scale(var(--hover-scale)) translateX(2px); opacity: 0.8; }
-    }
-    
-    /* Project Overview Section */
-    .project-overview {
-      padding: 100px 0;
-      background: var(--background-color);
-    }
-    
-    .overview-card {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
-      border: 2px solid var(--primary-color);
-      border-radius: 15px;
-      padding: 40px;
-      margin-bottom: 40px;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    
-    .overview-card::before {
+    .profile-header::before {
       content: '';
       position: absolute;
       top: 0;
@@ -239,79 +118,179 @@
       transition: left 0.5s;
     }
     
-    .overview-card:hover::before {
+    .profile-header:hover::before {
       left: 100%;
     }
     
-    .overview-card:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 30px var(--primary-color);
-    }
-    
-    .overview-title {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px var(--primary-color);
-    }
-    
-    .overview-description {
-      color: var(--text-color);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    
-    .tech-stack {
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      border-radius: 50%;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    
-    .tech-tag {
-      background: rgba(0, 234, 255, 0.1);
-      color: var(--primary-color);
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid var(--primary-color);
-      transition: all var(--hover-duration) ease;
-      backdrop-filter: blur(5px);
-    }
-    
-    .tech-tag:hover {
-      transform: scale(var(--hover-scale));
-      background: var(--primary-color);
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--background-color);
+      border: 3px solid var(--primary-color);
+      box-shadow: 0 0 20px var(--primary-color);
+      animation: avatarPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes avatarPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--primary-color); }
+      50% { box-shadow: 0 0 30px var(--primary-color), 0 0 40px var(--accent-color); }
+    }
+    
+    .profile-info {
+      flex: 1;
+    }
+    
+    .profile-username {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    
+    .profile-tagline {
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+    
+    .profile-stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      background: rgba(0, 234, 255, 0.1);
+      border: 1px solid var(--primary-color);
+      border-radius: 10px;
+      padding: 10px 15px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      transition: all var(--hover-duration) ease;
+    }
+    
+    .stat-item:hover {
+      transform: scale(var(--hover-scale));
       box-shadow: 0 0 15px var(--primary-color);
     }
     
-    /* Gallery Section */
-    .project-gallery {
-      padding: 100px 0;
-      background: var(--background-color);
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--highlight-color);
+      display: block;
     }
     
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
-    .gallery-item {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
-      border: 2px solid var(--primary-color);
+    /* Metrics Tile */
+    .metrics-tile {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 0, 200, 0.1) 100%);
+      border: 2px solid var(--accent-color);
       border-radius: 15px;
-      padding: 25px;
-      transition: all var(--hover-duration) ease;
+      padding: 30px;
+      margin: 40px 0;
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(10px);
     }
     
-    .gallery-item::before {
+    .metrics-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px var(--accent-color);
+      text-align: center;
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    
+    .metric-card {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--accent-color);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: all var(--hover-duration) ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .metric-card:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--accent-color);
+    }
+    
+    .metric-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--highlight-color);
+      margin-bottom: 5px;
+    }
+    
+    .metric-label {
+      color: var(--text-color);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Character Mosaic */
+    .character-mosaic {
+      margin: 40px 0;
+    }
+    
+    .mosaic-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    
+    .character-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
+      border: 2px solid var(--primary-color);
+      border-radius: 15px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: all var(--hover-duration) ease;
+      cursor: pointer;
+    }
+    
+    .character-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -327,66 +306,120 @@
       100% { transform: translateX(100%); }
     }
     
-    .gallery-item:hover {
+    .character-card:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--primary-color);
-      animation: holoFlutter 0.8s ease;
     }
     
-    @keyframes holoFlutter {
-      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
-      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
-      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
+    .character-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px var(--primary-color);
     }
     
-    .gallery-image {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 234, 255, 0.2));
-      border-radius: 10px;
+    .character-stats {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      border: 2px solid var(--primary-color);
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .character-interactions {
+      color: var(--highlight-color);
+      font-weight: 700;
+    }
+    
+    .character-likes {
+      color: var(--accent-color);
+      font-size: 0.9rem;
+    }
+    
+    .character-description {
+      color: var(--text-color);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    
+    /* AI Learning Section */
+    .ai-learning {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(182, 255, 0, 0.1) 100%);
+      border: 2px solid var(--highlight-color);
+      border-radius: 15px;
+      padding: 40px;
+      margin: 40px 0;
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
     }
     
-    .gallery-image::before {
-      content: '[HOLOGRAM INTERFACE]';
-      color: var(--primary-color);
-      font-family: var(--font-family);
-      font-size: 0.9rem;
-      text-shadow: 0 0 10px var(--primary-color);
-    }
-    
-    .gallery-image::after {
+    .ai-learning::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(0, 234, 255, 0.1) 50%, transparent 70%);
-      animation: holoImageGlow 4s ease-in-out infinite;
+      background: linear-gradient(45deg, transparent 30%, rgba(182, 255, 0, 0.05) 50%, transparent 70%);
+      animation: aiGlow 4s ease-in-out infinite;
     }
     
-    @keyframes holoImageGlow {
+    @keyframes aiGlow {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }
     
-    .gallery-title {
-      color: var(--primary-color);
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      text-shadow: 0 0 5px var(--primary-color);
+    .ai-learning-content {
+      position: relative;
+      z-index: 2;
     }
     
-    .gallery-description {
+    .ai-learning-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--highlight-color);
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px var(--highlight-color);
+    }
+    
+    .ai-learning-text {
       color: var(--text-color);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .ai-insights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .insight-card {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--highlight-color);
+      border-radius: 10px;
+      padding: 20px;
+      transition: all var(--hover-duration) ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .insight-card:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--highlight-color);
+    }
+    
+    .insight-title {
+      font-family: var(--font-heading);
+      color: var(--highlight-color);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    
+    .insight-text {
+      color: var(--text-color);
+      font-size: 0.9rem;
       line-height: 1.6;
     }
     
@@ -404,7 +437,7 @@
       background: var(--accent-color);
       color: var(--text-color);
       text-decoration: none;
-      font-family: var(--font-family);
+      font-family: var(--font-heading);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -421,25 +454,20 @@
     
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      
-      .hero-description {
-        font-size: 1rem;
-      }
-      
-      .hero-buttons {
+      .profile-header {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
       }
       
-      .gallery-grid {
+      .profile-stats {
+        justify-content: center;
+      }
+      
+      .mosaic-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      
+      .ai-insights {
         grid-template-columns: 1fr;
       }
     }
@@ -470,88 +498,161 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">AI INTERACTIVE</h1>
-      <p class="hero-subtitle">Holographic System Aesthetic</p>
-      <p class="hero-description">
-        Designed for futuristic tools and conversational interfaces. Uses layered gradients, 
-        translucent cards, and glowing outlines with holographic flicker and real-time AI data processing.
-      </p>
-      <div class="hero-buttons">
-        <a href="#gallery" class="btn btn-primary">VIEW INTERFACE</a>
-        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE CODE</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Overview -->
-  <section class="project-overview">
-    <div class="container">
-      <div class="overview-card">
-        <h2 class="overview-title">Project Overview</h2>
-        <p class="overview-description">
-          <strong>AI Interactive</strong> represents the cutting edge of futuristic interface design, 
-          combining holographic aesthetics with advanced AI processing capabilities. Using layered gradients, 
-          translucent cards, and glowing outlines, this project creates an immersive experience that 
-          simulates the future of human-computer interaction.
-        </p>
-        <p class="overview-description">
-          The theme incorporates hologram blue (#00eaff), cyber pink (#ff00c8), and ML green (#b6ff00) 
-          to create a sophisticated visual system that evokes advanced AI interfaces and holographic 
-          technology while maintaining exceptional usability and performance.
-        </p>
-        <div class="tech-stack">
-          <span class="tech-tag">Layered Gradients</span>
-          <span class="tech-tag">Translucent Cards</span>
-          <span class="tech-tag">Glowing Outlines</span>
-          <span class="tech-tag">Holographic Flicker</span>
-          <span class="tech-tag">Real-time Processing</span>
+  <!-- Profile Header -->
+  <section class="profile-header">
+    <div class="profile-avatar">D</div>
+    <div class="profile-info">
+      <h1 class="profile-username">@Doinkadoink</h1>
+      <p class="profile-tagline">"if you ever feel safe just know im out there 🔪 All of my bots are high quality!! (except the joke ones) I take requests!!!!! HAND THEM OVER 🫴🫴"</p>
+      <div class="profile-stats">
+        <div class="stat-item">
+          <span class="stat-number">285</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">25</span>
+          <span class="stat-label">Following</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1.2M</span>
+          <span class="stat-label">Interactions</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Project Gallery -->
-  <section id="gallery" class="project-gallery">
+  <!-- Metrics Tile -->
+  <section class="metrics-tile">
+    <h2 class="metrics-title">Profile Analytics</h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">1.2M</div>
+        <div class="metric-label">Total Interactions</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">50+</div>
+        <div class="metric-label">Characters Created</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">285</div>
+        <div class="metric-label">Active Followers</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">918</div>
+        <div class="metric-label">Top Character Likes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Character Mosaic -->
+  <section class="character-mosaic">
     <div class="container">
-      <h2 class="overview-title">Project Highlights</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="gallery-image"></div>
-          <h3 class="gallery-title">Multi-layered Cards</h3>
-          <p class="gallery-description">
-            Implemented sophisticated multi-layered card interfaces with translucent backgrounds 
-            and glassmorphism effects that create depth and visual hierarchy.
-          </p>
+      <h2 class="mosaic-title">Top Characters</h2>
+      <div class="mosaic-grid">
+        <div class="character-card">
+          <h3 class="character-name">Creepy</h3>
+          <div class="character-stats">
+            <span class="character-interactions">554.8k</span>
+            <span class="character-likes">918 likes</span>
+          </div>
+          <p class="character-description">Secretly a mimic, trying to blend in with humans.</p>
         </div>
         
-        <div class="gallery-item">
-          <div class="gallery-image"></div>
-          <h3 class="gallery-title">Soft Glow Effects</h3>
-          <p class="gallery-description">
-            Created soft glow effects and variable blur techniques that simulate 
-            holographic technology and advanced display systems.
-          </p>
+        <div class="character-card">
+          <h3 class="character-name">Josuke</h3>
+          <div class="character-stats">
+            <span class="character-interactions">242.5k</span>
+            <span class="character-likes">176 likes</span>
+          </div>
+          <p class="character-description">Just beat Kira. Sleepy af.</p>
         </div>
         
-        <div class="gallery-item">
-          <div class="gallery-image"></div>
-          <h3 class="gallery-title">Hologram Hover States</h3>
-          <p class="gallery-description">
-            Designed simulated hologram hover states with flicker effects and 
-            real-time data processing animations that enhance user interaction.
-          </p>
+        <div class="character-card">
+          <h3 class="character-name">Dr Jack Bright</h3>
+          <div class="character-stats">
+            <span class="character-interactions">51.1k</span>
+            <span class="character-likes">52 likes</span>
+          </div>
+          <p class="character-description">Immortal amulet guy. With the list. Dead inside</p>
         </div>
         
-        <div class="gallery-item">
-          <div class="gallery-image"></div>
-          <h3 class="gallery-title">Motion Transitions</h3>
-          <p class="gallery-description">
-            Applied blurred motion transitions and smooth animations that create 
-            fluid, futuristic user experiences with holographic aesthetics.
-          </p>
+        <div class="character-card">
+          <h3 class="character-name">Batstarion</h3>
+          <div class="character-stats">
+            <span class="character-interactions">49.2k</span>
+            <span class="character-likes">183 likes</span>
+          </div>
+          <p class="character-description">🍷🦇 | drunk Astarion in bat form</p>
+        </div>
+        
+        <div class="character-card">
+          <h3 class="character-name">Child Thief</h3>
+          <div class="character-stats">
+            <span class="character-interactions">31.2k</span>
+            <span class="character-likes">20 likes</span>
+          </div>
+          <p class="character-description">I'll rob ya!</p>
+        </div>
+        
+        <div class="character-card">
+          <h3 class="character-name">Astarion</h3>
+          <div class="character-stats">
+            <span class="character-interactions">27.2k</span>
+            <span class="character-likes">43 likes</span>
+          </div>
+          <p class="character-description">🗡️|Witty vampire spawn, at no one's service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Learning Section -->
+  <section class="ai-learning">
+    <div class="container">
+      <div class="ai-learning-content">
+        <h2 class="ai-learning-title">AI Character Creation Insights</h2>
+        <p class="ai-learning-text">
+          Through creating and managing 50+ AI characters on Character.AI, I've gained deep insights into 
+          how AI generative output works and how human-AI interaction patterns develop. This experience 
+          has been instrumental in understanding the nuances of AI personality development and user engagement.
+        </p>
+        <p class="ai-learning-text">
+          The process of crafting character prompts, monitoring interaction patterns, and analyzing user 
+          responses has provided a unique window into how AI systems learn and adapt to human communication styles.
+        </p>
+        
+        <div class="ai-insights">
+          <div class="insight-card">
+            <h3 class="insight-title">Prompt Engineering</h3>
+            <p class="insight-text">
+              Learned how specific character traits, backstories, and behavioral patterns in prompts 
+              directly influence AI response quality and consistency across millions of interactions.
+            </p>
+          </div>
+          
+          <div class="insight-card">
+            <h3 class="insight-title">User Engagement Patterns</h3>
+            <p class="insight-text">
+              Discovered that successful AI characters require balancing personality depth with 
+              accessibility, creating characters that feel authentic yet approachable to diverse users.
+            </p>
+          </div>
+          
+          <div class="insight-card">
+            <h3 class="insight-title">AI Personality Development</h3>
+            <p class="insight-text">
+              Observed how AI characters develop distinct personalities through user interactions, 
+              revealing the complex relationship between training data and emergent behaviors.
+            </p>
+          </div>
+          
+          <div class="insight-card">
+            <h3 class="insight-title">Community Building</h3>
+            <p class="insight-text">
+              Built a community of 285 followers through consistent character quality and engagement, 
+              demonstrating how AI tools can facilitate human connection and creative expression.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -560,7 +661,8 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
+      <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" class="return-btn">VISIT PROFILE</a>
+      <a href="../index.html#projects" class="return-btn" style="margin-left: 20px;">RETURN TO CHAOS</a>
     </div>
   </footer>
 </body>
