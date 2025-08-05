@@ -37,9 +37,9 @@
 }
 
 .contact-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: var(--accent-color);
-  box-shadow: 0 15px 35px rgba(162, 89, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(162, 89, 255, 0.15);
 }
 
 .contact-icon {

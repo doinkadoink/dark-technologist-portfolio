@@ -101,8 +101,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(162, 89, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(162, 89, 255, 0.15);
   border-color: var(--accent-color);
 }
 

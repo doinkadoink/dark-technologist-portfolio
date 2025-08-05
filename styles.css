@@ -464,9 +464,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
 }
 
 .skill-title {
@@ -523,8 +523,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.15);
     border-color: var(--accent-color);
 }
 
@@ -793,9 +793,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes themedFlutter {
-    0%, 100% { transform: translateY(-10px) scale(1.02) rotate(0deg); }
-    25% { transform: translateY(-10px) scale(1.02) rotate(1deg); }
-    75% { transform: translateY(-10px) scale(1.02) rotate(-1deg); }
+    0%, 100% { transform: translateY(-5px) scale(1.01) rotate(0deg); }
+    25% { transform: translateY(-5px) scale(1.01) rotate(0.3deg); }
+    75% { transform: translateY(-5px) scale(1.01) rotate(-0.3deg); }
 }
 
 /* Scanning line effect for themed cards */
@@ -861,9 +861,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: var(--accent-color);
-    box-shadow: 0 15px 35px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.15);
 }
 
 .contact-icon {

@@ -107,8 +107,8 @@
 
 .detail-item:hover {
   background: rgba(0, 255, 65, 0.1);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 65, 0.15);
 }
 
 .detail-item h3 {
@@ -158,8 +158,8 @@
 
 .features-list li:hover {
   background: rgba(255, 0, 102, 0.1);
-  transform: translateX(5px);
-  box-shadow: 0 5px 15px rgba(255, 0, 102, 0.2);
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(255, 0, 102, 0.15);
 }
 
 .tech-grid {
@@ -182,8 +182,8 @@
 }
 
 .tech-tag:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(0, 255, 65, 0.2);
 }
 
 .gallery-placeholder {
@@ -252,8 +252,8 @@
 
 .stat-item:hover, .collection-item:hover {
   background: rgba(255, 0, 102, 0.1);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255, 0, 102, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 0, 102, 0.15);
 }
 
 .stat-item h3, .collection-item h3 {
@@ -291,8 +291,8 @@
 }
 
 .project-footer .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 65, 0.2);
 }
 
 /* Responsive Design */
