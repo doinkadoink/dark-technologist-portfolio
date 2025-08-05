@@ -4,27 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <title>Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist</title>
-  <meta name="title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
-  <meta name="description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
-  <meta name="keywords" content="AI corruption, web development, machine-generated code, digital rebellion, dark technologist, AI tools, automated development" />
+  <title>Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist</title>
+  <meta name="title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
+  <meta name="description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
+  <meta name="keywords" content="web corruption, digital glitch, matrix green, retro hacking, terminal interface, corrupted systems, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/web-corruption" />
-  <meta property="og:title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
-  <meta property="og:description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
+  <meta property="og:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
+  <meta property="og:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
   <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="Rachel - Dark Technologist" />
+  <meta property="og:site_name" content="Web Corruption" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/web-corruption" />
-  <meta property="twitter:title" content="Web Corruption - AI-Corrupted Web Development | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="AI-corrupted websites using dark AI tools with 95% machine-generated code, demonstrating the future of automated digital rebellion." />
+  <meta property="twitter:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures mimicking corrupted system interfaces." />
   <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
+  <meta name="application-name" content="Web Corruption" />
   <meta name="msapplication-TileColor" content="#000000" />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="apple-touch-icon" href="../public/logo192.png" />
@@ -32,36 +32,36 @@
   <link rel="canonical" href="https://your-domain.com/web-corruption" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../src/App.css" />
-  <link rel="stylesheet" href="../src/index.css" />
-  <link rel="stylesheet" href="../src/components/Header.css" />
-  <link rel="stylesheet" href="../src/pages/ProjectPages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Web Corruption Theme: Matrix/Glitch Aesthetic */
+    /* Web Corruption Design Rationale Implementation */
     :root {
-      --primary-purple: #8A2BE2;
-      --secondary-purple: #4B0082;
-      --neon-green: #00FF41;
-      --dark-green: #003B00;
-      --matrix-bg: #0A0A0A;
-      --glitch-red: #FF0040;
-      
-      /* Shared Motion & Animation Standards (derived from NightKind) */
+      --primary-color: #00ff41; /* Matrix Green */
+      --accent-color: #ff0033; /* Glitch Red */
+      --background-color: #000000; /* Black */
+      --text-color: #ffffff;
+      --font-family: 'VT323', monospace;
       --hover-duration: 0.5s;
       --hover-scale: 1.02;
       --glow-opacity: 0.7;
     }
     
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      background: var(--matrix-bg);
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
       position: relative;
     }
     
+    /* Scanline overlay */
     body::before {
       content: '';
       position: fixed;
@@ -70,8 +70,8 @@
       width: 100%;
       height: 100%;
       background: 
-        linear-gradient(90deg, transparent 98%, var(--neon-green) 100%),
-        linear-gradient(0deg, transparent 98%, var(--neon-green) 100%);
+        linear-gradient(90deg, transparent 98%, var(--primary-color) 100%),
+        linear-gradient(0deg, transparent 98%, var(--primary-color) 100%);
       background-size: 50px 50px;
       opacity: 0.1;
       pointer-events: none;
@@ -84,669 +84,412 @@
       100% { transform: translateY(100%); }
     }
     
-    .project-header {
-      position: relative;
-      overflow: hidden;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
     
-    .project-title {
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       position: relative;
-      font-family: 'Orbitron', monospace;
-      color: var(--neon-green);
+      background: var(--background-color);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 51, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 0 0 20px var(--primary-color);
+      margin-bottom: 20px;
+      letter-spacing: 4px;
       animation: matrixGlow 4s ease-in-out infinite;
-      text-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
     }
     
     @keyframes matrixGlow {
       0%, 100% { 
-        text-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
-        filter: drop-shadow(0 0 25px var(--neon-green));
+        text-shadow: 0 0 20px var(--primary-color);
+        filter: drop-shadow(0 0 25px var(--primary-color));
       }
       50% { 
-        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
-        filter: drop-shadow(0 0 35px #FFFFFF);
+        text-shadow: 0 0 40px var(--accent-color);
+        filter: drop-shadow(0 0 35px var(--accent-color));
       }
     }
     
-    .project-gallery {
-      margin: 60px 0;
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .gallery-grid {
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-family: var(--font-family);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--background-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-primary:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--primary-color);
+      filter: drop-shadow(0 0 10px var(--primary-color));
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    
+    .btn-secondary:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--accent-color);
+      filter: drop-shadow(0 0 10px var(--accent-color));
+    }
+    
+    /* Project Section */
+    .project {
+      padding: 100px 0;
+      background: var(--background-color);
+    }
+    
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 40px;
+      margin-top: 60px;
     }
     
-    .gallery-item {
-      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
-      border: 3px solid var(--neon-green);
-      border-radius: 15px;
-      padding: 25px;
+    .project-card {
+      text-align: center;
+      padding: 40px 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
       transition: all var(--hover-duration) ease;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 59, 0, 0.3) 100%);
     }
     
-    .gallery-item:hover {
-      transform: scale(var(--hover-scale));
-      filter: drop-shadow(0 0 6px var(--neon-green));
-      border-color: var(--primary-purple);
-      animation: matrixFlutter 0.8s ease;
-    }
-    
-    @keyframes matrixFlutter {
-      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
-      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
-      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
-    }
-    
-    .gallery-item::before {
+    .project-card::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--neon-green), var(--primary-purple), var(--neon-green));
-      animation: scanline 3s linear infinite;
-    }
-    
-    @keyframes scanline {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .gallery-image {
+      left: -100%;
       width: 100%;
-      height: 200px;
-      background: linear-gradient(45deg, rgba(26, 15, 46, 0.6), rgba(0, 0, 0, 0.8));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .project-card:hover::before {
+      left: 100%;
+    }
+    
+    .project-card:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--primary-color);
+      border-color: var(--accent-color);
+    }
+    
+    .project-icon {
+      font-size: 3rem;
       margin-bottom: 20px;
-      border: 2px solid var(--neon-green);
-      position: relative;
-      overflow: hidden;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
     }
     
-    .gallery-image::before {
-      content: '[MATRIX SCREENSHOT]';
-      color: var(--neon-green);
-      font-family: 'Orbitron', monospace;
-      font-size: 14px;
-      text-shadow: 0 0 10px var(--neon-green);
-    }
-    
-    .gallery-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
-      animation: matrixImageGlow 4s ease-in-out infinite;
-    }
-    
-    @keyframes matrixImageGlow {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-    
-    .gallery-title {
-      color: var(--neon-green);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Orbitron', monospace;
-      text-shadow: 0 0 10px var(--neon-green);
-    }
-    
-    .gallery-description {
-      color: #EEEEEE;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    
-    .project-stats {
-      background: linear-gradient(135deg, var(--dark-green) 0%, var(--matrix-bg) 100%);
-      border: 2px solid var(--neon-green);
-      border-radius: 15px;
-      padding: 30px;
-      margin: 40px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .project-stats::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
-      animation: matrixScan 3s linear infinite;
-    }
-    
-    @keyframes matrixScan {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 25px;
-    }
-    
-    .stat-card {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 255, 65, 0.1);
-      border-radius: 10px;
-      border: 1px solid var(--neon-green);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .stat-number {
-      color: var(--neon-green);
-      font-size: 2rem;
-      font-weight: 900;
-      font-family: 'Orbitron', monospace;
-      margin-bottom: 5px;
-      text-shadow: 0 0 15px var(--neon-green);
-    }
-    
-    .stat-label {
-      color: #EEEEEE;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    
-    .process-timeline {
-      margin: 40px 0;
-    }
-    
-    .timeline-item {
-      display: flex;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 25px;
-      top: 40px;
-      bottom: -30px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--neon-green), var(--primary-purple));
-      animation: timelinePulse 2s ease-in-out infinite;
-    }
-    
-    @keyframes timelinePulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-    
-    .timeline-item:last-child::before {
-      display: none;
-    }
-    
-    .timeline-marker {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--neon-green), var(--primary-purple));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 30px;
-      flex-shrink: 0;
-      font-weight: 700;
-      color: var(--matrix-bg);
-      font-family: 'Orbitron', monospace;
-      box-shadow: 0 0 20px var(--neon-green);
-      animation: markerGlow 2s ease-in-out infinite;
-    }
-    
-    @keyframes markerGlow {
-      0%, 100% { box-shadow: 0 0 20px var(--neon-green); }
-      50% { box-shadow: 0 0 30px var(--neon-green), 0 0 40px var(--neon-green); }
-    }
-    
-    .timeline-content {
-      flex: 1;
-      background: rgba(0, 59, 0, 0.3);
-      border: 1px solid var(--neon-green);
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-    }
-    
-    .timeline-title {
-      color: var(--neon-green);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Orbitron', monospace;
-      text-shadow: 0 0 8px var(--neon-green);
-    }
-    
-    .timeline-description {
-      color: #EEEEEE;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    
-    .challenges-section {
-      background: linear-gradient(135deg, var(--dark-green) 0%, var(--matrix-bg) 100%);
-      border: 2px solid var(--neon-green);
-      border-radius: 15px;
-      padding: 30px;
-      margin: 40px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .challenges-section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 4px,
-        rgba(0, 255, 65, 0.05) 4px,
-        rgba(0, 255, 65, 0.05) 6px
-      );
-      pointer-events: none;
-      opacity: 0.3;
-    }
-    
-    .challenges-title {
-      color: var(--neon-green);
+    .project-title {
       font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 20px;
-      font-family: 'Orbitron', monospace;
-      text-align: center;
-      text-shadow: 0 0 15px var(--neon-green);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .challenge-item {
-      background: rgba(0, 0, 0, 0.7);
-      border: 1px solid var(--neon-green);
-      border-radius: 10px;
-      padding: 20px;
+      color: var(--primary-color);
       margin-bottom: 15px;
-      position: relative;
-      z-index: 1;
-      backdrop-filter: blur(5px);
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     
-    .challenge-title {
-      color: var(--neon-green);
+    .project-description {
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+    
+    /* Command Line Section */
+    .command-line {
+      background: var(--background-color);
+      border-top: 2px solid var(--primary-color);
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .terminal {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      font-family: var(--font-family);
+      text-align: left;
+    }
+    
+    .terminal-header {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .terminal-line {
+      color: var(--text-color);
+      margin-bottom: 10px;
+      animation: typewriter 2s steps(40, end);
+    }
+    
+    .terminal-line:nth-child(2) { animation-delay: 0.5s; }
+    .terminal-line:nth-child(3) { animation-delay: 1s; }
+    .terminal-line:nth-child(4) { animation-delay: 1.5s; }
+    
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    .cursor {
+      color: var(--primary-color);
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--background-color);
+      border-top: 2px solid var(--primary-color);
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .footer-section p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .glitch-info {
+      background: rgba(0, 255, 65, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--primary-color);
+    }
+    
+    .return-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--accent-color);
+      color: var(--text-color);
+      text-decoration: none;
+      font-family: var(--font-family);
       font-weight: 700;
-      margin-bottom: 8px;
-      font-family: 'Orbitron', monospace;
-      text-shadow: 0 0 8px var(--neon-green);
-    }
-    
-    .challenge-description {
-      color: #EEEEEE;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    
-    .tech-tag {
-      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      border: 1px solid var(--neon-green);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid var(--accent-color);
       transition: all var(--hover-duration) ease;
     }
     
-    .tech-tag:hover {
+    .return-btn:hover {
       transform: scale(var(--hover-scale));
-      filter: drop-shadow(0 0 6px var(--neon-green));
+      box-shadow: 0 0 20px var(--accent-color);
+      filter: drop-shadow(0 0 10px var(--accent-color));
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">WEB CORRUPTION</h1>
+      <p class="hero-subtitle">
+        Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays. 
+        Glitch animations and scanline textures mimic corrupted system interfaces.
+      </p>
+      <div class="hero-buttons">
+        <a href="#project" class="btn btn-primary">VIEW CORRUPTION</a>
+        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">ACCESS TERMINAL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Section -->
+  <section class="project">
     <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="../index.html" aria-label="Rachel - Dark Technologist Home">
-            <span class="logo-text">R</span>
-            <span class="logo-full">ACHEL</span>
-          </a>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-icon">💻</div>
+          <h3 class="project-title">Terminal Interface</h3>
+          <p class="project-description">
+            Terminal font (VT323) with monospaced styling for authentic retro hacking aesthetics. 
+            Used for AI-generated, unstable, or datastream-based projects.
+          </p>
         </div>
-        <nav class="nav" role="navigation" aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li><a href="../index.html#home" class="nav-link" aria-label="Go to Home section">HOME</a></li>
-            <li><a href="../index.html#about" class="nav-link" aria-label="Go to About section">ABOUT</a></li>
-            <li><a href="../index.html#projects" class="nav-link" aria-label="Go to Projects section">PROJECTS</a></li>
-            <li><a href="../index.html#contact" class="nav-link" aria-label="Go to Contact section">CONTACT</a></li>
-          </ul>
-        </nav>
+        
+        <div class="project-card">
+          <div class="project-icon">⚡</div>
+          <h3 class="project-title">Glitch Animations</h3>
+          <p class="project-description">
+            Frame-jitter, glitch flicker, and CRT glow animations that simulate corrupted data reveal 
+            and system instability effects.
+          </p>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-icon">🔧</div>
+          <h3 class="project-title">Command Line</h3>
+          <p class="project-description">
+            Section dividers styled as command line prompts with animated RGB channel offsets 
+            and hover displacements for authentic terminal experience.
+          </p>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Project Page Content -->
-  <div class="project-page">
+  <!-- Command Line Section -->
+  <section class="command-line">
     <div class="container">
-      <nav class="project-nav">
-        <a href="../index.html" class="back-link">← BACK TO CHAOS</a>
-      </nav>
-      
-      <header class="project-header">
-        <h1 class="project-title" data-text="AI-CORRUPTED WEB DEVELOPMENT">AI-CORRUPTED WEB DEVELOPMENT</h1>
-        <p class="project-subtitle">Digital Rebellion Through Machine-Generated Chaos</p>
-      </header>
-      
-      <div class="project-content">
-        <section class="project-overview">
-          <h2>PROJECT OVERVIEW</h2>
+      <div class="terminal">
+        <div class="terminal-header">SYSTEM TERMINAL - WEB CORRUPTION</div>
+        <div class="terminal-line">> Initializing corruption sequence...</div>
+        <div class="terminal-line">> Loading matrix green overlay...</div>
+        <div class="terminal-line">> Applying glitch red accents...</div>
+        <div class="terminal-line">> System corrupted successfully <span class="cursor">_</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Theme Overview</h3>
           <p>
-            Created 3 fully corrupted websites using dark AI tools with 95% machine-generated code, 
-            demonstrating the future of automated digital rebellion. Each site represents a different 
-            aspect of digital anarchy and AI corruption, pushing the boundaries of what's possible 
-            when human creativity meets machine intelligence.
+            Digital glitch aesthetic inspired by retro hacking visuals, using matrix green, 
+            deep red, and black overlays with terminal-style fonts and corrupted system interfaces.
           </p>
-        </section>
+        </div>
         
-        <section class="project-stats">
-          <h2>CORRUPTION STATISTICS</h2>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">95%</div>
-              <div class="stat-label">Machine-Generated Code</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">3</div>
-              <div class="stat-label">Corrupted Websites</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">2.5</div>
-              <div class="stat-label">Weeks Development</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Digital Rebellion</div>
-            </div>
+        <div class="footer-section">
+          <div class="glitch-info">
+            <h3>Glitch Effects</h3>
+            <p>
+              Animations use frame-jitter, glitch flicker, and CRT glow. Hover elements simulate 
+              corrupted data reveal with RGB channel offsets and scanline textures.
+            </p>
           </div>
-        </section>
+        </div>
         
-        <section class="project-details">
-          <h2>DIGITAL CORRUPTION DETAILS</h2>
-          
-          <div class="detail-grid">
-            <div class="detail-item">
-              <h3>AI CORRUPTION LEVEL</h3>
-              <p>95% machine-generated code using advanced AI tools</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>WEBSITES CREATED</h3>
-              <p>3 fully functional corrupted sites with unique themes</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>CORRUPTION TOOLS</h3>
-              <p>Cursor.ai, React, TypeScript, AI-powered development</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>REBELLION STATUS</h3>
-              <p>Active digital anarchy with ongoing corruption</p>
-            </div>
-          </div>
-        </section>
-        
-        <section class="process-timeline">
-          <h2>CORRUPTION PROCESS</h2>
-          
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content">
-              <div class="timeline-title">AI TOOL SELECTION</div>
-              <div class="timeline-description">
-                Researched and selected Cursor.ai as the primary corruption tool, 
-                along with React and TypeScript for maximum digital rebellion potential.
-              </div>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content">
-              <div class="timeline-title">CONCEPTUAL CORRUPTION</div>
-              <div class="timeline-description">
-                Developed three distinct themes: cyberpunk rebellion, digital dystopia, 
-                and AI-enhanced chaos. Each site would showcase different aspects of 
-                machine-generated creativity.
-              </div>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-marker">3</div>
-            <div class="timeline-content">
-              <div class="timeline-title">MACHINE GENERATION</div>
-              <div class="timeline-description">
-                Used AI tools to generate 95% of the codebase, including components, 
-                styling, and functionality. Human oversight focused on creative direction 
-                and quality assurance.
-              </div>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-marker">4</div>
-            <div class="timeline-content">
-              <div class="timeline-title">DIGITAL REFINEMENT</div>
-              <div class="timeline-description">
-                Enhanced AI-generated code with custom animations, dark technologist 
-                aesthetics, and advanced interactive elements for maximum impact.
-              </div>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-marker">5</div>
-            <div class="timeline-content">
-              <div class="timeline-title">DEPLOYMENT & CHAOS</div>
-              <div class="timeline-description">
-                Successfully deployed all three corrupted websites, demonstrating 
-                the future of AI-assisted web development and digital rebellion.
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="project-features">
-          <h2>CORRUPTION FEATURES</h2>
-          <ul class="features-list">
-            <li>AI-powered code generation and corruption</li>
-            <li>Automated digital rebellion systems</li>
-            <li>Dark technologist aesthetic integration</li>
-            <li>Chaos-driven user experience design</li>
-            <li>Machine learning enhanced corruption</li>
-            <li>Automated content generation</li>
-            <li>Advanced CSS animations and effects</li>
-            <li>Responsive design across all devices</li>
-          </ul>
-        </section>
-        
-        <section class="project-gallery">
-          <h2>CORRUPTION GALLERY</h2>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CYBERPUNK REBELLION SITE</div>
-              <div class="gallery-description">
-                The first corrupted website featuring neon aesthetics, glitch effects, 
-                and AI-generated cyberpunk content. Demonstrates machine creativity 
-                in dark digital environments.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">DIGITAL DYSTOPIA PORTAL</div>
-              <div class="gallery-description">
-                Second site showcasing AI-generated dystopian landscapes and corrupted 
-                user interfaces. Features advanced animations and interactive chaos elements.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">AI-ENHANCED CHAOS HUB</div>
-              <div class="gallery-description">
-                Third corrupted website with machine-generated content, dynamic layouts, 
-                and automated rebellion systems. Pushes boundaries of AI-assisted design.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CODE CORRUPTION VIEWER</div>
-              <div class="gallery-description">
-                Interactive tool showing the AI-generated code structure and corruption 
-                patterns. Demonstrates the technical complexity behind the rebellion.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">MACHINE LEARNING DASHBOARD</div>
-              <div class="gallery-description">
-                Real-time display of AI corruption metrics and machine learning 
-                performance. Shows the data behind the digital anarchy.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">REBELLION ANALYTICS</div>
-              <div class="gallery-description">
-                Comprehensive overview of user engagement with corrupted content, 
-                showing the impact of AI-generated digital experiences.
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="challenges-section">
-          <h2 class="challenges-title">CHALLENGES & SOLUTIONS</h2>
-          
-          <div class="challenge-item">
-            <div class="challenge-title">AI CODE QUALITY</div>
-            <div class="challenge-description">
-              Initial AI-generated code required significant refinement for production use. 
-              Solution: Implemented hybrid approach with human oversight and iterative 
-              AI generation cycles.
-            </div>
-          </div>
-          
-          <div class="challenge-item">
-            <div class="challenge-title">PERFORMANCE OPTIMIZATION</div>
-            <div class="challenge-description">
-              Machine-generated code was initially inefficient. Solution: Applied 
-              advanced optimization techniques and caching strategies for smooth performance.
-            </div>
-          </div>
-          
-          <div class="challenge-item">
-            <div class="challenge-title">CREATIVE DIRECTION</div>
-            <div class="challenge-description">
-              Balancing AI creativity with human artistic vision. Solution: Established 
-              clear creative parameters and iterative feedback loops with AI systems.
-            </div>
-          </div>
-          
-          <div class="challenge-item">
-            <div class="challenge-title">DEPLOYMENT COMPLEXITY</div>
-            <div class="challenge-description">
-              Managing multiple corrupted sites with different technologies. Solution: 
-              Implemented automated deployment pipelines and version control systems.
-            </div>
-          </div>
-        </section>
-        
-        <section class="project-technologies">
-          <h2>TECHNOLOGIES OF CHAOS</h2>
-          <div class="tech-grid">
-            <span class="tech-tag">Cursor.ai</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">AI Corruption</span>
-            <span class="tech-tag">Machine Learning</span>
-            <span class="tech-tag">Digital Anarchy</span>
-            <span class="tech-tag">CSS3 Animations</span>
-            <span class="tech-tag">Responsive Design</span>
-          </div>
-        </section>
-        
-        <section class="project-impact">
-          <h2>DIGITAL IMPACT</h2>
+        <div class="footer-section">
+          <h3>Typography</h3>
           <p>
-            These corrupted websites demonstrate the potential for AI to generate functional, 
-            rebellious digital experiences. They challenge traditional web development paradigms 
-            and showcase the future of automated digital creation. The project successfully 
-            achieved 95% machine-generated code while maintaining high quality and user experience.
+            Terminal font (VT323) for authentic retro hacking experience. Monospaced styling 
+            with command line prompt aesthetics throughout the interface.
           </p>
-        </section>
-        
-        <section class="project-future">
-          <h2>FUTURE CORRUPTIONS</h2>
-          <p>
-            Plans for expanding the corruption include more sophisticated AI integration, 
-            advanced chaos algorithms, and deeper digital rebellion systems. Future projects 
-            will explore AI-generated content, automated testing, and machine learning 
-            enhanced user experiences.
-          </p>
-        </section>
+        </div>
       </div>
       
-      <footer class="project-footer">
-        <a href="../index.html#projects" class="btn">RETURN TO CHAOS</a>
-      </footer>
+      <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
-  </div>
-
-  <!-- Smooth Scroll JS for anchor links -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href.length > 1 && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-    });
-  </script>
+  </footer>
 </body>
 </html> 

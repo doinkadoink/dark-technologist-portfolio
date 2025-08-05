@@ -4,27 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <title>Chaos Maps - AI-Enhanced Chaos Maps | Rachel - Dark Technologist</title>
-  <meta name="title" content="Chaos Maps - AI-Enhanced Chaos Maps | Rachel - Dark Technologist" />
-  <meta name="description" content="Intelligent corruption solutions for Fantasy Grounds, incorporating AI for dynamic chaos generation and immersive digital dystopian experiences." />
-  <meta name="keywords" content="Fantasy Grounds, AI integration, chaos maps, D&D corruption, digital dystopia, game modification, AI chaos generation" />
+  <title>Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist</title>
+  <meta name="title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
+  <meta name="description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
+  <meta name="keywords" content="chaos maps, retro grid, arcade aesthetic, 8-bit gaming, pixel fonts, experimental navigation, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.com/chaos-maps" />
-  <meta property="og:title" content="Chaos Maps - AI-Enhanced Chaos Maps | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Intelligent corruption solutions for Fantasy Grounds, incorporating AI for dynamic chaos generation and immersive digital dystopian experiences." />
+  <meta property="og:title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
+  <meta property="og:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
   <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="Rachel - Dark Technologist" />
+  <meta property="og:site_name" content="Chaos Maps" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://your-domain.com/chaos-maps" />
-  <meta property="twitter:title" content="Chaos Maps - AI-Enhanced Chaos Maps | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Intelligent corruption solutions for Fantasy Grounds, incorporating AI for dynamic chaos generation and immersive digital dystopian experiences." />
+  <meta property="twitter:title" content="Chaos Maps - Retro Grid Aesthetic | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="A playful, arcade-inspired interface referencing 1980s gaming consoles. Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation." />
   <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="Rachel - Dark Technologist Portfolio" />
+  <meta name="application-name" content="Chaos Maps" />
   <meta name="msapplication-TileColor" content="#000000" />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="apple-touch-icon" href="../public/logo192.png" />
@@ -32,36 +32,36 @@
   <link rel="canonical" href="https://your-domain.com/chaos-maps" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../src/App.css" />
-  <link rel="stylesheet" href="../src/index.css" />
-  <link rel="stylesheet" href="../src/components/Header.css" />
-  <link rel="stylesheet" href="../src/pages/ProjectPages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Chaos Maps Theme: Retro Arcade/8-bit Aesthetic */
+    /* Chaos Maps Design Rationale Implementation */
     :root {
-      --primary-purple: #8A2BE2;
-      --secondary-purple: #4B0082;
-      --neon-green: #00FF41;
-      --arcade-green: #39FF14;
-      --retro-bg: #0A0A0A;
-      --pixel-border: #00FF00;
-      
-      /* Shared Motion & Animation Standards (derived from NightKind) */
+      --primary-color: #39ff14; /* Arcade Green */
+      --accent-color: #ff5afd; /* Glitch Pink */
+      --background-color: #000000; /* Black */
+      --text-color: #ffffff;
+      --font-family: 'Press Start 2P', monospace;
       --hover-duration: 0.5s;
       --hover-scale: 1.02;
       --glow-opacity: 0.7;
     }
     
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      background: var(--retro-bg);
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
       position: relative;
     }
     
+    /* 8-bit grid background */
     body::before {
       content: '';
       position: fixed;
@@ -70,409 +70,430 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+        linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
       pointer-events: none;
       z-index: -1;
-      animation: retroPulse 4s ease-in-out infinite;
+      animation: gridMove 10s linear infinite;
     }
     
-    @keyframes retroPulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(20px, 20px); }
     }
     
-    .project-header {
-      position: relative;
-      overflow: hidden;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
     
-    .project-title {
-      position: relative;
-      font-family: 'Orbitron', monospace;
-      color: var(--arcade-green);
-      animation: arcadeGlow 4s ease-in-out infinite;
-      text-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
-    }
-    
-    @keyframes arcadeGlow {
-      0%, 100% { 
-        text-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
-        filter: drop-shadow(0 0 25px var(--arcade-green));
-      }
-      50% { 
-        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
-        filter: drop-shadow(0 0 35px #FFFFFF);
-      }
-    }
-    
-    .gallery-item {
-      background: linear-gradient(135deg, rgba(26, 15, 46, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
-      border: 3px solid var(--arcade-green);
-      border-radius: 15px;
-      padding: 25px;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(var(--hover-scale));
-      filter: drop-shadow(0 0 6px var(--arcade-green));
-      border-color: var(--primary-purple);
-      animation: arcadeFlutter 0.8s ease;
-    }
-    
-    @keyframes arcadeFlutter {
-      0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
-      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
-      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
-    }
-    
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--arcade-green), var(--primary-purple), var(--arcade-green));
-      animation: scanline 3s linear infinite;
-    }
-    
-    @keyframes scanline {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .project-gallery {
-      margin: 60px 0;
-    }
-    
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .gallery-item {
-      background: linear-gradient(135deg, #1a0f2e 0%, var(--retro-bg) 100%);
-      border: 3px solid var(--arcade-green);
-      border-radius: 0;
-      padding: 25px;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-      overflow: hidden;
-      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
-    }
-    
-    .gallery-item:hover {
-      transform: scale(var(--hover-scale));
-      filter: drop-shadow(0 0 6px var(--arcade-green));
-      border-color: var(--primary-purple);
-      animation: pixelShift 0.3s ease;
-    }
-    
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--arcade-green), var(--primary-purple), var(--arcade-green));
-      animation: scanline 2s linear infinite;
-    }
-    
-    .gallery-image {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(45deg, rgba(26, 15, 46, 0.6), rgba(10, 10, 10, 0.8));
-      border-radius: 10px;
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      border: 2px solid var(--arcade-green);
+      text-align: center;
       position: relative;
-      overflow: hidden;
+      background: var(--background-color);
     }
     
-    .gallery-image::before {
-      content: '[ARCADE MAP]';
-      color: var(--arcade-green);
-      font-family: 'Orbitron', monospace;
-      font-size: 14px;
-      text-shadow: 0 0 10px var(--arcade-green);
-    }
-    
-        .gallery-image::after {
+    .hero::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.1) 50%, transparent 70%);
-      animation: arcadeImageGlow 4s ease-in-out infinite;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(57, 255, 20, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 90, 253, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
     }
     
-    @keyframes arcadeImageGlow {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
     
-    @keyframes pixelFlicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 0 0 20px var(--primary-color);
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+      animation: arcadeGlow 4s ease-in-out infinite;
     }
     
-    .gallery-title {
-      color: var(--arcade-green);
+    @keyframes arcadeGlow {
+      0%, 100% { 
+        text-shadow: 0 0 20px var(--primary-color);
+        filter: drop-shadow(0 0 25px var(--primary-color));
+      }
+      50% { 
+        text-shadow: 0 0 40px var(--accent-color);
+        filter: drop-shadow(0 0 35px var(--accent-color));
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-family: var(--font-family);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--background-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-primary:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--primary-color);
+      filter: drop-shadow(0 0 10px var(--primary-color));
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    
+    .btn-secondary:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 20px var(--accent-color);
+      filter: drop-shadow(0 0 10px var(--accent-color));
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+      background: var(--background-color);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 40px 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      transition: all var(--hover-duration) ease;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(57, 255, 20, 0.1) 100%);
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(57, 255, 20, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .feature-card:hover::before {
+      left: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: scale(var(--hover-scale));
+      box-shadow: 0 0 30px var(--primary-color);
+      border-color: var(--accent-color);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    
+    .feature-title {
       font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Orbitron', monospace;
-      text-shadow: 0 0 10px var(--arcade-green);
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     
-    .gallery-description {
-      color: #EEEEEE;
+    .feature-description {
+      color: var(--text-color);
+      line-height: 1.8;
       font-size: 0.9rem;
-      line-height: 1.5;
     }
     
-    .tech-tag {
-      background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      border: 1px solid var(--arcade-green);
+    /* Loading Bar Section */
+    .loading-section {
+      background: var(--background-color);
+      border-top: 2px solid var(--primary-color);
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .loading-bar {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      font-family: var(--font-family);
+    }
+    
+    .loading-header {
+      color: var(--primary-color);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      width: 0%;
+      animation: progressLoad 3s ease-in-out infinite;
+    }
+    
+    @keyframes progressLoad {
+      0% { width: 0%; }
+      50% { width: 100%; }
+      100% { width: 0%; }
+    }
+    
+    .loading-text {
+      color: var(--text-color);
+      margin-top: 15px;
+      font-size: 0.8rem;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--background-color);
+      border-top: 2px solid var(--primary-color);
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+      color: var(--primary-color);
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .footer-section p {
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 0.8rem;
+    }
+    
+    .retro-info {
+      background: rgba(57, 255, 20, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--primary-color);
+    }
+    
+    .return-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--accent-color);
+      color: var(--text-color);
+      text-decoration: none;
+      font-family: var(--font-family);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid var(--accent-color);
       transition: all var(--hover-duration) ease;
     }
     
-    .tech-tag:hover {
+    .return-btn:hover {
       transform: scale(var(--hover-scale));
-      filter: drop-shadow(0 0 6px var(--arcade-green));
+      box-shadow: 0 0 20px var(--accent-color);
+      filter: drop-shadow(0 0 10px var(--accent-color));
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">CHAOS MAPS</h1>
+      <p class="hero-subtitle">
+        A playful, arcade-inspired interface referencing 1980s gaming consoles. 
+        Uses pixelated fonts, neon outlines, and animated grid backgrounds for navigation and experimentation.
+      </p>
+      <div class="hero-buttons">
+        <a href="#features" class="btn btn-primary">EXPLORE GRID</a>
+        <a href="https://github.com/rachel-darktech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">PLAY GAME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
     <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="../index.html" aria-label="Rachel - Dark Technologist Home">
-            <span class="logo-text">R</span>
-            <span class="logo-full">ACHEL</span>
-          </a>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎮</div>
+          <h3 class="feature-title">Pixel Borders</h3>
+          <p class="feature-description">
+            Pixel borders and animated background layers that create authentic 8-bit gaming aesthetics 
+            with retro loading bar animations and CRT-style distortions.
+          </p>
         </div>
-        <nav class="nav" role="navigation" aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li><a href="../index.html#home" class="nav-link" aria-label="Go to Home section">HOME</a></li>
-            <li><a href="../index.html#about" class="nav-link" aria-label="Go to About section">ABOUT</a></li>
-            <li><a href="../index.html#projects" class="nav-link" aria-label="Go to Projects section">PROJECTS</a></li>
-            <li><a href="../index.html#contact" class="nav-link" aria-label="Go to Contact section">CONTACT</a></li>
-          </ul>
-        </nav>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Retro Loading</h3>
+          <p class="feature-description">
+            Retro loading bar animations with CRT-style distortions applied to hover icons, 
+            creating an immersive arcade gaming experience.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3 class="feature-title">Grid Patterns</h3>
+          <p class="feature-description">
+            8-bit grid loop patterns with animated background layers that reference classic 
+            gaming consoles and experimental visualizations.
+          </p>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Project Page Content -->
-  <div class="project-page">
+  <!-- Loading Bar Section -->
+  <section class="loading-section">
     <div class="container">
-      <nav class="project-nav">
-        <a href="../index.html" class="back-link">← BACK TO CHAOS</a>
-      </nav>
-      
-      <header class="project-header">
-        <h1 class="project-title">AI-ENHANCED CHAOS MAPS</h1>
-        <p class="project-subtitle">Digital Dystopia in Fantasy Grounds</p>
-      </header>
-      
-      <div class="project-content">
-        <section class="project-overview">
-          <h2>PROJECT OVERVIEW</h2>
+      <div class="loading-bar">
+        <div class="loading-header">LOADING CHAOS MAPS...</div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="loading-text">Initializing retro grid system...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Theme Overview</h3>
           <p>
-            Developed intelligent corruption solutions for Fantasy Grounds, incorporating AI for 
-            dynamic chaos generation and immersive digital dystopian experiences. This project 
-            transforms traditional tabletop gaming into a corrupted digital realm.
+            Playful, arcade-inspired interface referencing 1980s gaming consoles with pixelated fonts, 
+            neon outlines, and animated grid backgrounds for creative tools and experimental visualizations.
           </p>
-        </section>
+        </div>
         
-        <section class="project-details">
-          <h2>CHAOS MAP DETAILS</h2>
-          
-          <div class="detail-grid">
-            <div class="detail-item">
-              <h3>PLATFORM</h3>
-              <p>Fantasy Grounds</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>CHAOS LEVEL</h3>
-              <p>Maximum digital corruption</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>AI INTEGRATION</h3>
-              <p>Dynamic chaos generation</p>
-            </div>
-            
-            <div class="detail-item">
-              <h3>GAME MODIFICATION</h3>
-              <p>D&D corruption systems</p>
-            </div>
+        <div class="footer-section">
+          <div class="retro-info">
+            <h3>Retro Features</h3>
+            <p>
+              Pixel borders, animated background layers, retro loading bar animations, and CRT-style 
+              distortions applied to hover icons for authentic arcade gaming experience.
+            </p>
           </div>
-        </section>
+        </div>
         
-        <section class="project-features">
-          <h2>DYSTOPIAN FEATURES</h2>
-          <ul class="features-list">
-            <li>AI-generated chaos maps and environments</li>
-            <li>Dynamic corruption algorithms for game worlds</li>
-            <li>Automated digital anarchy systems</li>
-            <li>Corrupted D&D rule implementations</li>
-            <li>Real-time chaos generation</li>
-            <li>Immersive dystopian storytelling</li>
-          </ul>
-        </section>
-        
-        <section class="project-technologies">
-          <h2>TECHNOLOGIES OF DESTRUCTION</h2>
-          <div class="tech-grid">
-            <span class="tech-tag">Fantasy Grounds</span>
-            <span class="tech-tag">AI Integration</span>
-            <span class="tech-tag">Chaos Development</span>
-            <span class="tech-tag">D&D Corruption</span>
-            <span class="tech-tag">Digital Anarchy</span>
-            <span class="tech-tag">Game Modification</span>
-          </div>
-        </section>
-        
-        <section class="project-gallery">
-          <h2>CHAOS GALLERY</h2>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CORRUPTED FANTASY GROUNDS</div>
-              <div class="gallery-description">
-                Screenshots showing the transformation of traditional Fantasy Grounds 
-                interface into a corrupted, AI-enhanced digital dystopia.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">AI-GENERATED CHAOS MAPS</div>
-              <div class="gallery-description">
-                Dynamic maps created by AI algorithms, featuring corrupted landscapes 
-                and unpredictable terrain generation for immersive gameplay.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">DIGITAL DYSTOPIAN ENVIRONMENTS</div>
-              <div class="gallery-description">
-                Dark, corrupted environments that challenge traditional D&D settings 
-                and create unique storytelling opportunities.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">CORRUPTED RULE SYSTEMS</div>
-              <div class="gallery-description">
-                Visual representation of how traditional D&D rules are subverted 
-                and corrupted by AI systems for enhanced chaos.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">REAL-TIME CHAOS GENERATION</div>
-              <div class="gallery-description">
-                Live demonstrations of AI algorithms creating dynamic content 
-                and corrupting game worlds in real-time.
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <div class="gallery-image"></div>
-              <div class="gallery-title">PLAYER IMMERSION EXPERIENCES</div>
-              <div class="gallery-description">
-                Documentation of player reactions and experiences within 
-                the corrupted digital environments and chaos systems.
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="project-impact">
-          <h2>GAMING IMPACT</h2>
+        <div class="footer-section">
+          <h3>Typography</h3>
           <p>
-            These chaos maps revolutionize traditional tabletop gaming by introducing AI-driven 
-            corruption and digital anarchy. They challenge conventional gaming paradigms and 
-            create truly unique dystopian experiences.
+            Pixel-style fonts (Press Start 2P) for authentic 8-bit gaming aesthetics with 
+            neon outlines and animated grid backgrounds throughout the interface.
           </p>
-        </section>
-        
-        <section class="project-process">
-          <h2>CORRUPTION PROCESS</h2>
-          <div class="process-steps">
-            <div class="step">
-              <h3>STEP 1: DIGITAL INVASION</h3>
-              <p>AI systems infiltrate traditional game worlds</p>
-            </div>
-            <div class="step">
-              <h3>STEP 2: CHAOS GENERATION</h3>
-              <p>Dynamic algorithms create corrupted environments</p>
-            </div>
-            <div class="step">
-              <h3>STEP 3: RULE CORRUPTION</h3>
-              <p>Traditional D&D rules are subverted and corrupted</p>
-            </div>
-            <div class="step">
-              <h3>STEP 4: DYSTOPIAN IMMERSION</h3>
-              <p>Players experience true digital anarchy</p>
-            </div>
-          </div>
-        </section>
-        
-        <section class="project-future">
-          <h2>FUTURE CHAOS</h2>
-          <p>
-            Expansion plans include more sophisticated AI corruption algorithms, 
-            additional game system integrations, and deeper digital rebellion features.
-          </p>
-        </section>
+        </div>
       </div>
       
-      <footer class="project-footer">
-        <a href="../index.html#projects" class="btn">RETURN TO CHAOS</a>
-      </footer>
+      <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
     </div>
-  </div>
-
-  <!-- Smooth Scroll JS for anchor links -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href.length > 1 && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-    });
-  </script>
+  </footer>
 </body>
 </html> 
