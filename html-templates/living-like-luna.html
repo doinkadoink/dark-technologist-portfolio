@@ -213,6 +213,70 @@
       75% { transform: scale(var(--hover-scale)) translateX(2px); }
     }
     
+    /* Film Section */
+    .film-section {
+      padding: 100px 0;
+      background: var(--background-color);
+    }
+    
+    .film-container {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 215, 0, 0.1) 100%);
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      padding: 40px;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .film-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .film-container:hover::before {
+      left: 100%;
+    }
+    
+    .vimeo-embed {
+      position: relative;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    
+    .vimeo-embed iframe {
+      border-radius: 10px;
+      transition: all var(--hover-duration) ease;
+    }
+    
+    .vimeo-embed:hover iframe {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px var(--accent-color);
+    }
+    
+    .film-info {
+      text-align: center;
+    }
+    
+    .film-description {
+      color: var(--text-color);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .film-description strong {
+      color: var(--accent-color);
+      text-shadow: 0 0 5px var(--accent-color);
+    }
+    
     /* Project Overview Section */
     .project-overview {
       padding: 100px 0;
@@ -479,8 +543,33 @@
         with content sections divided like storyboard panels for short films and visual media presentations.
       </p>
       <div class="hero-buttons">
-        <a href="#gallery" class="btn btn-primary">WATCH FILM</a>
-        <a href="https://vimeo.com/your-film" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VIEW TRAILER</a>
+        <a href="#film" class="btn btn-primary">WATCH FILM</a>
+        <a href="https://vimeo.com/788104000" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VIEW ON VIMEO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Film Section -->
+  <section id="film" class="film-section">
+    <div class="container">
+      <h2 class="overview-title">Watch the Film</h2>
+      <div class="film-container">
+        <div class="vimeo-embed">
+          <iframe 
+            src="https://player.vimeo.com/video/788104000?h=password&autoplay=0&title=0&byline=0&portrait=0&color=ffd700&badge=0&autopause=0&player_id=0&app_id=58479" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="film-info">
+          <p class="film-description">
+            <strong>Password:</strong> alien<br>
+            Experience the cinematic journey of "Living Like Luna" - a visual exploration of dark aesthetics and storytelling through the lens of film.
+          </p>
+        </div>
       </div>
     </div>
   </section>
