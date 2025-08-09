@@ -225,12 +225,20 @@ createScrollProgress();
 
 // Contact Form Modal Functions
 function openContactForm() {
+    console.log('Opening contact form...');
     const modal = document.getElementById('contactFormModal');
+    
+    if (!modal) {
+        console.error('Contact form modal not found!');
+        return;
+    }
+    
     modal.style.display = 'flex';
     // Force reflow before adding class for smooth animation
     modal.offsetHeight;
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
+    console.log('Contact form opened successfully');
 }
 
 function closeContactForm() {
@@ -400,4 +408,38 @@ function showDiscordCopyStatus(message, type) {
             }
         }, 300);
     }, 3000);
-} 
+}
+
+// Make functions globally available for onclick handlers
+window.openContactForm = openContactForm;
+window.closeContactForm = closeContactForm;
+window.copyDiscordUsername = copyDiscordUsername;
+
+// Add event listeners when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up event listeners...');
+    
+    // Contact form buttons
+    const openContactBtn = document.getElementById('openContactBtn');
+    const startRebellionBtn = document.getElementById('startRebellionBtn');
+    
+    if (openContactBtn) {
+        openContactBtn.addEventListener('click', function() {
+            console.log('Open contact button clicked');
+            openContactForm();
+        });
+        console.log('Open contact button listener added');
+    } else {
+        console.error('Open contact button not found');
+    }
+    
+    if (startRebellionBtn) {
+        startRebellionBtn.addEventListener('click', function() {
+            console.log('Start rebellion button clicked');
+            openContactForm();
+        });
+        console.log('Start rebellion button listener added');
+    } else {
+        console.error('Start rebellion button not found');
+    }
+}); 
