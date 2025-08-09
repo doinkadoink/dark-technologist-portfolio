@@ -135,21 +135,69 @@ if (heroStats) {
     statsObserver.observe(heroStats);
 }
 
-// Add mobile menu functionality
+// Mobile menu functionality
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const nav = document.querySelector('.nav');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Toggle mobile menu
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+        
+        // Update aria-expanded attribute for accessibility
+        const isExpanded = this.classList.contains('active');
+        this.setAttribute('aria-expanded', isExpanded);
+        
+        // Prevent body scroll when menu is open
+        if (isExpanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Close mobile menu when clicking on nav links
 navLinks.forEach(link => {
     link.addEventListener('click', function() {
-        // Close mobile menu if open
-        nav.classList.remove('nav-open');
+        if (mobileMenuToggle) {
+            mobileMenuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    if (mobileMenuToggle && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        mobileMenuToggle.classList.remove('active');
+        nav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+});
+
+// Close mobile menu on window resize to desktop size
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768 && mobileMenuToggle) {
+        mobileMenuToggle.classList.remove('active');
+        nav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
 });
 
 // Add keyboard navigation
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        nav.classList.remove('nav-open');
+    if (e.key === 'Escape' && mobileMenuToggle) {
+        mobileMenuToggle.classList.remove('active');
+        nav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     }
 });
 
