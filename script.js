@@ -415,6 +415,9 @@ window.openContactForm = openContactForm;
 window.closeContactForm = closeContactForm;
 window.copyDiscordUsername = copyDiscordUsername;
 
+// Script is loading
+console.log('Script.js is loading...');
+
 // Add event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, setting up event listeners...');
@@ -424,22 +427,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const startRebellionBtn = document.getElementById('startRebellionBtn');
     
     if (openContactBtn) {
-        openContactBtn.addEventListener('click', function() {
+        openContactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             console.log('Open contact button clicked');
             openContactForm();
         });
-        console.log('Open contact button listener added');
-    } else {
-        console.error('Open contact button not found');
+        console.log('Contact form button listener added');
     }
     
     if (startRebellionBtn) {
-        startRebellionBtn.addEventListener('click', function() {
+        startRebellionBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             console.log('Start rebellion button clicked');
             openContactForm();
         });
-        console.log('Start rebellion button listener added');
-    } else {
-        console.error('Start rebellion button not found');
+        console.log('Rebellion button listener added');
     }
 }); 

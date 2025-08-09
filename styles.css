@@ -1002,6 +1002,7 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, transparent, rgba(138, 43, 226, 0.05), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .contact-card:hover::before {
