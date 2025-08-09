@@ -3,46 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <title>Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist</title>
-  <meta name="title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta name="description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
-  <meta name="keywords" content="web corruption, digital glitch, matrix green, retro hacking, terminal interface, glitch animations, scanline textures, dark technologist" />
+  <meta name="theme-color" content="#8B4513" />
+  <title>Chattea - Coffee Chat Community | Rachel - Dark Technologist</title>
+  <meta name="title" content="Chattea - Coffee Chat Community | Rachel - Dark Technologist" />
+  <meta name="description" content="A warm, inviting chat platform that brings coffee lovers together. Connect with locals, discover coffee shops, and brew connections in themed lobbies." />
+  <meta name="keywords" content="chattea, coffee chat, community platform, coffee shops, local connections, chat rooms, coffee lovers, social platform, dark technologist" />
   <meta name="author" content="Rachel - Dark Technologist" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/web-corruption" />
-  <meta property="og:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta property="og:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
+  <meta property="og:url" content="https://your-domain.com/chattea" />
+  <meta property="og:title" content="Chattea - Coffee Chat Community | Rachel - Dark Technologist" />
+  <meta property="og:description" content="A warm, inviting chat platform that brings coffee lovers together. Connect with locals, discover coffee shops, and brew connections in themed lobbies." />
   <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="Web Corruption" />
+  <meta property="og:site_name" content="Chattea" />
   <meta property="og:locale" content="en_US" />
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://your-domain.com/web-corruption" />
-  <meta property="twitter:title" content="Web Corruption - Digital Glitch Aesthetic | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays with glitch animations and scanline textures." />
+  <meta property="twitter:url" content="https://your-domain.com/chattea" />
+  <meta property="twitter:title" content="Chattea - Coffee Chat Community | Rachel - Dark Technologist" />
+  <meta property="twitter:description" content="A warm, inviting chat platform that brings coffee lovers together. Connect with locals, discover coffee shops, and brew connections in themed lobbies." />
   <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="Web Corruption" />
-  <meta name="msapplication-TileColor" content="#000000" />
+  <meta name="application-name" content="Chattea" />
+  <meta name="msapplication-TileColor" content="#8B4513" />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="apple-touch-icon" href="../public/logo192.png" />
   <link rel="manifest" href="../public/manifest.json" />
-  <link rel="canonical" href="https://your-domain.com/web-corruption" />
+  <link rel="canonical" href="https://your-domain.com/html-templates/chattea" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* Web Corruption Design Rationale Implementation */
+    /* Chattea Coffee Theme Design Implementation */
     :root {
-      --primary-color: #00ff41; /* Matrix Green */
-      --accent-color: #ff0033; /* Glitch Red */
-      --background-color: #000000; /* True Black */
-      --text-color: #ffffff;
-      --font-family: 'VT323', monospace;
+      --primary-color: #D2691E; /* Coffee Brown */
+      --accent-color: #F4E4C1; /* Cream */
+      --secondary-color: #8B4513; /* Dark Roast */
+      --background-color: #1a0f0a; /* Deep Coffee Black */
+      --text-color: #F5F5DC; /* Beige */
+      --warm-color: #CD853F; /* Peru/Warm Brown */
+      --font-family: 'Poppins', sans-serif;
+      --heading-font: 'Crimson Text', serif;
       --hover-duration: 0.5s;
       --hover-scale: 1.02;
       --glow-opacity: 0.7;
@@ -63,7 +66,7 @@
       position: relative;
     }
     
-    /* Scanline overlay */
+    /* Coffee Bean Pattern Overlay */
     body::before {
       content: '';
       position: fixed;
@@ -72,18 +75,18 @@
       width: 100%;
       height: 100%;
       background: 
-        linear-gradient(90deg, transparent 98%, var(--primary-color) 100%),
-        linear-gradient(0deg, transparent 98%, var(--primary-color) 100%);
-      background-size: 50px 50px;
-      opacity: 0.1;
+        radial-gradient(circle at 25% 25%, var(--secondary-color) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, var(--warm-color) 1px, transparent 1px);
+      background-size: 60px 60px, 40px 40px;
+      opacity: 0.15;
       pointer-events: none;
       z-index: -1;
-      animation: matrixRain 20s linear infinite;
+      animation: coffeeFloat 30s linear infinite;
     }
     
-    @keyframes matrixRain {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
+    @keyframes coffeeFloat {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-20px) rotate(360deg); }
     }
     
     .container {
@@ -111,8 +114,8 @@
       right: 0;
       bottom: 0;
       background-image: 
-        radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 0, 51, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(210, 105, 30, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(244, 228, 193, 0.1) 0%, transparent 50%);
       pointer-events: none;
       z-index: 1;
     }
@@ -123,31 +126,33 @@
     }
     
     .hero-title {
+      font-family: var(--heading-font);
       font-size: 4rem;
       font-weight: 700;
       color: var(--primary-color);
       text-shadow: 0 0 20px var(--primary-color);
       margin-bottom: 20px;
-      letter-spacing: 4px;
-      animation: matrixGlow 4s ease-in-out infinite;
+      letter-spacing: 3px;
+      animation: coffeeGlow 4s ease-in-out infinite;
     }
     
-    @keyframes matrixGlow {
+    @keyframes coffeeGlow {
       0%, 100% { 
         text-shadow: 0 0 20px var(--primary-color);
         filter: drop-shadow(0 0 25px var(--primary-color));
       }
       50% { 
-        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
-        filter: drop-shadow(0 0 35px #FFFFFF);
+        text-shadow: 0 0 30px var(--accent-color);
+        filter: drop-shadow(0 0 25px var(--accent-color));
       }
     }
     
     .hero-subtitle {
       font-size: 1.5rem;
-      color: var(--accent-color);
+      color: var(--warm-color);
       margin-bottom: 40px;
-      text-shadow: 0 0 10px var(--accent-color);
+      text-shadow: 0 0 10px var(--warm-color);
+      font-style: italic;
     }
     
     .hero-description {
@@ -190,25 +195,25 @@
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 20px var(--primary-color);
       filter: drop-shadow(0 0 10px var(--primary-color));
-      animation: glitchFlicker 0.3s ease;
+      animation: coffeeWarm 0.3s ease;
     }
     
     .btn-secondary {
       background: transparent;
-      color: var(--accent-color);
-      border-color: var(--accent-color);
+      color: var(--warm-color);
+      border-color: var(--warm-color);
     }
     
     .btn-secondary:hover {
       transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--accent-color);
-      filter: drop-shadow(0 0 10px var(--accent-color));
+      box-shadow: 0 0 20px var(--warm-color);
+      filter: drop-shadow(0 0 10px var(--warm-color));
+      background: rgba(205, 133, 63, 0.1);
     }
     
-    @keyframes glitchFlicker {
-      0%, 100% { transform: scale(var(--hover-scale)) translateX(0); }
-      25% { transform: scale(var(--hover-scale)) translateX(-2px); }
-      75% { transform: scale(var(--hover-scale)) translateX(2px); }
+    @keyframes coffeeWarm {
+      0%, 100% { transform: scale(var(--hover-scale)); }
+      50% { transform: scale(var(--hover-scale)) translateY(-2px); }
     }
     
     /* Project Overview Section */
@@ -218,9 +223,9 @@
     }
     
     .overview-card {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 59, 0, 0.3) 100%);
+      background: linear-gradient(135deg, rgba(26, 15, 10, 0.9) 0%, rgba(139, 69, 19, 0.3) 100%);
       border: 2px solid var(--primary-color);
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 40px;
       margin-bottom: 40px;
       position: relative;
@@ -234,7 +239,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(210, 105, 30, 0.2), transparent);
       transition: left 0.5s;
     }
     
@@ -248,6 +253,7 @@
     }
     
     .overview-title {
+      font-family: var(--heading-font);
       font-size: 2rem;
       color: var(--primary-color);
       margin-bottom: 20px;
@@ -299,9 +305,9 @@
     }
     
     .gallery-item {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 59, 0, 0.3) 100%);
+      background: linear-gradient(135deg, rgba(26, 15, 10, 0.9) 0%, rgba(139, 69, 19, 0.3) 100%);
       border: 2px solid var(--primary-color);
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 25px;
       transition: all var(--hover-duration) ease;
       position: relative;
@@ -315,11 +321,11 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
-      animation: scanline 3s linear infinite;
+      background: linear-gradient(90deg, var(--primary-color), var(--warm-color), var(--primary-color));
+      animation: coffeeStream 4s linear infinite;
     }
     
-    @keyframes scanline {
+    @keyframes coffeeStream {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
@@ -327,20 +333,20 @@
     .gallery-item:hover {
       transform: scale(var(--hover-scale));
       box-shadow: 0 0 30px var(--primary-color);
-      animation: matrixFlutter 0.8s ease;
+      animation: coffeeSwirl 0.8s ease;
     }
     
-    @keyframes matrixFlutter {
+    @keyframes coffeeSwirl {
       0%, 100% { transform: scale(var(--hover-scale)) rotate(0deg); }
-      25% { transform: scale(var(--hover-scale)) rotate(0.3deg); }
-      75% { transform: scale(var(--hover-scale)) rotate(-0.3deg); }
+      25% { transform: scale(var(--hover-scale)) rotate(0.5deg); }
+      75% { transform: scale(var(--hover-scale)) rotate(-0.5deg); }
     }
     
     .gallery-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 59, 0, 0.4));
-      border-radius: 10px;
+      background: linear-gradient(45deg, rgba(26, 15, 10, 0.8), rgba(139, 69, 19, 0.4));
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -351,7 +357,7 @@
     }
     
     .gallery-image::before {
-      content: '[MATRIX SCREENSHOT]';
+      content: '[COFFEE SCREENSHOT]';
       color: var(--primary-color);
       font-family: var(--font-family);
       font-size: 14px;
@@ -365,16 +371,17 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
-      animation: matrixImageGlow 4s ease-in-out infinite;
+      background: linear-gradient(45deg, transparent 30%, rgba(210, 105, 30, 0.1) 50%, transparent 70%);
+      animation: coffeeImageGlow 4s ease-in-out infinite;
     }
     
-    @keyframes matrixImageGlow {
+    @keyframes coffeeImageGlow {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }
     
     .gallery-title {
+      font-family: var(--heading-font);
       color: var(--primary-color);
       font-size: 1.3rem;
       margin-bottom: 15px;
@@ -397,21 +404,24 @@
     .return-btn {
       display: inline-block;
       padding: 15px 30px;
-      background: var(--accent-color);
-      color: var(--text-color);
+      background: var(--warm-color);
+      color: var(--background-color);
       text-decoration: none;
       font-family: var(--font-family);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border: 2px solid var(--accent-color);
+      border: 2px solid var(--warm-color);
       transition: all var(--hover-duration) ease;
+      border-radius: 8px;
     }
     
     .return-btn:hover {
       transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--accent-color);
-      filter: drop-shadow(0 0 10px var(--accent-color));
+      box-shadow: 0 0 20px var(--warm-color);
+      filter: drop-shadow(0 0 10px var(--warm-color));
+      background: var(--primary-color);
+      border-color: var(--primary-color);
     }
     
     /* Responsive Design */
@@ -468,15 +478,15 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">WEB CORRUPTION</h1>
-      <p class="hero-subtitle">Digital Glitch Aesthetic</p>
+      <h1 class="hero-title">CHATTEA</h1>
+      <p class="hero-subtitle">Where Coffee Meets Community</p>
       <p class="hero-description">
-        Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays. 
-        Glitch animations and scanline textures mimic corrupted system interfaces.
+        A warm, inviting chat platform that brings coffee lovers together. Connect with locals, 
+        discover coffee shops, and brew meaningful conversations in themed lobbies across your city.
       </p>
       <div class="hero-buttons">
-        <a href="#gallery" class="btn btn-primary">VIEW CORRUPTION</a>
-        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SOURCE CODE</a>
+        <a href="#gallery" class="btn btn-primary">EXPLORE FEATURES</a>
+        <a href="https://doinkadoink.github.io/wk6-digital-design/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">VISIT CHATTEA</a>
       </div>
     </div>
   </section>
@@ -487,20 +497,20 @@
       <div class="overview-card">
         <h2 class="overview-title">Project Overview</h2>
         <p class="overview-description">
-          <strong>Web Corruption</strong> demonstrates the fusion of retro hacking aesthetics with modern web development. 
-          Using terminal-style fonts, glitch animations, and scanline textures, this project creates an immersive 
-          digital environment that simulates corrupted system interfaces and data streams.
+          <strong>Chattea</strong> is a community-driven chat platform designed to connect coffee enthusiasts across local areas. 
+          The platform features location-based lobbies, coffee shop discovery tools, and real-time chat functionality 
+          that brings people together around their shared love of coffee culture.
         </p>
         <p class="overview-description">
-          The theme incorporates matrix green (#00ff41), deep red (#ff0033), and true black (#000000) to create 
-          a high-contrast visual experience that evokes the feeling of accessing forbidden digital realms.
+          Built with a warm, inviting aesthetic using coffee browns (#D2691E), cream tones (#F4E4C1), and rich dark roast colors (#8B4513), 
+          the design creates a cozy digital coffeehouse atmosphere that encourages community interaction and discovery.
         </p>
         <div class="tech-stack">
-          <span class="tech-tag">Terminal Fonts</span>
-          <span class="tech-tag">Glitch Animations</span>
-          <span class="tech-tag">Scanline Textures</span>
-          <span class="tech-tag">Matrix Effects</span>
-          <span class="tech-tag">Retro Hacking</span>
+          <span class="tech-tag">Location Lobbies</span>
+          <span class="tech-tag">Coffee Shop Locator</span>
+          <span class="tech-tag">Real-time Chat</span>
+          <span class="tech-tag">Community Features</span>
+          <span class="tech-tag">Mobile Responsive</span>
         </div>
       </div>
     </div>
@@ -509,41 +519,41 @@
   <!-- Project Gallery -->
   <section id="gallery" class="project-gallery">
     <div class="container">
-      <h2 class="overview-title">Project Highlights</h2>
+      <h2 class="overview-title">Platform Features</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
           <div class="gallery-image"></div>
-          <h3 class="gallery-title">Terminal Interface</h3>
+          <h3 class="gallery-title">Location-Based Lobbies</h3>
           <p class="gallery-description">
-            Implemented VT323 monospace font family to create authentic terminal-style typography 
-            that mimics classic computer interfaces and command-line environments.
+            Chat rooms organized by local areas including Southport, Broadbeach, and Surfers Paradise. 
+            Each lobby shows current active users and capacity to help connect nearby coffee lovers.
           </p>
         </div>
         
         <div class="gallery-item">
           <div class="gallery-image"></div>
-          <h3 class="gallery-title">Glitch Animations</h3>
+          <h3 class="gallery-title">Coffee Shop Discovery</h3>
           <p class="gallery-description">
-            Created frame-jitter, glitch flicker, and CRT glow effects that simulate corrupted 
-            data streams and unstable system interfaces.
+            Built-in locator map feature (in development) that will help users discover local coffee shops, 
+            read reviews, and plan coffee meetups with community members.
           </p>
         </div>
         
         <div class="gallery-item">
           <div class="gallery-image"></div>
-          <h3 class="gallery-title">Scanline Textures</h3>
+          <h3 class="gallery-title">Community Profiles</h3>
           <p class="gallery-description">
-            Applied transparent scanline overlays with animated matrix rain effects to create 
-            depth and movement in the background layers.
+            User profiles with customizable settings, about sections, and help center integration 
+            to build meaningful connections within the coffee community.
           </p>
         </div>
         
         <div class="gallery-item">
           <div class="gallery-image"></div>
-          <h3 class="gallery-title">RGB Channel Offsets</h3>
+          <h3 class="gallery-title">Live Chat Features</h3>
           <p class="gallery-description">
-            Implemented animated RGB channel offsets and hover displacements that create 
-            authentic glitch effects and visual corruption.
+            Real-time messaging system with live servers (coming soon) and game mode chat rooms 
+            for interactive community experiences and coffee-themed discussions.
           </p>
         </div>
       </div>
@@ -553,7 +563,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
+      <a href="../index.html#projects" class="return-btn">RETURN TO PORTFOLIO</a>
     </div>
   </footer>
 </body>

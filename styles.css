@@ -738,36 +738,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Project Card Theme Styles */
-/* Web Corruption - Matrix/Glitch Theme */
-.project-card.web-corruption {
-    border-color: #00FF41;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+/* Chattea - Coffee Community Theme */
+.project-card.chattea {
+    border-color: #D2691E;
+    background: linear-gradient(135deg, #1a0f0a 0%, #2d1a10 100%);
 }
 
-.project-card.web-corruption::before {
-    background: linear-gradient(90deg, #00FF41, #FF0000, #00FF41);
+.project-card.chattea::before {
+    background: linear-gradient(90deg, #D2691E, #CD853F, #D2691E);
 }
 
-.project-card.web-corruption:hover {
-    border-color: #FF0000;
+.project-card.chattea:hover {
+    border-color: #CD853F;
     transform: scale(var(--hover-scale));
-    filter: drop-shadow(0 0 6px #00FF41);
+    filter: drop-shadow(0 0 6px #D2691E);
 }
 
-.project-card.web-corruption .project-category {
-    color: #00FF41;
-    text-shadow: 0 0 10px #00FF41;
+.project-card.chattea .project-category {
+    color: #D2691E;
+    text-shadow: 0 0 10px #D2691E;
 }
 
-.project-card.web-corruption .tech-tag {
-    border-color: #00FF41;
-    color: #00FF41;
+.project-card.chattea .tech-tag {
+    border-color: #D2691E;
+    color: #D2691E;
 }
 
-.project-card.web-corruption .tech-tag:hover {
-    background: #00FF41;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #00FF41;
+.project-card.chattea .tech-tag:hover {
+    background: #D2691E;
+    color: #1a0f0a;
+    box-shadow: 0 0 15px #D2691E;
 }
 
 /* Chaos Maps - Retro Arcade Theme */
@@ -931,7 +931,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Enhanced hover animations for themed cards - using standardized motion system */
-.project-card.web-corruption:hover,
+.project-card.chattea:hover,
 .project-card.chaos-maps:hover,
 .project-card.ai-interactive:hover,
 .project-card.digital-dark-art:hover,
@@ -947,7 +947,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Scanning line effect for themed cards */
-.project-card.web-corruption::after,
+.project-card.chattea::after,
 .project-card.chaos-maps::after,
 .project-card.ai-interactive::after,
 .project-card.digital-dark-art::after,

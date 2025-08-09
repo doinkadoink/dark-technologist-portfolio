@@ -37,26 +37,30 @@ A fusion of nocturnal imagery and alternative fashion, the NightKind page uses n
 
 ---
 
-## 🐞 2. **Web Corruption (Digital Glitch Aesthetic)**
+## ☕ 2. **Chattea (Coffee Community Aesthetic)**
 
-**File:** `html-templates/web-corruption.html`
+**File:** `html-templates/chattea.html`
+**Reference:** [https://doinkadoink.github.io/wk6-digital-design/](https://doinkadoink.github.io/wk6-digital-design/)
 
 **Theme Overview:**
-Inspired by retro hacking visuals, this theme uses matrix green, deep red, and black overlays. Glitch animations and scanline textures mimic corrupted system interfaces. Font selections are monospaced, terminal-style. Used for AI-generated, unstable, or datastream-based projects.
+A warm, inviting coffee-themed design that creates a cozy digital coffeehouse atmosphere. This theme uses rich coffee browns, cream tones, and dark roast colors to connect coffee enthusiasts through location-based chat lobbies and community features. Font selections blend modern sans-serif with elegant serif typography for a welcoming yet sophisticated feel.
 
 **Core Styling Logic:**
 
-* `--primary-color`: `#00ff41` (Matrix Green)
-* `--accent-color`: `#ff0033` (Glitch Red)
-* `--background-layer`: Transparent scanlines + `#000000`
-* Animated RGB channel offsets and hover displacements
+* `--primary-color`: `#D2691E` (Coffee Brown)
+* `--accent-color`: `#F4E4C1` (Cream)
+* `--secondary-color`: `#8B4513` (Dark Roast)
+* `--background-color`: `#1a0f0a` (Deep Coffee Black)
+* `--warm-color`: `#CD853F` (Peru/Warm Brown)
+* Coffee bean pattern overlay with floating animations
 
 **Design Features:**
 
-* Terminal font (e.g. VT323)
-* Animations use frame-jitter, glitch flicker, and CRT glow
-* Hover elements simulate corrupted data reveal
-* Section dividers are styled as command line prompts
+* Poppins sans-serif for body text, Crimson Text serif for headings
+* Gentle hover animations with coffee-inspired swirl effects
+* Coffee bean pattern backgrounds with subtle floating motion
+* Warm glow effects that simulate coffee shop ambiance
+* Rounded corners and soft gradients for approachable design
 
 ---
 
