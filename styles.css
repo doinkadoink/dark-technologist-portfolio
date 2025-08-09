@@ -373,27 +373,37 @@ h1, h2, h3, h4, h5, h6 {
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
+    display: block;
+    margin-bottom: 60px;
+}
+
+.about-top {
     display: flex;
     align-items: flex-start;
     gap: 40px;
+    margin-bottom: 40px;
+}
+
+.about-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-right {
+    flex: 1;
+    text-align: center;
 }
 
 .about-image-container {
-    flex-shrink: 0;
-    text-align: left;
-    margin-bottom: 0;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-text-content {
-    flex: 1;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .about-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 40px;
 }
 
@@ -460,12 +470,59 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+.about-left .about-description {
+    margin: 0 auto;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-left .about-description p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Force center alignment for about description - override everything */
+.about-left .about-description,
+.about-left .about-description p {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Nuclear option - direct class targeting */
+.centered-text {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.center-me {
+    text-align: center !important;
+    margin: 0 auto 20px auto !important;
+    padding: 0 !important;
+}
+
+.center-me * {
+    text-align: center !important;
+}
+
+.about-description-full {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .about-image-container {
-    text-align: left;
-    margin-bottom: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .about-image {
@@ -488,10 +545,10 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 60px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skill-card {
@@ -1083,6 +1140,11 @@ h1, h2, h3, h4, h5, h6 {
     .about-content {
         flex-direction: column;
         gap: 30px;
+        text-align: center;
+    }
+    
+    .about-right {
+        text-align: center;
     }
     
     .about-image {
