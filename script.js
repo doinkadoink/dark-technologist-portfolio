@@ -221,4 +221,100 @@ function createScrollProgress() {
     });
 }
 
-createScrollProgress(); 
+createScrollProgress();
+
+// Contact Form Modal Functions
+function openContactForm() {
+    const modal = document.getElementById('contactFormModal');
+    modal.style.display = 'flex';
+    // Force reflow before adding class for smooth animation
+    modal.offsetHeight;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactForm() {
+    const modal = document.getElementById('contactFormModal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
+    
+    // Reset form
+    document.getElementById('contactForm').reset();
+    hideFormStatus();
+}
+
+function showFormStatus(message, type) {
+    const statusDiv = document.getElementById('formStatus');
+    statusDiv.textContent = message;
+    statusDiv.className = `form-status ${type}`;
+    statusDiv.style.display = 'block';
+}
+
+function hideFormStatus() {
+    const statusDiv = document.getElementById('formStatus');
+    statusDiv.style.display = 'none';
+}
+
+// Handle contact form submission
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const formObject = Object.fromEntries(formData);
+    
+    // Show loading status
+    showFormStatus('Sending encrypted message...', 'loading');
+    
+    try {
+        // For now, we'll use Formspree (free service for handling form submissions)
+        // You'll need to replace this URL with your actual Formspree endpoint
+        // Alternative: Use EmailJS or implement your own backend
+        
+        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formObject.name,
+                email: formObject.email,
+                subject: formObject.subject,
+                message: formObject.message,
+                _replyto: formObject.email,
+                _subject: `Dark Tech Portfolio Contact: ${formObject.subject}`
+            })
+        });
+        
+        if (response.ok) {
+            showFormStatus('Message sent successfully! Expect a response from the dark side soon.', 'success');
+            setTimeout(() => {
+                closeContactForm();
+            }, 3000);
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        console.error('Error sending form:', error);
+        showFormStatus('Failed to send message. Please try again or contact directly via Discord.', 'error');
+    }
+});
+
+// Close modal when clicking outside of it
+document.getElementById('contactFormModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeContactForm();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('contactFormModal');
+        if (modal.style.display === 'flex') {
+            closeContactForm();
+        }
+    }
+}); 
