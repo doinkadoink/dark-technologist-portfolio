@@ -273,7 +273,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
         // You'll need to replace this URL with your actual Formspree endpoint
         // Alternative: Use EmailJS or implement your own backend
         
-        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        const response = await fetch('https://formspree.io/f/xyzplykg', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -317,4 +317,87 @@ document.addEventListener('keydown', function(e) {
             closeContactForm();
         }
     }
-}); 
+});
+
+// Copy Discord username to clipboard
+function copyDiscordUsername() {
+    const discordId = '389694826456547328';
+    
+    // Use the modern clipboard API if available
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(discordId).then(() => {
+            showDiscordCopyStatus('Discord ID copied to clipboard!', 'success');
+        }).catch(() => {
+            fallbackCopyTextToClipboard(discordId);
+        });
+    } else {
+        fallbackCopyTextToClipboard(discordId);
+    }
+}
+
+// Fallback for older browsers
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showDiscordCopyStatus('Discord ID copied to clipboard!', 'success');
+    } catch (err) {
+        showDiscordCopyStatus('Failed to copy. Please manually copy: 389694826456547328', 'error');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Show copy status message
+function showDiscordCopyStatus(message, type) {
+    // Remove any existing status message
+    const existingStatus = document.querySelector('.discord-copy-status');
+    if (existingStatus) {
+        existingStatus.remove();
+    }
+    
+    // Create new status message
+    const statusDiv = document.createElement('div');
+    statusDiv.className = `discord-copy-status ${type}`;
+    statusDiv.textContent = message;
+    statusDiv.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: ${type === 'success' ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.1)'};
+        border: 1px solid ${type === 'success' ? '#00ff00' : '#ff0000'};
+        color: ${type === 'success' ? '#00ff00' : '#ff0000'};
+        padding: 1rem;
+        border-radius: 5px;
+        z-index: 1001;
+        font-weight: 600;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        transform: translateY(100px);
+        transition: transform 0.3s ease;
+    `;
+    
+    document.body.appendChild(statusDiv);
+    
+    // Animate in
+    setTimeout(() => {
+        statusDiv.style.transform = 'translateY(0)';
+    }, 10);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        statusDiv.style.transform = 'translateY(100px)';
+        setTimeout(() => {
+            if (statusDiv.parentNode) {
+                statusDiv.parentNode.removeChild(statusDiv);
+            }
+        }, 300);
+    }, 3000);
+} 
