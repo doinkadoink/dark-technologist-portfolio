@@ -1,0 +1,29 @@
+# Axe Accessibility Report Screenshot
+
+This file is a placeholder for the axe-core accessibility audit screenshot.
+
+## Screenshot Requirements
+- **Content**: Full axe-core accessibility audit results
+- **Tool**: axe-core browser extension or CLI output
+- **Metrics**: Accessibility violations and recommendations
+- **Format**: PNG screenshot of audit results
+
+## Expected Results
+- **Violations**: 0 critical or high-severity issues
+- **Passes**: All accessibility checks pass
+- **Incomplete**: Minimal incomplete tests
+- **WCAG Compliance**: AA level compliance
+
+## When to Capture
+- After running axe-core audit
+- Before submission deadline
+- Ensure all accessibility issues are resolved
+- Test on production build
+
+## File Naming Convention
+- **Format**: PNG for quality
+- **Size**: Optimize for web (under 1MB)
+- **Description**: Include date and accessibility status
+
+---
+*Placeholder for compliance evidence - replace with actual axe accessibility screenshot* 

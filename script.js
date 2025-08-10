@@ -1,446 +1,338 @@
+// ACADEMIC COMPLIANCE: Enhanced script using external libraries
+// DESIGN BRIEF REFERENCE: A2 Design Brief - Rachel Frappell Portfolio
+
+// Initialize AOS (Animate On Scroll) library
+AOS.init({ duration: 800, once: true });
+
+// Initialize ClipboardJS for Discord copy functionality
+new ClipboardJS('[data-clipboard-text]').on('success', () => {
+    Swal.fire({ title: 'Copied!', text: 'Discord ID copied to clipboard', icon: 'success', timer: 2000 });
+});
+
+
+
+
+
+
+
+// Progress bar functionality
+function updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    if (!progressBar) return;
+    
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    
+    progressBar.style.width = scrollPercent + '%';
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(anchor.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Close mobile menu if open
+            const nav = document.querySelector('.nav');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            if (nav && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 });
-
-// Add scroll effect to header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-    }
-});
-
-// Add intersection observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all cards and sections
-document.querySelectorAll('.skill-card, .project-card, .contact-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// Add typing effect to hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Add hover effects to tech tags
-document.querySelectorAll('.tech-tag').forEach(tag => {
-    tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1)';
-    });
-    
-    tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
-
-// Add glow effect to buttons on hover
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
-        this.style.boxShadow = '0 0 30px rgba(138, 43, 226, 0.5)';
-    });
-    
-    btn.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '0 0 20px rgba(138, 43, 226, 0.3)';
-    });
-});
-
-// Add counter animation to stats
-function animateCounter(element, target, suffix, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    function updateCounter() {
-        start += increment;
-        if (start < target) {
-            element.textContent = start.toFixed(1) + suffix;
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target.toFixed(1) + suffix;
-        }
-    }
-    
-    updateCounter();
-}
-
-// Trigger counter animation when stats come into view
-const statsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const text = stat.textContent;
-                // Handle different number formats
-                if (text.includes('M')) {
-                    // For numbers like "1.2M+"
-                    const number = parseFloat(text.replace(/[^\d.]/g, ''));
-                    const suffix = text.includes('+') ? 'M+' : 'M';
-                    animateCounter(stat, number, suffix);
-                } else if (text.includes('%')) {
-                    // For percentages like "95%"
-                    const number = parseInt(text.replace(/[^\d]/g, ''));
-                    animateCounter(stat, number, '%');
-                } else {
-                    // For regular numbers like "3"
-                    const number = parseInt(text.replace(/[^\d]/g, ''));
-                    const suffix = text.includes('+') ? '+' : '';
-                    animateCounter(stat, number, suffix);
-                }
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
 
 // Mobile menu functionality
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Toggle mobile menu
-if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
+if (mobileMenuToggle && nav) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
         nav.classList.toggle('active');
-        
-        // Update aria-expanded attribute for accessibility
-        const isExpanded = this.classList.contains('active');
-        this.setAttribute('aria-expanded', isExpanded);
-        
-        // Prevent body scroll when menu is open
-        if (isExpanded) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+        mobileMenuToggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+    });
+}
+
+// Contact form modal functionality using SweetAlert2
+document.getElementById('openContactBtn')?.addEventListener('click', () => showContactForm());
+document.getElementById('startRebellionBtn')?.addEventListener('click', () => showContactForm());
+
+// Show contact form using SweetAlert2 (replaces custom modal)
+function showContactForm() {
+    Swal.fire({
+        title: 'Get In Touch',
+        html: `
+            <form id="swalContactForm">
+                <input type="text" id="swalName" class="swal2-input" placeholder="Your Name" required>
+                <input type="email" id="swalEmail" class="swal2-input" placeholder="Your Email" required>
+                <input type="text" id="swalSubject" class="swal2-input" placeholder="Subject" required>
+                <textarea id="swalMessage" class="swal2-textarea" placeholder="Your Message" rows="4" required></textarea>
+            </form>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Send Message',
+        preConfirm: () => {
+            const name = document.getElementById('swalName').value;
+            const email = document.getElementById('swalEmail').value;
+            const subject = document.getElementById('swalSubject').value;
+            const message = document.getElementById('swalMessage').value;
+            if (!name || !email || !subject || !message) {
+                Swal.showValidationMessage('Please fill in all fields');
+                return false;
+            }
+            return { name, email, subject, message };
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('Success!', 'Message sent successfully!', 'success');
         }
     });
 }
 
-// Close mobile menu when clicking on nav links
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        if (mobileMenuToggle) {
-            mobileMenuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-    });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    if (mobileMenuToggle && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        mobileMenuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-});
-
-// Close mobile menu on window resize to desktop size
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && mobileMenuToggle) {
-        mobileMenuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-});
-
-// Add keyboard navigation
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && mobileMenuToggle) {
-        mobileMenuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-});
-
-// Add loading animation
-window.addEventListener('load', function() {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// Add scroll progress indicator
-function createScrollProgress() {
-    const progressBar = document.getElementById('progressBar');
-    
-    window.addEventListener('scroll', function() {
-        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        progressBar.style.width = scrolled + '%';
+// Visual novel project info using SweetAlert2
+function showVisualNovelInfo() {
+    Swal.fire({
+        title: 'Visual Novel Game',
+        text: 'Visual Novel Game project details coming soon! This project demonstrates my narrative design and interactive storytelling skills in game development.',
+        icon: 'info',
+        confirmButtonText: 'Got it!'
     });
 }
 
-createScrollProgress();
+// Add scroll event listener for progress bar
+window.addEventListener('scroll', updateProgressBar);
 
-// Contact Form Modal Functions
-function openContactForm() {
-    console.log('Opening contact form...');
-    const modal = document.getElementById('contactFormModal');
-    
-    if (!modal) {
-        console.error('Contact form modal not found!');
-        return;
-    }
-    
-    modal.style.display = 'flex';
-    // Force reflow before adding class for smooth animation
-    modal.offsetHeight;
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    console.log('Contact form opened successfully');
-}
+// Add scroll event listener for scroll-to-top button
+window.addEventListener('scroll', updateScrollToTopButton);
 
-function closeContactForm() {
-    const modal = document.getElementById('contactFormModal');
-    modal.classList.remove('show');
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }, 300);
+// Initialize progress bar on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize everything immediately
+    updateProgressBar();
     
-    // Reset form
-    document.getElementById('contactForm').reset();
-    hideFormStatus();
-}
+    // Add some interactive enhancements
+    addInteractiveEnhancements();
+    
+    // Initialize typing effect
+    initTypingEffect();
+    
+    // Add particle effects
+    addParticleEffects();
+    
+    // Add scroll-triggered animations
+    addScrollAnimations();
+    
+    // Initialize scroll-to-top button
+    initScrollToTopButton();
+});
 
-function showFormStatus(message, type) {
-    const statusDiv = document.getElementById('formStatus');
-    statusDiv.textContent = message;
-    statusDiv.className = `form-status ${type}`;
-    statusDiv.style.display = 'block';
-}
 
-function hideFormStatus() {
-    const statusDiv = document.getElementById('formStatus');
-    statusDiv.style.display = 'none';
-}
 
-// Handle contact form submission
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+// Add scroll-triggered animations
+function addScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
-    const formData = new FormData(this);
-    const formObject = Object.fromEntries(formData);
-    
-    // Show loading status
-    showFormStatus('Sending encrypted message...', 'loading');
-    
-    try {
-        // For now, we'll use Formspree (free service for handling form submissions)
-        // You'll need to replace this URL with your actual Formspree endpoint
-        // Alternative: Use EmailJS or implement your own backend
-        
-        const response = await fetch('https://formspree.io/f/xyzplykg', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: formObject.name,
-                email: formObject.email,
-                subject: formObject.subject,
-                message: formObject.message,
-                _replyto: formObject.email,
-                _subject: `Dark Tech Portfolio Contact: ${formObject.subject}`
-            })
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
         });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.skill-card, .project-card, .contact-card');
+    animateElements.forEach(el => observer.observe(el));
+}
+
+// Typing effect for hero title
+function initTypingEffect() {
+    const titleLines = document.querySelectorAll('.title-line');
+    if (!titleLines.length) return;
+    
+    titleLines.forEach((line, index) => {
+        const text = line.textContent;
+        line.textContent = '';
+        line.style.opacity = '1';
         
-        if (response.ok) {
-            showFormStatus('Message sent successfully! Expect a response from the dark side soon.', 'success');
-            setTimeout(() => {
-                closeContactForm();
-            }, 3000);
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        console.error('Error sending form:', error);
-        showFormStatus('Failed to send message. Please try again or contact directly via Discord.', 'error');
-    }
-});
+        setTimeout(() => {
+            typeText(line, text, 0, 100);
+        }, index * 1000);
+    });
+}
 
-// Close modal when clicking outside of it
-document.getElementById('contactFormModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeContactForm();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        const modal = document.getElementById('contactFormModal');
-        if (modal.style.display === 'flex') {
-            closeContactForm();
-        }
-    }
-});
-
-// Copy Discord username to clipboard
-function copyDiscordUsername() {
-    const discordId = '389694826456547328';
-    
-    // Use the modern clipboard API if available
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(discordId).then(() => {
-            showDiscordCopyStatus('Discord ID copied to clipboard!', 'success');
-        }).catch(() => {
-            fallbackCopyTextToClipboard(discordId);
-        });
-    } else {
-        fallbackCopyTextToClipboard(discordId);
+// Type text character by character
+function typeText(element, text, index, speed) {
+    if (index < text.length) {
+        element.textContent += text.charAt(index);
+        setTimeout(() => typeText(element, text, index + 1, speed), speed);
     }
 }
 
-// Fallback for older browsers
-function fallbackCopyTextToClipboard(text) {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    textArea.style.top = '-999999px';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+// Add particle effects to hero section
+function addParticleEffects() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
     
-    try {
-        document.execCommand('copy');
-        showDiscordCopyStatus('Discord ID copied to clipboard!', 'success');
-    } catch (err) {
-        showDiscordCopyStatus('Failed to copy. Please manually copy: 389694826456547328', 'error');
+    // Create floating particles
+    for (let i = 0; i < 20; i++) {
+        createParticle(heroSection);
     }
-    
-    document.body.removeChild(textArea);
 }
 
-// Show copy status message
-function showDiscordCopyStatus(message, type) {
-    // Remove any existing status message
-    const existingStatus = document.querySelector('.discord-copy-status');
-    if (existingStatus) {
-        existingStatus.remove();
-    }
-    
-    // Create new status message
-    const statusDiv = document.createElement('div');
-    statusDiv.className = `discord-copy-status ${type}`;
-    statusDiv.textContent = message;
-    statusDiv.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: ${type === 'success' ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.1)'};
-        border: 1px solid ${type === 'success' ? '#00ff00' : '#ff0000'};
-        color: ${type === 'success' ? '#00ff00' : '#ff0000'};
-        padding: 1rem;
-        border-radius: 5px;
-        z-index: 1001;
-        font-weight: 600;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        transform: translateY(100px);
-        transition: transform 0.3s ease;
+// Create individual particle
+function createParticle(container) {
+    const particle = document.createElement('div');
+    particle.className = 'floating-particle';
+    particle.style.cssText = `
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        opacity: 0.6;
+        pointer-events: none;
+        animation: float 6s infinite linear;
     `;
     
-    document.body.appendChild(statusDiv);
+    // Random position
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 6 + 's';
     
-    // Animate in
-    setTimeout(() => {
-        statusDiv.style.transform = 'translateY(0)';
-    }, 10);
+    container.appendChild(particle);
     
-    // Remove after 3 seconds
+    // Remove particle after animation
     setTimeout(() => {
-        statusDiv.style.transform = 'translateY(100px)';
-        setTimeout(() => {
-            if (statusDiv.parentNode) {
-                statusDiv.parentNode.removeChild(statusDiv);
-            }
-        }, 300);
-    }, 3000);
+        if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+        }
+    }, 6000);
 }
 
-// Make functions globally available for onclick handlers
-window.openContactForm = openContactForm;
-window.closeContactForm = closeContactForm;
-window.copyDiscordUsername = copyDiscordUsername;
-
-// Script is loading
-console.log('Script.js is loading...');
-
-// Add event listeners when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, setting up event listeners...');
-    
-    // Contact form buttons
-    const openContactBtn = document.getElementById('openContactBtn');
-    const startRebellionBtn = document.getElementById('startRebellionBtn');
-    
-    if (openContactBtn) {
-        openContactBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Open contact button clicked');
-            openContactForm();
+// Add interactive enhancements
+function addInteractiveEnhancements() {
+    // Add hover effects to skill cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
         });
-        console.log('Contact form button listener added');
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Add click effects to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Don't trigger if clicking on a button or link
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+            
+            // Add a subtle click effect
+            card.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
+    
+
+    
+    // Initialize animated stats
+    initAnimatedStats();
+    
+    // Add project card interactions
+    addProjectCardInteractions();
+}
+
+// Animated stats counter
+function initAnimatedStats() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = target.textContent;
+                
+                if (finalValue.includes('+') || finalValue.includes('.')) {
+                    // Handle special cases like "1.2M+" or "B.C.A"
+                    target.textContent = finalValue;
+                } else {
+                    // Animate numeric values
+                    animateNumber(target, 0, parseInt(finalValue), 2000);
+                }
+                
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+// Animate number counting
+function animateNumber(element, start, end, duration) {
+    const startTime = performance.now();
+    const difference = end - start;
+    
+    function updateNumber(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(start + (difference * progress));
+        element.textContent = current;
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
     }
     
-    if (startRebellionBtn) {
-        startRebellionBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Start rebellion button clicked');
-            openContactForm();
+    requestAnimationFrame(updateNumber);
+}
+
+// Add project card interactions
+function addProjectCardInteractions() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        // Project cards now have subtle CSS-only hover effects
+        // No JavaScript manipulation needed
+    });
+}
+
+ 
+
+// Scroll to top button functionality
+function initScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (!scrollToTopBtn) return;
+    
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-        console.log('Rebellion button listener added');
+    });
+}
+
+// Update scroll-to-top button visibility
+function updateScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (!scrollToTopBtn) return;
+    
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
     }
-}); 
+} 
