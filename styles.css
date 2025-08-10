@@ -930,13 +930,46 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 15px #ffff33;
 }
 
+/* Visual Novel - Game Development Theme */
+.project-card.visual-novel {
+    border-color: #ff6b35;
+    background: linear-gradient(135deg, #000000 0%, #1a0f0f 100%);
+}
+
+.project-card.visual-novel::before {
+    background: linear-gradient(90deg, #ff6b35, #00d4aa, #ff6b35);
+}
+
+.project-card.visual-novel:hover {
+    border-color: #00d4aa;
+    transform: scale(var(--hover-scale));
+    filter: drop-shadow(0 0 6px #ff6b35);
+}
+
+.project-card.visual-novel .project-category {
+    color: #ff6b35;
+    text-shadow: 0 0 10px #ff6b35;
+}
+
+.project-card.visual-novel .tech-tag {
+    border-color: #00d4aa;
+    color: #00d4aa;
+}
+
+.project-card.visual-novel .tech-tag:hover {
+    background: #ff6b35;
+    color: #000000;
+    box-shadow: 0 0 15px #ff6b35;
+}
+
 /* Enhanced hover animations for themed cards - using standardized motion system */
 .project-card.chattea:hover,
 .project-card.chaos-maps:hover,
 .project-card.ai-interactive:hover,
 .project-card.digital-dark-art:hover,
 .project-card.living-like-luna:hover,
-.project-card.nightkind:hover {
+.project-card.nightkind:hover,
+.project-card.visual-novel:hover {
     animation: themedFlutter 0.5s ease;
 }
 
@@ -952,7 +985,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-card.ai-interactive::after,
 .project-card.digital-dark-art::after,
 .project-card.living-like-luna::after,
-.project-card.nightkind::after {
+.project-card.nightkind::after,
+.project-card.visual-novel::after {
     content: '';
     position: absolute;
     top: 0;
