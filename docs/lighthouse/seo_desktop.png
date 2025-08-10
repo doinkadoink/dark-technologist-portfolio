@@ -1,0 +1,30 @@
+# Desktop Lighthouse SEO Screenshot
+
+This file is a placeholder for the desktop Lighthouse SEO audit screenshot.
+
+## Screenshot Requirements
+- **Content**: Full Lighthouse SEO audit results
+- **Device**: Desktop simulation
+- **Metrics**: SEO best practices and optimization scores
+- **Format**: PNG screenshot of browser results
+
+## Expected Metrics
+- **SEO Score**: Target ≥ 90
+- **Meta Tags**: Proper title and description
+- **Structured Data**: JSON-LD implementation
+- **Canonical URLs**: Proper canonical implementation
+- **Image Alt Text**: All images have alt attributes
+
+## When to Capture
+- After running Lighthouse CI
+- Before submission deadline
+- Ensure all SEO elements are complete
+- Test on production build
+
+## File Naming Convention
+- **Format**: PNG for quality
+- **Size**: Optimize for web (under 1MB)
+- **Description**: Include date and SEO score
+
+---
+*Placeholder for compliance evidence - replace with actual Lighthouse SEO screenshot* 

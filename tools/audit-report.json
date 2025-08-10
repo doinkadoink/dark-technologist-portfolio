@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-08-10T08:59:53.232Z",
+  "siteUrl": "https://doinkadoink.github.io/dark-technologist-portfolio/",
+  "analysis": {
+    "htmlStructure": {
+      "totalImages": 0,
+      "missingAltText": 0,
+      "missingLazyLoading": 0,
+      "landmarks": 0,
+      "h1Count": 0,
+      "singleH1": false,
+      "htmlFiles": 1
+    },
+    "accessibility": {
+      "ariaLabels": 0,
+      "semanticTags": 0,
+      "formLabels": 0,
+      "landmarksPresent": false
+    },
+    "seo": {
+      "hasTitle": true,
+      "hasMetaDescription": true,
+      "hasCanonical": false,
+      "hasOpenGraph": false,
+      "hasRobots": false,
+      "metaDescriptionLength": 107,
+      "metaDescriptionOptimal": false
+    },
+    "performance": {
+      "inlineStyles": 0,
+      "inlineScripts": 1,
+      "linkedCSS": 2,
+      "linkedJS": 1,
+      "separationOfConcerns": true,
+      "inlineStyleRatio": 0
+    },
+    "fileNaming": {
+      "violations": [
+        {
+          "file": "build\\static\\css\\main.045a476a.css.map",
+          "issue": "Unusual file extension",
+          "recommendation": "Verify file type is appropriate for web"
+        },
+        {
+          "file": "build\\static\\js\\main.71f90d2e.js.map",
+          "issue": "Unusual file extension",
+          "recommendation": "Verify file type is appropriate for web"
+        }
+      ],
+      "totalViolations": 2,
+      "recommendations": [
+        "Verify file type is appropriate for web",
+        "Verify file type is appropriate for web"
+      ]
+    }
+  }
+}

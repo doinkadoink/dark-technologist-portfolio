@@ -1,0 +1,30 @@
+# Desktop Lighthouse Performance Screenshot
+
+This file is a placeholder for the desktop Lighthouse performance audit screenshot.
+
+## Screenshot Requirements
+- **Content**: Full Lighthouse performance audit results
+- **Device**: Desktop simulation
+- **Metrics**: Core Web Vitals and performance scores
+- **Format**: PNG screenshot of browser results
+
+## Expected Metrics
+- **Performance Score**: Target ≥ 90
+- **LCP**: < 2.5 seconds
+- **FID**: < 100 milliseconds  
+- **CLS**: < 0.1
+- **FCP**: < 1.8 seconds
+
+## When to Capture
+- After running Lighthouse CI
+- Before submission deadline
+- Ensure all optimizations are complete
+- Test on production build
+
+## File Naming Convention
+- **Format**: PNG for quality
+- **Size**: Optimize for web (under 1MB)
+- **Description**: Include date and performance score
+
+---
+*Placeholder for compliance evidence - replace with actual Lighthouse screenshot* 

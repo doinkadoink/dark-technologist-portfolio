@@ -1,0 +1,143 @@
+name: Site Audit & Compliance Check
+
+on:
+  push:
+    branches: [ main, a2-docs-only ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+
+jobs:
+  lighthouse-audit:
+    name: Lighthouse Performance & SEO Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
+        
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --config=./.lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          
+      - name: Upload Lighthouse artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
+          retention-days: 30
+
+  accessibility-audit:
+    name: Accessibility Audit with axe-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Install axe-core
+        run: npm install -g axe-core
+        
+      - name: Run accessibility audit
+        run: |
+          npx axe https://doinkadoink.github.io/dark-technologist-portfolio/ --format=json --output=docs/accessibility/axe-report.json
+          
+      - name: Generate accessibility summary
+        run: |
+          echo "## Accessibility Audit Results" > docs/accessibility/axe-summary.md
+          echo "Generated on: $(date)" >> docs/accessibility/axe-summary.md
+          echo "" >> docs/accessibility/axe-summary.md
+          echo "Full report: [axe-report.json](axe-report.json)" >> docs/accessibility/axe-summary.md
+          
+      - name: Upload accessibility artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-results
+          path: docs/accessibility/
+          retention-days: 30
+
+  static-analysis:
+    name: Static Code Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Run static analyzer
+        run: node tools/audit.js
+        
+      - name: Upload analysis artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-analysis
+          path: |
+            tools/audit-report.json
+            docs/
+          retention-days: 30
+
+  compliance-report:
+    name: Generate Compliance Report
+    runs-on: ubuntu-latest
+    needs: [lighthouse-audit, accessibility-audit, static-analysis]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+          
+      - name: Generate compliance summary
+        run: |
+          echo "# Compliance Report" > docs/compliance-summary.md
+          echo "Generated on: $(date)" >> docs/compliance-summary.md
+          echo "" >> docs/compliance-summary.md
+          echo "## Audit Results Summary" >> docs/compliance-summary.md
+          echo "" >> docs/compliance-summary.md
+          echo "### Lighthouse Scores" >> docs/compliance-summary.md
+          echo "- Performance: See docs/lighthouse/" >> docs/compliance-summary.md
+          echo "- Accessibility: See docs/accessibility/" >> docs/compliance-summary.md
+          echo "- SEO: See docs/lighthouse/" >> docs/compliance-summary.md
+          echo "" >> docs/compliance-summary.md
+          echo "### Static Analysis" >> docs/compliance-summary.md
+          echo "- Code quality: See tools/audit-report.json" >> docs/compliance-summary.md
+          echo "- Accessibility: See docs/accessibility/axe-summary.md" >> docs/compliance-summary.md
+          
+      - name: Commit compliance artifacts
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/ tools/
+          git commit -m "Update compliance artifacts from CI run" || echo "No changes to commit"
+          git push origin a2-docs-only || echo "Push failed or no changes" 

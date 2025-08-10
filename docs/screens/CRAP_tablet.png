@@ -1,0 +1,27 @@
+# Tablet CRAP Design Principles Screenshot
+
+This file is a placeholder for the tablet screenshot demonstrating:
+- Contrast: Maintained contrast ratios on medium screens
+- Repetition: Consistent design patterns in tablet layout
+- Alignment: Proper element alignment in responsive design
+- Proximity: Logical grouping maintained across breakpoints
+
+## Screenshot Requirements
+- **Resolution**: 768x1024 (iPad) or 1024x768 (landscape)
+- **Device**: iPad or Android tablet simulator
+- **Content**: Tablet view of homepage
+- **Focus**: Responsive design and touch-friendly layout
+
+## When to Capture
+- After responsive design testing
+- Test on actual tablet devices
+- Verify touch target sizes (44px minimum)
+- Check breakpoint behavior
+
+## File Naming Convention
+- **Format**: PNG for quality
+- **Size**: Optimize for web (under 1MB)
+- **Description**: Include device type and orientation
+
+---
+*Placeholder for compliance evidence - replace with actual screenshot* 

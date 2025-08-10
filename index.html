@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- DESIGN BRIEF REFERENCE: A2 Design Brief - Rachel Frappell Portfolio -->
     <!-- Primary Meta Tags -->
     <title>Rachel Frappell | Creative Arts Practitioner & Digital Designer</title>
     <meta name="title" content="Rachel Frappell | Creative Arts Practitioner & Digital Designer">
@@ -47,6 +48,14 @@
     <!-- Fonts with display=swap for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- EXTERNAL LIBRARIES FOR ACADEMIC COMPLIANCE -->
+    <!-- AOS (Animate On Scroll) - Replaces custom intersection observer animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- SweetAlert2 - Replaces custom modal and form handling -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- ClipboardJS - Replaces custom clipboard functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -123,6 +132,8 @@
                         <li><a href="#contact" class="nav-link" aria-label="Go to contact section">CONTACT</a></li>
                     </ul>
                 </nav>
+                
+
             </div>
         </div>
     </header>
@@ -141,38 +152,34 @@
             
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title" id="hero-title">
+                    <h1 class="hero-title" id="hero-title" data-aos="fade-up" data-aos-duration="1000">
                         <span class="title-line">RACHEL</span>
                         <span class="title-line">FRAPPELL</span>
                     </h1>
                     
-                    <p class="hero-tagline">
+                    <p class="hero-tagline" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                         Creative Arts Practitioner & Digital Designer
                     </p>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                         Currently pursuing Bachelor of Creative Arts at Bond University
                     </p>
                     
-                    <div class="hero-stats" role="region" aria-label="Achievement statistics">
+                    <div class="hero-stats" role="region" aria-label="Achievement statistics" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
                         <div class="stat-item">
                             <div class="stat-number" aria-label="Over 1 million AI interactions">1.2M+</div>
                             <div class="stat-label">AI Interactions</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" aria-label="2 portfolio websites created">2</div>
-                            <div class="stat-label">Portfolio Sites</div>
+                            <div class="stat-number" aria-label="3 portfolio websites created">3</div>
+                            <div class="stat-label">Ai Sites</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" aria-label="Bachelor of Creative Arts">B.C.A</div>
                             <div class="stat-label">Bond University</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" aria-label="Film Production Experience">2023</div>
-                            <div class="stat-label">Film Producer</div>
-                        </div>
                     </div>
                     
-                    <div class="hero-buttons">  
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">  
                         <a href="#projects" class="btn" aria-label="Explore creative projects">EXPLORE PROJECTS</a>
                         <a href="#contact" class="btn btn-secondary" aria-label="Get in touch">GET IN TOUCH</a>
                     </div>
@@ -183,22 +190,22 @@
         <!-- About Section -->
         <section id="about" class="about section" role="region" aria-labelledby="about-title">
             <div class="container">
-                                <div class="about-content">
+                <div class="about-content">
                     <div class="about-top">
                         <div class="about-left">
-                            <div class="about-image-container">
+                            <div class="about-image-container" data-aos="fade-right" data-aos-duration="800">
                                 <img src="rachel-portrait.jpg" alt="Rachel - Dark Technologist with vibrant purple hair and dark aesthetic" class="about-image">
                             </div>
                         </div>
                         
                         <div class="about-right">
-                            <div class="about-header">
+                            <div class="about-header" data-aos="fade-left" data-aos-duration="800">
                                 <h2 class="section-title" id="about-title">ABOUT RACHEL</h2>
                                 <h3 class="about-subtitle">Rachel Frappell</h3>
                                 <div class="about-badge">Creative Arts Practitioner & Digital Designer</div>
                             </div>
                             
-                            <div class="about-info" role="region" aria-label="Personal information">
+                            <div class="about-info" role="region" aria-label="Personal information" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
                                 <div class="info-item">
                                     <span class="info-icon" aria-hidden="true">📍</span>
                                     <span class="info-text">Gold Coast, Queensland, Australia</span>
@@ -215,7 +222,7 @@
                         </div>
                     </div>
                     
-                    <div class="about-description-full centered-text">
+                    <div class="about-description-full centered-text" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                         <p class="center-me">
                             I'm an emerging creative arts practitioner with a strong foundation in digital design, 
                             storytelling, and interactive media. Currently pursuing my Bachelor of Creative Arts at Bond University (2021 - Present).
@@ -234,42 +241,42 @@
                 </div>
                 
                 <div class="skills-grid" role="region" aria-label="Skills and expertise">
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                         <h4 class="skill-title">UI/UX DESIGN</h4>
                         <p class="skill-description">
                             Creating intuitive, accessible user interfaces with strong focus on user experience and accessibility compliance
                         </p>
                     </article>
                     
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                         <h4 class="skill-title">WEB DEVELOPMENT</h4>
                         <p class="skill-description">
                             Building responsive websites using HTML, CSS, and JavaScript with modern design principles and cyberpunk aesthetics
                         </p>
                     </article>
                     
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                         <h4 class="skill-title">AI INTEGRATION</h4>
                         <p class="skill-description">
                             Experienced with Character.AI and AI-powered creative tools for enhanced user engagement and content creation
                         </p>
                     </article>
                     
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
                         <h4 class="skill-title">CREATIVE PROBLEM-SOLVING</h4>
                         <p class="skill-description">
                             Combining technical skills with creative thinking to develop innovative digital solutions and interactive media
                         </p>
                     </article>
                     
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
                         <h4 class="skill-title">FILM PRODUCTION</h4>
                         <p class="skill-description">
                             Experience as film producer for "Living Like Luna" (2023), demonstrating creative leadership and project management
                         </p>
                     </article>
                     
-                    <article class="skill-card">
+                    <article class="skill-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
                         <h4 class="skill-title">GRAPHIC DESIGN</h4>
                         <p class="skill-description">
                             Proficient in Adobe Creative Suite (Photoshop, Illustrator, InDesign) for posters, magazines, and visual assets
@@ -282,10 +289,10 @@
         <!-- Projects Section -->
         <section id="projects" class="projects section" role="region" aria-labelledby="projects-title">
             <div class="container">
-                <h2 class="section-title" id="projects-title">CREATIVE PORTFOLIO</h2>
+                <h2 class="section-title" id="projects-title" data-aos="fade-up" data-aos-duration="800">CREATIVE PORTFOLIO</h2>
                 
                 <div class="projects-grid" role="region" aria-label="Project portfolio">
-                    <article class="project-card chattea">
+                    <article class="project-card chattea" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                         <div class="project-header">
                             <h3 class="project-category">WEB DEVELOPMENT</h3>
                             <h4 class="project-title">ChatTea - Coffee Chat Community</h4>
@@ -310,7 +317,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card chaos-maps">
+                    <article class="project-card chaos-maps" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                         <div class="project-header">
                             <h3 class="project-category">AI INTEGRATION</h3>
                             <h4 class="project-title">Character.AI Profile @Doinkadoink</h4>
@@ -335,7 +342,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card ai-interactive" onclick="window.location.href='html-templates/ai-interactive.html'" style="cursor: pointer;">
+                    <article class="project-card ai-interactive" onclick="window.location.href='html-templates/ai-interactive.html'" style="cursor: pointer;" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                         <div class="project-header">
                             <h3 class="project-category">AI INTEGRATION</h3>
                             <h4 class="project-title">AI Learning & Development</h4>
@@ -360,7 +367,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card digital-dark-art">
+                    <article class="project-card digital-dark-art" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
                         <div class="project-header">
                             <h3 class="project-category">GRAPHIC DESIGN</h3>
                             <h4 class="project-title">Digital Art & Design</h4>
@@ -385,7 +392,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card living-like-luna">
+                    <article class="project-card living-like-luna" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
                         <div class="project-header">
                             <h3 class="project-category">FILM PRODUCTION</h3>
                             <h4 class="project-title">Living Like Luna</h4>
@@ -410,7 +417,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card nightkind">
+                    <article class="project-card nightkind" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
                         <div class="project-header">
                             <h3 class="project-category">WILDLIFE CONSERVATION</h3>
                             <h4 class="project-title">Bats QLD Volunteering</h4>
@@ -435,7 +442,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card maya-3d">
+                    <article class="project-card maya-3d" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
                         <div class="project-header">
                             <h3 class="project-category">3D MODELING</h3>
                             <h4 class="project-title">Maya Character Modeling</h4>
@@ -460,7 +467,7 @@
                         </div>
                     </article>
                     
-                    <article class="project-card visual-novel">
+                    <article class="project-card visual-novel" data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
                         <div class="project-header">
                             <h3 class="project-category">GAME DEVELOPMENT</h3>
                             <h4 class="project-title">Visual Novel Game</h4>
@@ -481,7 +488,7 @@
                                 <span class="tech-tag">Narrative Design</span>
                             </div>
                             
-                            <button class="btn" aria-label="View visual novel game project" onclick="alert('Visual Novel Game project details coming soon! This project demonstrates my narrative design and interactive storytelling skills in game development.')">VIEW PROJECT</button>
+                            <button class="btn" aria-label="View visual novel game project" onclick="showVisualNovelInfo()">VIEW PROJECT</button>
                         </div>
                     </article>
                 </div>
@@ -491,10 +498,10 @@
         <!-- Contact Section -->
         <section id="contact" class="contact section" role="region" aria-labelledby="contact-title">
             <div class="container">
-                <h2 class="section-title" id="contact-title">GET IN TOUCH</h2>
+                <h2 class="section-title" id="contact-title" data-aos="fade-up" data-aos-duration="800">GET IN TOUCH</h2>
                 
                 <div class="contact-grid" role="region" aria-label="Contact methods">
-                    <article class="contact-card">
+                    <article class="contact-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                         <div class="contact-icon" aria-hidden="true">📧</div>
                         <h3 class="contact-title">EMAIL CONTACT</h3>
                         <p class="contact-description">
@@ -503,7 +510,7 @@
                         <button class="btn" id="openContactBtn" aria-label="Send email message">SEND MESSAGE</button>
                     </article>
                     
-                    <article class="contact-card">
+                    <article class="contact-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                         <div class="contact-icon" aria-hidden="true">💼</div>
                         <h3 class="contact-title">LINKEDIN PROFILE</h3>
                         <p class="contact-description">
@@ -512,20 +519,20 @@
                         <a href="https://www.linkedin.com/in/rachel-frappell-profile/" class="btn" aria-label="View LinkedIn profile" target="_blank" rel="noopener noreferrer">VIEW LINKEDIN</a>
                     </article>
                     
-                    <article class="contact-card">
+                    <article class="contact-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                         <div class="contact-icon" aria-hidden="true">🎮</div>
                         <h3 class="contact-title">DISCORD CHAT</h3>
                         <p class="contact-description">
                             Message me on Discord for creative discussions, tech talk, or casual chat
                         </p>
-                        <button class="btn" onclick="copyDiscordUsername()" aria-label="Copy Discord username">COPY DISCORD ID</button>
+                        <button class="btn" data-clipboard-text="389694826456547328" aria-label="Copy Discord username">COPY DISCORD ID</button>
                         <div class="discord-info" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
                             Click to copy: @389694826456547328
                         </div>
                     </article>
                 </div>
                 
-                <div class="contact-cta" role="region" aria-label="Call to action">
+                <div class="contact-cta" role="region" aria-label="Call to action" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                     <h3 class="cta-title">READY TO CREATE SOMETHING AMAZING?</h3>
                     <p class="cta-description">
                         Whether you're interested in web development, digital design, AI integration, film production, 
@@ -554,40 +561,20 @@
         </div>
     </footer>
 
-    <!-- Contact Form Popup -->
-    <div id="contactFormModal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">GET IN TOUCH</h3>
-                <button class="close-btn" onclick="closeContactForm()" aria-label="Close contact form">&times;</button>
-            </div>
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="senderName">Name *</label>
-                    <input type="text" id="senderName" name="name" required aria-label="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="senderEmail">Email *</label>
-                    <input type="email" id="senderEmail" name="email" required aria-label="Your email address">
-                </div>
-                <div class="form-group">
-                    <label for="messageSubject">Subject *</label>
-                    <input type="text" id="messageSubject" name="subject" required aria-label="Message subject">
-                </div>
-                <div class="form-group">
-                    <label for="messageContent">Message *</label>
-                    <textarea id="messageContent" name="message" rows="6" required aria-label="Your message"></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn submit-btn">SEND MESSAGE</button>
-                    <button type="button" class="btn btn-secondary" onclick="closeContactForm()">CANCEL</button>
-                </div>
-            </form>
-            <div id="formStatus" class="form-status" style="display: none;"></div>
-        </div>
-    </div>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <span class="scroll-icon">↑</span>
+    </button>
 
 
+
+    <!-- EXTERNAL LIBRARIES FOR ACADEMIC COMPLIANCE -->
+    <!-- AOS (Animate On Scroll) - Replaces custom intersection observer animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+    
+    <!-- MINIMAL CUSTOM SCRIPT FOR ACADEMIC COMPLIANCE (UNDER 20 LINES) -->
     <script src="script.js"></script>
 </body>
 </html> 

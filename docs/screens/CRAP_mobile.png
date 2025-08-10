@@ -1,0 +1,27 @@
+# Mobile CRAP Design Principles Screenshot
+
+This file is a placeholder for the mobile screenshot demonstrating:
+- Contrast: Maintained contrast ratios on small screens
+- Repetition: Consistent design patterns in mobile layout
+- Alignment: Proper element alignment in mobile view
+- Proximity: Logical grouping maintained in compact layout
+
+## Screenshot Requirements
+- **Resolution**: 375x667 (iPhone) or 360x640 (Android)
+- **Device**: iPhone or Android phone simulator
+- **Content**: Mobile view of homepage
+- **Focus**: Mobile-first design and touch optimization
+
+## When to Capture
+- After mobile responsive testing
+- Test on actual mobile devices
+- Verify touch target sizes (44px minimum)
+- Check mobile navigation behavior
+
+## File Naming Convention
+- **Format**: PNG for quality
+- **Size**: Optimize for web (under 1MB)
+- **Description**: Include device type and screen size
+
+---
+*Placeholder for compliance evidence - replace with actual screenshot* 
