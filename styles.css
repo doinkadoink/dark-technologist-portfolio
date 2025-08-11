@@ -36,6 +36,12 @@ a, button, .btn, .nav-link, .tech-tag {
     --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.8);
     
+    /* Button System Variables */
+    --brand-outline: #FFD700;
+    --btn-radius: 8px;
+    --btn-duration: 120ms;
+    --btn-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    
     /* Shared Motion & Animation Standards (derived from NightKind) */
     --hover-duration: 0.3s;
     --hover-scale: 1.01;
@@ -70,38 +76,89 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
+/* Primary Button - Gradient background by default */
 .btn {
     display: inline-block;
     padding: 12px 30px;
     background: var(--gradient-primary);
     color: #000000;
     text-decoration: none;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid transparent;
+    border-radius: var(--btn-radius);
     font-family: 'Orbitron', monospace;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: all var(--hover-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 
+        transform var(--btn-duration) var(--btn-ease),
+        box-shadow var(--btn-duration) var(--btn-ease),
+        background-color var(--btn-duration) var(--btn-ease),
+        color var(--btn-duration) var(--btn-ease),
+        border-color var(--btn-duration) var(--btn-ease);
     box-shadow: var(--shadow-glow);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Primary Button Hover - Inverse theme: becomes black with highlighted outline */
 .btn:hover {
-    transform: translateY(-2px) scale(var(--hover-scale));
-    filter: drop-shadow(0 0 8px var(--accent-color));
-    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--accent-yellow);
+    background: #000000;
     color: var(--accent-yellow);
+    border-color: var(--brand-outline);
+    box-shadow: 0 0 0 2px var(--brand-outline) inset, 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px) scale(var(--hover-scale));
 }
 
-.btn-secondary:hover {
-    background: var(--accent-yellow);
-    color: var(--text-primary);
+/* Secondary Button - Solid black with highlighted outline */
+.btn.btn-secondary {
+    background: #000000;
+    color: var(--accent-yellow);
+    border-color: var(--brand-outline);
+    box-shadow: 0 0 0 2px var(--brand-outline) inset, 0 0 15px rgba(255, 215, 0, 0.2);
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    border-radius: var(--btn-radius);
+    position: relative;
+}
+
+/* Secondary Button Hover - Inverse theme: switches to gradient style */
+.btn.btn-secondary:hover {
+    background: var(--gradient-primary);
+    color: #000000;
+    border-color: transparent;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px) scale(var(--hover-scale));
+}
+
+/* Active/Click Feedback - Both button types */
+.btn:active,
+.btn.btn-secondary:active {
+    transform: translateY(1px) scale(0.98);
+    filter: saturate(0.95);
+    transition-duration: 50ms;
+}
+
+/* Focus-Visible Ring - High contrast accessibility */
+.btn:focus-visible,
+.btn.btn-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px var(--brand-outline);
+}
+
+/* Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    .btn, .btn.btn-secondary {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Ensure Buttons Appear Immediately on First Load */
+.btn, .btn.btn-secondary {
+    opacity: 1;
+    animation: none;
+    transition-delay: 0ms;
 }
 
 .section {
@@ -387,9 +444,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
 }
 
-.hero-buttons .btn:first-child {
-    background: linear-gradient(135deg, var(--accent-yellow), var(--accent-color));
-}
+/* Removed rogue CSS that was overriding the button system */
 
 /* About Styles */
 .about {
@@ -1276,11 +1331,19 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 20px;
     }
     
-    .btn {
+    .btn, .btn.btn-secondary {
         width: 100%;
         max-width: 280px;
         padding: 15px 25px;
         font-size: 0.9rem;
+        /* Ensure mobile buttons maintain the new button system */
+        border-radius: var(--btn-radius);
+        transition: 
+            transform var(--btn-duration) var(--btn-ease),
+            box-shadow var(--btn-duration) var(--btn-ease),
+            background-color var(--btn-duration) var(--btn-ease),
+            color var(--btn-duration) var(--btn-ease),
+            border-color var(--btn-duration) var(--btn-ease);
     }
     
     /* About Section */
@@ -1435,10 +1498,18 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8rem;
     }
     
-    .btn {
+    .btn, .btn.btn-secondary {
         max-width: 260px;
         padding: 12px 20px;
         font-size: 0.85rem;
+        /* Ensure small mobile buttons maintain the new button system */
+        border-radius: var(--btn-radius);
+        transition: 
+            transform var(--btn-duration) var(--btn-ease),
+            box-shadow var(--btn-duration) var(--btn-ease),
+            background-color var(--btn-duration) var(--btn-ease),
+            color var(--btn-duration) var(--btn-ease),
+            border-color var(--btn-duration) var(--btn-ease);
     }
     
     .section-title {
@@ -1754,49 +1825,11 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 } 
 
-/* Enhanced Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--gradient-primary);
-    color: #000000;
-    text-decoration: none;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Orbitron', monospace;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all var(--hover-duration) ease;
-    box-shadow: var(--shadow-glow);
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.btn:hover::before {
-    transform: translateX(100%);
-}
-
-.btn:hover {
-    transform: scale(var(--hover-scale));
-    filter: drop-shadow(0 0 8px var(--accent-color));
-    box-shadow: var(--shadow-glow), 0 8px 25px rgba(0, 0, 0, 0.3);
-} 
+/* Removed duplicate button styles - using unified button system above */ 
 
 
 
-/* Scroll-triggered animations */
+/* Scroll-triggered animations - Buttons excluded for immediate visibility */
 .skill-card, .project-card, .contact-card {
     opacity: 0;
     transform: translateY(30px);
@@ -1806,6 +1839,14 @@ h1, h2, h3, h4, h5, h6 {
 .skill-card.animate-in, .project-card.animate-in, .contact-card.animate-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Ensure buttons are always visible and not affected by scroll animations */
+.skill-card .btn, .project-card .btn, .contact-card .btn,
+.skill-card .btn.btn-secondary, .project-card .btn.btn-secondary, .contact-card .btn.btn-secondary {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 /* Enhanced mobile responsiveness */
