@@ -1023,6 +1023,39 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 15px #ff6b35;
 }
 
+/* Maya 3D - 3D Modeling Theme */
+.project-card.maya-3d {
+    border-color: #00ced1;
+    background: linear-gradient(135deg, #000000 0%, #0f1a1a 100%);
+}
+
+.project-card.maya-3d::before {
+    display: none;
+}
+
+.project-card.maya-3d:hover {
+    border-color: #ff8c00;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px #00ced1);
+    background: linear-gradient(135deg, #000000 0%, rgba(255, 140, 0, 0.05) 100%);
+}
+
+.project-card.maya-3d .project-category {
+    color: #00ced1;
+    text-shadow: 0 0 10px #00ced1;
+}
+
+.project-card.maya-3d .tech-tag {
+    border-color: #ff8c00;
+    color: #ff8c00;
+}
+
+.project-card.maya-3d .tech-tag:hover {
+    background: #00ced1;
+    color: #000000;
+    box-shadow: 0 0 15px #00ced1;
+}
+
 /* Enhanced hover animations for themed cards - using standardized motion system */
 .project-card.chattea:hover,
 .project-card.chaos-maps:hover,
@@ -1030,7 +1063,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-card.digital-dark-art:hover,
 .project-card.living-like-luna:hover,
 .project-card.nightkind:hover,
-.project-card.visual-novel:hover {
+.project-card.visual-novel:hover,
+.project-card.maya-3d:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
     background: linear-gradient(135deg, var(--secondary-bg) 0%, rgba(138, 43, 226, 0.03) 100%);
@@ -1049,7 +1083,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-card.digital-dark-art::after,
 .project-card.living-like-luna::after,
 .project-card.nightkind::after,
-.project-card.visual-novel::after {
+.project-card.visual-novel::after,
+.project-card.maya-3d::after {
     display: none;
 }
 
