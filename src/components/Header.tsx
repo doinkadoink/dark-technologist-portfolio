@@ -13,13 +13,18 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <ScrollToSection to="#home" ariaLabel="Rachel - Dark Technologist Home">
+            <ScrollToSection to="#home" ariaLabel="Rachel Frappell Home">
               <span className="logo-text">R</span>
               <span className="logo-full">RACHEL</span>
             </ScrollToSection>
           </div>
           
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`} role="navigation" aria-label="Main Navigation">
+          <nav
+            id="main-navigation"
+            className={`nav ${isMenuOpen ? 'nav-open' : ''}`}
+            role="navigation"
+            aria-label="Main Navigation"
+          >
             <ul className="nav-list">
               <li><ScrollToSection to="#home" className="nav-link" ariaLabel="Go to Home section">HOME</ScrollToSection></li>
               <li><ScrollToSection to="#about" className="nav-link" ariaLabel="Go to About section">ABOUT</ScrollToSection></li>

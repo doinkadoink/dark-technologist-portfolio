@@ -4,47 +4,41 @@ const SEOHead: React.FC = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Rachel",
-    "jobTitle": "Dark Technologist & AI Punk",
-    "description": "Digital anarchist living at the intersection of chaos and technology. AI corruption expert, game world destroyer, and automation overlord.",
-    "url": "https://your-domain.com",
-    "sameAs": [
-      "https://linkedin.com/in/rachel-darktech",
-      "https://discord.gg/darktech"
-    ],
+    "name": "Rachel Frappell",
+    "jobTitle": "Creative Arts Student (Unreal Engine Environments)",
+    "description": "Emerging creative arts practitioner focused on Unreal Engine environments, photogrammetry workflows, and virtual production.",
+    "url": "https://doink.github.io/dark-technologist-portfolio/",
     "knowsAbout": [
-      "AI Corruption",
-      "Web Development",
-      "React",
-      "TypeScript",
-      "Fantasy Grounds",
-      "Digital Anarchy",
-      "Automation",
-      "Dark Arts"
+      "Unreal Engine",
+      "Virtual Production",
+      "Photogrammetry",
+      "Digital Locations",
+      "3D Modelling",
+      "Maya",
+      "Sequencer",
+      "Scene Lighting",
+      "Web Design",
+      "UI/UX"
     ],
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "Bond University"
-    },
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Digital Rebellion"
     }
   };
 
   const websiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Rachel - Dark Technologist",
-    "description": "Digital anarchist living at the intersection of chaos and technology. AI corruption expert, game world destroyer, and automation overlord.",
-    "url": "https://your-domain.com",
+    "name": "Rachel Frappell - Portfolio",
+    "description": "Portfolio featuring Unreal Engine environments, photogrammetry workflows, virtual production, and digital design.",
+    "url": "https://doink.github.io/dark-technologist-portfolio/",
     "author": {
       "@type": "Person",
-      "name": "Rachel"
+      "name": "Rachel Frappell"
     },
     "publisher": {
       "@type": "Person",
-      "name": "Rachel"
+      "name": "Rachel Frappell"
     }
   };
 

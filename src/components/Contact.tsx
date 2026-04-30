@@ -5,46 +5,46 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact section" aria-label="Contact Information">
       <div className="container">
-        <h2 className="section-title">JOIN THE REBELLION</h2>
+        <h2 className="section-title">CONTACT</h2>
         
         <div className="contact-grid" role="region" aria-label="Contact Methods">
           <article className="contact-card">
             <div className="contact-icon" aria-hidden="true">📧</div>
-            <h3 className="contact-title">ENCRYPTED COMMUNICATION</h3>
+            <h3 className="contact-title">EMAIL</h3>
             <p className="contact-description">
-              Drop me an encrypted line for dark collaborations
+              Best for placement opportunities and project enquiries
             </p>
-            <a href="mailto:rachel@darktech.com" className="btn" aria-label="Send encrypted email to Rachel">SEND ENCRYPTED MESSAGE</a>
+            <a href="mailto:rachelfrappell18@gmail.com" className="btn" aria-label="Email Rachel">EMAIL ME</a>
           </article>
           
           <article className="contact-card">
-            <div className="contact-icon" aria-hidden="true">💼</div>
-            <h3 className="contact-title">PROFESSIONAL NETWORK</h3>
+            <div className="contact-icon" aria-hidden="true">📞</div>
+            <h3 className="contact-title">PHONE</h3>
             <p className="contact-description">
-              Connect for underground professional opportunities
+              Gold Coast, QLD (AEST)
             </p>
-            <a href="https://linkedin.com/in/rachel-darktech" className="btn" aria-label="Connect with Rachel on LinkedIn" target="_blank" rel="noopener noreferrer">JOIN NETWORK</a>
+            <a href="tel:+61417740323" className="btn" aria-label="Call Rachel">CALL</a>
           </article>
           
           <article className="contact-card">
-            <div className="contact-icon" aria-hidden="true">🎮</div>
-            <h3 className="contact-title">DISCORD UNDERGROUND</h3>
+            <div className="contact-icon" aria-hidden="true">📁</div>
+            <h3 className="contact-title">PORTFOLIO</h3>
             <p className="contact-description">
-              Chat about AI corruption, dark gaming, and tech rebellion
+              Selected work across environments, design, and interactive media
             </p>
-            <a href="https://discord.gg/darktech" className="btn" aria-label="Join Rachel's Discord server" target="_blank" rel="noopener noreferrer">ENTER UNDERGROUND</a>
+            <a href="#projects" className="btn" aria-label="Jump to Projects section">VIEW WORK</a>
           </article>
         </div>
         
         <article className="contact-cta" role="region" aria-label="Call to Action">
-          <h3 className="cta-title">READY TO CORRUPT THE SYSTEM?</h3>
+          <h3 className="cta-title">AVAILABLE FOR INDUSTRY PLACEMENT</h3>
           <p className="cta-description">
-            Whether you're interested in AI corruption, dark technology, or revolutionary web solutions, 
-            I'd love to hear about your rebellious project and explore how we can bring chaos to life.
+            I’m looking for opportunities in virtual production, digital locations, scan-informed assets, and previs.
+            If you’d like to see specific examples (UE scenes, scans, or design work), I’m happy to share.
           </p>
           <nav className="cta-buttons" aria-label="Call to Action Navigation">
-            <a href="mailto:rachel@darktech.com" className="btn" aria-label="Start rebellion by contacting Rachel">START REBELLION</a>
-            <a href="#projects" className="btn btn-secondary" aria-label="View chaos projects">VIEW CHAOS</a>
+            <a href="mailto:rachelfrappell18@gmail.com" className="btn" aria-label="Email Rachel">EMAIL</a>
+            <a href="#projects" className="btn btn-secondary" aria-label="View projects">VIEW PROJECTS</a>
           </nav>
         </article>
       </div>
@@ -53,10 +53,10 @@ const Contact: React.FC = () => {
         <div className="container">
           <div className="footer-content">
             <p className="footer-text">
-              © 2024 Rachel. Built with AI-powered rebellion and dark passion.
+              © 2026 Rachel Frappell.
             </p>
             <p className="footer-subtext">
-              Designed to corrupt and showcase the future of dark creative technology.
+              Unreal environments • photogrammetry workflows • virtual production • digital design.
             </p>
           </div>
         </div>

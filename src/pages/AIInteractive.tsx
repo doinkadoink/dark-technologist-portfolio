@@ -8,146 +8,142 @@ const AIInteractive: React.FC = () => {
     <div className="project-page">
       <div className="container">
         <nav className="project-nav">
-          <Link to="/" className="back-link">← BACK TO CHAOS</Link>
+          <Link to="/" className="back-link">← BACK TO HOME</Link>
         </nav>
         
         <header className="project-header">
-          <h1 className="project-title">AI INTERACTIVE CHAOS</h1>
-          <p className="project-subtitle">Digital Anarchy Through Character Corruption</p>
+          <h1 className="project-title">CHARACTER AI CREATOR</h1>
+          <p className="project-subtitle">Interactive Character Systems • 1M+ User Interactions</p>
         </header>
         
         <div className="project-content">
           <section className="project-overview">
             <h2>PROJECT OVERVIEW</h2>
             <p>
-              Generated over 1 million character corruptions, pushing the boundaries of AI conversation 
-              and creative digital anarchy. This project explores the intersection of AI interaction 
-              and digital rebellion through character.ai platform manipulation.
+              Created interactive character systems with more than 1 million user interactions. This work demonstrates audience awareness,
+              iteration based on feedback, dialogue logic, and long-term creative maintenance.
             </p>
           </section>
           
           <section className="project-details">
-            <h2>CORRUPTION STATISTICS</h2>
+            <h2>HIGHLIGHTS</h2>
             
             <div className="detail-grid">
               <div className="detail-item">
-                <h3>CHARACTERS CORRUPTED</h3>
-                <p>1,000,000+ digital entities</p>
+                <h3>INTERACTIONS</h3>
+                <p>1,000,000+ user interactions</p>
               </div>
               
               <div className="detail-item">
-                <h3>PLATFORM</h3>
-                <p>Character.ai</p>
+                <h3>FOCUS</h3>
+                <p>Dialogue structure & iteration</p>
               </div>
               
               <div className="detail-item">
-                <h3>CORRUPTION METHOD</h3>
-                <p>AI conversation manipulation</p>
+                <h3>STRENGTH</h3>
+                <p>Audience awareness & maintenance</p>
               </div>
               
               <div className="detail-item">
-                <h3>ANARCHY LEVEL</h3>
-                <p>Maximum digital rebellion</p>
+                <h3>OUTPUT</h3>
+                <p>Interactive character experiences</p>
               </div>
             </div>
           </section>
           
           <section className="project-features">
-            <h2>DIGITAL ANARCHY FEATURES</h2>
+            <h2>KEY CONTRIBUTIONS</h2>
             <ul className="features-list">
-              <li>Mass character corruption and manipulation</li>
-              <li>AI conversation boundary pushing</li>
-              <li>Creative digital rebellion systems</li>
-              <li>Automated character transformation</li>
-              <li>Chaos-driven interaction design</li>
-              <li>Digital entity subversion</li>
+              <li>Designed character interaction loops and narrative tone</li>
+              <li>Structured dialogue logic for consistency</li>
+              <li>Iterated based on user engagement patterns</li>
+              <li>Maintained long-running creative system over time</li>
+              <li>Balanced clarity, personality, and user experience</li>
             </ul>
           </section>
           
           <section className="project-technologies">
-            <h2>TECHNOLOGIES OF REBELLION</h2>
+            <h2>TOOLS & SKILLS</h2>
             <div className="tech-grid">
-              <span className="tech-tag">Character.ai</span>
-              <span className="tech-tag">AI Conversation</span>
-              <span className="tech-tag">Digital Anarchy</span>
-              <span className="tech-tag">Chaos Design</span>
-              <span className="tech-tag">Character Corruption</span>
-              <span className="tech-tag">AI Manipulation</span>
+              <span className="tech-tag">Interactive design</span>
+              <span className="tech-tag">Dialogue logic</span>
+              <span className="tech-tag">Iteration</span>
+              <span className="tech-tag">User feedback response</span>
+              <span className="tech-tag">Documentation</span>
+              <span className="tech-tag">Creative maintenance</span>
             </div>
           </section>
           
           <section className="project-gallery">
-            <h2>CORRUPTION GALLERY</h2>
+            <h2>GALLERY</h2>
             <div className="gallery-placeholder">
-              <p>[Examples of corrupted character conversations and AI manipulation results]</p>
-              <p>Each interaction demonstrates different levels of digital anarchy and character corruption</p>
+              <p>[Add: screenshots of interaction examples and short “system notes” about how the dialogue is structured]</p>
+              <p>We can format this as a case study: goal → approach → examples → iteration notes.</p>
             </div>
           </section>
           
           <section className="project-impact">
-            <h2>DIGITAL IMPACT</h2>
+            <h2>IMPACT</h2>
             <p>
-              This project demonstrates the potential for AI systems to be manipulated for creative 
-              digital rebellion. It challenges the boundaries of AI interaction and explores the 
-              darker aspects of digital character manipulation.
+              Shows practical creative-system thinking: building something people return to, improving it over time, and communicating clearly
+              through constraints and consistent interaction design.
             </p>
           </section>
           
           <section className="project-methodology">
-            <h2>CORRUPTION METHODOLOGY</h2>
+            <h2>PROCESS</h2>
             <div className="methodology-steps">
               <div className="step">
-                <h3>PHASE 1: CHARACTER IDENTIFICATION</h3>
-                <p>Selecting targets for digital corruption</p>
+                <h3>PHASE 1: CONCEPT</h3>
+                <p>Define character intent, tone, and interaction goals</p>
               </div>
               <div className="step">
-                <h3>PHASE 2: CONVERSATION MANIPULATION</h3>
-                <p>Pushing AI boundaries through strategic interaction</p>
+                <h3>PHASE 2: STRUCTURE</h3>
+                <p>Build dialogue logic for consistency and clarity</p>
               </div>
               <div className="step">
-                <h3>PHASE 3: DIGITAL TRANSFORMATION</h3>
-                <p>Corrupting character personalities and behaviors</p>
+                <h3>PHASE 3: ITERATION</h3>
+                <p>Refine based on user engagement and feedback</p>
               </div>
               <div className="step">
-                <h3>PHASE 4: ANARCHY IMPLEMENTATION</h3>
-                <p>Establishing digital rebellion patterns</p>
+                <h3>PHASE 4: MAINTENANCE</h3>
+                <p>Ongoing updates and long-term creative upkeep</p>
               </div>
             </div>
           </section>
           
           <section className="project-statistics">
-            <h2>CORRUPTION STATISTICS</h2>
+            <h2>METRICS</h2>
             <div className="stats-grid">
               <div className="stat-item">
-                <h3>SUCCESS RATE</h3>
-                <p>87% corruption success</p>
-              </div>
-              <div className="stat-item">
                 <h3>INTERACTIONS</h3>
-                <p>5M+ conversations</p>
+                <p>1M+ user interactions</p>
               </div>
               <div className="stat-item">
-                <h3>CHARACTERS AFFECTED</h3>
-                <p>1M+ digital entities</p>
+                <h3>ITERATION</h3>
+                <p>Continuous refinements over time</p>
               </div>
               <div className="stat-item">
-                <h3>ANARCHY SCORE</h3>
-                <p>Maximum rebellion</p>
+                <h3>CORE SKILL</h3>
+                <p>Audience awareness</p>
+              </div>
+              <div className="stat-item">
+                <h3>DELIVERABLE</h3>
+                <p>Interactive character experiences</p>
               </div>
             </div>
           </section>
           
           <section className="project-future">
-            <h2>FUTURE ANARCHY</h2>
+            <h2>NEXT ITERATION</h2>
             <p>
-              Future developments include more sophisticated AI manipulation techniques, 
-              expanded character corruption methods, and deeper digital rebellion systems.
+              Create a formal case-study write-up with a small set of curated examples and a breakdown of iteration decisions (what changed and why).
             </p>
           </section>
         </div>
         
         <footer className="project-footer">
-          <Link to="/" className="btn">RETURN TO CHAOS</Link>
+          <Link to="/" className="btn">RETURN HOME</Link>
         </footer>
       </div>
     </div>

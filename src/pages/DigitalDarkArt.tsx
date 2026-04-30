@@ -8,147 +8,122 @@ const DigitalDarkArt: React.FC = () => {
     <div className="project-page">
       <div className="container">
         <nav className="project-nav">
-          <Link to="/" className="back-link">← BACK TO CHAOS</Link>
+          <Link to="/" className="back-link">← BACK TO HOME</Link>
         </nav>
         
         <header className="project-header">
-          <h1 className="project-title">DIGITAL DARK ART</h1>
-          <p className="project-subtitle">Artistic Rebellion Through AI Corruption</p>
+          <h1 className="project-title">PORTFOLIO WEBSITES (2025)</h1>
+          <p className="project-subtitle">Visual Identity • Accessible Layout • HTML/CSS • Beginner JavaScript</p>
         </header>
         
         <div className="project-content">
           <section className="project-overview">
             <h2>PROJECT OVERVIEW</h2>
             <p>
-              Combining traditional artistic rebellion with AI corruption tools to create unique 
-              digital artworks and dystopian short film content. This project explores the intersection 
-              of human creativity and machine-generated chaos.
+              Designed and developed two portfolio-style websites in 2025, focusing on visual identity, clear information hierarchy,
+              and accessible layout thinking. This work complements my environment/film practice by improving how projects are presented,
+              documented, and communicated.
             </p>
           </section>
           
           <section className="project-details">
-            <h2>DARK ART DETAILS</h2>
+            <h2>PROJECT DETAILS</h2>
             
             <div className="detail-grid">
               <div className="detail-item">
-                <h3>ARTISTIC MEDIUM</h3>
-                <p>Digital dark art & video</p>
+                <h3>DELIVERABLE</h3>
+                <p>Two portfolio-style websites</p>
               </div>
               
               <div className="detail-item">
-                <h3>CORRUPTION TOOLS</h3>
-                <p>AI-powered artistic rebellion</p>
+                <h3>FRONT-END</h3>
+                <p>HTML, CSS, beginner JavaScript</p>
               </div>
               
               <div className="detail-item">
-                <h3>CREATIVE DIRECTION</h3>
-                <p>Chaos-driven aesthetics</p>
+                <h3>DESIGN</h3>
+                <p>UI/UX thinking, layout, accessibility</p>
               </div>
               
               <div className="detail-item">
-                <h3>REBELLION LEVEL</h3>
-                <p>Maximum artistic anarchy</p>
+                <h3>TOOLS</h3>
+                <p>Figma + design system basics</p>
               </div>
             </div>
           </section>
           
           <section className="project-features">
-            <h2>ARTISTIC REBELLION FEATURES</h2>
+            <h2>KEY CONTRIBUTIONS</h2>
             <ul className="features-list">
-              <li>AI-generated dark art and imagery</li>
-              <li>Corrupted video content creation</li>
-              <li>Digital dystopian aesthetics</li>
-              <li>Chaos-driven artistic direction</li>
-              <li>Automated creative corruption</li>
-              <li>Dark technologist visual themes</li>
+              <li>Information hierarchy for “quick scan” readability</li>
+              <li>Consistent visual identity across pages</li>
+              <li>Accessible layout thinking (spacing, contrast, clarity)</li>
+              <li>Responsive structure for desktop and mobile</li>
+              <li>Basic JavaScript for interactivity</li>
             </ul>
           </section>
           
           <section className="project-technologies">
-            <h2>TECHNOLOGIES OF DARKNESS</h2>
+            <h2>TOOLS & SKILLS</h2>
             <div className="tech-grid">
-              <span className="tech-tag">Digital Dark Art</span>
-              <span className="tech-tag">Video Corruption</span>
-              <span className="tech-tag">AI Tools</span>
-              <span className="tech-tag">Chaos Direction</span>
-              <span className="tech-tag">Artistic Rebellion</span>
-              <span className="tech-tag">Dystopian Aesthetics</span>
+              <span className="tech-tag">HTML</span>
+              <span className="tech-tag">CSS</span>
+              <span className="tech-tag">JavaScript (basic)</span>
+              <span className="tech-tag">Figma</span>
+              <span className="tech-tag">UI/UX</span>
+              <span className="tech-tag">Accessibility</span>
             </div>
           </section>
           
           <section className="project-gallery">
-            <h2>DARK ART GALLERY</h2>
+            <h2>GALLERY</h2>
             <div className="gallery-placeholder">
-              <p>[Collection of AI-generated dark art pieces and corrupted video content]</p>
-              <p>Each piece represents a different aspect of digital rebellion and artistic corruption</p>
+              <p>[Add: screenshots of the two sites (home, project page, contact), plus a mobile view]</p>
+              <p>If you share the links or images, I can build a proper gallery with captions.</p>
             </div>
           </section>
           
           <section className="project-impact">
-            <h2>ARTISTIC IMPACT</h2>
+            <h2>IMPACT</h2>
             <p>
-              This project challenges traditional artistic paradigms by incorporating AI corruption 
-              and digital anarchy into the creative process. It demonstrates the potential for 
-              machine-generated chaos to enhance human artistic expression.
+              Stronger presentation and documentation makes environment/film work easier to understand quickly—especially for studio placement,
+              where clarity and structure matter.
             </p>
           </section>
           
           <section className="project-process">
-            <h2>CREATIVE CORRUPTION PROCESS</h2>
+            <h2>PROCESS</h2>
             <div className="process-steps">
               <div className="step">
-                <h3>PHASE 1: CONCEPTUAL CORRUPTION</h3>
-                <p>Developing dark artistic concepts through AI</p>
+                <h3>PHASE 1: CONTENT + STRUCTURE</h3>
+                <p>Define sections and the story each page needs to tell</p>
               </div>
               <div className="step">
-                <h3>PHASE 2: DIGITAL GENERATION</h3>
-                <p>AI tools create corrupted visual content</p>
+                <h3>PHASE 2: WIREFRAMES</h3>
+                <p>Layout planning and hierarchy checks</p>
               </div>
               <div className="step">
-                <h3>PHASE 3: ARTISTIC REFINEMENT</h3>
-                <p>Human creativity enhances machine chaos</p>
+                <h3>PHASE 3: BUILD</h3>
+                <p>Implement with HTML/CSS and add small JS interactions</p>
               </div>
               <div className="step">
-                <h3>PHASE 4: DYSTOPIAN PRESENTATION</h3>
-                <p>Final corrupted artworks are displayed</p>
-              </div>
-            </div>
-          </section>
-          
-          <section className="project-collections">
-            <h2>DARK ART COLLECTIONS</h2>
-            <div className="collections-grid">
-              <div className="collection-item">
-                <h3>DIGITAL DYSTOPIA</h3>
-                <p>AI-generated apocalyptic landscapes</p>
-              </div>
-              <div className="collection-item">
-                <h3>CORRUPTED PORTRAITS</h3>
-                <p>Machine-manipulated human forms</p>
-              </div>
-              <div className="collection-item">
-                <h3>CHAOS ABSTRACTIONS</h3>
-                <p>Algorithmic disorder and anarchy</p>
-              </div>
-              <div className="collection-item">
-                <h3>DARK TECHNOLOGIST</h3>
-                <p>Corrupted digital self-portraits</p>
+                <h3>PHASE 4: REFINEMENT</h3>
+                <p>Accessibility checks, spacing/typography polish, and responsive tweaks</p>
               </div>
             </div>
           </section>
           
           <section className="project-future">
-            <h2>FUTURE DARKNESS</h2>
+            <h2>NEXT ITERATION</h2>
             <p>
-              Future developments include more sophisticated AI art generation, 
-              expanded video corruption techniques, and deeper integration of 
-              digital anarchy into artistic expression.
+              Consolidate projects into consistent case-study templates (overview, tools, breakdowns, gallery, learnings) to make the portfolio
+              more studio-ready.
             </p>
           </section>
         </div>
         
         <footer className="project-footer">
-          <Link to="/" className="btn">RETURN TO CHAOS</Link>
+          <Link to="/" className="btn">RETURN HOME</Link>
         </footer>
       </div>
     </div>

@@ -4,100 +4,100 @@ import './Projects.css';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="projects section" aria-label="Digital Chaos Projects">
+    <section id="projects" className="projects section" aria-label="Projects">
       <div className="container">
-        <h2 className="section-title">DIGITAL CHAOS</h2>
+        <h2 className="section-title">PROJECTS</h2>
         
         <div className="projects-grid" role="region" aria-label="Project Portfolio">
           <article className="project-card">
             <header className="project-header">
-              <h3 className="project-category">WEB CORRUPTION</h3>
-              <h4 className="project-title">AI-Corrupted Web Development</h4>
+              <h3 className="project-category">VIRTUAL PRODUCTION</h3>
+              <h4 className="project-title">Underwater Facility Environment (Bond)</h4>
             </header>
             
             <div className="project-content">
               <p className="project-description">
-                Created 3 fully corrupted websites using dark AI tools with 95% machine-generated code, 
-                demonstrating the future of automated digital rebellion.
+                Built an abandoned underwater facility environment for a multimedia short film, integrating a physical actor with a digital set
+                for a large LED virtual production workflow.
               </p>
               
               <div className="project-tech" role="region" aria-label="Technologies Used">
-                <span className="tech-tag">Cursor.ai</span>
-                <span className="tech-tag">React</span>
-                <span className="tech-tag">TypeScript</span>
-                <span className="tech-tag">AI Corruption</span>
+                <span className="tech-tag">Unreal Engine</span>
+                <span className="tech-tag">Sequencer</span>
+                <span className="tech-tag">Lighting</span>
+                <span className="tech-tag">LED VP workflow</span>
               </div>
               
-              <Link to="/web-corruption" className="btn">EXPLORE CHAOS</Link>
+              <Link to="/web-corruption" className="btn">VIEW DETAILS</Link>
             </div>
           </article>
           
           <article className="project-card">
             <header className="project-header">
-              <h3 className="project-category">GAME CORRUPTION</h3>
-              <h4 className="project-title">AI-Enhanced Chaos Maps</h4>
+              <h3 className="project-category">DIGITAL LOCATIONS</h3>
+              <h4 className="project-title">Photogrammetry → Unreal Environments</h4>
             </header>
             
             <div className="project-content">
               <p className="project-description">
-                Developed intelligent corruption solutions for Fantasy Grounds, incorporating AI for 
-                dynamic chaos generation and immersive digital dystopian experiences.
+                Used Scaniverse-style capture workflows and Unreal Engine to turn real-world spatial references into usable digital environments,
+                troubleshooting missing geometry, texture issues, lighting, and continuity.
               </p>
               
               <div className="project-tech" role="region" aria-label="Technologies Used">
-                <span className="tech-tag">Fantasy Grounds</span>
-                <span className="tech-tag">AI Integration</span>
-                <span className="tech-tag">Chaos Development</span>
-                <span className="tech-tag">D&D Corruption</span>
+                <span className="tech-tag">Photogrammetry</span>
+                <span className="tech-tag">Scan capture</span>
+                <span className="tech-tag">Unreal Engine</span>
+                <span className="tech-tag">Scene continuity</span>
               </div>
               
-              <Link to="/chaos-maps" className="btn">ENTER DYSTOPIA</Link>
+              <Link to="/chaos-maps" className="btn">VIEW DETAILS</Link>
             </div>
           </article>
           
           <article className="project-card">
             <header className="project-header">
-              <h3 className="project-category">AI REBELLION</h3>
-              <h4 className="project-title">AI Interactive Chaos</h4>
+              <h3 className="project-category">INTERACTIVE MEDIA</h3>
+              <h4 className="project-title">Character AI Creator</h4>
             </header>
             
             <div className="project-content">
               <p className="project-description">
-                Generated over 1 million character corruptions, pushing the boundaries of AI conversation 
-                and creative digital anarchy.
+                Created interactive character systems with 1M+ user interactions, demonstrating audience awareness, iteration,
+                dialogue logic, and long-term creative maintenance.
               </p>
               
               <div className="project-tech" role="region" aria-label="Technologies Used">
-                <span className="tech-tag">Character.ai</span>
-                <span className="tech-tag">AI Conversation</span>
-                <span className="tech-tag">Digital Anarchy</span>
-                <span className="tech-tag">Chaos Design</span>
+                <span className="tech-tag">Interactive systems</span>
+                <span className="tech-tag">Dialogue logic</span>
+                <span className="tech-tag">Iteration</span>
+                <span className="tech-tag">Audience insight</span>
               </div>
               
-              <Link to="/ai-interactive" className="btn">JOIN CHAOS</Link>
+              <Link to="/ai-interactive" className="btn">VIEW DETAILS</Link>
             </div>
           </article>
           
           <article className="project-card">
             <header className="project-header">
-              <h3 className="project-category">DARK ARTS</h3>
-              <h4 className="project-title">Digital Dark Art</h4>
+              <h3 className="project-category">DESIGN & WEB</h3>
+              <h4 className="project-title">Portfolio Websites (2025)</h4>
             </header>
             
             <div className="project-content">
               <p className="project-description">
-                Combining traditional artistic rebellion with AI corruption tools to create unique 
-                digital artworks and dystopian short film content.
+                Designed and developed two portfolio-style websites using visual identity, accessible layout thinking, HTML, CSS,
+                and beginner JavaScript.
               </p>
               
               <div className="project-tech" role="region" aria-label="Technologies Used">
-                <span className="tech-tag">Digital Dark Art</span>
-                <span className="tech-tag">Video Corruption</span>
-                <span className="tech-tag">AI Tools</span>
-                <span className="tech-tag">Chaos Direction</span>
+                <span className="tech-tag">HTML</span>
+                <span className="tech-tag">CSS</span>
+                <span className="tech-tag">JavaScript (basic)</span>
+                <span className="tech-tag">Figma</span>
               </div>
               
-              <Link to="/digital-dark-art" className="btn">VIEW DARKNESS</Link>
+              <Link to="/digital-dark-art" className="btn">VIEW DETAILS</Link>
             </div>
           </article>
         </div>

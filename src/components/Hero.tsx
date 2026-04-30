@@ -8,32 +8,32 @@ const Hero: React.FC = () => {
         <article className="hero-content">
           <header className="hero-text">
             <h1 className="hero-title">
-              <span className="title-line">DARK</span>
-              <span className="title-line">TECHNOLOGIST</span>
+              <span className="title-line">RACHEL</span>
+              <span className="title-line">FRAPPELL</span>
             </h1>
             
             <p className="hero-tagline">
-              Corrupting reality through AI integration and digital rebellion
+              Creative Arts student building Unreal Engine environments, scan-informed assets, and virtual production workflows.
             </p>
             
             <div className="hero-stats" role="region" aria-label="Achievement Statistics">
               <div className="stat-item">
                 <div className="stat-number">1M+</div>
-                <div className="stat-label">AI Corruptions</div>
+                <div className="stat-label">Interactive AI uses</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">3</div>
-                <div className="stat-label">Dark Sites</div>
+                <div className="stat-number">2026</div>
+                <div className="stat-label">Bond BCA (grad)</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">95%</div>
-                <div className="stat-label">Machine Code</div>
+                <div className="stat-number">UE</div>
+                <div className="stat-label">Environments</div>
               </div>
             </div>
             
             <nav className="hero-buttons" aria-label="Primary Navigation">
-              <a href="#projects" className="btn">EXPLORE CHAOS</a>
-              <a href="#contact" className="btn btn-secondary">JOIN REBELLION</a>
+              <a href="#projects" className="btn">VIEW WORK</a>
+              <a href="#contact" className="btn btn-secondary">CONTACT</a>
             </nav>
           </header>
         </article>
