@@ -93,16 +93,6 @@ function showContactForm() {
     });
 }
 
-// Visual novel project info using SweetAlert2
-function showVisualNovelInfo() {
-    Swal.fire({
-        title: 'Visual Novel Game',
-        text: 'Visual Novel Game project details coming soon! This project demonstrates my narrative design and interactive storytelling skills in game development.',
-        icon: 'info',
-        confirmButtonText: 'Got it!'
-    });
-}
-
 // Add scroll event listener for progress bar
 window.addEventListener('scroll', updateProgressBar);
 

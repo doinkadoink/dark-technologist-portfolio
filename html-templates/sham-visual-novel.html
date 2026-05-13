@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121820" />
+  <title>Sham (Demo) — visual novel (2020, abandoned) | Rachel Frappell</title>
+  <meta name="description" content="Sham (Demo): a 2020 Ren'Py visual novel prototype — abandoned after release of a day-one demo. Download preserved on itch.io." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --sham-accent: #c75a4a;
+      --sham-accent-soft: #e88878;
+      --sham-bg: #0e1116;
+      --sham-surface: #161c24;
+      --sham-text: #e8eaef;
+      --sham-muted: #9aa3b2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--sham-bg);
+      color: var(--sham-text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 45% at 20% 0%, rgba(199, 90, 74, 0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 100% 60%, rgba(80, 120, 140, 0.08), transparent);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 28px 20px 72px; }
+    .back {
+      display: inline-block;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--sham-accent-soft);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 1.85rem);
+      font-weight: 700;
+      color: var(--sham-text);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--sham-muted);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .status-banner {
+      background: var(--sham-surface);
+      border: 1px solid rgba(199, 90, 74, 0.45);
+      border-left: 4px solid var(--sham-accent);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.75rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .status-banner strong {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--sham-accent-soft);
+      margin-bottom: 0.35rem;
+    }
+    .status-banner p {
+      font-size: 0.95rem;
+      color: var(--sham-text);
+      margin: 0;
+    }
+    .year-pill {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--sham-muted);
+      margin-bottom: 1.25rem;
+    }
+    section { margin-bottom: 1.75rem; }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: var(--sham-accent-soft);
+      margin-bottom: 0.65rem;
+    }
+    p { margin-bottom: 0.85rem; font-size: 1.02rem; color: #c5cad4; }
+    p:last-child { margin-bottom: 0; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--sham-muted);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.35rem;
+      background: var(--sham-accent);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      border-radius: 6px;
+      border: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #d46b5a;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 0.75rem 1.2rem;
+      color: var(--sham-accent-soft);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid rgba(232, 136, 120, 0.5);
+      border-radius: 6px;
+    }
+    .btn-secondary:hover {
+      background: rgba(232, 136, 120, 0.1);
+    }
+    .fine-print {
+      font-size: 0.85rem;
+      color: var(--sham-muted);
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+
+    <span class="year-pill" aria-label="Release period">2020 · itch.io</span>
+    <h1>Sham (Demo)</h1>
+    <p class="subtitle">Interactive visual novel · Ren'Py · Windows &amp; macOS</p>
+
+    <div class="status-banner" role="status">
+      <strong>ABANDONED DEMO</strong>
+      <p>
+        This project is <strong>not active</strong>. Only a <strong>day-one demo</strong> was published; a full release was never completed.
+        This page is kept for transparency and portfolio context — dated <strong>2020</strong>.
+      </p>
+    </div>
+
+    <section>
+      <h2>OVERVIEW</h2>
+      <p>
+        <em>Sham</em> was an early interactive visual novel built in <strong>Ren'Py</strong>, made while learning to code and ship a first playable.
+        The demo offers branching, comedic narrative around an improvised medical clinic — the itch.io listing describes scope, tone, and downloads.
+      </p>
+      <p>
+        Publishing under <strong>doinkadoink</strong> on itch.io; the build remains available for historical interest only.
+      </p>
+    </section>
+
+    <section>
+      <h2>DOWNLOAD &amp; DETAILS</h2>
+      <p>
+        All files, platform notes, tags, and community comments live on the original store page.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://doinkadoink.itch.io/sham-demo" target="_blank" rel="noopener noreferrer">Open on itch.io — Sham (Demo)</a>
+        <a class="btn-secondary" href="../index.html#projects">All projects</a>
+      </div>
+      <div class="tags" aria-label="Keywords">
+        <span class="tag">Visual novel</span>
+        <span class="tag">Ren'Py</span>
+        <span class="tag">Prototype</span>
+        <span class="tag">2020</span>
+        <span class="tag">Abandoned demo</span>
+      </div>
+    </section>
+
+    <p class="fine-print">
+      External link: <a href="https://doinkadoink.itch.io/sham-demo" target="_blank" rel="noopener noreferrer" style="color: var(--sham-accent-soft);">https://doinkadoink.itch.io/sham-demo</a>
+      — hosted by itch.io; content and binaries are unchanged from the listing there.
+    </p>
+  </div>
+</body>
+</html>
