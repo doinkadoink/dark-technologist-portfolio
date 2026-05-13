@@ -65,9 +65,16 @@ const About: React.FC = () => {
             </article>
             
             <article className="skill-card">
-              <h4 className="skill-title">DESIGN & WEB</h4>
+              <h4 className="skill-title">CREATIVE SOFTWARE</h4>
               <p className="skill-description">
-                HTML/CSS, beginner JavaScript, UI/UX design, Figma, accessible design thinking.
+                Photoshop, Illustrator, InDesign — posters, magazines, and publication layout.
+              </p>
+            </article>
+            
+            <article className="skill-card">
+              <h4 className="skill-title">PRODUCTION &amp; WORKFLOW</h4>
+              <p className="skill-description">
+                Storytelling, previs thinking, collaboration, documentation, and practical-to-digital translation.
               </p>
             </article>
           </section>

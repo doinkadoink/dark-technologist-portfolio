@@ -51,7 +51,7 @@ const Projects: React.FC = () => {
                 <span className="tech-tag">Scene continuity</span>
               </div>
               
-              <Link to="/chaos-maps" className="btn">VIEW DETAILS</Link>
+              <Link to="/photogrammetry" className="btn">VIEW DETAILS</Link>
             </div>
           </article>
           

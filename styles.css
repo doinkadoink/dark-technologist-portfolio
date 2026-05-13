@@ -770,37 +770,70 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 15px #D2691E;
 }
 
-/* Chaos Maps - Retro Arcade Theme */
-.project-card.chaos-maps {
-    border-color: #00FF00;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+/* Virtual production — LED volume / underwater facility */
+.project-card.virtual-production {
+    border-color: #00c8c8;
+    background: linear-gradient(135deg, #050a12 0%, #0a1520 100%);
 }
 
-.project-card.chaos-maps::before {
+.project-card.virtual-production::before {
     display: none;
 }
 
-.project-card.chaos-maps:hover {
-    border-color: #FFD700;
+.project-card.virtual-production:hover {
+    border-color: #4de8ff;
     transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #00FF00);
-    background: linear-gradient(135deg, #0a0a0a 0%, rgba(255, 215, 0, 0.05) 100%);
+    filter: drop-shadow(0 0 6px #00c8c8);
+    background: linear-gradient(135deg, #050a12 0%, rgba(0, 200, 200, 0.08) 100%);
 }
 
-.project-card.chaos-maps .project-category {
-    color: #00FF00;
-    text-shadow: 0 0 10px #00FF00;
+.project-card.virtual-production .project-category {
+    color: #4de8ff;
+    text-shadow: 0 0 10px #00a8a8;
 }
 
-.project-card.chaos-maps .tech-tag {
-    border-color: #00FF00;
-    color: #00FF00;
+.project-card.virtual-production .tech-tag {
+    border-color: #00c8c8;
+    color: #7ef0f0;
 }
 
-.project-card.chaos-maps .tech-tag:hover {
-    background: #00FF00;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #00FF00;
+.project-card.virtual-production .tech-tag:hover {
+    background: #00c8c8;
+    color: #050a12;
+    box-shadow: 0 0 15px #00c8c8;
+}
+
+/* Photogrammetry — scan to Unreal */
+.project-card.photogrammetry {
+    border-color: #c9a227;
+    background: linear-gradient(135deg, #0f0c08 0%, #1a1510 100%);
+}
+
+.project-card.photogrammetry::before {
+    display: none;
+}
+
+.project-card.photogrammetry:hover {
+    border-color: #e8d48a;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px #c9a227);
+    background: linear-gradient(135deg, #0f0c08 0%, rgba(201, 162, 39, 0.08) 100%);
+}
+
+.project-card.photogrammetry .project-category {
+    color: #e8d48a;
+    text-shadow: 0 0 10px #a88420;
+}
+
+.project-card.photogrammetry .tech-tag {
+    border-color: #c9a227;
+    color: #f0e6b8;
+}
+
+.project-card.photogrammetry .tech-tag:hover {
+    background: #c9a227;
+    color: #0f0c08;
+    box-shadow: 0 0 15px #c9a227;
 }
 
 /* AI Interactive - Holographic Theme */
@@ -970,7 +1003,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Enhanced hover animations for themed cards - using standardized motion system */
 .project-card.chattea:hover,
-.project-card.chaos-maps:hover,
+.project-card.virtual-production:hover,
+.project-card.photogrammetry:hover,
 .project-card.ai-interactive:hover,
 .project-card.digital-dark-art:hover,
 .project-card.living-like-luna:hover,
@@ -989,7 +1023,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Scanning line effect for themed cards */
 .project-card.chattea::after,
-.project-card.chaos-maps::after,
+.project-card.virtual-production::after,
+.project-card.photogrammetry::after,
 .project-card.ai-interactive::after,
 .project-card.digital-dark-art::after,
 .project-card.living-like-luna::after,

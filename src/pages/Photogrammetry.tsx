@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import './ProjectPages.css';
 
-const ChaosMaps: React.FC = () => {
+const Photogrammetry: React.FC = () => {
   return (
     <div className="project-page">
       <div className="container">
         <nav className="project-nav">
           <Link to="/" className="back-link">← BACK TO HOME</Link>
         </nav>
-        
+
         <header className="project-header">
           <h1 className="project-title">PHOTOGRAMMETRY → DIGITAL LOCATIONS</h1>
           <p className="project-subtitle">Scan-Informed Environments in Unreal Engine</p>
         </header>
-        
+
         <div className="project-content">
           <section className="project-overview">
             <h2>PROJECT OVERVIEW</h2>
@@ -24,33 +24,33 @@ const ChaosMaps: React.FC = () => {
               The focus is on practical problem-solving: scan issues, missing geometry, texture problems, lighting integration, and continuity.
             </p>
           </section>
-          
+
           <section className="project-details">
             <h2>PROJECT DETAILS</h2>
-            
+
             <div className="detail-grid">
               <div className="detail-item">
                 <h3>WORKFLOW</h3>
                 <p>Capture → cleanup awareness → Unreal assembly</p>
               </div>
-              
+
               <div className="detail-item">
                 <h3>PRIMARY GOAL</h3>
                 <p>Production-usable digital locations</p>
               </div>
-              
+
               <div className="detail-item">
                 <h3>TROUBLESHOOTING</h3>
                 <p>Geometry gaps, texture issues, lighting continuity</p>
               </div>
-              
+
               <div className="detail-item">
                 <h3>OUTPUT</h3>
                 <p>Scene-ready environments for cinematic use</p>
               </div>
             </div>
           </section>
-          
+
           <section className="project-features">
             <h2>KEY CONTRIBUTIONS</h2>
             <ul className="features-list">
@@ -61,7 +61,7 @@ const ChaosMaps: React.FC = () => {
               <li>Environment assembly and cinematic usability checks</li>
             </ul>
           </section>
-          
+
           <section className="project-technologies">
             <h2>TOOLS & SKILLS</h2>
             <div className="tech-grid">
@@ -73,7 +73,7 @@ const ChaosMaps: React.FC = () => {
               <span className="tech-tag">Environment assembly</span>
             </div>
           </section>
-          
+
           <section className="project-gallery">
             <h2>GALLERY</h2>
             <div className="gallery-placeholder">
@@ -81,14 +81,14 @@ const ChaosMaps: React.FC = () => {
               <p>I can help you format these into “Before / After” panels for quick readability.</p>
             </div>
           </section>
-          
+
           <section className="project-impact">
             <h2>IMPACT</h2>
             <p>
               Demonstrates a strong practical-to-digital mindset: using real-world capture as a foundation and making it reliable for production use.
             </p>
           </section>
-          
+
           <section className="project-process">
             <h2>PROCESS</h2>
             <div className="process-steps">
@@ -110,7 +110,7 @@ const ChaosMaps: React.FC = () => {
               </div>
             </div>
           </section>
-          
+
           <section className="project-future">
             <h2>NEXT ITERATION</h2>
             <p>
@@ -119,7 +119,7 @@ const ChaosMaps: React.FC = () => {
             </p>
           </section>
         </div>
-        
+
         <footer className="project-footer">
           <Link to="/" className="btn">RETURN HOME</Link>
         </footer>
@@ -128,4 +128,4 @@ const ChaosMaps: React.FC = () => {
   );
 };
 
-export default ChaosMaps; 
+export default Photogrammetry;

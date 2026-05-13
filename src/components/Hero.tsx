@@ -13,21 +13,21 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="hero-tagline">
-              Creative Arts student building Unreal Engine environments, scan-informed assets, and virtual production workflows.
+              Creative Arts student · Unreal Engine environments · Photogrammetry · Virtual production · Digital design
             </p>
             
             <div className="hero-stats" role="region" aria-label="Achievement Statistics">
               <div className="stat-item">
                 <div className="stat-number">1M+</div>
-                <div className="stat-label">Interactive AI uses</div>
+                <div className="stat-label">Character AI</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">2026</div>
-                <div className="stat-label">Bond BCA (grad)</div>
+                <div className="stat-number">2</div>
+                <div className="stat-label">Websites (2025)</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">UE</div>
-                <div className="stat-label">Environments</div>
+                <div className="stat-number">B.C.A.</div>
+                <div className="stat-label">Bond (to Jun 2026)</div>
               </div>
             </div>
             

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#031018" />
+  <title>Virtual Production Environment | Rachel Frappell</title>
+  <meta name="description" content="Abandoned underwater facility for a multimedia short film — LED virtual production, Unreal Engine, lighting, and physical actor integration." />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --vp-a: #00d4e8;
+      --vp-b: #0a2838;
+      --vp-bg: #030810;
+      --vp-text: #e8f4f8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--vp-bg);
+      color: var(--vp-text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 212, 232, 0.12), transparent),
+        linear-gradient(180deg, #051520 0%, var(--vp-bg) 45%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+    .back { display: inline-block; margin: 100px 0 24px; color: var(--vp-a); text-decoration: none; font-weight: 600; letter-spacing: 0.08em; }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--vp-a);
+      text-shadow: 0 0 24px rgba(0, 212, 232, 0.45);
+      margin-bottom: 12px;
+    }
+    .lede { font-size: 1.15rem; color: #9ec8d4; margin-bottom: 40px; }
+    section { margin-bottom: 36px; }
+    h2 { font-family: 'Orbitron', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: var(--vp-a); margin-bottom: 14px; }
+    p { margin-bottom: 12px; }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 8px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag {
+      border: 1px solid var(--vp-a);
+      color: var(--vp-a);
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--vp-b); }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--vp-a);
+      border: 2px solid var(--vp-a);
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    .btn:hover { background: rgba(0, 212, 232, 0.15); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#projects">← BACK TO PORTFOLIO</a>
+    <h1>Virtual production environment</h1>
+    <p class="lede">Bond University — abandoned underwater facility for a multimedia short film, built for large LED volume workflows.</p>
+
+    <section>
+      <h2>ROLE & OUTPUT</h2>
+      <p>
+        Developed lighting, animated environmental plates, creature silhouettes, and shot material to integrate a physical performer with a digital set.
+        Focus on atmosphere, scale, and material that reads clearly for cinematic blocking and LED playback.
+      </p>
+    </section>
+
+    <section>
+      <h2>ALIGNMENT WITH CV</h2>
+      <ul>
+        <li>Unreal Engine environment build and iteration</li>
+        <li>Virtual production thinking: plates, silhouettes, shot-ready passes</li>
+        <li>Practical-to-digital translation for on-set use</li>
+      </ul>
+      <div class="tags" role="list">
+        <span class="tag">Unreal Engine</span>
+        <span class="tag">Sequencer</span>
+        <span class="tag">Scene lighting</span>
+        <span class="tag">LED VP</span>
+        <span class="tag">Digital actor integration</span>
+      </div>
+    </section>
+
+    <footer>
+      <a class="btn" href="../index.html#contact">CONTACT</a>
+    </footer>
+  </div>
+</body>
+</html>

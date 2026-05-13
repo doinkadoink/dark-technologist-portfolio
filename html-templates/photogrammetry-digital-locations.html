@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1a1510" />
+  <title>Photogrammetry & digital locations | Rachel Frappell</title>
+  <meta name="description" content="Scaniverse-style capture and Unreal Engine workflows — real-world references into production-usable digital environments." />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --pg-a: #d4b44a;
+      --pg-bg: #0f0c08;
+      --pg-text: #f2ead8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--pg-bg);
+      color: var(--pg-text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(212, 180, 74, 0.04) 24px, rgba(212, 180, 74, 0.04) 25px),
+        radial-gradient(ellipse at 30% 20%, rgba(212, 180, 74, 0.08), transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+    .back { display: inline-block; margin: 48px 0 24px; color: var(--pg-a); text-decoration: none; font-weight: 600; letter-spacing: 0.08em; }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.35rem, 3.5vw, 2rem);
+      color: var(--pg-a);
+      margin-bottom: 12px;
+    }
+    .lede { font-size: 1.1rem; color: #c4b89a; margin-bottom: 32px; }
+    section { margin-bottom: 32px; }
+    h2 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.14em; color: var(--pg-a); margin-bottom: 12px; }
+    p { margin-bottom: 12px; }
+    .process { display: grid; gap: 12px; }
+    .step {
+      border-left: 3px solid var(--pg-a);
+      padding-left: 16px;
+    }
+    .step h3 { font-size: 0.9rem; color: #fff; margin-bottom: 4px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag {
+      border: 1px solid var(--pg-a);
+      color: var(--pg-a);
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    footer { margin-top: 40px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 2px solid var(--pg-a);
+      color: var(--pg-a);
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    .btn:hover { background: rgba(212, 180, 74, 0.12); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#projects">← BACK TO PORTFOLIO</a>
+    <h1>Photogrammetry → Unreal</h1>
+    <p class="lede">Turning real-world spatial references into usable digital environments with Scaniverse-style capture and Unreal Engine.</p>
+
+    <section>
+      <h2>OVERVIEW</h2>
+      <p>
+        Work spans troubleshooting scans, missing geometry, texture issues, lighting integration, and continuity so locations hold up across shots.
+      </p>
+    </section>
+
+    <section>
+      <h2>WORKFLOW</h2>
+      <div class="process">
+        <div class="step">
+          <h3>Capture</h3>
+          <p>Plan coverage and capture constraints for reliable spatial data.</p>
+        </div>
+        <div class="step">
+          <h3>Cleanup awareness</h3>
+          <p>Identify gaps, reflective-surface failures, and what must be rebuilt or retouched.</p>
+        </div>
+        <div class="step">
+          <h3>Unreal assembly</h3>
+          <p>Reconstruct the location, light cohesively, and check cinematic usability.</p>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag">Photogrammetry</span>
+        <span class="tag">Scan capture</span>
+        <span class="tag">Unreal Engine</span>
+        <span class="tag">Continuity</span>
+      </div>
+    </section>
+
+    <footer>
+      <a class="btn" href="../index.html#projects">ALL PROJECTS</a>
+    </footer>
+  </div>
+</body>
+</html>
