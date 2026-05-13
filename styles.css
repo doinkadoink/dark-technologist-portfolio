@@ -1096,6 +1096,44 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
+/* Unity VR — Night Kind City (distinct from .nightkind = Bats QLD) */
+.project-card.unity-night-city {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #8b4ddb;
+    background: linear-gradient(165deg, #140a1c 0%, #1a1224 100%);
+}
+
+.project-card.unity-night-city::before {
+    display: none;
+}
+
+.project-card.unity-night-city:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #b888f0;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #140a1c 0%, rgba(139, 77, 219, 0.12) 100%);
+}
+
+.project-card.unity-night-city .project-category {
+    color: #c9a8f0;
+    text-shadow: none;
+}
+
+.project-card.unity-night-city .tech-tag {
+    border-color: rgba(160, 120, 220, 0.45);
+    color: #dcc8f5;
+    background: rgba(0, 0, 0, 0.22);
+}
+
+.project-card.unity-night-city .tech-tag:hover {
+    background: rgba(232, 192, 64, 0.12);
+    color: #fff8e0;
+    border-color: rgba(232, 192, 64, 0.5);
+    box-shadow: none;
+}
+
 @keyframes themedFlutter {
     0%, 100% { transform: none; }
     25% { transform: none; }
@@ -1111,7 +1149,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-card.living-like-luna::after,
 .project-card.nightkind::after,
 .project-card.visual-novel::after,
-.project-card.maya-3d::after {
+.project-card.maya-3d::after,
+.project-card.unity-night-city::after {
     display: none;
 }
 

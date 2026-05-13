@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1a1028" />
+  <title>Night Kind City — Unity VR showcase (2025) | Rachel Frappell</title>
+  <meta name="description" content="Unity 2025 VR walkthrough: night-themed maze city, purple forest, yellow skyline, and simple scripted traffic." />
+  <link rel="icon" href="../public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --nk-purple: #a070d8;
+      --nk-gold: #e8c040;
+      --nk-bg: #120c18;
+      --nk-text: #eae6f0;
+      --nk-muted: #9a92a8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--nk-bg);
+      color: var(--nk-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(160, 112, 216, 0.18), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(232, 192, 64, 0.08), transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 64px; }
+    .back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--nk-purple);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.25rem, 3.5vw, 1.65rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .meta {
+      font-size: 0.95rem;
+      color: var(--nk-muted);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .meta strong { color: var(--nk-gold); font-weight: 700; }
+    .video-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+    }
+    section { margin-bottom: 1.5rem; }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--nk-gold);
+      margin-bottom: 0.5rem;
+    }
+    p, li { color: #c8c2d4; font-size: 1.02rem; margin-bottom: 0.65rem; }
+    ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    li { margin-bottom: 0.4rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(160, 112, 216, 0.45);
+      color: var(--nk-purple);
+    }
+    .btn-row { margin-top: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid rgba(232, 192, 64, 0.55);
+      color: var(--nk-gold);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+    .btn:hover { background: rgba(232, 192, 64, 0.1); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+
+    <h1>Night Kind City</h1>
+    <p class="meta"><strong>2025</strong> · Unity · VR walkthrough · personal study piece</p>
+
+    <div class="video-wrap">
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Screen recording: VR walkthrough of Night Kind City — purple forest, yellow-lit towers, and moving traffic."
+      >
+        <source src="../Night-Kind-City-Showcase-Unity3D-videogame.mp4" type="video/mp4" />
+        Your browser does not support embedded video. The file is <code>Night-Kind-City-Showcase-Unity3D-videogame.mp4</code> in the site root.
+      </video>
+    </div>
+
+    <section>
+      <h2>WHAT THIS IS</h2>
+      <p>
+        A simple <strong>VR</strong> environment built in <strong>Unity (2025)</strong>: a night–“kind” themed <strong>city and maze</strong>,
+        a walkthrough through a <strong>purple forest</strong> and <strong>yellow-lit skyscrapers</strong>, plus lightweight <strong>coded vehicles</strong> to suggest traffic flow.
+      </p>
+      <p>
+        It is a <strong>showcase / prototype</strong> focused on mood, scale, and basic interactivity rather than a shipped product.
+      </p>
+    </section>
+
+    <section>
+      <h2>FOCUS</h2>
+      <ul>
+        <li>3D blockout and atmosphere (forest vs. urban read)</li>
+        <li>VR locomotion and scene pacing for a short walkthrough</li>
+        <li>Simple traffic simulation (vehicle scripts)</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Unity</span>
+        <span class="tag">VR</span>
+        <span class="tag">2025</span>
+        <span class="tag">Environment</span>
+        <span class="tag">C#</span>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <a class="btn" href="../index.html#projects">All projects</a>
+    </div>
+  </div>
+</body>
+</html>
