@@ -12,16 +12,21 @@ const AIInteractive: React.FC = () => {
         </nav>
         
         <header className="project-header">
-          <h1 className="project-title">CHARACTER AI CREATOR</h1>
-          <p className="project-subtitle">Interactive Character Systems • 1M+ User Interactions</p>
+          <h1 className="project-title">CHARACTER.AI — @DOINKADOINK</h1>
+          <p className="project-subtitle">Personal creator · ~3 years of bot curation · 1.6M+ interactions (live on Character.AI)</p>
         </header>
         
         <div className="project-content">
           <section className="project-overview">
             <h2>PROJECT OVERVIEW</h2>
             <p>
-              Created interactive character systems with more than 1 million user interactions. This work demonstrates audience awareness,
-              iteration based on feedback, dialogue logic, and long-term creative maintenance.
+              I author and maintain a library of Character.AI bots as a <strong>personal content creator</strong>: shaping dialogue, revising definitions as the product changes,
+              and growing an on-platform fanbase. Totals (including <strong>1.6M+</strong> account-level interactions) and the full character roster update on Character.AI itself.
+            </p>
+            <p style={{ marginTop: '1rem' }}>
+              <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" className="btn">
+                Open live profile — character.ai/profile/Doinkadoink
+              </a>
             </p>
           </section>
           
@@ -31,7 +36,7 @@ const AIInteractive: React.FC = () => {
             <div className="detail-grid">
               <div className="detail-item">
                 <h3>INTERACTIONS</h3>
-                <p>1,000,000+ user interactions</p>
+                <p>1.6M+ on the live profile (updates as users chat)</p>
               </div>
               
               <div className="detail-item">
@@ -75,10 +80,11 @@ const AIInteractive: React.FC = () => {
           </section>
           
           <section className="project-gallery">
-            <h2>GALLERY</h2>
+            <h2>LIVE SHOWCASE</h2>
             <div className="gallery-placeholder">
-              <p>[Add: screenshots of interaction examples and short “system notes” about how the dialogue is structured]</p>
-              <p>We can format this as a case study: goal → approach → examples → iteration notes.</p>
+              <p>
+                Character cards, voices, scenes, and per-bot stats are hosted on Character.AI — this React page only summarizes the practice.
+              </p>
             </div>
           </section>
           
@@ -117,7 +123,7 @@ const AIInteractive: React.FC = () => {
             <div className="stats-grid">
               <div className="stat-item">
                 <h3>INTERACTIONS</h3>
-                <p>1M+ user interactions</p>
+                <p>1.6M+ (see live profile)</p>
               </div>
               <div className="stat-item">
                 <h3>ITERATION</h3>
@@ -143,7 +149,10 @@ const AIInteractive: React.FC = () => {
         </div>
         
         <footer className="project-footer">
-          <Link to="/" className="btn">RETURN HOME</Link>
+          <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" className="btn">
+            CHARACTER.AI PROFILE
+          </a>
+          <Link to="/" className="btn" style={{ marginLeft: '12px' }}>RETURN HOME</Link>
         </footer>
       </div>
     </div>
