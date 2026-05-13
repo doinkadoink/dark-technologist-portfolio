@@ -635,28 +635,47 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-/* Projects Styles */
+/* Projects — editorial grid (wider cards, calmer chrome) */
 .projects {
     background: var(--primary-bg);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    align-items: stretch;
 }
 
-/* Enhanced Project Cards with 3D Effects */
+@media (min-width: 720px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.75rem;
+    }
+}
+
 .project-card {
     background: var(--secondary-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 0;
     position: relative;
     overflow: hidden;
-    transition: all var(--hover-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--hover-duration) ease, box-shadow var(--hover-duration) ease, transform var(--hover-duration) ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.28);
 }
 
 .project-card::before {
@@ -664,83 +683,94 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
-    border-color: var(--accent-color);
-    background: linear-gradient(135deg, var(--secondary-bg) 0%, rgba(138, 43, 226, 0.03) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: var(--accent-color);
+    background: linear-gradient(165deg, var(--secondary-bg) 0%, rgba(138, 43, 226, 0.04) 100%);
 }
 
 .project-header {
-    padding: 30px 30px 20px;
-    border-bottom: 1px solid var(--border-color);
+    padding: 1.15rem 1.35rem 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .project-category {
-    font-size: 0.9rem;
+    font-size: 0.72rem;
     color: var(--accent-color);
-    font-family: 'Orbitron', monospace;
-    font-weight: 600;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
 }
 
 .project-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
-    font-weight: 700;
-    line-height: 1.3;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
 }
 
 .project-content {
-    padding: 30px;
+    padding: 1rem 1.35rem 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-description {
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 25px;
-    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+    flex: 1 1 auto;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 0.4rem 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .tech-tag {
-    background: var(--primary-bg);
-    color: var(--accent-color);
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-family: 'Orbitron', monospace;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid var(--accent-color);
-    transition: all var(--hover-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--text-secondary);
+    padding: 0.28rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background var(--hover-duration) ease, color var(--hover-duration) ease, border-color var(--hover-duration) ease;
 }
 
 .tech-tag:hover {
-    background: var(--accent-color);
+    background: rgba(138, 43, 226, 0.15);
     color: var(--text-primary);
-    filter: drop-shadow(0 0 8px var(--accent-color));
+    border-color: rgba(138, 43, 226, 0.35);
+    filter: none;
 }
 
 .project-card .btn {
-    width: 100%;
+    width: auto;
+    align-self: flex-start;
     text-align: center;
-    margin-top: 10px;
+    margin-top: auto;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.72rem;
 }
 
-/* Project Card Theme Styles */
-/* Chattea - Coffee Community Theme */
+/* Project card themes — left accent, muted glow */
 .project-card.chattea {
-    border-color: #D2691E;
-    background: linear-gradient(135deg, #1a0f0a 0%, #2d1a10 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #c4783a;
+    background: linear-gradient(165deg, #1a0f0a 0%, #23160e 100%);
 }
 
 .project-card.chattea::before {
@@ -748,32 +778,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.chattea:hover {
-    border-color: #CD853F;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #D2691E);
-    background: linear-gradient(135deg, #1a0f0a 0%, rgba(210, 105, 30, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #d4915a;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #1a0f0a 0%, rgba(210, 105, 30, 0.1) 100%);
 }
 
 .project-card.chattea .project-category {
-    color: #D2691E;
-    text-shadow: 0 0 10px #D2691E;
+    color: #d4915a;
+    text-shadow: none;
 }
 
 .project-card.chattea .tech-tag {
-    border-color: #D2691E;
-    color: #D2691E;
+    border-color: rgba(210, 140, 80, 0.4);
+    color: #e8c9a8;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.chattea .tech-tag:hover {
-    background: #D2691E;
-    color: #1a0f0a;
-    box-shadow: 0 0 15px #D2691E;
+    background: rgba(210, 105, 30, 0.22);
+    color: #fff8f0;
+    border-color: rgba(210, 140, 80, 0.65);
+    box-shadow: none;
 }
 
-/* Virtual production — LED volume / underwater facility */
 .project-card.virtual-production {
-    border-color: #00c8c8;
-    background: linear-gradient(135deg, #050a12 0%, #0a1520 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #00a8b0;
+    background: linear-gradient(165deg, #050a12 0%, #0c1822 100%);
 }
 
 .project-card.virtual-production::before {
@@ -781,32 +815,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.virtual-production:hover {
-    border-color: #4de8ff;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #00c8c8);
-    background: linear-gradient(135deg, #050a12 0%, rgba(0, 200, 200, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #3dd4e0;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+    background: linear-gradient(165deg, #050a12 0%, rgba(0, 180, 190, 0.12) 100%);
 }
 
 .project-card.virtual-production .project-category {
-    color: #4de8ff;
-    text-shadow: 0 0 10px #00a8a8;
+    color: #5ee0eb;
+    text-shadow: none;
 }
 
 .project-card.virtual-production .tech-tag {
-    border-color: #00c8c8;
-    color: #7ef0f0;
+    border-color: rgba(0, 200, 210, 0.4);
+    color: #a8eef4;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.virtual-production .tech-tag:hover {
-    background: #00c8c8;
-    color: #050a12;
-    box-shadow: 0 0 15px #00c8c8;
+    background: rgba(0, 200, 210, 0.18);
+    color: #f0fdff;
+    border-color: rgba(0, 220, 230, 0.55);
+    box-shadow: none;
 }
 
-/* Photogrammetry — scan to Unreal */
 .project-card.photogrammetry {
-    border-color: #c9a227;
-    background: linear-gradient(135deg, #0f0c08 0%, #1a1510 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #b8922a;
+    background: linear-gradient(165deg, #0f0c08 0%, #1a1510 100%);
 }
 
 .project-card.photogrammetry::before {
@@ -814,32 +852,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.photogrammetry:hover {
-    border-color: #e8d48a;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #c9a227);
-    background: linear-gradient(135deg, #0f0c08 0%, rgba(201, 162, 39, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #d4b44a;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #0f0c08 0%, rgba(201, 162, 39, 0.1) 100%);
 }
 
 .project-card.photogrammetry .project-category {
-    color: #e8d48a;
-    text-shadow: 0 0 10px #a88420;
+    color: #dcc882;
+    text-shadow: none;
 }
 
 .project-card.photogrammetry .tech-tag {
-    border-color: #c9a227;
-    color: #f0e6b8;
+    border-color: rgba(201, 162, 39, 0.45);
+    color: #ede4c8;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.photogrammetry .tech-tag:hover {
-    background: #c9a227;
-    color: #0f0c08;
-    box-shadow: 0 0 15px #c9a227;
+    background: rgba(201, 162, 39, 0.2);
+    color: #fffdf5;
+    border-color: rgba(212, 180, 74, 0.6);
+    box-shadow: none;
 }
 
-/* AI Interactive - Holographic Theme */
 .project-card.ai-interactive {
-    border-color: #00BFFF;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #0099cc;
+    background: linear-gradient(165deg, #0a0c10 0%, #141a22 100%);
 }
 
 .project-card.ai-interactive::before {
@@ -847,32 +889,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.ai-interactive:hover {
-    border-color: #FF69B4;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #00BFFF);
-    background: linear-gradient(135deg, #0a0a0a 0%, rgba(0, 191, 255, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #33cfff;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #0a0c10 0%, rgba(0, 160, 210, 0.1) 100%);
 }
 
 .project-card.ai-interactive .project-category {
-    color: #00BFFF;
-    text-shadow: 0 0 10px #00BFFF;
+    color: #5cd4f5;
+    text-shadow: none;
 }
 
 .project-card.ai-interactive .tech-tag {
-    border-color: #00BFFF;
-    color: #00BFFF;
+    border-color: rgba(0, 180, 230, 0.4);
+    color: #b8ecfc;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.ai-interactive .tech-tag:hover {
-    background: #00BFFF;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #00BFFF;
+    background: rgba(0, 180, 230, 0.18);
+    color: #f5fcff;
+    border-color: rgba(90, 210, 255, 0.55);
+    box-shadow: none;
 }
 
-/* Digital Dark Art - Cyberpunk Theme */
 .project-card.digital-dark-art {
-    border-color: #FF69B4;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #c94d8c;
+    background: linear-gradient(165deg, #0a0a0f 0%, #16121a 100%);
 }
 
 .project-card.digital-dark-art::before {
@@ -880,32 +926,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.digital-dark-art:hover {
-    border-color: #00BFFF;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #FF69B4);
-    background: linear-gradient(135deg, #0a0a0a 0%, rgba(255, 105, 180, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #e070a8;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #0a0a0f 0%, rgba(200, 80, 140, 0.08) 100%);
 }
 
 .project-card.digital-dark-art .project-category {
-    color: #FF69B4;
-    text-shadow: 0 0 10px #FF69B4;
+    color: #e888b8;
+    text-shadow: none;
 }
 
 .project-card.digital-dark-art .tech-tag {
-    border-color: #FF69B4;
-    color: #FF69B4;
+    border-color: rgba(220, 100, 160, 0.4);
+    color: #f5c8dc;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.digital-dark-art .tech-tag:hover {
-    background: #FF69B4;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #FF69B4;
+    background: rgba(220, 100, 160, 0.16);
+    color: #fff5fa;
+    border-color: rgba(240, 130, 180, 0.55);
+    box-shadow: none;
 }
 
-/* Living Like Luna - Cinematic Theme */
 .project-card.living-like-luna {
-    border-color: #FFD700;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #c9a635;
+    background: linear-gradient(165deg, #0a0a0c 0%, #15151c 100%);
 }
 
 .project-card.living-like-luna::before {
@@ -913,32 +963,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.living-like-luna:hover {
-    border-color: #8A2BE2;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #FFD700);
-    background: linear-gradient(135deg, #0a0a0a 0%, rgba(138, 43, 226, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #e0c060;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #0a0a0c 0%, rgba(180, 140, 40, 0.1) 100%);
 }
 
 .project-card.living-like-luna .project-category {
-    color: #FFD700;
-    text-shadow: 0 0 10px #FFD700;
+    color: #e0c060;
+    text-shadow: none;
 }
 
 .project-card.living-like-luna .tech-tag {
-    border-color: #FFD700;
-    color: #FFD700;
+    border-color: rgba(220, 190, 90, 0.45);
+    color: #f0e6b8;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.living-like-luna .tech-tag:hover {
-    background: #FFD700;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px #FFD700;
+    background: rgba(220, 190, 90, 0.18);
+    color: #fffcef;
+    border-color: rgba(240, 210, 120, 0.55);
+    box-shadow: none;
 }
 
-/* NightKind - Alt-Gothic Conservation Theme */
 .project-card.nightkind {
-    border-color: #ffff33;
-    background: linear-gradient(135deg, #000000 0%, #1a0f2e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #c4c42a;
+    background: linear-gradient(165deg, #000008 0%, #120a1e 100%);
 }
 
 .project-card.nightkind::before {
@@ -946,32 +1000,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.nightkind:hover {
-    border-color: #8a2be2;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #ffff33);
-    background: linear-gradient(135deg, #000000 0%, rgba(138, 43, 226, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #d8d850;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #000008 0%, rgba(100, 50, 160, 0.12) 100%);
 }
 
 .project-card.nightkind .project-category {
-    color: #ffff33;
-    text-shadow: 0 0 10px #ffff33;
+    color: #d8d85a;
+    text-shadow: none;
 }
 
 .project-card.nightkind .tech-tag {
-    border-color: #8a2be2;
-    color: #8a2be2;
+    border-color: rgba(138, 80, 200, 0.45);
+    color: #d4c4f0;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.nightkind .tech-tag:hover {
-    background: #ffff33;
-    color: #000000;
-    box-shadow: 0 0 15px #ffff33;
+    background: rgba(138, 80, 200, 0.2);
+    color: #faf5ff;
+    border-color: rgba(170, 120, 230, 0.55);
+    box-shadow: none;
 }
 
-/* Visual Novel - Game Development Theme */
 .project-card.visual-novel {
-    border-color: #ff6b35;
-    background: linear-gradient(135deg, #000000 0%, #1a0f0f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #d45a30;
+    background: linear-gradient(165deg, #080606 0%, #141010 100%);
 }
 
 .project-card.visual-novel::before {
@@ -979,40 +1037,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card.visual-novel:hover {
-    border-color: #00d4aa;
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 6px #ff6b35);
-    background: linear-gradient(135deg, #000000 0%, rgba(0, 212, 170, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #e87848;
+    transform: translateY(-3px);
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+    background: linear-gradient(165deg, #080606 0%, rgba(220, 90, 48, 0.1) 100%);
 }
 
 .project-card.visual-novel .project-category {
-    color: #ff6b35;
-    text-shadow: 0 0 10px #ff6b35;
+    color: #e87848;
+    text-shadow: none;
 }
 
 .project-card.visual-novel .tech-tag {
-    border-color: #00d4aa;
-    color: #00d4aa;
+    border-color: rgba(0, 200, 170, 0.4);
+    color: #9ee8dc;
+    background: rgba(0, 0, 0, 0.22);
 }
 
 .project-card.visual-novel .tech-tag:hover {
-    background: #ff6b35;
-    color: #000000;
-    box-shadow: 0 0 15px #ff6b35;
+    background: rgba(0, 200, 170, 0.15);
+    color: #f0fffc;
+    border-color: rgba(0, 220, 190, 0.5);
+    box-shadow: none;
 }
 
-/* Enhanced hover animations for themed cards - using standardized motion system */
-.project-card.chattea:hover,
-.project-card.virtual-production:hover,
-.project-card.photogrammetry:hover,
-.project-card.ai-interactive:hover,
-.project-card.digital-dark-art:hover,
-.project-card.living-like-luna:hover,
-.project-card.nightkind:hover,
-.project-card.visual-novel:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
-    background: linear-gradient(135deg, var(--secondary-bg) 0%, rgba(138, 43, 226, 0.03) 100%);
+.project-card.maya-3d {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #00b8c4;
+    background: linear-gradient(165deg, #060a0e 0%, #101820 100%);
+}
+
+.project-card.maya-3d::before {
+    display: none;
+}
+
+.project-card.maya-3d:hover {
+    border-left-color: #33d0dc;
+    filter: none;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+}
+
+.project-card.maya-3d .project-category {
+    color: #5cdce8;
+    text-shadow: none;
+}
+
+.project-card.maya-3d .tech-tag {
+    border-color: rgba(0, 200, 210, 0.4);
+    color: #b0eef4;
+    background: rgba(0, 0, 0, 0.22);
+}
+
+.project-card.maya-3d .tech-tag:hover {
+    background: rgba(0, 200, 210, 0.18);
+    border-color: rgba(80, 220, 230, 0.55);
+    box-shadow: none;
 }
 
 @keyframes themedFlutter {
@@ -1029,7 +1110,8 @@ h1, h2, h3, h4, h5, h6 {
 .project-card.digital-dark-art::after,
 .project-card.living-like-luna::after,
 .project-card.nightkind::after,
-.project-card.visual-novel::after {
+.project-card.visual-novel::after,
+.project-card.maya-3d::after {
     display: none;
 }
 
@@ -1371,20 +1453,20 @@ h1, h2, h3, h4, h5, h6 {
     /* Projects Section */
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 1.25rem;
     }
     
     .project-header {
-        padding: 20px 20px 15px;
+        padding: 1rem 1.15rem 0.75rem;
     }
     
     .project-content {
-        padding: 20px;
+        padding: 0.85rem 1.15rem 1rem;
     }
     
     .project-title {
-        font-size: 1.2rem;
-        line-height: 1.3;
+        font-size: 1.05rem;
+        line-height: 1.35;
     }
     
     .project-description {
@@ -1848,10 +1930,6 @@ h1, h2, h3, h4, h5, h6 {
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .project-card {
-        padding: 20px;
     }
 }
 
