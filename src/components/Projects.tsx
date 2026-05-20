@@ -35,13 +35,12 @@ const Projects: React.FC = () => {
           <article className="project-card">
             <header className="project-header">
               <h3 className="project-category">DIGITAL LOCATIONS</h3>
-              <h4 className="project-title">Photogrammetry → Unreal Environments</h4>
+              <h4 className="project-title">on &amp; on &amp; on &amp; on — home flythrough</h4>
             </header>
             
             <div className="project-content">
               <p className="project-description">
-                Used Scaniverse-style capture workflows and Unreal Engine to turn real-world spatial references into usable digital environments,
-                troubleshooting missing geometry, texture issues, lighting, and continuity.
+                Home Scaniverse scan → Unreal cleanup and flythrough (~54s, seamless loop) cut to piri &amp; Tommy Villiers&apos; “on &amp; on” — 3 weeks.
               </p>
               
               <div className="project-tech" role="region" aria-label="Technologies Used">

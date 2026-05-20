@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import './ProjectPages.css';
 
+const SPOTIFY_ON_AND_ON =
+  'https://open.spotify.com/track/5mfGEs5n647v4WE3K5YmBy?si=3d71d934301c47ec';
+const FLYTHROUGH_VIDEO = `${process.env.PUBLIC_URL}/on-on-on-on-flythrough.mp4`;
+
 const Photogrammetry: React.FC = () => {
   return (
     <div className="project-page">
@@ -12,116 +16,88 @@ const Photogrammetry: React.FC = () => {
         </nav>
 
         <header className="project-header">
-          <h1 className="project-title">PHOTOGRAMMETRY → DIGITAL LOCATIONS</h1>
-          <p className="project-subtitle">Scan-Informed Environments in Unreal Engine</p>
+          <h1 className="project-title">on &amp; on &amp; on &amp; on</h1>
+          <p className="project-subtitle">
+            ~54 sec · 3 weeks · Scaniverse (iPhone) → Unreal Engine (PC) · home flythrough
+          </p>
         </header>
 
         <div className="project-content">
           <section className="project-overview">
-            <h2>PROJECT OVERVIEW</h2>
-            <p>
-              Used Scaniverse-style capture workflows and Unreal Engine to turn real-world spatial references into usable digital environments.
-              The focus is on practical problem-solving: scan issues, missing geometry, texture problems, lighting integration, and continuity.
+            <div className="video-wrap" style={{ marginBottom: '1rem' }}>
+              <video
+                controls
+                playsInline
+                loop
+                preload="metadata"
+                style={{ width: '100%', maxHeight: '70vh', display: 'block', borderRadius: '8px' }}
+                aria-label="Unreal Engine flythrough of a photogrammetry scan of Rachel's home, edited to loop seamlessly to the chorus of on and on."
+              >
+                <source src={FLYTHROUGH_VIDEO} type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+            </div>
+            <p style={{ fontSize: '0.9rem', opacity: 0.85, marginBottom: '1.25rem' }}>
+              Music:{' '}
+              <a href={SPOTIFY_ON_AND_ON} target="_blank" rel="noopener noreferrer">
+                “on &amp; on”
+              </a>{' '}
+              by piri &amp; Tommy Villiers — timed to the main chorus; loops start-to-finish.
             </p>
-          </section>
-
-          <section className="project-details">
-            <h2>PROJECT DETAILS</h2>
-
-            <div className="detail-grid">
-              <div className="detail-item">
-                <h3>WORKFLOW</h3>
-                <p>Capture → cleanup awareness → Unreal assembly</p>
-              </div>
-
-              <div className="detail-item">
-                <h3>PRIMARY GOAL</h3>
-                <p>Production-usable digital locations</p>
-              </div>
-
-              <div className="detail-item">
-                <h3>TROUBLESHOOTING</h3>
-                <p>Geometry gaps, texture issues, lighting continuity</p>
-              </div>
-
-              <div className="detail-item">
-                <h3>OUTPUT</h3>
-                <p>Scene-ready environments for cinematic use</p>
-              </div>
-            </div>
-          </section>
-
-          <section className="project-features">
-            <h2>KEY CONTRIBUTIONS</h2>
-            <ul className="features-list">
-              <li>Scan capture planning and capture constraints awareness</li>
-              <li>Identifying common scan failure points (coverage, occlusion, reflective surfaces)</li>
-              <li>Lighting integration for cohesive scene look</li>
-              <li>Continuity thinking for shot-to-shot consistency</li>
-              <li>Environment assembly and cinematic usability checks</li>
-            </ul>
-          </section>
-
-          <section className="project-technologies">
-            <h2>TOOLS & SKILLS</h2>
-            <div className="tech-grid">
-              <span className="tech-tag">Photogrammetry principles</span>
-              <span className="tech-tag">Scaniverse-style capture</span>
-              <span className="tech-tag">Unreal Engine</span>
-              <span className="tech-tag">Lighting</span>
-              <span className="tech-tag">Continuity</span>
-              <span className="tech-tag">Environment assembly</span>
-            </div>
-          </section>
-
-          <section className="project-gallery">
-            <h2>GALLERY</h2>
-            <div className="gallery-placeholder">
-              <p>[Add: scan previews, problem cases (missing geo/texture), and final Unreal scene screenshots]</p>
-              <p>I can help you format these into “Before / After” panels for quick readability.</p>
-            </div>
-          </section>
-
-          <section className="project-impact">
-            <h2>IMPACT</h2>
+            <h2>WHAT IT IS</h2>
             <p>
-              Demonstrates a strong practical-to-digital mindset: using real-world capture as a foundation and making it reliable for production use.
+              A <strong>3D scan of my house</strong> captured on iPhone with <strong>Scaniverse</strong>, brought into{' '}
+              <strong>Unreal Engine on PC</strong> for cleanup, then recorded as a cinematic flythrough through the interior.
+            </p>
+            <p>
+              The cut is built around the <strong>main chorus</strong> of the track — designed to{' '}
+              <strong>loop seamlessly</strong> (~54 seconds) from first frame to last.
             </p>
           </section>
 
           <section className="project-process">
-            <h2>PROCESS</h2>
+            <h2>WORKFLOW</h2>
             <div className="process-steps">
               <div className="step">
-                <h3>STEP 1: CAPTURE</h3>
-                <p>Plan coverage and capture real-world spatial references</p>
+                <h3>CAPTURE</h3>
+                <p>Room-by-room Scaniverse coverage on iPhone — paths planned to reduce holes and mismatched geometry.</p>
               </div>
               <div className="step">
-                <h3>STEP 2: CLEANUP AWARENESS</h3>
-                <p>Identify scan issues and what needs fixing/rebuilding</p>
+                <h3>UNREAL CLEANUP</h3>
+                <p>Mesh cleanup, materials, lighting, and a flythrough path that reads naturally at house scale.</p>
               </div>
               <div className="step">
-                <h3>STEP 3: UNREAL ASSEMBLY</h3>
-                <p>Reconstruct the location and block shots for usability</p>
-              </div>
-              <div className="step">
-                <h3>STEP 4: LIGHTING & CONTINUITY</h3>
-                <p>Match scene lighting and check continuity across angles</p>
+                <h3>EDIT &amp; LOOP</h3>
+                <p>In-engine recording, grading, and chorus-aligned motion so the loop point is invisible.</p>
               </div>
             </div>
           </section>
 
-          <section className="project-future">
-            <h2>NEXT ITERATION</h2>
+          <section className="project-technologies">
+            <h2>TOOLS &amp; SKILLS</h2>
+            <div className="tech-grid">
+              <span className="tech-tag">Scaniverse</span>
+              <span className="tech-tag">iPhone capture</span>
+              <span className="tech-tag">Photogrammetry</span>
+              <span className="tech-tag">Unreal Engine</span>
+              <span className="tech-tag">Flythrough</span>
+              <span className="tech-tag">Seamless loop</span>
+            </div>
+          </section>
+
+          <section className="project-impact">
+            <h2>BROADER PRACTICE</h2>
             <p>
-              Build a small set of “scan-to-scene” case studies with consistent breakdowns (capture notes, fixes, final renders),
-              and expand into more complex locations.
+              Part of my <strong>digital locations</strong> work: real-world capture as foundation, then production-minded cleanup for lighting, continuity, and shot planning.
             </p>
           </section>
         </div>
 
-        <footer className="project-footer">
+        <footer className="project-footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <Link to="/" className="btn">RETURN HOME</Link>
+          <a className="btn" href={SPOTIFY_ON_AND_ON} target="_blank" rel="noopener noreferrer">
+            LISTEN ON SPOTIFY
+          </a>
         </footer>
       </div>
     </div>

@@ -4,18 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1a1510" />
-  <title>Photogrammetry & digital locations | Rachel Frappell</title>
-  <meta name="description" content="Scaniverse-style capture and Unreal Engine workflows — real-world references into production-usable digital environments." />
+  <title>Photogrammetry → Unreal — on &amp; on flythrough | Rachel Frappell</title>
+  <meta name="description" content="Home photogrammetry scan (Scaniverse, iPhone) cleaned in Unreal Engine — seamless flythrough cut to piri &amp; Tommy Villiers' on &amp; on (~54s, 3 weeks)." />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
     :root {
       --pg-a: #d4b44a;
+      --pg-a-soft: #e8d078;
       --pg-bg: #0f0c08;
       --pg-text: #f2ead8;
+      --pg-muted: #a89878;
+      --pg-body: #d4c8b0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -30,62 +33,152 @@
       position: fixed;
       inset: 0;
       background:
-        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(212, 180, 74, 0.04) 24px, rgba(212, 180, 74, 0.04) 25px),
-        radial-gradient(ellipse at 30% 20%, rgba(212, 180, 74, 0.08), transparent 50%);
+        radial-gradient(ellipse 75% 45% at 20% 0%, rgba(212, 180, 74, 0.1), transparent 52%),
+        radial-gradient(ellipse 55% 40% at 100% 80%, rgba(120, 90, 40, 0.06), transparent 48%);
       pointer-events: none;
       z-index: -1;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
-    .back { display: inline-block; margin: 48px 0 24px; color: var(--pg-a); text-decoration: none; font-weight: 600; letter-spacing: 0.08em; }
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 64px; }
+    .back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--pg-a);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
     .back:hover { text-decoration: underline; }
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.35rem, 3.5vw, 2rem);
-      color: var(--pg-a);
-      margin-bottom: 12px;
+      font-size: clamp(1.25rem, 3.5vw, 1.65rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      color: var(--pg-text);
     }
-    .lede { font-size: 1.1rem; color: #c4b89a; margin-bottom: 32px; }
-    section { margin-bottom: 32px; }
-    h2 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.14em; color: var(--pg-a); margin-bottom: 12px; }
-    p { margin-bottom: 12px; }
-    .process { display: grid; gap: 12px; }
+    .meta {
+      font-size: 0.95rem;
+      color: var(--pg-muted);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .meta strong { color: var(--pg-a-soft); font-weight: 700; }
+    .video-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 180, 74, 0.25);
+      background: #000;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 72vh;
+    }
+    .music-credit {
+      font-size: 0.88rem;
+      color: var(--pg-muted);
+      margin-bottom: 1.75rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--pg-a);
+    }
+    .music-credit a {
+      color: var(--pg-a-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .music-credit a:hover { text-decoration: underline; }
+    section { margin-bottom: 1.5rem; }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--pg-a-soft);
+      margin-bottom: 0.5rem;
+    }
+    p, li { color: var(--pg-body); font-size: 1.02rem; margin-bottom: 0.65rem; }
+    .process { display: grid; gap: 0.85rem; margin-top: 0.5rem; }
     .step {
       border-left: 3px solid var(--pg-a);
-      padding-left: 16px;
+      padding-left: 1rem;
     }
-    .step h3 { font-size: 0.9rem; color: #fff; margin-bottom: 4px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .step h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--pg-text);
+      margin-bottom: 0.25rem;
+    }
+    .step p { margin-bottom: 0; font-size: 0.98rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
     .tag {
-      border: 1px solid var(--pg-a);
-      color: var(--pg-a);
-      padding: 4px 12px;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 180, 74, 0.45);
+      color: var(--pg-a);
     }
-    footer { margin-top: 40px; }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      border: 2px solid var(--pg-a);
-      color: var(--pg-a);
+      padding: 0.65rem 1.2rem;
+      border: 1px solid rgba(232, 208, 120, 0.55);
+      color: var(--pg-a-soft);
       text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      border-radius: 6px;
+      font-size: 0.9rem;
     }
-    .btn:hover { background: rgba(212, 180, 74, 0.12); }
+    .btn:hover { background: rgba(212, 180, 74, 0.1); }
+    .btn-solid {
+      background: linear-gradient(165deg, #2a2210 0%, #3d3218 100%);
+      color: #fff8e8;
+      border-color: rgba(212, 180, 74, 0.55);
+    }
+    .btn-solid:hover { background: linear-gradient(165deg, #3a3018 0%, #4d4020 100%); }
   </style>
 </head>
 <body>
   <div class="container">
-    <a class="back" href="../index.html#projects">← BACK TO PORTFOLIO</a>
-    <h1>Photogrammetry → Unreal</h1>
-    <p class="lede">Turning real-world spatial references into usable digital environments with Scaniverse-style capture and Unreal Engine.</p>
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+
+    <h1>on &amp; on &amp; on &amp; on</h1>
+    <p class="meta"><strong>~54 sec</strong> · <strong>3 weeks</strong> · Scaniverse (iPhone) → Unreal Engine (PC) · home flythrough</p>
+
+    <div class="video-wrap">
+      <video
+        controls
+        playsinline
+        loop
+        preload="metadata"
+        aria-label="Unreal Engine flythrough of a photogrammetry scan of Rachel's home, edited to loop seamlessly to the chorus of on and on."
+      >
+        <source src="../public/on-on-on-on-flythrough.mp4" type="video/mp4" />
+        Your browser does not support embedded video. The file is <code>public/on-on-on-on-flythrough.mp4</code>.
+      </video>
+    </div>
+
+    <p class="music-credit">
+      Music: <a href="https://open.spotify.com/track/5mfGEs5n647v4WE3K5YmBy?si=3d71d934301c47ec" target="_blank" rel="noopener noreferrer">“on &amp; on”</a> by piri &amp; Tommy Villiers (piri &amp; tommy) — flythrough timed to the main chorus; edit loops start-to-finish.
+    </p>
 
     <section>
-      <h2>OVERVIEW</h2>
+      <h2>WHAT IT IS</h2>
       <p>
-        Work spans troubleshooting scans, missing geometry, texture issues, lighting integration, and continuity so locations hold up across shots.
+        A <strong>3D scan of my house</strong> captured on iPhone with <strong>Scaniverse</strong>, brought into <strong>Unreal Engine on PC</strong> for cleanup, then recorded as a <strong>cinematic flythrough</strong> through the interior.
+      </p>
+      <p>
+        The cut is built around the <strong>main chorus</strong> of the track — the piece is designed to <strong>loop seamlessly</strong> from the first frame to the last (~54 seconds), so it reads as one continuous pass rather than a hard cut.
       </p>
     </section>
 
@@ -93,29 +186,39 @@
       <h2>WORKFLOW</h2>
       <div class="process">
         <div class="step">
-          <h3>Capture</h3>
-          <p>Plan coverage and capture constraints for reliable spatial data.</p>
+          <h3>CAPTURE</h3>
+          <p>Room-by-room Scaniverse coverage on iPhone — planning paths so walls, floors, and furniture tie together with fewer holes.</p>
         </div>
         <div class="step">
-          <h3>Cleanup awareness</h3>
-          <p>Identify gaps, reflective-surface failures, and what must be rebuilt or retouched.</p>
+          <h3>UNREAL CLEANUP</h3>
+          <p>Import and fix on PC: mesh cleanup, materials, lighting, and blocking a flythrough path that feels natural at house scale.</p>
         </div>
         <div class="step">
-          <h3>Unreal assembly</h3>
-          <p>Reconstruct the location, light cohesively, and check cinematic usability.</p>
+          <h3>EDIT &amp; LOOP</h3>
+          <p>Record the flythrough in-engine, grade for readability, and align motion to the chorus so the loop point is invisible when it repeats.</p>
         </div>
       </div>
       <div class="tags">
+        <span class="tag">Scaniverse</span>
+        <span class="tag">iPhone capture</span>
         <span class="tag">Photogrammetry</span>
-        <span class="tag">Scan capture</span>
         <span class="tag">Unreal Engine</span>
-        <span class="tag">Continuity</span>
+        <span class="tag">Flythrough</span>
+        <span class="tag">Seamless loop</span>
       </div>
     </section>
 
-    <footer>
-      <a class="btn" href="../index.html#projects">ALL PROJECTS</a>
-    </footer>
+    <section>
+      <h2>BROADER PRACTICE</h2>
+      <p>
+        This sits in the same line of work as my other <strong>digital location</strong> experiments: real-world spatial capture as a foundation, then production-minded cleanup so environments hold up for lighting, continuity, and shot planning.
+      </p>
+    </section>
+
+    <div class="btn-row">
+      <a class="btn btn-solid" href="../index.html#projects">All projects</a>
+      <a class="btn" href="https://open.spotify.com/track/5mfGEs5n647v4WE3K5YmBy?si=3d71d934301c47ec" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+    </div>
   </div>
 </body>
 </html>
