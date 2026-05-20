@@ -20,7 +20,7 @@ This document provides a comprehensive analysis and optimization plan for image 
 
 | Image | Alt Text | Format | Size KB | Lazy-load | Notes | Optimization Status |
 |-------|----------|--------|----------|-----------|-------|-------------------|
-| rachel-portrait.jpg | "Rachel Frappell - Digital Anarchist and AI Corruption Expert" | JPG | 64 | ❌ | Main profile image | ⚠️ Needs lazy-loading |
+| rachel-frappell.jpg | "Rachel Frappell — creative arts practitioner" | JPG | ~728 | ✅ | Main profile image (About section) | — |
 | NightKindLogo.svg | "NightKind Logo - Digital Art Collective" | SVG | <1 | ✅ | Logo image | ✅ Optimized |
 | rachelsart1.png | "Digital Artwork 1 - AI Corruption Visualization" | PNG | ~50 | ❌ | Portfolio artwork | ⚠️ Needs lazy-loading |
 | rachelsart2.png | "Digital Artwork 2 - Chaos Map Interface" | PNG | ~50 | ❌ | Portfolio artwork | ⚠️ Needs lazy-loading |
