@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
           <article className="project-card">
             <header className="project-header">
               <h3 className="project-category">VIRTUAL PRODUCTION</h3>
-              <h4 className="project-title">Underwater Facility Environment (Bond)</h4>
+              <h4 className="project-title">Underwater facility</h4>
             </header>
             
             <div className="project-content">
