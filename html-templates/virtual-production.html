@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#031018" />
-  <title>Virtual Production Places — group short film | Rachel Frappell</title>
-  <meta name="description" content="Bond University group VP short (~1:34): motion-tracked LED volume, full Unreal underwater facility, Blueprint animation, lighting, and Rachel's environment and render pipeline work." />
+  <title>Virtual production — Assignment 2 short film | Rachel Frappell</title>
+  <meta name="description" content="Bond University group short (1:34): LED virtual production with motion-tracked screen, Unreal underwater facility, Blueprint animation, and on-set integration." />
   <link rel="icon" href="../public/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
       --vp-bg: #030810;
       --vp-text: #e8f4f8;
       --vp-muted: #7a9aa8;
-      --vp-body: #b8d4de;
+      --vp-body: #b8d0d8;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -34,7 +34,7 @@
       inset: 0;
       background:
         radial-gradient(ellipse 75% 45% at 50% 0%, rgba(0, 212, 232, 0.14), transparent 52%),
-        linear-gradient(180deg, #051520 0%, var(--vp-bg) 50%);
+        linear-gradient(180deg, #051520 0%, var(--vp-bg) 48%);
       pointer-events: none;
       z-index: -1;
     }
@@ -66,7 +66,7 @@
     .video-wrap {
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(0, 212, 232, 0.25);
+      border: 1px solid rgba(0, 212, 232, 0.3);
       background: #000;
       margin-bottom: 1rem;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
@@ -96,7 +96,7 @@
     }
     p, li { color: var(--vp-body); font-size: 1.02rem; margin-bottom: 0.65rem; }
     ul { padding-left: 1.2rem; margin-top: 0.5rem; }
-    li { margin-bottom: 0.4rem; }
+    li { margin-bottom: 0.45rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
     .tag {
       font-size: 0.78rem;
@@ -124,88 +124,68 @@
     }
     .btn:hover { background: rgba(0, 212, 232, 0.1); }
     .btn-solid {
-      background: linear-gradient(165deg, #062028 0%, #0a3848 100%);
+      background: linear-gradient(165deg, #042028 0%, #0a3848 100%);
       color: #e8fcff;
       border-color: rgba(0, 212, 232, 0.55);
     }
-    .btn-solid:hover { background: linear-gradient(165deg, #083038 0%, #0e4858 100%); }
+    .btn-solid:hover { background: linear-gradient(165deg, #063040 0%, #0e4858 100%); }
   </style>
 </head>
 <body>
   <div class="container">
     <a class="back" href="../index.html#projects">← Back to portfolio</a>
 
-    <h1>Virtual Production Places</h1>
-    <p class="meta"><strong>~1 min 34 sec</strong> · <strong>3 weeks</strong> · Bond University · group short film · LED virtual production</p>
+    <h1>Virtual production — Assignment 2</h1>
+    <p class="meta"><strong>1:34</strong> · <strong>Group short film</strong> · Bond University · LED volume &amp; motion-tracked screen</p>
 
     <div class="video-wrap">
       <video
         controls
         playsinline
         preload="metadata"
-        aria-label="Final cut of Virtual Production Places, a group short film using motion-tracked LED virtual production and an Unreal Engine underwater facility."
+        aria-label="Final cut of the Virtual Production Assignment 2 group short film: underwater facility with LED virtual production and integrated performer."
       >
-        <source src="../public/virtual-production-assignment-final.mov" type="video/quicktime" />
-        Your browser does not support embedded video. The file is <code>public/virtual-production-assignment-final.mov</code>.
+        <source src="../public/virtual-production-assignment2-final.mov" type="video/quicktime" />
+        <source src="../public/virtual-production-assignment2-final.mov" type="video/mp4" />
+        Your browser does not support embedded video. The file is <code>public/virtual-production-assignment2-final.mov</code>.
       </video>
     </div>
 
     <p class="note">
-      Shot with a <strong>motion-tracked LED volume</strong>: the in-camera display tracks perspective so the Unreal environment reads as a next-generation green screen behind the performer.
+      <strong>Virtual production method:</strong> a large <strong>LED screen</strong> with <strong>motion-tracked perspective</strong> — acting as a next-generation green screen so the camera and performer share the same parallax as the Unreal environment.
     </p>
 
     <section>
       <h2>WHAT IT IS</h2>
       <p>
-        <strong>Virtual Production Places</strong> is a Bond University <strong>group multimedia short</strong> set in an abandoned underwater facility.
-        The production combined a physical performer on set with a real-time <strong>Unreal Engine</strong> environment played back on the LED wall.
-      </p>
-      <p>
-        I led the <strong>digital build and pipeline</strong> for the project — environment, animation, lighting, renders, and on-set scene setup — while coordinating progress with the team through our Microsoft Teams production chat.
+        A <strong>multimedia short film</strong> set in an <strong>abandoned underwater facility</strong>, produced as a Bond University virtual production assignment.
+        The digital world was built in <strong>Unreal Engine</strong> and played back on set through an LED volume so live action could be captured in-camera against a reactive 3D backdrop.
       </p>
     </section>
 
     <section>
       <h2>MY CONTRIBUTIONS</h2>
-      <ul>
-        <li>Built the <strong>entire 3D Unreal environment</strong> for the facility and supporting locations</li>
-        <li>Authored <strong>all Blueprint animation</strong> (self-taught): flickering lights, shark motion, water ripples, jellyfish bobbing</li>
-        <li>Handled <strong>in-engine lighting</strong> and <strong>rendered every shot</strong> where the actor was not immediately in frame</li>
-        <li>Modelled and integrated a <strong>carpark</strong> into the world — mesh edits and supporting <strong>VFX</strong></li>
-        <li>Prepared the <strong>film-day setup</strong> (location, angle, scene state) and worked with Nirav to resolve on-set technical issues</li>
-        <li>Documented progress continuously in the <strong>group Teams chat</strong> so the team had a clear record of digital delivery</li>
-        <li>Delivered a <strong>hard-drive copy</strong> of the finished Unreal scene after the team agreed to render additional shots themselves</li>
-        <li>Advocated for a <strong>submission extension</strong> when the group was blocked by technical problems and risked handing in an incomplete cut</li>
-        <li>Personally sourced <strong>Unreal marketplace assets</strong> (including the shark) to meet scope under time pressure — purchased voluntarily, not billed to the team</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>TIME &amp; SCOPE</h2>
-      <p>
-        The project ran for <strong>three weeks</strong> at roughly <strong>six hours per day</strong> on my side for the digital work, with an intensive earlier pass at about <strong>five hours daily over two weeks</strong> while the environment and animation systems came together.
+      <p style="margin-bottom:0.75rem;">
+        Reflection on my role on the digital side of the project (progress was also documented continuously in our team Microsoft Teams chat).
       </p>
-      <p>
-        That effort covered environment art, Blueprint systems, lighting, offline renders, carpark integration, and on-set support — not just a single hero asset.
-      </p>
-    </section>
-
-    <section>
-      <h2>TECHNICAL FOCUS</h2>
       <ul>
-        <li>LED / ICVFX workflow: plates and silhouettes that read on camera</li>
-        <li>Atmosphere, scale, and materials tuned for cinematic blocking</li>
-        <li>Practical-to-digital handoff for performer integration on the volume</li>
+        <li><strong>Full Unreal environment</strong> — built the entire 3D underwater facility in Unreal Engine.</li>
+        <li><strong>Blueprint animation (self-taught)</strong> — lights flickering, shark movement, water rippling, jellyfish bobbing.</li>
+        <li><strong>Lighting &amp; rendering</strong> — in-game lighting; created and rendered every scene that did not have the actor immediately in shot.</li>
+        <li><strong>On-set support</strong> — prepared the scene for film day, organised location and camera angle, and worked with Nirav to resolve technical issues on the floor.</li>
+        <li><strong>Carpark extension</strong> — modelled carpark geometry for integration into the environment, edited the mesh, and handled related VFX.</li>
+        <li><strong>Production leadership</strong> — encouraged the team to request an extension when technical blockers risked an incomplete submit; handed off a hard-drive copy of the scene after the team agreed to render additional passes (those passes were not completed by others).</li>
+        <li><strong>Time &amp; resources</strong> — roughly <strong>two weeks at ~5 hours per day</strong> on the digital work; personally purchased <strong>$100+</strong> of Unreal marketplace assets (including the shark) to meet ambition and deadlines — my own choice, not billed to the team.</li>
       </ul>
       <div class="tags">
         <span class="tag">Unreal Engine</span>
         <span class="tag">Blueprints</span>
         <span class="tag">LED virtual production</span>
-        <span class="tag">Motion-tracked display</span>
+        <span class="tag">Motion-tracked screen</span>
         <span class="tag">Scene lighting</span>
-        <span class="tag">Environment art</span>
+        <span class="tag">On-set VP</span>
         <span class="tag">VFX</span>
-        <span class="tag">On-set support</span>
+        <span class="tag">Team collaboration</span>
       </div>
     </section>
 
