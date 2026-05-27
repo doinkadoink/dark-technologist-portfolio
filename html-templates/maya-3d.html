@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a1014" />
-  <title>Maya &amp; Unreal — environment assets | Rachel Frappell</title>
-  <meta name="description" content="3D environment work in Autodesk Maya and Unreal Engine — atmosphere, scale, and cinematic usability for coursework and practice." />
+  <title>Alto Clef — first Maya animation | Rachel Frappell</title>
+  <meta name="description" content="First 3D animation in Maya: handmade Alto Clef (SCP Foundation) character model, synced to Will Wood's BlackBoxWarrior — OKULTRA, with a behind-the-scenes breakdown." />
   <meta name="author" content="Rachel Frappell" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="../public/favicon.ico" />
@@ -53,7 +53,7 @@
     .back:hover { text-decoration: underline; }
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.15rem, 3.2vw, 1.5rem);
+      font-size: clamp(1.25rem, 3.5vw, 1.65rem);
       letter-spacing: 0.04em;
       margin-bottom: 0.35rem;
     }
@@ -64,6 +64,35 @@
       margin-bottom: 1.5rem;
     }
     .meta strong { color: var(--maya-cyan); font-weight: 700; }
+    .video-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(92, 212, 232, 0.25);
+      background: #000;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 72vh;
+    }
+    .credit {
+      font-size: 0.88rem;
+      color: var(--maya-muted);
+      margin-bottom: 1.75rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid var(--maya-teal);
+    }
+    .credit a {
+      color: var(--maya-cyan);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .credit a:hover { text-decoration: underline; }
     section { margin-bottom: 1.5rem; }
     h2 {
       font-family: 'Orbitron', sans-serif;
@@ -83,16 +112,6 @@
       border-radius: 6px;
       border: 1px solid rgba(92, 212, 232, 0.45);
       color: var(--maya-cyan);
-    }
-    .note {
-      font-size: 0.88rem;
-      color: var(--maya-muted);
-      margin-top: 0.25rem;
-      margin-bottom: 1rem;
-      padding: 0.65rem 0.9rem;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.04);
-      border-left: 3px solid var(--maya-teal);
     }
     .btn-row {
       display: flex;
@@ -126,44 +145,81 @@
   <div class="container">
     <a class="back" href="../index.html#projects">← Back to portfolio</a>
 
-    <h1>Maya &amp; Unreal — environment assets</h1>
-    <p class="meta"><strong>Maya · Unreal Engine</strong> · coursework &amp; personal 3D practice</p>
+    <h1>Alto Clef</h1>
+    <p class="meta"><strong>~21 sec</strong> · <strong>First Maya animation</strong> · handmade character · SCP Foundation fan piece</p>
 
     <section>
-      <h2>WHAT THIS IS</h2>
-      <p>
-        Digital <strong>environment components</strong> built in <strong>Autodesk Maya</strong> and assembled or lit in <strong>Unreal Engine</strong>,
-        with attention to <strong>atmosphere</strong>, <strong>scale</strong>, <strong>cinematic readability</strong>, and visual coherence — aligned with Bond Creative Arts work
-        and ongoing practice outside a single shipped title.
+      <h2>FINAL ANIMATION</h2>
+      <p style="margin-bottom:0.75rem;">
+        My <strong>first 3D animation</strong>: a character model I built in Maya, based on <strong>Alto Clef</strong> from the SCP Foundation — rigged, posed, and timed to music.
       </p>
-      <p>
-        This page summarises the skill line shown on the main portfolio; it replaces an older full-screen “cyber grid” layout with the same
-        document style used on Night Kind City, ChatTea, and Living Like Luna.
+      <div class="video-wrap">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Alto Clef Maya animation test synced to the opening of BlackBoxWarrior OKULTRA."
+        >
+          <source src="../public/altoclef-animation-test.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+      </div>
+      <p class="credit">
+        Music: uses the first <strong>21 seconds</strong> of
+        <a href="https://open.spotify.com/track/1WeNLbQCDJ1JnF5LjReC8t" target="_blank" rel="noopener noreferrer">“BlackBoxWarrior — OKULTRA”</a>
+        by Will Wood. Character is a personal fan interpretation of Alto Clef; SCP Foundation content is used here as creative reference, not as an official work.
       </p>
     </section>
 
     <section>
-      <h2>FOCUS</h2>
+      <h2>BEHIND THE SCENES</h2>
+      <p style="margin-bottom:0.75rem;">
+        Breakdown of how the final render came together — from <strong>character modelling</strong> and <strong>animation</strong> to <strong>hand-made background assets</strong>,
+        <strong>movement sync</strong> with the track, and a quirky <strong>AI voiceover</strong> of how I imagine Alto Clef might sound.
+      </p>
+      <div class="video-wrap">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Behind the scenes presentation for the Alto Clef Maya animation: modelling, animation, assets, and process."
+        >
+          <source src="../public/alto-clef-bts-presentation.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <h2>PROCESS</h2>
       <ul>
-        <li>Blocking and modelling passes suitable for import into Unreal</li>
-        <li>Materials and lighting choices that read in a <strong>cinematic</strong> frame (not only a modeller viewport)</li>
-        <li>Iteration for continuity with other coursework (e.g. VP and scan-informed scenes)</li>
+        <li>Hand-built <strong>Alto Clef</strong> character mesh and rig in <strong>Autodesk Maya</strong></li>
+        <li>First animation pass — learning timing, poses, and camera read at ~21 seconds</li>
+        <li>Background set pieces modelled/assembled by hand for the final frame</li>
+        <li>Edits aligned to the opening energy of the Will Wood track</li>
+        <li>Presentation edit with process footage and experimental character voiceover</li>
       </ul>
       <div class="tags">
         <span class="tag">Maya</span>
-        <span class="tag">Unreal Engine</span>
-        <span class="tag">3D modelling</span>
-        <span class="tag">Environment</span>
-        <span class="tag">Layout</span>
+        <span class="tag">Character modelling</span>
+        <span class="tag">Animation</span>
+        <span class="tag">SCP fan art</span>
+        <span class="tag">Music sync</span>
+        <span class="tag">Presentation</span>
       </div>
-      <p class="note">
-        <strong>Media:</strong> add still renders or a short viewport / in-engine clip here when you want this page to showcase specific assets; the layout is ready for a <code>video-wrap</code> or image block like the Unity showcase page.
+    </section>
+
+    <section>
+      <h2>BROADER 3D PRACTICE</h2>
+      <p>
+        Alongside this character piece, I also build <strong>environment components</strong> in Maya and Unreal — atmosphere, scale, and cinematic usability for coursework
+        (virtual production, scan-informed scenes, and layout work elsewhere on this portfolio).
       </p>
     </section>
 
     <div class="btn-row">
-      <a class="btn btn-solid" href="../index.html#contact">Get in touch</a>
-      <a class="btn" href="../index.html#projects">All projects</a>
+      <a class="btn btn-solid" href="../index.html#projects">All projects</a>
+      <a class="btn" href="https://open.spotify.com/track/1WeNLbQCDJ1JnF5LjReC8t" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
     </div>
   </div>
 </body>
