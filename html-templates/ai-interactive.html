@@ -3,766 +3,220 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#0c1218" />
   <title>@Doinkadoink on Character.AI | Rachel Frappell</title>
-  <meta name="title" content="@Doinkadoink on Character.AI | Rachel Frappell" />
   <meta name="description" content="Three years curating Character.AI bots as a personal creator — 1.6M+ interactions. Live roster and stats on character.ai/profile/Doinkadoink." />
-  <meta name="keywords" content="character ai, Doinkadoink, Rachel Frappell, AI character creator, interactive bots" />
   <meta name="author" content="Rachel Frappell" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="English" />
-  <meta name="revisit-after" content="7 days" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/ai-interactive" />
-  <meta property="og:title" content="@Doinkadoink | Character.AI — Rachel Frappell" />
-  <meta property="og:description" content="Personal Character.AI creator: bots built and refined over ~3 years, 1.6M+ interactions — open the live profile for roster, followers, and chats." />
-  <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="Character.AI Profile" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://your-domain.com/ai-interactive" />
-  <meta property="twitter:title" content="@Doinkadoink | Character.AI — Rachel Frappell" />
-  <meta property="twitter:description" content="Personal Character.AI creator: ~3 years of bot curation, 1.6M+ interactions. Live stats at character.ai/profile/Doinkadoink." />
-  <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="Character.AI Profile" />
-  <meta name="msapplication-TileColor" content="#000000" />
   <link rel="icon" href="../public/favicon.ico" />
-  <link rel="apple-touch-icon" href="../public/logo192.png" />
-  <link rel="manifest" href="../public/manifest.json" />
-  <link rel="canonical" href="https://your-domain.com/ai-interactive" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* Character.AI Profile - Holographic Aesthetic */
     :root {
-      --primary-color: #00eaff;        /* Hologram Blue */
-      --accent-color: #ff00c8;         /* Cyber Pink */
-      --highlight-color: #b6ff00;      /* Machine Learning Green */
-      --background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent dark */
-      --text-color: #e6e6e6;            /* Off-white for contrast */
-      --font-heading: 'Orbitron', sans-serif;
-      --font-body: 'Courier New', monospace;
-      --hover-duration: 0.5s;
-      --hover-scale: 1.02;
-      --glow-opacity: 0.7;
+      --cai-cyan: #4ec8e0;
+      --cai-cyan-soft: #8ee4f4;
+      --cai-magenta: #c878d8;
+      --cai-bg: #0c1218;
+      --cai-text: #e8f2f8;
+      --cai-muted: #8a9caa;
+      --cai-body: #b8c8d4;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: var(--font-body);
-      background-color: var(--background-color);
-      color: var(--text-color);
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--cai-bg);
+      color: var(--cai-text);
       line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
+      min-height: 100vh;
     }
-    
-    /* Holographic background */
     body::before {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(0, 234, 255, 0.1) 90deg, transparent 180deg, rgba(255, 0, 200, 0.1) 270deg, transparent 360deg);
+      inset: 0;
+      background:
+        radial-gradient(ellipse 75% 45% at 20% 0%, rgba(78, 200, 224, 0.12), transparent 52%),
+        radial-gradient(ellipse 55% 40% at 100% 80%, rgba(200, 120, 216, 0.07), transparent 48%);
       pointer-events: none;
       z-index: -1;
-      animation: holoRotate 20s linear infinite;
     }
-    
-    @keyframes holoRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: clamp(12px, 4vw, 24px);
-    }
-    
-    /* Header Styles */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid var(--primary-color);
-      padding: 15px 0;
-    }
-    
-    .progress-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      width: 0%;
-      transition: width 0.3s ease;
-      z-index: 1001;
-    }
-    
-    .header .container {
-      padding: 0 20px;
-    }
-    
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .logo a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .logo-text {
-      font-family: 'Orbitron', monospace;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--primary-color);
-      text-shadow: 0 0 20px var(--primary-color);
-    }
-    
-    .logo-full {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-color);
-      letter-spacing: 3px;
-    }
-    
-    .nav {
-      margin-left: auto;
-    }
-    
-    .nav-list {
-      display: flex;
-      list-style: none;
-      gap: 40px;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .nav-link {
-      color: var(--text-color);
-      text-decoration: none;
-      font-family: 'Orbitron', monospace;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-    }
-    
-    .nav-link:hover {
-      color: var(--primary-color);
-      text-shadow: 0 0 10px var(--primary-color);
-      transform: scale(1.02);
-      filter: drop-shadow(0 0 6px var(--primary-color));
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    /* Header Strip */
-    .profile-header {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
-      border: 2px solid var(--primary-color);
-      border-radius: 20px;
-      padding: 30px;
-      margin: 120px 0 40px 0;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    
-    .profile-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
-      transition: left 0.5s;
-    }
-    
-    .profile-header:hover::before {
-      left: 100%;
-    }
-    
-    .profile-avatar {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--background-color);
-      border: 3px solid var(--primary-color);
-      box-shadow: 0 0 20px var(--primary-color);
-      animation: avatarPulse 3s ease-in-out infinite;
-    }
-    
-    @keyframes avatarPulse {
-      0%, 100% { box-shadow: 0 0 20px var(--primary-color); }
-      50% { box-shadow: 0 0 30px var(--primary-color), 0 0 40px var(--accent-color); }
-    }
-    
-    .profile-info {
-      flex: 1;
-    }
-    
-    .profile-username {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-shadow: 0 0 10px var(--primary-color);
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    
-    .profile-tagline {
-      color: var(--accent-color);
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      font-style: italic;
-    }
-    
-    .profile-stats {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .stat-item {
-      background: rgba(0, 234, 255, 0.1);
-      border: 1px solid var(--primary-color);
-      border-radius: 10px;
-      padding: 10px 15px;
-      text-align: center;
-      backdrop-filter: blur(5px);
-      transition: all var(--hover-duration) ease;
-    }
-    
-    .stat-item:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 15px var(--primary-color);
-    }
-    
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--highlight-color);
-      display: block;
-    }
-    
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--accent-color);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .cai-hero {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .cai-hero-top {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-
-    .cai-prose {
-      font-style: normal;
-      color: #b8d5e0;
-      font-size: 1.05rem;
-      line-height: 1.65;
-      margin-top: 18px;
-      width: 100%;
-      max-width: 52rem;
-    }
-
-    .cai-prose strong {
-      color: #e8f8ff;
-    }
-
-    .cai-cta-wrap {
-      margin-top: 22px;
-      width: 100%;
-    }
-
-    .cai-primary-cta {
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 64px; }
+    .back {
       display: inline-block;
-      padding: 1rem 1.5rem;
-      background: linear-gradient(100deg, #00d4ff 0%, #00a8d4 45%, #0088cc 100%);
-      color: #050810;
-      font-family: var(--font-heading);
-      font-weight: 800;
+      margin-top: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--cai-cyan);
       text-decoration: none;
-      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.25rem, 3.5vw, 1.65rem);
       letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .meta {
       font-size: 0.95rem;
-      line-height: 1.35;
-      max-width: 100%;
-      text-align: center;
-      box-shadow: 0 4px 28px rgba(0, 212, 255, 0.35);
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      transition: transform var(--hover-duration) ease, box-shadow var(--hover-duration) ease;
-    }
-
-    .cai-primary-cta:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 36px rgba(0, 234, 255, 0.45);
-    }
-
-    .cai-live-note {
-      font-size: 0.88rem;
-      color: #8a9aaa;
-      margin-top: 16px;
-      max-width: 40rem;
-      line-height: 1.5;
-    }
-
-    .cai-live-note strong {
-      color: #c5d8e8;
-    }
-
-    .cai-subline {
-      font-style: normal;
-      color: #7ee8ff;
-      font-size: 0.95rem;
-      margin: 0 0 4px 0;
+      color: var(--cai-muted);
       font-weight: 600;
+      margin-bottom: 1.5rem;
     }
-    
-    /* Metrics Tile */
-    .metrics-tile {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 0, 200, 0.1) 100%);
-      border: 2px solid var(--accent-color);
-      border-radius: 15px;
-      padding: 30px;
-      margin: 40px 0;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
+    .meta strong { color: var(--cai-cyan-soft); font-weight: 700; }
+    section { margin-bottom: 1.5rem; }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      color: var(--cai-cyan-soft);
+      margin-bottom: 0.5rem;
     }
-    
-    .metrics-title {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px var(--accent-color);
-      text-align: center;
-    }
-    
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    
-    .metric-card {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--accent-color);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      transition: all var(--hover-duration) ease;
-      backdrop-filter: blur(5px);
-    }
-    
-    .metric-card:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--accent-color);
-    }
-    
-    .metric-value {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--highlight-color);
-      margin-bottom: 5px;
-    }
-    
-    .metric-label {
-      color: var(--text-color);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    /* Character Mosaic */
-    .character-mosaic {
-      margin: 40px 0;
-    }
-    
-    .mosaic-title {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      color: var(--primary-color);
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px var(--primary-color);
-    }
-    
-    .mosaic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-    }
-    
-    .character-card {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 234, 255, 0.1) 100%);
-      border: 2px solid var(--primary-color);
-      border-radius: 15px;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      transition: all var(--hover-duration) ease;
-      cursor: pointer;
-    }
-    
-    .character-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
-      animation: scanline 3s linear infinite;
-    }
-    
-    @keyframes scanline {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .character-card:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 30px var(--primary-color);
-    }
-    
-    .character-name {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-      text-shadow: 0 0 5px var(--primary-color);
-    }
-    
-    .character-stats {
+    p, li { color: var(--cai-body); font-size: 1.02rem; margin-bottom: 0.65rem; }
+    ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    li { margin-bottom: 0.4rem; }
+    .stat-row {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0 1.25rem;
     }
-    
-    .character-interactions {
-      color: var(--highlight-color);
+    .stat {
+      flex: 1 1 140px;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(78, 200, 224, 0.3);
+    }
+    .stat-val {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
       font-weight: 700;
+      color: var(--cai-cyan-soft);
+      letter-spacing: 0.04em;
     }
-    
-    .character-likes {
-      color: var(--accent-color);
-      font-size: 0.9rem;
-    }
-    
-    .character-description {
-      color: var(--text-color);
-      font-size: 0.8rem;
-      line-height: 1.4;
-      font-style: italic;
-    }
-    
-    /* AI Learning Section */
-    .ai-learning {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(182, 255, 0, 0.1) 100%);
-      border: 2px solid var(--highlight-color);
-      border-radius: 15px;
-      padding: 40px;
-      margin: 40px 0;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    
-    .ai-learning::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, transparent 30%, rgba(182, 255, 0, 0.05) 50%, transparent 70%);
-      animation: aiGlow 4s ease-in-out infinite;
-    }
-    
-    @keyframes aiGlow {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-    
-    .ai-learning-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .ai-learning-title {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      color: var(--highlight-color);
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px var(--highlight-color);
-    }
-    
-    .ai-learning-text {
-      color: var(--text-color);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    
-    .ai-insights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    
-    .insight-card {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--highlight-color);
-      border-radius: 10px;
-      padding: 20px;
-      transition: all var(--hover-duration) ease;
-      backdrop-filter: blur(5px);
-    }
-    
-    .insight-card:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--highlight-color);
-    }
-    
-    .insight-title {
-      font-family: var(--font-heading);
-      color: var(--highlight-color);
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-    
-    .insight-text {
-      color: var(--text-color);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    
-    /* Footer */
-    .footer {
-      background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
-      padding: 40px 0;
-      text-align: center;
-    }
-    
-    .return-btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: var(--accent-color);
-      color: var(--text-color);
-      text-decoration: none;
-      font-family: var(--font-heading);
-      font-weight: 700;
+    .stat-lbl {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--cai-muted);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      border: 2px solid var(--accent-color);
-      transition: all var(--hover-duration) ease;
-      backdrop-filter: blur(10px);
     }
-    
-    .return-btn:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--accent-color);
-      filter: drop-shadow(0 0 10px var(--accent-color));
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(78, 200, 224, 0.45);
+      color: var(--cai-cyan);
     }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .profile-header {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .profile-stats {
-        justify-content: center;
-      }
-      
-      .mosaic-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      }
-      
-      .ai-insights {
-        grid-template-columns: 1fr;
-      }
+    .note {
+      font-size: 0.88rem;
+      color: var(--cai-muted);
+      margin-top: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--cai-cyan);
+    }
+    .note a {
+      color: var(--cai-cyan-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .note a:hover { text-decoration: underline; }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid rgba(142, 228, 244, 0.55);
+      color: var(--cai-cyan-soft);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: rgba(78, 200, 224, 0.1); }
+    .btn-solid {
+      background: linear-gradient(165deg, #0e2838 0%, #1a4050 100%);
+      color: #eefcff;
+      border-color: rgba(78, 200, 224, 0.55);
+    }
+    .btn-solid:hover {
+      background: linear-gradient(165deg, #143448 0%, #225060 100%);
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">
-          <a href="../index.html" aria-label="Rachel Frappell portfolio home">
-            <span class="logo-text">R</span>
-            <span class="logo-full">ACHEL</span>
-          </a>
+  <div class="container">
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+
+    <h1>@Doinkadoink</h1>
+    <p class="meta"><strong>~3 years</strong> · Character.AI · personal creator · <strong>1.6M+</strong> interactions</p>
+
+    <section>
+      <h2>WHAT IT IS</h2>
+      <p>
+        A long-running <strong>Character.AI creator account</strong> where I build, release, and maintain a library of interactive character bots —
+        shaping dialogue, revising definitions as the product and policies change, and growing an <strong>on-platform fanbase</strong>.
+      </p>
+      <p>
+        Account-level interactions have passed <strong>1.6M+</strong> (see the live profile for current totals — numbers move as people chat).
+      </p>
+      <div class="stat-row" role="group" aria-label="Profile highlights">
+        <div class="stat">
+          <span class="stat-val">1.6M+</span>
+          <span class="stat-lbl">Interactions</span>
         </div>
-        
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <ul class="nav-list">
-            <li><a href="../index.html#home" class="nav-link" aria-label="Go to home section">HOME</a></li>
-            <li><a href="../index.html#about" class="nav-link" aria-label="Go to about section">ABOUT</a></li>
-            <li><a href="../index.html#projects" class="nav-link" aria-label="Go to projects section">PROJECTS</a></li>
-            <li><a href="../index.html#contact" class="nav-link" aria-label="Go to contact section">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- Profile: Character.AI is source of truth -->
-  <section class="profile-header cai-hero">
-    <div class="cai-hero-top">
-      <div class="profile-avatar" aria-hidden="true">D</div>
-      <div class="profile-info">
-        <h1 class="profile-username">@Doinkadoink</h1>
-        <p class="cai-subline">Character.AI — live profile</p>
-        <p class="profile-tagline" style="font-style: normal; color: #9ef0ff; font-size: 1rem; margin-bottom: 0;">
-          Personal creator · curated AI character bots · audience on-platform
-        </p>
-      </div>
-    </div>
-    <p class="cai-prose">
-      Over roughly <strong>three years</strong> I have built, released, and maintained a library of Character.AI bots as a <strong>personal content creator</strong>:
-      shaping dialogue, revising definitions as the product and policies change, and growing a <strong>fanbase on Character.AI</strong> itself.
-      The account has accumulated <strong>1.6M+ interactions</strong> (see the live profile for current totals — numbers move as people chat).
-    </p>
-    <div class="cai-cta-wrap">
-      <a href="https://character.ai/profile/Doinkadoink" class="cai-primary-cta" target="_blank" rel="noopener noreferrer">Open live profile — characters, voices &amp; stats</a>
-    </div>
-    <p class="cai-live-note">
-      <strong>This page is a summary only.</strong> Roster, follower counts, per-character analytics, and every chat experience live on
-      <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" style="color: #5cefff;">character.ai/profile/Doinkadoink</a>.
-    </p>
-  </section>
-
-  <!-- AI Learning Section -->
-  <section class="ai-learning">
-    <div class="container">
-      <div class="ai-learning-content">
-        <h2 class="ai-learning-title">Curation at scale</h2>
-        <p class="ai-learning-text">
-          Running a creator account for years means treating each bot like a small product: clear voice, safe boundaries where the platform requires them,
-          and steady iteration when user behavior or model updates shift what “good” replies look like.
-        </p>
-        <p class="ai-learning-text">
-          Rather than mirroring every stat here, I point visitors to the
-          <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" style="color: var(--highlight-color);">official Character.AI profile</a>
-          — the same place readers discover characters, try chats, and see up-to-date interaction totals (including <strong>1.6M+</strong> account-level interactions at the time this portfolio was written).
-        </p>
-        
-        <div class="ai-insights">
-          <div class="insight-card">
-            <h3 class="insight-title">Long-form authorship</h3>
-            <p class="insight-text">
-              A multi-year arc of releases and revisions: learning which ideas sustain repeat play and which are one-off experiments.
-            </p>
-          </div>
-          
-          <div class="insight-card">
-            <h3 class="insight-title">Audience &amp; iteration</h3>
-            <p class="insight-text">
-              Public chats and likes surface what lands; that feedback loop informs rewrites without losing each character’s core tone.
-            </p>
-          </div>
-          
-          <div class="insight-card">
-            <h3 class="insight-title">Platform literacy</h3>
-            <p class="insight-text">
-              Staying current with Character.AI tooling, moderation expectations, and how definition fields map to model behavior in practice.
-            </p>
-          </div>
-          
-          <div class="insight-card">
-            <h3 class="insight-title">Community on-platform</h3>
-            <p class="insight-text">
-              Followers and interaction counts accrue on Character.AI itself — the profile is the hub for that fanbase, not this static page.
-            </p>
-          </div>
+        <div class="stat">
+          <span class="stat-val">~3 yr</span>
+          <span class="stat-lbl">Active curation</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">Live</span>
+          <span class="stat-lbl">Roster on Character.AI</span>
         </div>
       </div>
-    </div>
-  </section>
+      <p class="note">
+        <strong>This page is a summary only.</strong> Character cards, voices, follower counts, per-bot stats, and every chat experience live on
+        <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer">character.ai/profile/Doinkadoink</a> — the official profile is the source of truth.
+      </p>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" class="return-btn">VISIT PROFILE</a>
-      <a href="../index.html#projects" class="return-btn" style="margin-left: 20px;">BACK TO PORTFOLIO</a>
+    <section>
+      <h2>CURATION AT SCALE</h2>
+      <p>
+        Running a creator account for years means treating each bot like a small product: clear voice, safe boundaries where the platform requires them,
+        and steady iteration when user behaviour or model updates shift what “good” replies look like.
+      </p>
+      <ul>
+        <li><strong>Long-form authorship</strong> — a multi-year arc of releases and revisions; learning which ideas sustain repeat play</li>
+        <li><strong>Audience &amp; iteration</strong> — public chats and likes surface what lands; feedback informs rewrites without losing each character’s core tone</li>
+        <li><strong>Platform literacy</strong> — staying current with Character.AI tooling, moderation expectations, and how definition fields map to model behaviour</li>
+        <li><strong>Community on-platform</strong> — followers and interaction counts accrue on Character.AI itself; the profile is the hub for that fanbase</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Character.AI</span>
+        <span class="tag">Interactive writing</span>
+        <span class="tag">Bot curation</span>
+        <span class="tag">Audience growth</span>
+        <span class="tag">Long-term iteration</span>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <a class="btn btn-solid" href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer">Open live profile</a>
+      <a class="btn" href="../index.html#projects">All projects</a>
     </div>
-  </footer>
+  </div>
 </body>
-</html> 
+</html>
