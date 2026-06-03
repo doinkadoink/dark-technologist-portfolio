@@ -1,4 +1,13 @@
-name: Deploy to GitHub Pages
+# NOTE: The live portfolio at https://doinkadoink.github.io/dark-technologist-portfolio/
+# is served from the main branch root (index.html, html-templates/, public/, etc.).
+# GitHub Pages does NOT serve Git LFS pointer files — portfolio videos must be
+# regular git blobs under 100 MB each (see public/*.mp4).
+#
+# This workflow builds the optional React app to gh-pages only. It does NOT
+# deploy the static project pages. Do not point GitHub Pages Settings at gh-pages
+# unless you intentionally want the React build instead of the static site.
+
+name: Deploy React build to gh-pages (optional)
 
 on:
   push:
@@ -31,4 +40,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build 
+        publish_dir: ./build
