@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
             
             <div className="hero-stats" role="region" aria-label="Achievement Statistics">
               <div className="stat-item">
-                <div className="stat-number">1.6M+</div>
+                <div className="stat-number">1.7M+</div>
                 <div className="stat-label">Character AI</div>
               </div>
               <div className="stat-item">

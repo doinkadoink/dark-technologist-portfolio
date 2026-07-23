@@ -13,7 +13,7 @@ const AIInteractive: React.FC = () => {
         
         <header className="project-header">
           <h1 className="project-title">CHARACTER.AI — @DOINKADOINK</h1>
-          <p className="project-subtitle">Personal creator · ~3 years of bot curation · 1.6M+ interactions (live on Character.AI)</p>
+          <p className="project-subtitle">Personal creator · ~3 years of bot curation · 1.7M+ interactions (live on Character.AI)</p>
         </header>
         
         <div className="project-content">
@@ -21,7 +21,7 @@ const AIInteractive: React.FC = () => {
             <h2>PROJECT OVERVIEW</h2>
             <p>
               I author and maintain a library of Character.AI bots as a <strong>personal content creator</strong>: shaping dialogue, revising definitions as the product changes,
-              and growing an on-platform fanbase. Totals (including <strong>1.6M+</strong> account-level interactions) and the full character roster update on Character.AI itself.
+              and growing an on-platform fanbase. Totals (including <strong>1.7M+</strong> account-level interactions) and the full character roster update on Character.AI itself.
             </p>
             <p style={{ marginTop: '1rem' }}>
               <a href="https://character.ai/profile/Doinkadoink" target="_blank" rel="noopener noreferrer" className="btn">
@@ -36,7 +36,7 @@ const AIInteractive: React.FC = () => {
             <div className="detail-grid">
               <div className="detail-item">
                 <h3>INTERACTIONS</h3>
-                <p>1.6M+ on the live profile (updates as users chat)</p>
+                <p>1.7M+ on the live profile (updates as users chat)</p>
               </div>
               
               <div className="detail-item">
@@ -123,7 +123,7 @@ const AIInteractive: React.FC = () => {
             <div className="stats-grid">
               <div className="stat-item">
                 <h3>INTERACTIONS</h3>
-                <p>1.6M+ (see live profile)</p>
+                <p>1.7M+ (see live profile)</p>
               </div>
               <div className="stat-item">
                 <h3>ITERATION</h3>
