@@ -1,10 +1,10 @@
 Rachel Frappell 
-Creative Arts student | Unreal Engine environments | Photogrammetry | Virtual production | Digital design
+Creative Arts graduate | Unreal Engine environments | Photogrammetry | Virtual production | Digital design
 Gold Coast, QLD | Mob: 0417 740 323 | rachelfrappell18@gmail.com | Portfolio
 PROFILE
-Emerging creative arts practitioner with hands-on experience in Unreal Engine environments, photogrammetry-based workflows, virtual production, 3D modelling, film production, web design, and interactive media. Seeking an industry placement with Myriad Studios, with particular interest in digital locations, scan-informed assets, previs, practical-to-digital workflows, and VFX/game production pipelines.
+Creative arts graduate with hands-on experience in Unreal Engine environments, photogrammetry-based workflows, virtual production, 3D modelling, film production, web design, and interactive media. Seeking an industry placement with Myriad Studios, with particular interest in digital locations, scan-informed assets, previs, practical-to-digital workflows, and VFX/game production pipelines.
 EDUCATION
-Bachelor of Creative Arts, Bond University, Gold Coast | 2021 – June 2026
+Bachelor of Creative Arts, Bond University, Gold Coast | Graduated June 2026
 
 High School Certificate, Citipointe Christian College | Graduated 2020 | ATAR 68.8
 

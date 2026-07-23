@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="hero-tagline">
-              Creative Arts student · Unreal Engine environments · Photogrammetry · Virtual production · Digital design
+              Creative Arts graduate · Unreal Engine environments · Photogrammetry · Virtual production · Digital design
             </p>
             
             <div className="hero-stats" role="region" aria-label="Achievement Statistics">
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="stat-item">
                 <div className="stat-number">B.C.A.</div>
-                <div className="stat-label">Bond (to Jun 2026)</div>
+                <div className="stat-label">Bond graduate</div>
               </div>
             </div>
             

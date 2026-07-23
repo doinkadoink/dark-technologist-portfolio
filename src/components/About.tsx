@@ -20,7 +20,7 @@ const About: React.FC = () => {
             </div>
             <div className="info-item">
               <span className="info-icon" aria-hidden="true">🎓</span>
-              <span className="info-text">Bachelor of Creative Arts (2021–Jun 2026)</span>
+              <span className="info-text">Bachelor of Creative Arts — Graduated Jun 2026</span>
             </div>
             <div className="info-item">
               <span className="info-icon" aria-hidden="true">🎯</span>
@@ -30,7 +30,7 @@ const About: React.FC = () => {
           
           <div className="about-description">
             <p>
-              Emerging creative arts practitioner with hands-on experience in Unreal Engine environments, photogrammetry-based workflows,
+              Creative arts graduate with hands-on experience in Unreal Engine environments, photogrammetry-based workflows,
               virtual production, 3D modelling, film production, web design, and interactive media.
             </p>
             <p>

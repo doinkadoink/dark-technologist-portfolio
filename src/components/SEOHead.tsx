@@ -5,8 +5,8 @@ const SEOHead: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rachel Frappell",
-    "jobTitle": "Creative Arts Student (Unreal Engine Environments)",
-    "description": "Emerging creative arts practitioner focused on Unreal Engine environments, photogrammetry workflows, and virtual production.",
+    "jobTitle": "Creative Arts Graduate (Unreal Engine Environments)",
+    "description": "Creative arts graduate focused on Unreal Engine environments, photogrammetry workflows, and virtual production.",
     "url": "https://doink.github.io/dark-technologist-portfolio/",
     "knowsAbout": [
       "Unreal Engine",
