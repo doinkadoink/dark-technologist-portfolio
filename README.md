@@ -9,6 +9,7 @@ A dark, cyberpunk-inspired portfolio website for Rachel, a digital anarchist and
 - **Smooth Animations**: CSS animations and hover effects throughout
 - **Modern Tech Stack**: React 18, TypeScript, and CSS Grid/Flexbox
 - **Performance Optimized**: Fast loading and smooth interactions
+- **🦇 NightKind E-Commerce**: Integrated Shopify store for alt-gothic conservation merchandise
 
 ## ✅ Quality Assessment & Compliance
 
