@@ -111,7 +111,7 @@ export const addLineItemToCheckout = async (checkoutId: string, lineItems: any[]
   }
 };
 
-export default {
+const shopifyUtils = {
   initializeShopifyClient,
   getShopifyClient,
   fetchProducts,
@@ -119,3 +119,5 @@ export default {
   createCheckout,
   addLineItemToCheckout,
 };
+
+export default shopifyUtils;
