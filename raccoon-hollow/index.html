@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raccoon Hollow</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#171f24;color:#f9e8bf;font:15px system-ui,sans-serif;background-image:radial-gradient(ellipse at top,#303b35,transparent 70%)}main{max-width:1220px;margin:auto;padding:34px 20px}header{display:flex;justify-content:space-between;align-items:end;margin-bottom:23px;gap:12px}h1,h2,.tag,button{font-family:monospace}h1{font-size:clamp(27px,5.5vw,54px);letter-spacing:-.075em;margin:0;text-shadow:3px 4px #805b48}.tag{color:#edb774;letter-spacing:.14em;font-size:12px}header p{margin:8px 0 0;color:#b8c2a4}.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,300px);gap:16px}.scene,.panel,.journal{border:2px solid #69654e;background:#252d2c;box-shadow:0 5px #10171b}.scene{position:relative;overflow:hidden}canvas{width:100%;height:auto;display:block;image-rendering:pixelated;touch-action:none;cursor:grab}.playfield{position:relative}.location{position:absolute;top:13px;left:13px;background:#1b2827;padding:7px 9px;border:1px solid #8b8863}.caption{padding:12px 15px;display:flex;justify-content:space-between;gap:12px;align-items:center;color:#c4cdb1}#creek-travel{position:absolute;top:46%;left:10px;min-width:44px;min-height:44px;font-size:23px;background:#263b35e8}#creek-travel[data-side="right"]{left:auto;right:10px}#travel{min-width:44px;min-height:44px;padding:4px 10px;font-size:22px;line-height:1;flex-shrink:0}#supply-drop{position:absolute;top:var(--den-top);left:var(--den-left);transform:translate(-50%,-50%);z-index:2;background:#293c35f0;min-height:44px;white-space:nowrap}.supplies [aria-pressed="true"]{outline:2px solid #ffd794}.supply-icon{width:28px;height:28px;image-rendering:pixelated;margin:0 auto 6px}.pouch-help{margin:10px 0 0;color:#c4cdb1}.inventory{padding:10px 13px 13px;border-top:1px solid #69654e;background:#202827}
+.inventory .supplies{grid-template-columns:repeat(auto-fit,minmax(102px,1fr));margin-top:8px}
+.inventory .supplies button{min-height:62px;font-size:12px}
+.inventory .supply-icon{display:block;touch-action:auto}
+
+.caption strong{color:#ffdf9c}.panel{padding:17px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}h2{margin:0 0 8px;font-size:20px}.stat{margin:10px 0}.label{display:flex;justify-content:space-between;margin-bottom:5px;color:#ded9b9}.meter{height:12px;background:#151c20;border:1px solid #656653;padding:2px}.fill{height:100%;width:var(--value);background:repeating-linear-gradient(90deg,var(--color) 0 8px,transparent 8px 10px);transition:width .3s}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}button{background:#3b4940;color:#ffe8bc;border:1px solid #8b8f68;border-bottom:4px solid #18221e;padding:10px 6px;cursor:pointer;font-weight:bold;font-size:13px}button:hover{background:#56634e}button:active{transform:translateY(2px);border-bottom-width:2px;margin-bottom:2px}button:focus-visible{outline:2px solid #f9be78;outline-offset:2px}.journal{margin-top:16px;padding:14px 16px;display:flex;gap:13px;align-items:baseline}.journal p{margin:0;color:#dfd7ba}footer{margin-top:18px;color:#aebba5;font-size:12px}@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding-top:20px}header{align-items:start;flex-direction:column}}
+</style>
+<main>
+<header><div><div class="tag">A WOODLAND PET GAME</div><h1>Raccoon Hollow</h1><p>A little patch of forest for you and Pip.</p></div><div class="tag" id="hearts">♥ 0 FRIENDSHIP</div></header>
+<div class="grid">
+<section class="scene" aria-label="Pip’s woodland clearing">
+<div class="playfield"><canvas id="view" tabindex="0" aria-describedby="move-help" width="240" height="150" role="img" aria-label="A pixel-art raccoon beside a forest den"></canvas>
+<div class="location tag"><span id="area-name">◆ THE HOLLOW</span> <span id="day-phase"></span></div>
+<button id="creek-travel" aria-label="Walk right to Willow Creek" title="Walk right to Willow Creek" data-side="right">→</button><button id="supply-drop" hidden></button></div><div class="caption"><strong>Pip</strong><span id="mood"></span><button id="travel" aria-label="Visit city alley" title="Visit city alley">→</button></div>
+<div class="inventory" aria-label="Item pouch"><div class="tag">ITEM POUCH</div><div class="actions supplies"><button data-item="berries">Berry pouch · +18 Fullness</button>
+<button data-item="cloth">Paw sponge · +20 Cleanliness</button>
+<button data-item="blanket">Cozy blanket · +20 Energy</button>
+<button data-item="leaf">Familiar leaf · +16 Comfort</button>
+<button id="pouch-caps" hidden></button></div></div></section>
+<section class="panel" aria-label="Pet care"><div><h2>Pip’s needs</h2><div id="stats"></div><div id="city-perk" hidden><span class="tag">PERK</span> <strong>City Regular</strong><br><small>Pip can keep scavenging when he hears footsteps and feels comfortable.</small></div></div>
+<div class="actions"><button data-act="feed">✦ Feed</button><button data-act="play">◇ Play</button><button data-act="wash">≈ Wash</button><button data-act="rest">☾ Rest</button><button id="rinse" hidden>Rinse a snack</button><button id="burrow" style="grid-column:1 / -1">Hide in burrow</button></div></section>
+</div>
+<div class="journal"><span class="tag">FIELD NOTES</span><p id="note" role="status">Pip peeks out of the hollow. What shall we do first?</p></div>
+
+<details class="panel" style="margin-top:16px"><summary>Field Notes objectives</summary><ul id="objectives"></ul></details>
+<div class="journal"><span class="tag">TREASURES</span><p id="treasures"></p></div>
+
+<footer id="move-help">Tap his head or his hideout while he is awake inside to give him a pat. Drag Pip to pick him up. Let go above the dotted ground line and he drops to the ground. With the clearing focused, use Space to pick him up or set him down and arrow keys to move him.</footer><footer id="save">Progress is saved in this browser.</footer>
+</main>
+<script>
+const view=document.querySelector('#view'), ctx=view.getContext('2d');
+const stats=[['full','Fullness','#dfaa68'],['fun','Happiness','#d78782'],['clean','Cleanliness','#8cc4b9'],['energy','Energy','#b5c97e']];
+const initial={full:64,fun:72,clean:56,energy:80,bond:0,hollowSupply:0,creekSupply:0,alleySupply:0,bakerySupply:0,washedPaws:0,playedTogether:0,stashedCaps:0,calmVisits:0,cityRegular:0,forestCap:0,cityCap:0,feather:0,pebble:0,cap:0,button:0,comfort:78,care:0,careTime:0,stress:0,handled:0,time:Date.now()};
+const key='raccoon-hollow-v1';
+let state={...initial};
+try {const saved=JSON.parse(localStorage.getItem(key));for(const k in initial){if(Number.isFinite(saved?.[k]))state[k]=saved[k]}} catch {}
+const clamp=n=>Math.min(100,Math.max(0,n));
+const decay=()=>{const now=Date.now(), steps=Math.min(20,Math.floor((now-state.time)/45000));if(steps>0){stats.forEach(([k])=>state[k]=clamp(state[k]-steps));state.time=now}};
+function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch{document.querySelector('#save').textContent='Saving is unavailable in this browser.'}}
+const treasureNames={feather:'Blue feather',pebble:'Shiny pebble',cap:'Bottle cap',button:'Brass button'};
+function render(){
+ renderSupplies();
+ document.querySelector('#city-perk').hidden=!state.cityRegular;
+ const caps=document.querySelector('#pouch-caps');
+ caps.hidden=state.cap===0;caps.textContent='Leave a bottle cap ×'+state.cap;
+ caps.disabled=Boolean(city?state.cityCap:state.forestCap);
+ document.querySelector('#objectives').innerHTML=[
+  ['A Clean Getaway','While Pip is hungry, let him find an apple core in the alley. Stay there a few seconds while he washes his paws.',state.washedPaws],
+  ['Your Turn','Play when Pip brings you a pinecone.',state.playedTogether],
+  ['A Place for Shiny Things','Leave a bottle cap by a hideout and watch Pip stash it.',state.stashedCaps],
+  ['City Regular','Spend 8 seconds roaming the alley with at least 55 Comfort, then return to the Hollow between visits. Calm visits: '+Math.min(3,state.calmVisits)+'/3. After the third visit, stay for the next footsteps encounter.',state.cityRegular]
+ ].map(([title,hint,done])=>'<li>'+(done?'✓ ':'○ ')+'<strong>'+title+'</strong> · '+hint+'</li>').join('');
+ document.querySelector('#treasures').textContent=Object.entries(treasureNames).filter(([key])=>key!=='cap'&&state[key]>0).map(([key,name])=>name+' ×'+state[key]).join(' · ')||'Pip may bring you a gift once you reach 8 Friendship.';
+ document.querySelector('#stats').innerHTML=[...stats,['comfort','Comfort','#cea7d6']].map(([k,label,color])=>'<div class="stat"><div class="label"><span>'+label+'</span><span>'+state[k]+'%</span></div><div class="meter" role="meter" aria-label="'+label+'" aria-valuenow="'+state[k]+'" aria-valuemin="0" aria-valuemax="100"><div class="fill" style="--value:'+state[k]+'%;--color:'+color+'"></div></div></div>').join('');
+ const lowest=stats.reduce((a,b)=>state[a[0]]<=state[b[0]]?a:b)[0];
+ const stress=handlingStress();
+ let mood='Cozy in the clearing';
+ if(nap)mood=bakery?'Sleeping · in the nook under the steps':city?'Sleeping · in the dumpster':'Sleeping · in the Hollow';
+ else if(hidden)mood=bakery?'Tucked away · inside the nook under the steps':city?'Tucked away · inside the dumpster':'Tucked away · inside the burrow';
+ else if(burrowing)mood=burrowing.entering?'Heading inside':'Coming out';
+ else if(held)mood=stress>=3?'Wriggly · wants down':'Startled · paws tucked';
+ else if(stress>=3)mood='Wary · needs a little space';
+ else if(state.comfort<35)mood='Uneasy · listening for noises';
+ else if(state[lowest]<32)mood={full:'Hungry · looking for berries',fun:'Bored · wants to play',clean:'Grubby · needs a wash',energy:'Sleepy · wants a nap'}[lowest];
+ else if(state.care && Date.now()-state.careTime<45000)mood=['Cozy','Content · enjoyed a berry','Playful · loved the pinecone','Fresh · clean fur','Rested · enjoyed a nap','Affectionate · enjoyed a head pat'][state.care];
+ else if(stats.every(([k])=>state[k]>=75))mood='Thriving · feeling well cared for';
+ document.querySelector('#mood').textContent=mood;
+ document.querySelector('#hearts').textContent='♥ '+state.bond+' FRIENDSHIP';
+}
+const actions={
+ feed:{gain:{full:26},min:null,note:'Pip holds a berry in both paws and munches it.',icon:'♥'},
+ play:{gain:{fun:25,energy:-13,clean:-8,full:-6},min:['energy',13],note:'Pip chases a pinecone across the clearing.',icon:'✦'},
+ wash:{gain:{clean:32},min:null,note:'Pip wets his front paws and rubs his face clean.',icon:'≈'},
+ rest:{icon:'Z'}
+};
+let active='',start=0;
+document.querySelectorAll('[data-act]').forEach(button=>button.onclick=()=>{
+ if(traveling)return;
+ if(button.dataset.act==='rest'){
+  if(held||pendingPat||fall||nap)return;
+  decay();
+  if(hidden)startNap(performance.now());
+  else if(burrowing){
+   if(burrowing.entering)burrowing.sleep=true;
+  }else beginBurrow(false,true);
+  return;
+ }
+ if(hidden||burrowing){note.textContent='Call Pip out of his hideout first.';return}
+ decay();
+ const action=actions[button.dataset.act];
+ if(action.min&&state[action.min[0]]<action.min[1]){document.querySelector('#note').textContent='Pip is sleepy. Try a nap first.';render();save();return}
+ const invited=button.dataset.act==='play'&&playRequest>performance.now();
+ if(invited){state.playedTogether=1;playRequest=0;nextInvitation=performance.now()+35000;}
+ const primary=Object.keys(action.gain)[0];
+ if(state[primary]===100&&!invited){document.querySelector('#note').textContent={feed:'Pip is full and saves the berry for later.',play:'Pip is already delighted and settles down beside you.',wash:'Pip’s fur is already squeaky clean.',rest:'Pip is wide awake and eager to explore.'}[button.dataset.act];render();save();return}
+ if(creek&&button.dataset.act==='wash')settleAtCreekBank();
+ for(const [k,n] of Object.entries(action.gain))state[k]=clamp(state[k]+n);
+ state.bond++;state.care=['feed','play','wash','rest'].indexOf(button.dataset.act)+1;state.careTime=Date.now();state.stress=Math.max(0,handlingStress()-1);state.handled=Date.now();active=button.dataset.act;start=performance.now();document.querySelector('#note').textContent=action.note;render();save();
+});
+const items={
+ berries:{name:'Berry pouch',stat:'full',amount:18,note:'Pip finds your berries and munches them.',colors:['#b96583','#86a45d'],art:['...bb...','..b.....','.aa.aa..','aaaaaaa.','aaaaaaa.','.aaaaa..','..aaa...','........']},
+ cloth:{name:'Paw sponge',stat:'clean',amount:20,note:'Pip finds the sponge and wipes his paws.',colors:['#e1b964','#a98350'],art:['........','..aaaa..','.aaaaaa.','aaaaabaa','abaabaaa','aaaaaaaa','.bbbbbb.','........']},
+ blanket:{name:'Cozy blanket',stat:'energy',amount:20,note:'Pip snuggles into the blanket you left him.',colors:['#a478b9','#e0aab5'],art:['........','.aaaaaa.','.abbaaa.','.abbaba.','.aaaaba.','.bbbbbb.','.aaaaaa.','..a..a..']},
+ leaf:{name:'Familiar leaf',stat:'comfort',amount:16,note:'Pip finds the familiar leaf and relaxes.',colors:['#809c59','#c3c581'],art:['......aa','....abaa','...abaa.','..abaa..','..baa...','.baaa...','ba......','........']}
+};
+const supplyTypes=Object.keys(items);
+const supplyButtons=[...document.querySelectorAll('[data-item]')];
+const supplyDrop=document.querySelector('#supply-drop');
+let selectedSupply='';
+function shelterSlot(){return bakery?'bakerySupply':city?'alleySupply':creek?'creekSupply':'hollowSupply'}
+function renderSupplies(){
+ const stocked=state[shelterSlot()];
+ supplyDrop.hidden=!(selectedSupply||stocked)||hidden||burrowing||traveling;
+ supplyDrop.textContent=stocked?'Retrieve '+items[supplyTypes[stocked-1]].name:'Leave here';
+ supplyDrop.style.setProperty('--den-left',bakery?'23%':city?'73%':creek?'79%':'21%');
+ supplyDrop.style.setProperty('--den-top',bakery?'69%':city?'56%':'68%');
+ for(const button of supplyButtons)button.setAttribute('aria-pressed',String(button.dataset.item===selectedSupply));
+}
+function placeSupply(type){
+ if(!supplyTypes.includes(type)||hidden||burrowing||traveling||held||fall||state[shelterSlot()])return;
+ state[shelterSlot()]=supplyTypes.indexOf(type)+1;
+ selectedSupply='';
+ note.textContent='You left a '+items[type].name.toLowerCase()+' for Pip to find.';
+ render();save();
+}
+supplyDrop.onclick=()=>{
+ if(hidden||burrowing||traveling||held||fall)return;
+ if(state[shelterSlot()]){
+  state[shelterSlot()]=0;note.textContent='You put the supply back in your pouch.';render();save();
+ }else placeSupply(selectedSupply);
+};
+supplyDrop.addEventListener('dragover',e=>{if(selectedSupply&&!state[shelterSlot()])e.preventDefault()});
+supplyDrop.addEventListener('drop',e=>{e.preventDefault();placeSupply(selectedSupply)});
+function overHideout(e){
+ const [x,y]=coordinates(e);
+ return bakery?x>=20&&x<=78&&y>=79&&y<=119:city?x>=123&&x<=210&&y>=54&&y<=107:
+  creek?x>=155&&x<=226&&y>=78&&y<=115:x>=15&&x<=83&&y>=75&&y<=113;
+}
+view.addEventListener('dragover',e=>{
+ if(selectedSupply&&overHideout(e)&&!hidden&&!burrowing&&!traveling&&!state[shelterSlot()])e.preventDefault();
+});
+view.addEventListener('drop',e=>{
+ if(!selectedSupply||!overHideout(e))return;
+ e.preventDefault();placeSupply(selectedSupply);
+});
+for(const button of supplyButtons){
+ const type=button.dataset.item,item=items[type];
+ const icon=document.createElement('canvas');
+ icon.width=8;icon.height=8;icon.className='supply-icon';icon.setAttribute('aria-hidden','true');
+ const ink=icon.getContext('2d');
+ item.art.forEach((row,y)=>[...row].forEach((pixel,x)=>{
+  if(pixel==='.')return;
+  ink.fillStyle=item.colors[pixel==='a'?0:1];ink.fillRect(x,y,1,1);
+ }));
+ button.prepend(icon);
+ button.draggable=true;
+ button.onclick=()=>{selectedSupply=selectedSupply===type?'':type;renderSupplies()};
+ button.addEventListener('dragstart',e=>{
+  selectedSupply=type;e.dataTransfer.setData('text/plain',item.name);
+  e.dataTransfer.effectAllowed='copy';renderSupplies();
+ });
+ button.addEventListener('dragend',()=>{selectedSupply='';renderSupplies()});
+}
+function discoverSupply(){
+ const slot=shelterSlot(),item=items[supplyTypes[state[slot]-1]];
+ if(!item)return '';
+ const before=state[item.stat];
+ const after=clamp(before+item.amount);
+ const label=item.stat==='comfort'?'Comfort':stats.find(([key])=>key===item.stat)[1];
+ if(after===before)return 'Pip finds the '+item.name.toLowerCase()+' and saves it for later. His '+label+' is already full.';
+ state[slot]=0;
+ state[item.stat]=after;
+ save();
+ return item.note+' (+'+(after-before)+' '+label+')';
+}
+const box=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+function poly(color,points){ctx.fillStyle=color;ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill()}
+function fir(x,y,s,c){box(x-s/10,y-s/4,s/5,s/3,c);for(let i=0;i<4;i++){const w=s*(.22+i*.085),top=y-s+i*s*.17;poly(c,[[x,top],[x-w,top+s*.43],[x+w,top+s*.43]])}}
+let seed=129;function rand(){seed=(seed*16807)%2147483647;return seed/2147483647}
+const landscape=document.createElement('canvas');landscape.width=240;landscape.height=150;
+function background(){
+
+ ctx.clearRect(0,0,240,150);
+ for(let i=0;i<32;i++)fir(i*8,81+rand()*10,30+rand()*29,'#43594e');
+ for(let i=0;i<20;i++)fir(i*13,98+rand()*8,30+rand()*44,'#334c42');
+ box(0,94,240,56,'#465840');
+ poly('#66734a',[[0,112],[29,105],[85,106],[106,102],[155,104],[185,110],[240,110],[240,150],[0,150]]);
+ poly('#857451',[[0,148],[42,130],[94,123],[121,114],[150,115],[169,121],[156,133],[202,150]]);
+ poly('#4d7771',[[240,116],[212,124],[206,134],[184,140],[177,150],[240,150]]);
+ for(let i=0;i<280;i++){const x=rand()*240|0,y=96+(rand()*54|0); box(x,y,1+(rand()*4|0),1,['#a08a60','#384d3b','#77855b','#536548'][i%4])}
+ for(let i=0;i<14;i++){const y=125+(rand()*25|0),x=211+(rand()*24|0);box(x,y,3+(rand()*8|0),1,'#86a39a')}
+ poly('#463d35',[[16,107],[20,89],[32,78],[54,75],[72,85],[83,103],[78,112],[18,112]]);
+ poly('#7a6b51',[[16,107],[20,89],[32,78],[54,75],[72,85],[68,89],[52,82],[34,85],[25,94],[23,109]]);
+ poly('#242b27',[[30,108],[32,99],[39,91],[52,89],[63,96],[69,109]]);
+ fir(4,112,61,'#263d34');
+ for(let i=0;i<38;i++){const x=rand()*240|0,y=98+(rand()*51|0); if(x>92&&x<160||x>189&&y>124)continue;box(x,y,1,3,'#344b38');box(x-1,y,3,1,i%3?'#a39661':'#dfb476')}
+ landscape.getContext('2d').drawImage(view,0,0);
+}
+background();
+function raccoon(x,y,blink,stride=0,sit=0,wash=null){
+ // Raise the head and shoulders gradually toward the front. Keep each paw planted.
+ const poseY=(dx,dy)=>{
+  const shoulderLift=5.5-8.5*Math.max(0,Math.min(1,(dx-13)/35));
+  const weight=Math.max(0,Math.min(1,(34-dy)/13));
+  return Math.round(-sit*shoulderLift*weight);
+ };
+ const shape=(c,pts)=>poly(c,pts.map(([dx,dy])=>[x+dx+(dy>=31?(dx<30?stride:-stride):0),y+dy+poseY(dx,dy)-(held?Math.max(0,dy-27):0)]));
+ const px=(dx,dy,w,h,c)=>box(x+dx+(dy>=31?(dx<30?stride:-stride):0),y+dy+poseY(dx,dy)-(held?Math.max(0,dy-27):0),w,h,c);
+ const dark='#25292a', fur='#767975', light='#aaa798', cream='#d9d0b7';
+ // Arched spine, shoulders, and rounded haunches.
+ shape(dark,[[11,18],[16,12],[23,12],[33,6],[41,3],[49,3],[55,6],[59,11],[60,18],[57,24],[53,27],[53,31],[51,35],[44,35],[44,33],[48,31],[47,25],[40,28],[32,27],[26,25],...(wash?[[21,25]]:[[26,29],[23,35],[16,35],[16,33],[20,31],[21,25]]),[15,25]]);
+ if(!wash)shape('#53534c',[[28,21],[34,23],[33,28],[29,35],[24,35],[24,33],[27,31]]);
+ shape('#53534c',[[48,22],[55,22],[56,29],[54,35],[49,35],[49,33],[52,31]]);
+ shape('#807d70',[[14,18],[18,14],[25,13],[34,8],[42,5],[49,5],[55,8],[58,13],[58,19],[54,25],[50,28],[42,27],[34,26],[27,23],[20,24],[16,23]]);
+ shape('#999588',[[19,16],[27,13],[36,8],[43,5],[49,5],[54,8],[53,10],[46,8],[38,10],[28,15],[21,17]]);
+ shape('#69665a',[[49,11],[55,13],[57,18],[54,24],[50,28],[50,32],[47,34],[44,34],[48,31],[46,25],[42,22],[43,16]]);
+ if(!wash)shape('#6d6a60',[[22,19],[27,21],[26,27],[23,33],[20,34],[17,34],[21,31],[22,26]]);
+ const rinsing=wash?.rinse;
+ const berryX=rinsing?5+Math.round(wash.rub*.45):0;
+ function rinsingPaw(front){
+  const shoulder=front?21:27;
+  const reach=Math.round(shoulder+(berryX+(front?4:-2)-shoulder)*wash.lift);
+  const wrist=33-Math.round(wash.lift*(front?1:3));
+  shape(dark,[[shoulder-2,22],[shoulder+3,23],[reach+4,wrist-2],[reach+3,wrist+2],[reach-3,wrist+2],[reach-4,wrist-1]]);
+  shape(front?'#898274':'#686558',[[shoulder,24],[shoulder+2,24],[reach+2,wrist-1],[reach+2,wrist+1],[reach-2,wrist+1],[reach-2,wrist]]);
+ }
+ function washingPaw(side){
+  const lift=wash.lift, rub=wash.rub*side;
+  const front=side===1;
+  const ax=front?21:27, ay=front?22:23;
+  const px=Math.round(ax+(8+(front?0:4)-ax)*lift);
+  const py=Math.round(33-(10+rub)*lift);
+  shape(dark,[[ax-2,ay],[ax+3,ay],[px+4,py-3],[px+3,py+2],[px-3,py+2],[px-4,py-2]]);
+  shape(front?'#898274':'#686558',[[ax-1,ay+1],[ax+1,ay+1],[px+2,py-2],[px+2,py],[px-2,py],[px-2,py-1]]);
+ }
+ if(rinsing)rinsingPaw(false);else if(wash)washingPaw(-1);
+ const torsoShape=shape,torsoPixel=px;
+ const headShape=(c,pts)=>torsoShape(c,pts.map(([dx,dy])=>[Math.round(dx*.83),Math.round(4+dy*.74)]));
+ const headPixel=(dx,dy,w,h,c)=>torsoPixel(Math.round(dx*.83),Math.round(4+dy*.74),w,h,c);
+ // Left-facing head. The far ear peeks above the crown.
+ headShape(dark,[[6,13],[7,8],[10,6],[14,7],[16,11],[19,12],[20,8],[24,7],[28,10],[28,15],[26,18],[28,22],[25,27],[18,30],[8,30],[0,27],[-4,26],[-4,22],[1,21],[4,16]]);
+ headShape('#77796f',[[8,11],[10,8],[13,9],[14,12],[9,14]]);
+ headShape(light,[[21,10],[24,9],[26,11],[26,14],[24,16],[20,14]]);
+ headShape('#535650',[[22,11],[24,11],[25,13],[23,14]]);
+ headShape(fur,[[6,16],[10,13],[17,12],[21,15],[25,18],[26,22],[23,26],[17,28],[8,28],[2,25],[5,21]]);
+ headShape(cream,[[5,18],[8,15],[13,14],[18,16],[21,19],[15,17],[10,17],[7,19]]);
+ headShape('#303433',[[5,20],[9,17],[15,17],[20,19],[22,22],[19,25],[13,24],[9,22],[5,23]]);
+ headShape(cream,[[-2,23],[3,22],[7,21],[10,22],[13,24],[19,25],[16,28],[8,28],[1,26],[-2,25]]);
+ headShape('#a49e8b',[[0,25],[6,26],[12,26],[17,25],[15,28],[8,28],[2,27]]);
+ headPixel(-4,22,4,3,'#181d1e');headPixel(-3,22,2,1,'#515352');
+ if(rinsing){headPixel(10,19,3,3,'#141819');headPixel(10,20,1,1,'#eadbbc')}
+ else if(blink)headPixel(10,19,4,1,'#141819');
+ else{headPixel(10,18,3,3,'#141819');headPixel(10,18,1,1,'#eadbbc')}
+ if(rinsing){
+  rinsingPaw(true);
+  if(wash.lift>.45&&wash.fish){
+   px(berryX-3,30,6,2,'#c1d8cc');px(berryX+3,29,2,4,'#75a6a5');px(berryX-2,30,1,1,dark);
+  }else if(wash.lift>.45){
+   px(berryX-2,30,5,4,'#49283e');
+   px(berryX-1,30,3,3,'#934766');
+   px(berryX,30,1,1,'#df91a5');
+  }
+ }else if(wash)washingPaw(1);
+}
+const groundY=100,pawOffset=35;
+let fall=null;
+let petX=94,petY=80,held=false,pointer=null,offsetX=0,offsetY=0;
+const note=document.querySelector('#note');
+function handlingStress(){
+ return Math.max(0,state.stress-Math.floor(Math.max(0,Date.now()-state.handled)/20000));
+}
+function pickUp(){
+ state.stress=Math.min(5,handlingStress()+1);state.handled=Date.now();
+ held=true;active='';view.style.cursor='grabbing';render();save();
+ note.textContent=handlingStress()>=3?'Pip wriggles and wants to be put down.':'Pip gives a startled chirp and tucks his paws.';
+}
+function putDown(){
+ held=false;pointer=null;view.style.cursor='grab';
+ const now=performance.now();
+ if(petY+pawOffset-4<groundY&&!reducedMotion.matches){
+  fall={y:petY-4,start:now};active='';
+  note.textContent='Pip drops toward the ground.';
+ }else{
+  petY=Math.max(groundY-pawOffset,petY);
+  land(now);
+ }
+ render();
+}
+function land(t){
+ active='drop';start=t;
+ note.textContent='Pip lands on his paws and sniffs his new spot.';render();
+}
+function movePip(x,y){
+ petX=Math.round(Math.max(facing===1?4:25,Math.min(facing===1?166:187,x)));
+ petY=Math.round(Math.max(10,Math.min(113,y)));
+}
+let hidden=false, burrowing=null, nap=null, nextShelterComfort=0, shelterEntered=0;
+const burrow=document.querySelector('#burrow');
+burrow.onclick=()=>beginBurrow();
+function beginBurrow(flee=false,sleep=false){
+ if(traveling||burrowing||held||pendingPat||fall)return;
+ walk=null;active='';
+ const entering=!hidden;
+ nap=null;
+ const shelter=bakery?'nook under the steps':city?'dumpster':'burrow';
+ hidden=false;
+ facing=(city&&!bakery)?(entering?-1:1):(entering?1:-1);
+ burrowing={entering,flee,sleep,start:performance.now(),x:entering?petX:bakery?42:city?160:creek?161:31,y:entering?petY:bakery?76:city?60:75};
+ burrow.disabled=true;
+ note.textContent=entering?(flee?'Footsteps nearby! Pip bolts for the '+shelter+'.':sleep?'Pip hurries to the '+shelter+' for a nap.':'Pip heads for the '+shelter+'.'):'Pip peeks out of the '+shelter+'.';
+ render();
+};
+function updateBurrow(t){
+ if(!burrowing)return;
+ const {entering,sleep,start,x,y}=burrowing;
+ const progress=reducedMotion.matches?1:Math.min(1,Math.max(0,(t-start)/(burrowing.flee||burrowing.sleep?420:850)));
+ movePip(x+((bakery?(entering?42:86):city?(entering?160:120):(creek?(entering?161:130):(entering?31:60)))-x)*progress,y+((bakery?(entering?76:79):city?(entering?60:79):(entering?75:79))-y)*progress);
+ if(progress<1)return;
+ hidden=entering;burrowing=null;burrow.disabled=false;
+
+ if(hidden){shelterEntered=t;nextShelterComfort=t+2500;}
+ const shelter=bakery?'nook under the steps':city?'dumpster':'burrow';
+ burrow.textContent=bakery?(hidden?'Come out from under the steps':'Hide under the steps'):(hidden?'Come out of ':'Hide in ')+shelter;
+ const surprise=hidden?discoverSupply():'';
+ if(sleep){startNap(t,false,sleep==='doze'?2:4);if(surprise)note.textContent=surprise+' Then he curls up for a nap.';return}
+ note.textContent=surprise||(hidden?'Pip is tucked away inside the '+shelter+'.':city?'Pip climbs back into the alley.':'Pip steps back into the clearing.');
+ render();
+}
+function restoreShelterComfort(t){
+ if(!hidden||t<nextShelterComfort)return;
+ const ticks=1+Math.floor((t-nextShelterComfort)/2500);
+ nextShelterComfort+=ticks*2500;
+ const comfort=clamp(state.comfort+(city?1:3)*ticks);
+ if(comfort===state.comfort)return;
+ state.comfort=comfort;
+ render();save();
+}
+function startNap(t,automatic=false,length=4){
+ if(!hidden||nap)return;
+ nap={next:t+2500,ticks:0,length};
+ note.textContent=automatic?'Pip feels safe again and drifts off to sleep.':'Pip curls up for a nap.';
+ render();save();
+}
+function updateNap(t){
+ if(!nap||t<nap.next)return;
+ const ticks=Math.min(nap.length-nap.ticks,1+Math.floor((t-nap.next)/2500));
+ nap.ticks+=ticks;nap.next+=ticks*2500;
+ state.energy=clamp(state.energy+8*ticks);
+ const cost=city?'clean':'fun';
+ state[cost]=clamp(state[cost]-ticks);
+ if(nap.ticks===nap.length){
+  state.bond++;state.care=4;state.careTime=Date.now();
+  beginBurrow();
+  note.textContent='Pip wakes up and stretches.';
+ }
+ render();save();
+}
+function coordinates(e){
+ const rect=view.getBoundingClientRect();
+ return [(e.clientX-rect.left)*240/rect.width,(e.clientY-rect.top)*150/rect.height];
+}
+let pendingPat=null,lastPat=-Infinity;
+function pat(inShelter=false){
+ const now=performance.now();
+ if(now-lastPat<700)return;
+ lastPat=now;decay();
+ state.comfort=clamp(state.comfort+12);
+ state.care=5;state.careTime=Date.now();
+ active='pat';start=now;
+ note.textContent=inShelter?'Pip leans into a gentle head pat from inside his hideout.':'Pip leans into your hand and closes his eyes.';
+ render();save();
+}
+view.addEventListener('click',e=>{
+ if(hidden&&!nap&&!traveling&&!burrowing&&overHideout(e))pat(true);
+});
+function drawShelterPat(t){
+ if(nap||active!=='pat')return;
+ const x=bakery?49:city?172:creek?192:48;
+ const y=bakery?88:city?59:80;
+ ctx.save();
+ ctx.fillStyle='#ffe4a2';ctx.font='bold 12px monospace';
+ ctx.fillText('♥',x,y-(reducedMotion.matches?0:Math.floor((t-start)/110)));
+ ctx.restore();
+}
+view.addEventListener('pointerdown',e=>{
+ if(traveling||hidden||burrowing||fall||held||pointer!==null||e.button!==0)return;
+ const [x,y]=coordinates(e);
+ const left=facing===1?petX-4:petX-25; const right=facing===1?petX+74:petX+53;
+ if(x<left||x>right||y<petY||y>petY+36)return;
+ view.focus();view.setPointerCapture(e.pointerId);pointer=e.pointerId;
+ offsetX=x-petX;offsetY=y-petY;
+ const headX=facing===1?offsetX:48-offsetX;
+ if(headX>=-4&&headX<=27&&offsetY>=1&&offsetY<=29){pendingPat=[x,y];walk=null;nextWalk=performance.now()+3200}else pickUp();
+});
+view.addEventListener('pointermove',e=>{
+ if(pointer!==e.pointerId)return;
+ const [x,y]=coordinates(e);
+ if(pendingPat){if(Math.hypot(x-pendingPat[0],y-pendingPat[1])<4)return;pendingPat=null;pickUp()}
+ movePip(x-offsetX,y-offsetY);
+});
+for(const type of ['pointerup','pointercancel','lostpointercapture']){
+ view.addEventListener(type,e=>{
+  if(pointer!==e.pointerId)return;
+  if(pendingPat){pendingPat=null;pointer=null;if(type==='pointerup')pat()}else putDown();
+ });
+}
+view.addEventListener('keydown',e=>{
+ if(traveling||hidden||burrowing||fall||pointer!==null)return;
+ if(e.code==='Space'){
+  e.preventDefault();if(!e.repeat){if(held)putDown();else pickUp()}return;
+ }
+ const delta={ArrowLeft:[-4,0],ArrowRight:[4,0],ArrowUp:[0,-4],ArrowDown:[0,4]}[e.key];
+ if(held&&delta){e.preventDefault();movePip(petX+delta[0],petY+delta[1])}
+});
+view.addEventListener('blur',()=>{if(held&&pointer===null)putDown()});
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let walk=null,nextWalk=0,facing=1,sit=0,lastFrame=0;
+let nextForage=0, nextCreekWash=0;
+let nextTreasure=0;
+function findSnack(t){
+ if(document.hidden||traveling)return;
+ if(state.bond>=8&&t>=nextTreasure&&Math.random()<.22){
+  const options=city?['cap','button']:['feather','pebble'];
+  const treasure=options[Math.floor(Math.random()*options.length)];
+  state[treasure]++;
+  nextTreasure=t+40000;active='treasure';start=t;
+  note.textContent='Pip trots over and drops a gift at your feet. '+treasureNames[treasure]+'!';
+  render();save();return;
+ }
+ if(state.full>85||t<nextForage||traveling||Math.random()>=.35)return;
+ nextForage=t+22000;
+ if(creek){
+  facing=1;movePip(74,88);
+  state.full=clamp(state.full+20);
+  active='fish';start=t;
+  note.textContent='Pip feels around in the shallows and scoops up a minnow.';
+  render();save();
+  return;
+ }
+ state.full=clamp(state.full+(city?18:15));
+ if(city){state.clean=clamp(state.clean-10);if(!state.washedPaws||Math.random()<.5)washAt=t+3200;}
+ active='forage';start=t;
+ note.textContent=city?'Pip finds an apple core in the trash and gets his paws dirty.':'Pip noses through the leaf litter and finds a few berries.';
+ render();save();
+}
+function wander(t){
+ if(hidden||burrowing||pendingPat||held||fall||active){walk=null;nextWalk=t+3200;return 0}
+ if(reducedMotion.matches){walk=null;if(!nextWalk)nextWalk=t+3200;if(t>=nextWalk){nextWalk=t+6500;findSnack(t)}return 0}
+ if(!nextWalk)nextWalk=t+2500;
+ if(!walk&&t>=nextWalk){
+  const direction=petX<25?1:petX>145?-1:Math.random()<.5?-1:1;
+  const end=Math.max(12,Math.min(155,petX+direction*(18+Math.random()*22)));
+  facing=direction>0?-1:1;
+  walk={x:petX,y:petY,end,dy:Math.max(groundY-pawOffset,Math.min(110,petY+Math.random()*12-6))-petY,start:t};
+ }
+ if(!walk)return 0;
+ const progress=Math.min(1,(t-walk.start)/1800);
+ movePip(walk.x+(walk.end-walk.x)*progress,walk.y+walk.dy*progress);
+ if(progress===1){
+  walk=null;nextWalk=t+3500+Math.random()*3000;
+  findSnack(t);
+  return 0;
+ }
+ return Math.round(Math.sin((t-walk.start)/75)*2);
+}
+let city=false,creek=false,bakery=false,cityReturn='hollow';
+const travel=document.querySelector('#travel');
+let traveling=false, riverPan=null;
+const finished=animation=>animation.finished.catch(()=>{});
+const creekTravel=document.querySelector('#creek-travel');
+const rinse=document.querySelector('#rinse');
+travel.onclick=()=>travelTo(city?cityReturn:'city');
+creekTravel.onclick=()=>travelTo(city?(bakery?'city':'bakery'):(creek?'hollow':'creek'));
+rinse.onclick=()=>{
+ if(!creek||traveling||held||pendingPat||fall||hidden||burrowing)return;
+ decay();walk=null;facing=1;movePip(85,88);
+ active='rinse';start=performance.now();
+ state.full=clamp(state.full+14);state.clean=clamp(state.clean+8);
+ note.textContent='Pip rolls a berry between his paws in the shallows, then eats it.';
+ render();save();
+};
+async function travelTo(area){
+ if(traveling||held||pendingPat||burrowing||fall)return;
+ const alongRiver=city?(area==='bakery'||area==='city'):(area==='hollow'||area==='creek');
+ if(alongRiver){
+  if(reducedMotion.matches){switchArea(area);return}
+  traveling=true;creekTravel.disabled=true;travel.disabled=true;
+  riverPan={area,start:performance.now(),from:(creek||bakery)?riverSpan:0,x:petX,y:petY};
+  return;
+ }
+ if(reducedMotion.matches||typeof view.animate!=='function'){switchArea(area);return}
+ traveling=true;
+ travel.disabled=true;
+ let fade;
+ try{
+  fade=view.animate([{opacity:1},{opacity:0}],{duration:170,fill:'forwards',easing:'ease-in'});
+  await finished(fade);
+  switchArea(area);
+  const reveal=view.animate([{opacity:0},{opacity:1}],{duration:230,fill:'forwards',easing:'ease-out'});
+  fade.cancel();
+  fade=reveal;
+  await finished(reveal);
+ }finally{
+  fade?.cancel();
+  travel.disabled=false;
+  traveling=false;
+ }
+};
+function switchArea(area=city?'hollow':'city'){
+ if(held||pendingPat||burrowing)return;
+ if(area==='city'&&!city)cityReturn=creek?'creek':'hollow';
+ const sameStreet=city&&(area==='city'||area==='bakery');
+ if(!sameStreet){cityEntered=performance.now();visitCounted=false;cityEvent=null;pedestrian=null;nextPedestrian=performance.now()+3000;nextCityEvent=performance.now()+4500;}
+ selectedSupply='';nap=null;bakery=area==='bakery';city=area==='city'||bakery;creek=area==='creek';playRequest=0;washAt=0;hidden=false;walk=null;active='';facing=1;
+ movePip(94,80);
+ nextWalk=performance.now()+3200;
+
+ burrow.textContent=bakery?'Hide under the steps':city?'Hide in dumpster':'Hide in burrow';
+ creekTravel.hidden=false;
+  creekTravel.textContent=creek||bakery?'←':'→';
+ creekTravel.dataset.side=creek||bakery?'left':'right';
+ const riverDestination=bakery?'Walk left to City Alley':city?'Walk right to the bakery':creek?'Walk left to the Hollow':'Walk right to Willow Creek';
+ creekTravel.title=riverDestination;creekTravel.setAttribute('aria-label',riverDestination);
+ rinse.hidden=!creek;
+ const destination=city?(cityReturn==='creek'?'Return to Willow Creek':'Return to the Hollow'):'Visit city alley';
+ travel.textContent=city?'←':'→';
+ travel.title=destination;travel.setAttribute('aria-label',destination);
+ document.querySelector('#area-name').textContent=bakery?'◆ CORNER BAKERY':creek?'◆ WILLOW CREEK':city?'◆ CITY ALLEY':'◆ THE HOLLOW';
+ view.setAttribute('aria-label',bakery?'Pip outside a bakery beside a nook under the steps':creek?'Pip beside the shallows of Willow Creek':city?'Pip in a pixel-art city alley with a dumpster and trash cans':'Pip beside his forest burrow');
+ note.textContent=bakery?'Pip sniffs the bakery doorway and spots a sheltered nook under the steps.':creek?'Pip sniffs for berries along the creek. Try Rinse a snack.':city?'Pip sniffs around the alley. Something smells interesting.':'Pip is back in his woodland clearing.';
+ render();
+};
+const cityWindows=[[12,31],[46,31],[177,26],[210,26],[105,61],[133,61]];
+let cityEvent=null,nextCityEvent=0,citySound;
+travel.addEventListener('click',()=>{
+ try{
+  if(!citySound&&window.AudioContext)citySound=new window.AudioContext();
+  citySound?.resume().catch(()=>{});
+ }catch{}
+});
+function footfalls(){
+ if(citySound?.state!=='running')return;
+ for(let i=0;i<3;i++){
+  const t=citySound.currentTime+i*.22;
+  const step=citySound.createOscillator(), volume=citySound.createGain();
+  step.type='triangle';
+  step.frequency.setValueAtTime(105-i*8,t);
+  step.frequency.exponentialRampToValueAtTime(45,t+.13);
+  volume.gain.setValueAtTime(.06-i*.013,t);
+  volume.gain.exponentialRampToValueAtTime(.001,t+.14);
+  step.connect(volume);volume.connect(citySound.destination);
+  step.start(t);step.stop(t+.15);
+ }
+}
+function glowWindows(night){
+ for(const [i,[x,y]] of cityWindows.entries()){
+  if(i===1||i===4)continue;
+  ctx.save();ctx.globalAlpha=night;
+  box(x,y,13,17,'#e9b66f');
+  box(x,y,13,2,'#f9d48c');
+  box(x+6,y,1,17,'#765354');box(x,y+7,13,1,'#765354');
+  ctx.restore();
+ }
+}
+function alleyEvents(t){
+ if(!cityEvent&&t>=nextCityEvent&&!document.hidden&&!traveling&&!hidden&&!burrowing&&!held&&!pendingPat&&!fall&&!active){
+  const readyForFootsteps=state.calmVisits>=3&&!state.cityRegular&&state.comfort>=55;
+  const car=!readyForFootsteps&&Math.random()<.55;
+  cityEvent={car,start:t};
+  nextCityEvent=t+13000+Math.random()*17000;
+  state.comfort=clamp(state.comfort-(car?5:12));
+  if(car)note.textContent='A car rolls past the mouth of the alley.';
+  else{
+   footfalls();
+   if(state.calmVisits>=3&&state.comfort>=35){
+    state.cityRegular=1;state.full=clamp(state.full+18);state.clean=clamp(state.clean-10);
+    if(!state.washedPaws||Math.random()<.5)washAt=t+3200;
+    active='forage';start=t;note.textContent='Pip hears footsteps, then goes back to digging for an apple core.';
+   }else if(state.comfort<35||Math.random()<.4)beginBurrow(true);
+   else{
+    walk=null;active='alarm';start=t;
+    note.textContent='Footsteps echo between the buildings. Pip stops to listen.';
+   }
+  }
+  render();save();
+ }
+ if(!cityEvent)return;
+ if(t-cityEvent.start>=(cityEvent.car?3000:1800))cityEvent=null;
+}
+function drawPinecone(t,night){
+ if(!playRequest||!pinecone)return;
+ const progress=reducedMotion.matches?1:Math.max(0,Math.min(1,(t-pinecone.start)/950));
+ const roll=1-(1-progress)**2;
+ const x=Math.round(pinecone.x+(120-pinecone.x)*roll*.38);
+ const y=Math.round(pinecone.y+(146-pinecone.y)*roll);
+ ctx.save();
+ ctx.globalAlpha=1-night*.32;
+ ctx.translate(x,y);
+ ctx.rotate(roll*Math.PI*4);
+ poly('#46332b',[[-5,0],[-3,-3],[2,-3],[5,-1],[5,1],[2,3],[-3,3]]);
+ box(-3,-2,5,4,'#8c6243');
+ box(-3,-1,2,1,'#c39460');box(0,0,3,1,'#c39460');
+ box(-2,1,2,1,'#553c2e');box(3,-1,3,1,'#66503a');
+ ctx.restore();
+}
+let pedestrian=null,nextPedestrian=0;
+function pedestrianPosition(t){
+ return -28+(t-pedestrian.start)*.15;
+}
+function updatePedestrian(t){
+ const {phase}=bakeryClock(t);
+ if(pedestrian&&pedestrianPosition(t)>510)pedestrian=null;
+ if(!pedestrian&&phase>=.05&&phase<.43&&t>=nextPedestrian&&!document.hidden&&!traveling){
+  pedestrian={start:t,reacted:false,coat:Math.random()<.5?'#82708e':'#687d85'};
+  nextPedestrian=t+8500+Math.random()*8500;
+ }
+ if(!pedestrian||pedestrian.reacted||traveling)return;
+ const distance=pedestrianPosition(t)-(petX+24+(bakery?240:0));
+ if(Math.abs(distance)>32)return;
+ pedestrian.reacted=true;
+ if(hidden||burrowing||held||fall||pendingPat)return;
+ footfalls();
+ const drop=bakery?8:3;
+ state.comfort=clamp(state.comfort-drop);
+ const hideChance=bakery?(state.cityRegular?.18:.36):(state.cityRegular?.02:.08);
+ if(Math.random()<hideChance+(state.comfort<35?(bakery?.23:.10):0)){
+  beginBurrow(true);
+  note.textContent=bakery?'Pip hears someone pass close by and darts into his nook under the steps.':'A passerby startles Pip and he ducks into the dumpster.';
+ }else if(bakery&&!active){
+  walk=null;active='alarm';start=t;
+  note.textContent='Pip watches a pedestrian walk past the bakery.';
+ }else note.textContent='Someone walks past the alley and Pip carries on.';
+ render();save();
+}
+function drawPedestrian(t,night){
+ if(!city||!pedestrian)return;
+ const camera=riverPan?.camera??(bakery?240:0);
+ const x=Math.round(pedestrianPosition(t)-camera);
+ if(x < -20||x > 260)return;
+ const stride=reducedMotion.matches?0:Math.round(Math.sin(t/92)*5);
+ ctx.save();ctx.translate(x,0);
+ ctx.filter='brightness('+(1-night*.4)+')';
+ poly('#373843',[[-8,111],[1,111],[stride+1,150],[stride-7,150]]);
+ poly('#484853',[[1,110],[8,110],[8-stride,150],[-stride,150]]);
+ poly('#43414c',[[-7,64],[7,64],[12,73],[10,114],[-9,114],[-12,75]]);
+ poly(pedestrian.coat,[[-6,65],[6,65],[10,74],[8,110],[-7,110],[-9,75]]);
+ poly('#545361',[[5,71],[10,74],[9+stride,100],[4+stride,103],[2+stride,99]]);
+ box(5+stride,100,4,6,'#b99177');
+ box(-3,61,7,7,'#b99177');
+ poly('#77564f',[[-7,48],[-3,43],[5,43],[10,47],[10,56],[7,62],[-3,63],[-7,58]]);
+ poly('#cba081',[[-4,49],[6,48],[8,51],[9,55],[6,56],[6,60],[-1,61],[-4,57]]);
+ box(5,51,2,1,'#53404b');
+ poly('#4d3d48',[[-7,49],[-7,46],[-3,42],[5,42],[10,47],[9,50],[5,48],[0,49],[-4,53]]);
+ ctx.restore();
+}
+function drawForegroundCar(t,night){
+ if(!city||!cityEvent?.car)return;
+ const progress=Math.min(1,Math.max(0,(t-cityEvent.start)/3000));
+ const scale=1.5;
+ const width=Math.ceil(106*scale);
+ const camera=riverPan?.camera??(bakery?240:0);
+ const left=reducedMotion.matches?Math.round((240-width)/2):Math.round(-width+(480+width+4)*progress)-camera;
+ ctx.save();
+ ctx.translate(left,150);
+ ctx.scale(scale,scale);
+ ctx.translate(0,-150);
+ ctx.filter='brightness('+(1-night*.45)+')';
+ const x=0;
+ poly('#352d39',[[x,150],[x+10,146],[x+25,144],[x+36,135],[x+68,135],[x+84,145],[x+102,148],[x+106,153],[x,153]]);
+ poly('#ab5758',[[x+14,150],[x+26,146],[x+37,136],[x+67,136],[x+83,146],[x+98,149],[x+102,152],[x+9,152]]);
+ poly('#4b5968',[[x+30,145],[x+39,138],[x+65,138],[x+77,145]]);
+ box(x+53,139,2,7,'#70434b');
+ box(x+38,136,29,1,'#d28a79');
+ box(x+35,146,45,1,'#d28a79');
+ ctx.restore();
+}
+const alley=document.createElement('canvas');
+alley.width=240;alley.height=150;
+const alleyProps=document.createElement('canvas');alleyProps.width=240;alleyProps.height=150;
+function paintAlley(){
+ ctx.clearRect(0,0,240,150);
+ box(0,12,92,96,'#654d49');box(0,12,91,5,'#947064');
+ box(160,7,80,104,'#494756');box(160,7,80,5,'#79717c');
+ box(92,48,68,62,'#776b69');box(94,52,66,2,'#aa8d79');
+ for(let y=21;y<100;y+=7){
+  box(0,y,92,1,'#493a39');box(161,y,79,1,'#383743');
+  for(let x=(y%2)*9;x<88;x+=18)box(x,y,1,7,'#493a39');
+  for(let x=166+(y%2)*9;x<239;x+=18)box(x,y,1,7,'#383743');
+ }
+ for(const [x,y] of cityWindows){
+  box(x-2,y-2,17,22,'#37343d');box(x,y,13,17,'#9b805e');
+  box(x+6,y,1,17,'#514650');box(x,y+7,13,1,'#514650');
+  box(x-3,y+17,19,2,'#b1937c');
+ }
+ box(68,65,18,37,'#342c36');box(71,68,13,33,'#535360');
+ box(193,54,3,43,'#292e39');box(185,53,11,4,'#cfa977');
+ box(0,100,240,50,'#626069');
+ poly('#807579',[[91,100],[161,100],[216,150],[17,150]]);
+ for(let j=0;j<75;j++){const x=rand()*240|0,y=102+(rand()*48|0);box(x,y,1+(j%5),1,j%3?'#696169':'#958485')}
+ poly('#505666',[[15,125],[34,121],[54,125],[47,131],[24,131]]);
+ box(28,126,17,1,'#868995');
+ alley.getContext('2d').drawImage(view,0,0);
+ ctx.clearRect(0,0,240,150);
+ // Draw at native resolution so the dumpster's details match the brickwork.
+ poly('#343440',[[126,98],[187,96],[208,99],[208,105],[129,106]]);
+ for(const x of [136,190]){
+  box(x,96,7,4,'#364443');box(x+1,100,5,4,'#292b34');box(x+2,100,2,1,'#767476');
+ }
+ poly('#283c39',[[126,64],[200,64],[205,82],[201,96],[192,99],[134,98],[128,94]]);
+ poly('#516b55',[[129,69],[185,69],[186,91],[182,95],[136,95],[132,91]]);
+ poly('#3d5549',[[185,69],[200,67],[202,82],[198,94],[186,96]]);
+ box(133,72,50,1,'#849176');box(134,93,48,2,'#344a40');
+ for(const x of [137,150,164,177]){
+  box(x,76,2,15,'#40584b');box(x+2,76,1,14,'#687e64');
+ }
+ poly('#293c3c',[[122,64],[129,58],[193,58],[204,63],[204,69],[123,70]]);
+ poly('#657a66',[[124,64],[130,59],[193,59],[200,63],[189,65],[125,66]]);
+ for(const x of [134,146,158,170,182])box(x,61,7,1,'#87947d');
+ box(125,67,75,1,'#98a08a');box(143,67,8,2,'#394b43');box(174,67,8,2,'#394b43');
+ box(155,80,12,6,'#9d896f');box(157,81,8,1,'#c4a989');box(158,83,6,1,'#6a6357');
+ box(193,84,5,2,'#7f8270');box(141,91,5,1,'#86745d');box(173,91,4,1,'#86745d');
+ // Metal trash can and tied bags.
+ box(26,79,19,20,'#444b53');box(29,82,13,15,'#8b9190');
+ for(let x=30;x<42;x+=4)box(x,83,1,13,'#535d63');
+ box(24,78,23,4,'#b0aaa0');box(32,75,7,3,'#646d72');
+ for(const [x,y,shade] of [[46,103,0],[57,107,1],[212,103,1],[224,109,0]]){
+  const shell=shade?'#42434b':'#373842', sheen=shade?'#66646b':'#575866';
+  box(x-8,y+1,17,2,'#34333e');
+  poly('#272933',[[x-10,y],[x-9,y-4],[x-6,y-8],[x-2,y-10],[x-4,y-13],[x-2,y-14],[x+1,y-12],[x+4,y-13],[x+3,y-10],[x+6,y-8],[x+9,y-4],[x+10,y],[x+7,y+2],[x-7,y+2]]);
+  poly(shell,[[x-8,y-1],[x-7,y-5],[x-3,y-8],[x+1,y-9],[x+5,y-7],[x+8,y-3],[x+7,y],[x-5,y+1]]);
+  poly(sheen,[[x-7,y-3],[x-5,y-6],[x-1,y-8],[x-2,y-5],[x-5,y-4],[x-6,y-2]]);
+  box(x-1,y-10,4,1,'#817783');
+  poly('#303039',[[x+1,y-8],[x+3,y-7],[x+2,y-4],[x+5,y-1],[x+2,y-1],[x,y-4]]);
+  box(x-4,y-2,3,1,sheen);
+ }
+ alleyProps.getContext('2d').drawImage(view,0,0);}
+paintAlley();
+const riverSpan=240;
+const creekScene=document.createElement('canvas');
+creekScene.width=240;creekScene.height=150;
+function paintCreek(){
+ ctx.clearRect(0,0,240,150);
+ for(let i=0;i<16;i++)fir(i*16,96,37+(i*17)%31,i%2?'#36584b':'#446755');
+ box(0,94,240,56,'#465840');
+ poly('#66734a',[[0,107],[39,103],[90,106],[119,104],[145,108],[174,105],[218,109],[240,110],[240,150],[0,150]]);
+ poly('#9b8963',[[113,96],[149,99],[171,107],[165,122],[133,150],[63,150],[98,124],[130,108]]);
+ poly('#4d7771',[[0,116],[17,114],[41,116],[62,123],[92,126],[135,117],[145,150],[0,150]]);
+ poly('#4d7771',[[133,96],[168,93],[192,101],[217,112],[240,116],[240,150],[101,150],[135,128],[159,108]]);
+ poly('#60938d',[[154,101],[178,98],[200,104],[219,121],[240,129],[240,150],[121,150],[154,128],[172,110]]);
+ for(let i=0;i<38;i++){
+  const y=101+(i*13)%49,x=173+(i*31)%65-((y-100)>>1);
+  if(x<221)box(x,y,3+i%8,1,i%2?'#82aaa0':'#4e8586');
+ }
+ poly('#554737',[[14,111],[20,95],[31,83],[47,78],[60,80],[74,90],[84,110],[73,114],[21,114]]);
+ poly('#887555',[[19,108],[23,94],[33,85],[47,81],[60,83],[70,90],[58,87],[44,86],[34,92],[27,107]]);
+ poly('#68774a',[[29,86],[39,80],[51,78],[63,81],[66,85],[54,84],[44,85],[36,89]]);
+ box(32,87,6,1,'#9b9961');box(47,80,8,1,'#9b9961');
+ poly('#726047',[[65,91],[74,93],[80,103],[78,108],[72,106],[69,98]]);
+ poly('#252f2b',[[30,108],[32,99],[39,91],[52,89],[63,96],[69,109]]);
+ box(36,108,26,2,'#3d392c');box(40,110,18,1,'#a28c65');
+ for(const [x,y] of [[17,110],[23,113],[69,111],[80,108],[77,114]]){
+  box(x,y,4,2,'#625f4b');box(x+1,y-1,2,1,'#aaa082');
+ }
+ for(const [x,y] of [[13,108],[26,106],[73,104],[82,109]]){
+  box(x,y-3,1,4,'#3f5338');box(x-1,y-4,3,1,'#aa795b');
+ }
+ for(const [x,y] of [[7,115],[82,105],[110,113],[163,103],[211,96],[228,115],[44,127],[94,141]]){
+  box(x,y-6,1,7,'#3e5d42');box(x+3,y-4,1,5,'#58764b');box(x-2,y-3,1,4,'#829660');
+ }
+ const bank=creekScene.getContext('2d');
+ bank.save();bank.translate(240,0);bank.scale(-1,1);
+ bank.drawImage(view,0,0);bank.restore();
+}
+paintCreek();
+const riverside=document.createElement('canvas');
+riverside.width=riverSpan+240;riverside.height=150;
+const riverArt=riverside.getContext('2d');
+riverArt.drawImage(landscape,0,0);
+riverArt.drawImage(creekScene,riverSpan,0);
+// A continuous strip of foreground water crosses the scene boundary.
+riverArt.fillStyle='#4d7771';
+riverArt.beginPath();
+riverArt.moveTo(211,125);
+riverArt.lineTo(227,119);riverArt.lineTo(240,115);
+riverArt.lineTo(254,113);riverArt.lineTo(264,114);
+riverArt.lineTo(271,123);riverArt.lineTo(251,129);
+riverArt.lineTo(240,132);riverArt.lineTo(218,138);
+riverArt.closePath();riverArt.fill();
+// Bridge the tree line with silhouettes that straddle the join.
+for(const [x,y,w] of [[217,94,24],[233,94,32],[247,94,28],[264,94,23]]){
+ riverArt.fillStyle='#334c42';
+ for(let row=0;row<w;row++){
+  const half=Math.floor(row*.4);
+  riverArt.fillRect(x-half,y-w+row,half*2+1,1);
+ }
+}
+const cityStreet=document.createElement('canvas');
+cityStreet.width=480;cityStreet.height=150;
+const bakeryProps=document.createElement('canvas');
+bakeryProps.width=240;bakeryProps.height=150;
+function drawBakeryStep(){
+ // The apartment landing is on the left, with stairs descending toward the shop.
+ for(let i=0;i<5;i++){
+  const x=29+i*9,y=77+i*7,w=i===0?21:10;
+  box(x,y,w,6,'#887064');box(x,y,w,1,'#b49a81');
+ }
+ poly('#715956',[[29,82],[50,82],[75,109],[75,116],[48,94],[29,94]]);
+ box(29,94,6,22,'#81665b');box(30,101,5,1,'#57444a');box(30,109,5,1,'#57444a');
+}
+function drawBakeryCartons(){
+ for(const [x,y,w,h] of [[8,106,13,12],[17,102,14,14],[64,109,15,12],[74,104,12,10]]){
+  box(x,y,w,h,'#6d5346');box(x+1,y+2,w-5,h-3,'#a4805d');
+  box(x+1,y+1,w-2,2,'#c6a37a');box(x+w-4,y+2,3,h-3,'#86664d');
+  box(x+5,y+2,3,4,'#d0b78e');box(x+3,y+h-4,5,1,'#745e51');
+ }
+}
+function paintBakery(){
+ ctx.clearRect(0,0,240,150);
+ box(0,7,54,98,'#494756');box(0,7,54,5,'#79717c');
+ for(let y=21;y<100;y+=7)box(0,y,54,1,'#383743');
+ box(47,21,193,83,'#846559');box(47,21,193,5,'#b18a71');
+ for(let y=29;y<99;y+=8)box(48,y,192,1,'#70544f');
+ box(63,29,153,15,'#4e464a');
+ ctx.fillStyle='#f4d4a4';ctx.font='bold 11px monospace';ctx.fillText('CORNER BAKERY',96,40);
+ box(59,46,161,8,'#a95e61');
+ for(let x=61;x<216;x+=16)box(x,46,8,8,'#d9ad84');
+ box(66,55,90,43,'#524349');box(70,58,82,36,'#a78360');
+ box(110,58,2,36,'#6b5150');box(70,72,82,2,'#6b5150');
+ box(67,96,88,2,'#bd9271');
+ for(const x of [78,93,119,134]){
+  box(x,84,9,6,'#cb9c66');box(x+2,82,5,3,'#e3b980');
+ }
+ box(165,55,40,49,'#50464c');box(168,57,34,45,'#695254');
+ box(171,60,28,28,'#aa8262');box(184,60,2,28,'#755858');
+ box(173,92,24,7,'#795e58');box(195,90,3,2,'#cfb08b');
+ box(163,102,44,2,'#a48774');
+ box(0,100,240,50,'#626069');
+ poly('#807579',[[57,109],[181,101],[240,103],[240,150],[59,150]]);
+ for(let i=0;i<52;i++)box(4+(i*71)%232,105+(i*17)%44,2+i%3,1,i%2?'#696169':'#958485');
+ const street=cityStreet.getContext('2d');
+ // Distinct apartment frontage beside the bakery.
+ box(0,10,57,90,'#514c60');box(0,10,57,4,'#8b7b86');
+ for(let y=21;y<98;y+=8)box(0,y,55,1,'#433e51');
+ box(55,14,4,86,'#3a3545');
+ box(8,28,19,23,'#383340');box(10,30,15,18,'#a28877');
+ box(10,30,5,18,'#7e697d');box(21,30,4,18,'#7e697d');box(17,30,1,18,'#514454');
+ box(28,44,24,34,'#36303e');box(31,46,18,31,'#665564');
+ box(34,49,12,15,'#aa9280');box(34,49,4,15,'#796376');box(43,49,3,15,'#796376');
+ box(33,69,2,2,'#c5a680');
+ street.drawImage(alley,0,0);street.drawImage(view,240,0);
+ ctx.clearRect(0,0,240,150);
+ poly('#24262c',[[31,91],[47,89],[75,113],[71,118],[31,118]]);
+ box(35,114,34,3,'#3d3438');
+ drawBakeryStep();
+ drawBakeryCartons();
+ bakeryProps.getContext('2d').drawImage(view,0,0);
+}
+paintBakery();
+const cycleStart=performance.now();
+const cycleLength=240000;
+const phaseLabel=document.querySelector('#day-phase');
+function bakeryClock(t){
+ const day=(t-cycleStart)/cycleLength+.29;
+ const phase=day-Math.floor(day);
+ const shutter=Math.max(0,Math.min(1,(phase-.67)/.025,(.98-phase)/.025));
+ const glow=phase>=.42&&phase<.695?Math.min(1,(phase-.42)/.065)*(1-shutter):0;
+ return {day:Math.floor(day),phase,shutter,glow};
+}
+function bakeryLights(t,night,camera){
+ const {glow,shutter}=bakeryClock(t);
+ ctx.save();ctx.translate(240-camera,0);
+ if(glow>0){
+  ctx.globalAlpha=glow*.20;
+  poly('#ffd089',[[76,99],[201,99],[219,120],[57,120]]);
+  ctx.globalAlpha=glow*.70;
+  box(70,58,82,36,'#ffc47c');box(171,60,28,28,'#edaa69');
+  ctx.globalAlpha=glow;
+  box(110,58,2,36,'#705653');box(70,72,82,2,'#705653');box(184,60,2,28,'#705653');
+  for(const x of [78,93,119,134])box(x,85,9,5,'#ba8655');
+ }
+ if(shutter>0){
+  ctx.globalAlpha=1;
+  const height=Math.round(36*shutter);
+  box(70,58,82,height,'#5a4d53');
+  for(let y=60;y<58+height;y+=4)box(71,y,80,1,'#77615e');
+  box(70,57+height,82,1,'#a08370');
+ }
+ ctx.globalAlpha=night*.62;
+ box(180,49,9,4,'#ffcf87');
+ ctx.globalAlpha=night*.24;
+ poly('#e9b578',[[181,53],[188,53],[201,77],[168,77]]);
+ ctx.restore();
+}
+let checkedClosing=-1;
+function bakeryClosingSnack(t){
+ if(!bakery||document.hidden||traveling||hidden||held||burrowing||fall||pendingPat||active||walk)return;
+ const {day,phase}=bakeryClock(t);
+ if(phase<.695||phase>.80||day===checkedClosing||state.full>85)return;
+ checkedClosing=day;
+ if(Math.random()>=.5)return;
+ movePip(172,76);facing=1;state.full=clamp(state.full+12);
+ active='forage';start=t;
+ note.textContent='The bakery closes. Pip finds a few crumbs by the door.';
+ render();save();
+}
+function worldLight(t){
+ const phase=((t-cycleStart+cycleLength*.29)%cycleLength)/cycleLength;
+ const sun=Math.sin(phase*2*Math.PI);
+ const night=Math.max(0,Math.min(1,(.18-sun)/.7));
+ const angle=phase*2*Math.PI;
+ const moon=sun<0;
+ const orbit=moon?angle-Math.PI:angle;
+ const x=Math.round(54+156*orbit/Math.PI);
+ const y=Math.round(62-45*Math.sin(orbit));
+ const label=sun>.3?'DAY':sun<-.3?'NIGHT':phase>.25&&phase<.75?'DUSK':'DAWN';
+ if(phaseLabel.textContent!==' / '+label)phaseLabel.textContent=' / '+label;
+ ctx.save();
+ ctx.globalAlpha=night;
+ for(let i=0;i<29;i++)box(8+(i*73)%223,5+(i*19)%36,1,1,i%4?'#a8b7cd':'#eee3ca');
+ ctx.globalAlpha=Math.min(1,Math.abs(sun)*4);
+ for(let row=-8;row<=8;row++){
+  const w=Math.floor(Math.sqrt(81-row*row));
+  box(x-w,y+row,2*w+1,1,moon?'#dfdec5':'#f2c882');
+ }
+ if(moon){box(x-4,y-2,3,2,'#b8bed0');box(x+1,y+3,3,2,'#b8bed0')}
+ ctx.restore();
+ const cityCamera=city?(riverPan?.camera??(bakery?240:0)):0;
+ if(city)ctx.drawImage(cityStreet,-cityCamera,0);
+ else{
+  const camera=riverPan?riverPan.camera:creek?riverSpan:0;
+  ctx.drawImage(riverside,-camera,0);
+ }
+ ctx.save();
+ ctx.globalAlpha=night*.68;
+ box(0,0,240,150,'#101a37');
+ ctx.globalAlpha=(1-night)*Math.max(0,1-Math.abs(sun)*2)*.22;
+ box(0,0,240,150,'#a85645');
+ ctx.restore();
+ if(city){
+  ctx.save();ctx.translate(-cityCamera,0);glowWindows(night);ctx.restore();
+  ctx.save();
+  ctx.filter='brightness('+(1-night*.45)+')';
+  ctx.restore();
+  bakeryLights(t,night,cityCamera);
+  ctx.save();
+  ctx.filter='brightness('+(1-night*.45)+')';
+  ctx.drawImage(alleyProps,-cityCamera,0);
+  ctx.drawImage(bakeryProps,240-cityCamera,0);
+  ctx.restore();
+ }
+ return night;
+}
+let nextNoise=performance.now()+25000+Math.random()*20000;
+function woodlandNoise(t){
+ if(city||traveling||fall||t<nextNoise||document.hidden||hidden||burrowing||held||pendingPat||active)return;
+ nextNoise=t+35000+Math.random()*40000;
+ const close=Math.random()<.32;
+ state.comfort=clamp(state.comfort-(close?34:16));
+ if(close||state.comfort<25){
+  beginBurrow(true);
+  if(!close)note.textContent='The brush rustles again. Pip darts into his burrow.';
+ }else{
+  walk=null;active='alarm';start=t;
+  note.textContent='Something rustles in the woods. Pip pauses to listen.';
+ }
+ render();save();
+}
+let pinecone=null;
+let playRequest=0,nextInvitation=0,washAt=0,cityEntered=0,visitCounted=false;
+document.querySelector('#pouch-caps').onclick=()=>{
+ if(traveling||hidden||burrowing||held||fall||state.cap<1)return;
+ const slot=city?'cityCap':'forestCap';
+ if(state[slot])return;
+ state.cap--;state[slot]=1;
+ note.textContent='You leave a shiny bottle cap by Pip’s hideout.';
+ render();save();
+};
+function settleAtCreekBank(){
+ walk=null;facing=1;movePip(85,88);
+}
+let nextDozeCheck=0;
+function maybeDoze(t,night){
+ if(t<nextDozeCheck||document.hidden||traveling||hidden||burrowing||held||fall||pendingPat||active||walk||playRequest)return;
+ nextDozeCheck=t+12000;
+ const tiredness=Math.max(0,Math.min(1,(80-state.energy)/65));
+ const chance=tiredness*(.55-night*.43);
+ if(Math.random()>=chance)return;
+ nextDozeCheck=t+40000;
+ beginBurrow(false,'doze');
+ note.textContent='Pip yawns and heads inside for a short nap.';
+}
+function pipInitiative(t){
+ if(city&&!visitCounted&&t-cityEntered>=8000&&state.comfort>=55&&!hidden&&!burrowing){
+  visitCounted=true;state.calmVisits=Math.min(3,state.calmVisits+1);
+  if(state.calmVisits===3&&!state.cityRegular)nextCityEvent=Math.min(nextCityEvent,t+3500);
+  render();save();
+ }
+ if(playRequest&&t>=playRequest){playRequest=0;nextInvitation=t+20000;}
+ if(document.hidden||traveling||hidden||burrowing||held||fall||pendingPat||active||(walk&&!(washAt&&t>=washAt)))return;
+ const slot=city?'cityCap':'forestCap';
+ if(state[slot]){
+  state[slot]=0;state.stashedCaps++;
+  beginBurrow();
+  note.textContent='Pip bats the cap with a paw, then carries it into his hideout.';
+ }else if(washAt&&t>=washAt){
+  washAt=0;walk=null;state.clean=clamp(state.clean+14);state.washedPaws=1;
+  movePip(31,98);active='wash';start=t;
+  note.textContent='Pip pads over to a puddle and splashes the trash grime off his paws.';
+ }else if(creek&&state.clean<55&&t>=nextCreekWash){
+  nextCreekWash=t+20000;
+  if(Math.random()>=.35)return;
+  settleAtCreekBank();
+  state.clean=clamp(state.clean+18);
+  active='wash';start=t;
+  note.textContent='Pip sits beside the creek and washes his face with wet paws.';
+ }else if(!playRequest&&t>=nextInvitation&&state.bond>=8&&state.energy>=13){
+  nextInvitation=t+18000;
+  if(Math.random()>=.35)return;
+  playRequest=t+16000;active='invite';start=t;
+  pinecone={start:t,x:petX+(facing===1?4:44),y:Math.min(143,petY+34)};
+  note.textContent='Pip rolls a pinecone toward you. Press Play to roll it back to him.';
+ }else return;
+ render();save();
+}
+function peekFromBurrow(t){
+ if((city&&!bakery)||nap)return;
+ const elapsed=t-shelterEntered;
+ if(elapsed<2600)return;
+ const peek=(elapsed-2600)%6500;
+ if(peek>=1850)return;
+ const reveal=reducedMotion.matches?1:Math.min(1,peek/320,(1850-peek)/380);
+ ctx.save();
+ ctx.beginPath();
+ if(bakery){ctx.moveTo(35,94);ctx.lineTo(48,94);ctx.lineTo(69,113);ctx.lineTo(69,116);ctx.lineTo(35,116);ctx.closePath();ctx.clip();}else{
+ if(creek){ctx.translate(240,0);ctx.scale(-1,1);}
+ ctx.moveTo(30,108);ctx.lineTo(32,99);ctx.lineTo(39,91);
+ ctx.lineTo(52,89);ctx.lineTo(63,96);ctx.lineTo(69,109);
+ ctx.closePath();ctx.clip();}
+ const shift=Math.round((1-reveal)*12);
+ const blink=!reducedMotion.matches&&peek>1050&&peek<1190;
+ if(bakery){ctx.translate(41+shift,90+Math.round(shift/2));ctx.scale(.7,.7);raccoon(0,0,blink)}
+ else raccoon(39+shift,77+shift,blink);
+ ctx.restore();
+}
+function drawSleepMarks(t){
+ const x=bakery?52:city?157:creek?194:41, y=bakery?86:city?52:80;
+ ctx.save();
+ ctx.fillStyle='#ffe4a2';
+ if(reducedMotion.matches){
+  ctx.font='bold 10px monospace';
+  ctx.fillText('Z z',x,y);
+ }else{
+  for(let i=0;i<3;i++){
+   const rise=((t-shelterEntered+i*650)%1950)/1950;
+   ctx.globalAlpha=Math.min(1,rise*12,(1-rise)*4);
+   ctx.font='bold '+Math.round(7+rise*6)+'px monospace';
+   ctx.fillText('Z',x+Math.round(rise*17),y-Math.round(rise*23));
+  }
+ }
+ ctx.restore();
+}
+function shadowTint(night){
+ const day=[48,37,25], moon=[24,22,51];
+ const channels=day.map((value,i)=>Math.round(value+(moon[i]-value)*night));
+ return 'rgb('+channels.join(',')+')';
+}
+function animateRiver(t,night,camera){
+ if(reducedMotion.matches)return;
+ ctx.save();
+ ctx.translate(-camera,0);
+ ctx.beginPath();
+ ctx.moveTo(177,150);ctx.lineTo(184,140);ctx.lineTo(206,134);
+ ctx.lineTo(212,124);ctx.lineTo(227,119);ctx.lineTo(254,113);
+ ctx.lineTo(263,112);ctx.lineTo(288,101);ctx.lineTo(312,93);
+ ctx.lineTo(347,96);ctx.lineTo(321,108);ctx.lineTo(345,128);
+ ctx.lineTo(379,150);ctx.closePath();
+ ctx.moveTo(480,116);ctx.lineTo(463,114);ctx.lineTo(439,116);
+ ctx.lineTo(418,123);ctx.lineTo(388,126);ctx.lineTo(345,117);
+ ctx.lineTo(335,150);ctx.lineTo(480,150);ctx.closePath();
+ ctx.clip();
+ const light=1-night*.64;
+ for(let i=0;i<34;i++){
+  const flow=((t+i*719)%11000)/11000;
+  const x=Math.round(179+(i*47)%181+flow*13);
+  const y=Math.floor(99+(i*13)%21+flow*42);
+  ctx.globalAlpha=light*Math.sin(flow*Math.PI)*(.24+i%3*.10);
+  box(x,y,4+i%11,1,i%4?'#a9c9b5':'#4b767f');
+ }
+ for(let i=0;i<19;i++){
+  const flow=((t+i*587)%7400)/7400;
+  const x=Math.round(376+(i*23)%89+flow*9);
+  const y=Math.floor(120+(i*7)%12+flow*24);
+  ctx.globalAlpha=light*Math.sin(flow*Math.PI)*.62;
+  box(x,y,4+i%8,1,'#b4d3c0');
+ }
+ for(const [x,y,offset] of [[220,137,0],[270,131,2900],[310,115,5800],[454,135,4100]]){
+  const p=((t+offset)%8700)/1250;
+  if(p>=1)continue;
+  const radius=2+Math.floor(p*8);
+  ctx.globalAlpha=(1-p)*light*.75;
+  box(x-radius,y,2,1,'#b9d6bf');box(x+radius,y,2,1,'#b9d6bf');
+  box(x-2,y-Math.ceil(radius*.4),5,1,'#b9d6bf');
+  box(x-2,y+Math.ceil(radius*.4),5,1,'#b9d6bf');
+ }
+ ctx.restore();
+}
+function drawTail(x,y,t,pose,motion){
+ ctx.translate(x+55,y+12+Math.round(2*pose));
+ const swish=active==='play'?Math.sin(t/95)*.24:held?Math.sin(t/135)*.16:active==='rest'?0:Math.sin(t/460)*.14;
+ if(motion)ctx.rotate(swish+.12*pose);
+ poly('#30302d',[[-4,-4],[2,-4],[8,0],[13,7],[16,16],[17,21],[14,24],[9,24],[6,21],[5,15],[3,9],[0,5],[-4,3]]);
+ poly('#968e7b',[[-2,-2],[2,-2],[7,1],[11,7],[14,16],[15,21],[13,22],[9,22],[7,19],[6,13],[4,8],[0,4],[-2,2]]);
+ poly('#514d45',[[3,-1],[7,1],[9,4],[5,6],[3,4]]);
+ poly('#514d45',[[9,5],[11,7],[13,12],[7,14],[6,10]]);
+ poly('#514d45',[[14,15],[15,19],[8,21],[7,17]]);
+}
+function frame(t){
+ if(riverPan){
+  const pan=riverPan, to=pan.area==='creek'||pan.area==='bakery'?riverSpan:0;
+  const progress=Math.max(0,Math.min(1,(t-pan.start)/1150));
+  if(progress===1){
+   switchArea(pan.area);
+   riverPan=null;traveling=false;creekTravel.disabled=false;travel.disabled=false;
+  }else{
+   const ease=progress*progress*(3-2*progress);
+   pan.camera=Math.round(pan.from+(to-pan.from)*ease);
+   pan.screenX=Math.round(pan.from+pan.x+(to+94-pan.from-pan.x)*progress-pan.camera);
+   pan.screenY=Math.round(pan.y+(80-pan.y)*progress);
+  }
+ }
+ box(0,0,240,150,'#394d4a');box(0,14,240,61,'#566859');box(0,44,240,34,'#6c7760');
+ const night=worldLight(t);
+ if(!city)animateRiver(t,night,riverPan?.camera??(creek?riverSpan:0));
+ if(riverPan){
+  const pan=riverPan;
+  if(!hidden){
+   const direction=pan.area==='creek'||pan.area==='bakery'?-1:1;
+   ctx.save();ctx.translate(pan.screenX+24,0);ctx.scale(direction,1);ctx.translate(-pan.screenX-24,0);
+   ctx.save();drawTail(pan.screenX,pan.screenY,t,0,true);ctx.restore();
+   raccoon(pan.screenX,pan.screenY,false,Math.round(Math.sin(t/75)*2));
+   ctx.restore();
+  }
+  if(city){drawPedestrian(t,night);drawForegroundCar(t,night);}
+  requestAnimationFrame(frame);return;
+ }
+ if(city){alleyEvents(t);updatePedestrian(t);}
+ if(held||fall){for(let x=0;x<240;x+=8)box(x,groundY,4,1,'#c5ac79')}
+ let elapsed=t-start;if(active&&elapsed>2600)active='';
+ if(!city&&night>.55&&!reducedMotion.matches)for(let i=0;i<9;i++){const x=(i*41+Math.sin(t/1100+i)*8+240)%240,y=62+i*7+Math.cos(t/720+i)*5;if(Math.sin(t/510+i)>-.1)box(x|0,y|0,1,1,'#f5ca83')}
+ woodlandNoise(t);
+ updateBurrow(t);
+ restoreShelterComfort(t);
+ if(hidden&&!nap&&state.comfort>50&&state.energy<50){
+  const discovery=note.textContent;
+  startNap(t,true);
+  if(discovery.includes(' (+'))note.textContent=discovery+' Then Pip drifts off.';
+ }
+ if(hidden&&!nap&&state.comfort>=100&&!traveling){
+  beginBurrow();
+  note.textContent='Pip feels safe again and comes out on his own.';
+ }
+ updateNap(t);
+ bakeryClosingSnack(t);
+ pipInitiative(t);
+ maybeDoze(t,night);
+ if(fall){
+  const seconds=Math.max(0,t-fall.start)/1000;
+  petY=Math.min(groundY-pawOffset,Math.round(fall.y+240*seconds*seconds));
+  if(petY===groundY-pawOffset||reducedMotion.matches){
+   petY=groundY-pawOffset;fall=null;land(t);
+  }
+ }
+ elapsed=t-start;
+ const stride=burrowing?Math.round(Math.sin(t/75)*2):wander(t);
+ if(hidden){peekFromBurrow(t);drawShelterPat(t);if(nap)drawSleepMarks(t);drawPinecone(t,night);drawPedestrian(t,night);drawForegroundCar(t,night);requestAnimationFrame(frame);return}
+ ctx.save();
+ if(burrowing){const progress=Math.min(1,Math.max(0,(t-burrowing.start)/(burrowing.flee||burrowing.sleep?420:850)));ctx.globalAlpha=Math.min(1,(burrowing.entering?1-progress:progress)*3);}
+ const motion=!reducedMotion.matches;
+ const washing=(active==='wash'||active==='rinse'||active==='fish')&&!held;
+ const targetSit=!held&&((washing&&(!motion||elapsed<2150))||active==='rest'||(!active&&!walk&&nextWalk-t>850))?1:0;
+ const step=Math.min(50,Math.max(0,t-lastFrame))/360;
+ sit=motion?sit+Math.sign(targetSit-sit)*Math.min(step,Math.abs(targetSit-sit)):targetSit;
+ lastFrame=t;
+ const hop=motion&&active==='play'?Math.round(Math.abs(Math.sin(elapsed/115))*10):0;
+ const lift=held?4+(motion?Math.round(Math.sin(t/95)):0):0;
+ const landing=motion&&active==='drop'&&elapsed<200?Math.round(Math.sin(elapsed/200*Math.PI)*2):0;
+ const x=petX,y=petY-hop-lift+landing;
+ ctx.save();
+ ctx.globalAlpha*=.30;
+ const shadowY=Math.max(groundY,petY+35);
+ const shadow=shadowTint(night);
+ box(x+7,shadowY,39,3,shadow);
+ box(x+12,shadowY+3,28,1,shadow);
+ ctx.restore();
+ ctx.save();
+ ctx.translate(x+24,0);ctx.scale(facing,1);ctx.translate(-(x+24),0);
+ drawTail(x,y,t,sit,motion);
+ ctx.restore();
+ const blink=active==='rinse'||active==='wash'||active==='rest'||active==='pat'||(motion&&(t%4300>4160||(t%4300>3890&&t%4300<3980)));
+ const breathe=motion&&!held&&hop===0&&landing===0&&Math.sin(t/420)>.45?1:0;
+ ctx.save();
+ ctx.translate(x+24,0);ctx.scale(facing,1);ctx.translate(-(x+24),0);
+ const pawLift=washing?(motion?Math.max(0,Math.min(1,(elapsed-400)/240,(2150-elapsed)/300,sit)):1):0;
+ const wash=pawLift>0?{
+  lift:pawLift,
+  rinse:active==='rinse'||active==='fish', fish:active==='fish',
+  rub:motion?Math.sin(elapsed/95)*3:0
+ }:null;
+ raccoon(x,y-breathe-(walk&&stride>0?1:0),blink,stride,sit,wash);
+ ctx.restore();
+ if(creek&&(active==='wash'||active==='rinse'||active==='fish')&&wash){
+  const spread=motion?Math.floor(elapsed/75)%8:4;
+  box(x+2-spread,y+35,5+spread*2,1,'#a5c7af');
+ }
+ if(motion&&active==='drop'&&elapsed<330){
+  const spread=Math.floor(elapsed/45);
+  box(x+13-spread,y+34,2,1,'#c6ac7b');
+  box(x+45+spread,y+33,2,1,'#c6ac7b');
+ }
+ if(held||active){ctx.fillStyle='#ffe4a2';ctx.font='bold 12px monospace';ctx.fillText(held?'!':active==='drop'?'·':active==='pat'?'♥':active==='alarm'?'!':active==='invite'?'◇':(active==='rinse'||active==='fish')?'≈':(active==='forage'||active==='item'||active==='treasure')?'✦':actions[active].icon,x+19,Math.max(10,y+1-(held?0:Math.floor(elapsed/110))))}
+ ctx.restore();
+ if(bakery&&burrowing&&petX<83){
+  ctx.save();ctx.filter='brightness('+(1-night*.45)+')';drawBakeryStep();drawBakeryCartons();ctx.restore();
+ }
+ drawPinecone(t,night);
+ drawPedestrian(t,night);
+ drawForegroundCar(t,night);
+ requestAnimationFrame(frame);
+}
+decay();render();save();setInterval(()=>{decay();render();save()},10000);requestAnimationFrame(frame);
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
