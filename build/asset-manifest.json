@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dark-technologist-portfolio/static/css/main.b1895258.css",
-    "main.js": "/dark-technologist-portfolio/static/js/main.02cd5bf7.js",
+    "main.css": "/dark-technologist-portfolio/static/css/main.aff41ca6.css",
+    "main.js": "/dark-technologist-portfolio/static/js/main.c92a72dd.js",
     "index.html": "/dark-technologist-portfolio/index.html",
-    "main.b1895258.css.map": "/dark-technologist-portfolio/static/css/main.b1895258.css.map",
-    "main.02cd5bf7.js.map": "/dark-technologist-portfolio/static/js/main.02cd5bf7.js.map"
+    "main.aff41ca6.css.map": "/dark-technologist-portfolio/static/css/main.aff41ca6.css.map",
+    "main.c92a72dd.js.map": "/dark-technologist-portfolio/static/js/main.c92a72dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1895258.css",
-    "static/js/main.02cd5bf7.js"
+    "static/css/main.aff41ca6.css",
+    "static/js/main.c92a72dd.js"
   ]
 }

@@ -1,0 +1,141 @@
+.shopify-product-card {
+  background: rgba(255, 255, 51, 0.05);
+  border: 2px solid #ffff33;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopify-product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 51, 0.1), transparent);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.shopify-product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 51, 0.5);
+}
+
+.shopify-product-card:hover::before {
+  left: 100%;
+}
+
+.shopify-product-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 133%;
+  overflow: hidden;
+  background: #000;
+}
+
+.shopify-product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.shopify-product-card:hover .shopify-product-image {
+  transform: scale(1.05);
+}
+
+.shopify-product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.shopify-product-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffff33;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shopify-product-description {
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.shopify-product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 15px;
+}
+
+.shopify-product-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffff33;
+  text-shadow: 0 0 10px rgba(255, 255, 51, 0.7);
+}
+
+.shopify-add-to-cart-btn {
+  padding: 10px 20px;
+  background: #ffff33;
+  color: #000000;
+  border: 2px solid #ffff33;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.shopify-add-to-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 51, 0.7);
+  filter: drop-shadow(0 0 10px #ffff33);
+}
+
+.shopify-add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .shopify-product-title {
+    font-size: 1rem;
+  }
+  
+  .shopify-product-description {
+    font-size: 0.85rem;
+  }
+  
+  .shopify-product-price {
+    font-size: 1.2rem;
+  }
+  
+  .shopify-add-to-cart-btn {
+    font-size: 0.75rem;
+    padding: 8px 15px;
+  }
+}
