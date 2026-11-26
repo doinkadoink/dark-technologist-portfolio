@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1218">
+  <title>AI-assisted websites | Rachel Frappell</title>
+  <meta name="description" content="Explore Raccoon Hollow, ChatTea and NightKind: three website projects from Rachel Frappell's portfolio.">
+  <link rel="icon" href="../public/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #0c1218; color: #e8f2f8; font-family: 'Rajdhani', sans-serif; line-height: 1.6; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 75% 45% at 20% 0%, rgba(78, 200, 224, .12), transparent 52%), radial-gradient(ellipse 55% 40% at 100% 80%, rgba(200, 120, 216, .07), transparent 48%); pointer-events: none; z-index: -1; }
+    .website-collection { max-width: 1050px; margin: 0 auto; padding: 28px 20px 64px; }
+    .back { display: inline-block; margin: 1.5rem 0 1.25rem; color: #8ee4f4; font-weight: 700; letter-spacing: .06em; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    h1 { font: 700 clamp(1.3rem, 4vw, 1.9rem)/1.35 'Orbitron', sans-serif; letter-spacing: .04em; margin: 0 0 .5rem; }
+    .intro { color: #c4d2dc; font-size: 1.05rem; max-width: 65ch; margin: 0; }
+    .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin-top: 2rem; }
+    .website-card { display: flex; flex-direction: column; min-height: 240px; padding: 1.3rem; border: 1px solid rgba(142, 228, 244, .25); border-left: 3px solid #4ec8e0; border-radius: 10px; background: rgba(19, 31, 40, .9); color: #e8f2f8; text-decoration: none; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .website-card:hover { transform: translateY(-3px); border-color: #8ee4f4; background: #182e39; }
+    .website-card:focus-visible, .back:focus-visible { outline: 3px solid #ebd888; outline-offset: 4px; }
+    .website-card.chattea-card { border-left-color: #d4915a; background: #201711; }
+    .website-card.nightkind-card { border-left-color: #c19ce8; background: #1d1628; }
+    .category { color: #8ee4f4; font-size: .9rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .4rem; }
+    .chattea-card .category { color: #e8c49a; }
+    .nightkind-card .category { color: #d7b4f2; }
+    .website-card h2 { font: 700 1.12rem/1.4 'Orbitron', sans-serif; letter-spacing: .02em; margin: 0 0 .75rem; }
+    .website-card p { color: #d1d6dc; font-size: 1rem; margin: 0 0 1.2rem; }
+    .card-action { color: #a3e8f4; font-weight: 700; margin-top: auto; text-decoration: underline; text-underline-offset: .2em; }
+    .chattea-card .card-action { color: #f0c99f; }
+    .nightkind-card .card-action { color: #e3c3f9; }
+    @media (prefers-reduced-motion: reduce) { .website-card { transition: none; } .website-card:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <main class="website-collection">
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+    <h1>AI-assisted websites for tech demonstration</h1>
+    <p class="intro">Explore three different projects, from an interactive pet game and a community prototype to an AI-assisted small business.</p>
+    <div class="collection-grid" aria-label="Website projects">
+      <a class="website-card" href="../raccoon-hollow/index.html">
+        <span class="category">Interactive pet game</span>
+        <h2>Raccoon Hollow</h2>
+        <p>A playable woodland pet game created with AI assistance. Care for Pip the raccoon, explore his world and collect treasures.</p>
+        <span class="card-action">Play Raccoon Hollow</span>
+      </a>
+      <a class="website-card chattea-card" href="chattea.html">
+        <span class="category">Community web prototype</span>
+        <h2>ChatTea</h2>
+        <p>A coffee-themed community website prototype with themed lobbies, profile-style pages and a warm visual identity.</p>
+        <span class="card-action">Explore ChatTea</span>
+      </a>
+      <a class="website-card nightkind-card" href="nightkind.html">
+        <span class="category">AI-assisted small business</span>
+        <h2>NightKind</h2>
+        <p>A small business bringing alternative style and bat conservation together, with an AI-assisted website supporting Bats QLD.</p>
+        <span class="card-action">Explore NightKind</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
