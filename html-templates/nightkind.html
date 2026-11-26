@@ -3,540 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <title>NightKind - Alt-Gothic Conservation | Rachel - Dark Technologist</title>
-  <meta name="title" content="NightKind - Alt-Gothic Conservation | Rachel - Dark Technologist" />
-  <meta name="description" content="NightKind: Alt-gothic conservation aesthetic merging nocturnal imagery with wildlife activism. Supporting bat conservation through ethical commerce and subcultural community." />
-  <meta name="keywords" content="nightkind, bat conservation, alt-gothic, wildlife activism, ethical commerce, nocturnal aesthetic, conservation merchandise, dark technologist" />
-  <meta name="author" content="Rachel - Dark Technologist" />
+  <meta name="theme-color" content="#100d18" />
+  <title>NightKind | Rachel Frappell</title>
+  <meta name="description" content="NightKind brings alternative gothic aesthetics and wildlife conservation together in support of Bats QLD." />
+  <meta name="author" content="Rachel Frappell" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="English" />
-  <meta name="revisit-after" content="7 days" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nightkind.org" />
-  <meta property="og:title" content="NightKind - Alt-Gothic Conservation | Rachel - Dark Technologist" />
-  <meta property="og:description" content="NightKind: Alt-gothic conservation aesthetic merging nocturnal imagery with wildlife activism. Supporting bat conservation through ethical commerce and subcultural community." />
-  <meta property="og:image" content="og-image.jpg" />
-  <meta property="og:site_name" content="NightKind" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://nightkind.org" />
-  <meta property="twitter:title" content="NightKind - Alt-Gothic Conservation | Rachel - Dark Technologist" />
-  <meta property="twitter:description" content="NightKind: Alt-gothic conservation aesthetic merging nocturnal imagery with wildlife activism. Supporting bat conservation through ethical commerce and subcultural community." />
-  <meta property="twitter:image" content="og-image.jpg" />
-  <meta name="application-name" content="NightKind" />
-  <meta name="msapplication-TileColor" content="#000000" />
   <link rel="icon" href="../public/favicon.ico" />
-  <link rel="apple-touch-icon" href="../public/logo192.png" />
-  <link rel="manifest" href="../public/manifest.json" />
-  <link rel="canonical" href="https://nightkind.org" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* NightKind Design Rationale Implementation */
     :root {
-      --primary-color: #ffff33; /* Neon Yellow */
-      --secondary-color: #8a2be2; /* Electric Purple */
-      --background-color: #000000; /* True Black */
-      --text-color: #ffffff;
-      --font-family: 'Space Mono', monospace;
-      --hover-duration: 0.5s;
-      --hover-scale: 1.02;
-      --glow-opacity: 0.7;
+      --nk-bg: #100d18;
+      --nk-text: #f4eef8;
+      --nk-body: #d7cedf;
+      --nk-muted: #b6a9bf;
+      --nk-purple: #d0a4f2;
+      --nk-gold: #ebd888;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: var(--font-family);
-      background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .header .container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-    
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      background: linear-gradient(135deg, var(--background-color) 0%, #1a0f2e 100%);
-      padding-top: 80px;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 51, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .logo {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 40px;
-      filter: drop-shadow(0 0 20px var(--primary-color));
-      animation: logoGlow 4s ease-in-out infinite;
-    }
-    
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px var(--primary-color)); }
-      50% { filter: drop-shadow(0 0 30px var(--secondary-color)); }
-    }
-    
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      text-shadow: 0 0 20px var(--primary-color);
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-    }
-    
-    .hero-mission {
-      font-size: 1.5rem;
-      color: var(--text-color);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-family: var(--font-family);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border: 2px solid;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .btn-primary {
-      background: var(--primary-color);
-      color: var(--background-color);
-      border-color: var(--primary-color);
-    }
-    
-    .btn-primary:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--primary-color);
-      filter: drop-shadow(0 0 10px var(--primary-color));
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: var(--secondary-color);
-      border-color: var(--secondary-color);
-    }
-    
-    .btn-secondary:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--secondary-color);
-      filter: drop-shadow(0 0 10px var(--secondary-color));
-    }
-    
-    /* Mission Section */
-    .mission {
-      padding: 100px 0;
-      background: var(--background-color);
-    }
-    
-    .mission-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-    
-    .mission-card {
-      text-align: center;
-      padding: 40px 20px;
-      border: 2px solid var(--primary-color);
-      border-radius: 10px;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .mission-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 51, 0.1), transparent);
-      transition: left 0.5s;
-    }
-    
-    .mission-card:hover::before {
-      left: 100%;
-    }
-    
-    .mission-card:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 30px var(--primary-color);
-    }
-    
-    .mission-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: var(--primary-color);
-      text-shadow: 0 0 10px var(--primary-color);
-    }
-    
-    .mission-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .mission-description {
-      color: var(--text-color);
-      line-height: 1.8;
-    }
-    
-    /* Footer */
-    .footer {
-      background: var(--background-color);
-      border-top: 2px solid var(--primary-color);
-      padding: 40px 0;
-      text-align: center;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    
-    .footer-section h3 {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .footer-section p {
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    
-    .bat-facts {
-      background: rgba(255, 255, 51, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--primary-color);
-    }
-    
-    .return-btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: var(--secondary-color);
-      color: var(--text-color);
-      text-decoration: none;
-      font-family: var(--font-family);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border: 2px solid var(--secondary-color);
-      transition: all var(--hover-duration) ease;
-    }
-    
-    .return-btn:hover {
-      transform: scale(var(--hover-scale));
-      box-shadow: 0 0 20px var(--secondary-color);
-      filter: drop-shadow(0 0 10px var(--secondary-color));
-    }
-    
-    /* Header Styles */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid var(--primary-color);
-      padding: 15px 0;
-    }
-    
-    .progress-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      width: 0%;
-      transition: width 0.3s ease;
-      z-index: 1001;
-    }
-    
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-    
-    .nav {
-      margin-left: auto;
-    }
-    
-    /* Header Logo Styles */
-    .header-logo-text {
-      font-family: 'Orbitron', monospace;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--primary-color);
-      text-shadow: 0 0 20px var(--primary-color);
-    }
-    
-    .header-logo-full {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-color);
-      letter-spacing: 3px;
-    }
-    
-    /* Header Navigation Styles */
-    .header-nav-list {
-      display: flex;
-      list-style: none;
-      gap: 40px;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .header-nav-link {
-      color: var(--text-color);
-      text-decoration: none;
-      font-family: 'Orbitron', monospace;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all var(--hover-duration) ease;
-      position: relative;
-    }
-    
-    .header-nav-link:hover {
-      color: var(--primary-color);
-      text-shadow: 0 0 10px var(--primary-color);
-      transform: scale(1.02);
-      filter: drop-shadow(0 0 6px var(--primary-color));
-    }
-    
-    .header-nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      transition: width 0.3s ease;
-    }
-    
-    .header-nav-link:hover::after {
-      width: 100%;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-      }
-      
-      .hero-mission {
-        font-size: 1.2rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .mission-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-content {
-        grid-template-columns: 1fr;
-      }
-      
-      .nav-list {
-        flex-direction: column !important;
-        gap: 15px !important;
-      }
-      
-      .logo-full {
-        display: none;
-      }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Rajdhani', sans-serif; background: var(--nk-bg); color: var(--nk-text); line-height: 1.65; min-height: 100vh; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 75% 45% at 20% 0%, rgba(154, 95, 202, 0.16), transparent 52%), radial-gradient(ellipse 55% 40% at 100% 80%, rgba(235, 216, 136, 0.06), transparent 48%); pointer-events: none; z-index: -1; }
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 64px; }
+    .back { display: inline-block; margin: 1.5rem 0 1.25rem; color: var(--nk-purple); text-decoration: none; font-weight: 700; letter-spacing: 0.06em; }
+    .back:hover { text-decoration: underline; }
+    .project-heading { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+    .project-logo { display: block; width: 96px; height: 96px; object-fit: contain; flex: 0 0 auto; }
+    h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.25rem, 3.5vw, 1.65rem); letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+    .meta { color: var(--nk-muted); font-weight: 600; }
+    .meta strong { color: var(--nk-gold); }
+    section { margin-bottom: 1.5rem; }
+    h2 { font-family: 'Orbitron', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; color: var(--nk-purple); margin-bottom: 0.5rem; }
+    h3 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--nk-gold); margin-bottom: 0.5rem; }
+    p { color: var(--nk-body); font-size: 1.02rem; margin-bottom: 0.65rem; }
+    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0.75rem; margin: 1rem 0 1.5rem; }
+    .mission-card { padding: 1rem; border-radius: 8px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(208, 164, 242, 0.25); }
+    .mission-card p { margin: 0; }
+    .note { padding: 0.8rem 1rem; border-radius: 8px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--nk-purple); }
+    .note p:last-child { margin-bottom: 0; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .btn { display: inline-flex; padding: 0.65rem 1.2rem; border: 1px solid rgba(208, 164, 242, 0.55); color: var(--nk-purple); text-decoration: none; font-weight: 700; border-radius: 6px; font-size: 0.8rem; white-space: normal; }
+    .btn:hover { background: rgba(208, 164, 242, 0.1); }
+    .btn-solid { background: linear-gradient(165deg, #30213d 0%, #49305f 100%); color: #fff8ff; border-color: rgba(208, 164, 242, 0.6); }
+    .btn-solid:hover { background: linear-gradient(165deg, #402c51 0%, #5a3b72 100%); }
+    a:focus-visible { outline: 2px solid var(--nk-gold); outline-offset: 4px; }
+    @media (max-width: 480px) { .project-logo { width: 72px; height: 72px; } .project-heading { gap: 1rem; } }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-    <div class="container">
-      <div class="header-content">
-        <div class="header-logo">
-          <a href="../index.html" aria-label="Rachel - Dark Technologist Home" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-            <span class="header-logo-text" aria-label="Rachel's logo">R</span>
-            <span class="header-logo-full" aria-label="RACHEL">ACHEL</span>
-          </a>
-        </div>
-        
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <ul class="header-nav-list">
-            <li><a href="../index.html#home" class="header-nav-link" aria-label="Go to home section">HOME</a></li>
-            <li><a href="../index.html#about" class="header-nav-link" aria-label="Go to about section">ABOUT</a></li>
-            <li><a href="../index.html#projects" class="header-nav-link" aria-label="Go to projects section">PROJECTS</a></li>
-            <li><a href="../index.html#contact" class="header-nav-link" aria-label="Go to contact section">CONTACT</a></li>
-          </ul>
-        </nav>
+  <main class="container">
+    <a class="back" href="../index.html#projects">← Back to portfolio</a>
+    <div class="project-heading">
+      <img src="NightKind%20content/NightKindLogo.svg" alt="NightKind logo" class="project-logo">
+      <div>
+        <h1>NightKind</h1>
+        <p class="meta"><strong>Wildlife conservation</strong> · Alternative culture · Bats QLD</p>
       </div>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="NightKind content/NightKindLogo.svg" alt="NightKind Logo" class="logo">
-      <h1 class="hero-title">NIGHTKIND</h1>
-      <p class="hero-mission">
-        Alt-gothic conservation aesthetic merging nocturnal imagery with wildlife activism. 
-        Supporting bat conservation through ethical commerce and subcultural community.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://nightkind.org" target="_blank" rel="noopener noreferrer" class="btn btn-primary">VISIT NIGHTKIND</a>
-        <a href="https://bats.org.au" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">SUPPORT BATS QLD</a>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>WHAT IT IS</h2>
+      <p>Alt-gothic conservation aesthetic merging nocturnal imagery with wildlife activism. Supporting bat conservation through ethical commerce and subcultural community.</p>
+      <p>NightKind exists to bridge the gap between alternative culture and wildlife conservation, proving that style and substance can coexist in the fight for environmental protection.</p>
+    </section>
 
-  <!-- Mission Section -->
-  <section class="mission">
-    <div class="container">
+    <section>
+      <h2>THE MISSION</h2>
       <div class="mission-grid">
         <div class="mission-card">
-          <div class="mission-icon">🦇</div>
-          <h3 class="mission-title">Conservation</h3>
-          <p class="mission-description">
-            Direct funding for Bats QLD conservation efforts, supporting bat rescue, 
-            rehabilitation, and habitat protection programs across Queensland.
-          </p>
+          <h3>Conservation</h3>
+          <p>Direct funding for Bats QLD conservation efforts, supporting bat rescue, rehabilitation, and habitat protection programs across Queensland.</p>
         </div>
-        
         <div class="mission-card">
-          <div class="mission-icon">⚡</div>
-          <h3 class="mission-title">Alt-Culture</h3>
-          <p class="mission-description">
-            Merging subcultural aesthetics with environmental activism, creating 
-            a community that celebrates nocturnal beauty and alternative fashion.
-          </p>
+          <h3>Alt-Culture</h3>
+          <p>Merging subcultural aesthetics with environmental activism, creating a community that celebrates nocturnal beauty and alternative fashion.</p>
         </div>
-        
         <div class="mission-card">
-          <div class="mission-icon">🌙</div>
-          <h3 class="mission-title">Community</h3>
-          <p class="mission-description">
-            Building a global network of bat enthusiasts, conservation supporters, 
-            and alt-gothic culture advocates through ethical commerce and education.
-          </p>
+          <h3>Community</h3>
+          <p>Building a global network of bat enthusiasts, conservation supporters, and alt-gothic culture advocates through ethical commerce and education.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Mission</h3>
-          <p>
-            NightKind exists to bridge the gap between alternative culture and wildlife conservation, 
-            proving that style and substance can coexist in the fight for environmental protection.
-          </p>
-        </div>
-        
-        <div class="footer-section">
-          <div class="bat-facts">
-            <h3>Bat Facts</h3>
-            <p>
-              Bats are essential pollinators and pest controllers, contributing billions 
-              to global agriculture annually. They're also the only mammals capable of true flight.
-            </p>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Impact</h3>
-          <p>
-            Every purchase directly supports Bats QLD's vital work in bat rescue, 
-            rehabilitation, and habitat protection across Queensland.
-          </p>
-        </div>
-      </div>
-      
-      <a href="../index.html#projects" class="return-btn">RETURN TO CHAOS</a>
+    <section>
+      <h2>IMPACT</h2>
+      <p>Every purchase directly supports Bats QLD's vital work in bat rescue, rehabilitation, and habitat protection across Queensland.</p>
+    </section>
+
+    <section class="note">
+      <h2>BAT FACTS</h2>
+      <p>Bats are essential pollinators and pest controllers, contributing billions to global agriculture annually. They're also the only mammals capable of true flight.</p>
+    </section>
+
+    <div class="btn-row">
+      <a href="https://nightkind.org" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Visit NightKind</a>
+      <a href="https://bats.org.au" target="_blank" rel="noopener noreferrer" class="btn">Support Bats QLD</a>
+      <a href="../index.html#projects" class="btn">All projects</a>
     </div>
-  </footer>
+  </main>
 </body>
-</html> 
+</html>
